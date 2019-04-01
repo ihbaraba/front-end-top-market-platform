@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+.wrap {
+    display: flex;
+}
+
+.admin-content {
+    background: #FAFAFA;
+    border: 1px solid #ECECEC;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+.ant-table-thead > tr > th  {
+    background: #fff;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    background: #fff;
+    color: #4F4F4F;
+    font-family: Ubuntu;
+    font-size: 16px;
+    line-height: 18px;
+    position: relative !important;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header:active,
+.ant-collapse > .ant-collapse-item > .ant-collapse-header:focus,
+.ant-collapse > .ant-collapse-item > .ant-collapse-header:visited  {
+    background: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+}
+.react-daypicker-root {
+    width: 100%;
+    border-bottom: 1px solid  #E2E2E2;
+    padding-bottom: 30px;
+}
+.react-daypicker-root table {
+    width: 100%;
+}
+.react-daypicker-root .header {
+    margin-bottom: 30px;
+}

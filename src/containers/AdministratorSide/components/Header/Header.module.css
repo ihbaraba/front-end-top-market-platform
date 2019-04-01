@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
+
+header {
+    height: 100px;
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    /*justify-content: space-between;*/
+    padding-left: 18px;
+    padding-right: 52px;
+}
+.logo {
+    height: 79px;
+    width: 160px;
+    margin-right: 97px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.notification {
+    position: relative;
+    margin-right: 49px;
+}
+
+.alert {
+    top: -5px;
+    right: -15px;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F19300;
+    border-radius: 50%;
+    position: absolute;
+    color: #fff;
+    font-size: 12px;
+}
+
+.cart {
+    position: relative;
+    margin-right: 170px;
+}
+
+.balanceBlock {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.balanceBlock p {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-right: 27px;
+}
+
+.userBlock {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+}
+.balanceBox {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    width: 151px;
+    border-radius: 3px;
+    background-color: #FAFAFA;
+    color: #4A90E2;
+    font-family: Ubuntu;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 26px;
+}
+.dollarIcon {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #EEEEEE;
+    margin-right: 15px;
+}
+
+.avatar {
+    height: 61px;
+    width: 61px;
+    border-radius: 50%;
+    margin-right: 19px;
+}
+.name {
+    color: #9B9B9B;
+    font-family: Ubuntu;
+    font-size: 18px;
+    line-height: 21px;
+    margin-right: 18px;
+}

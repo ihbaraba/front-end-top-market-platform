@@ -1,0 +1,52 @@
+.navigationBar {
+    width: 226px;
+    border: 1px solid #ECECEC;
+    background: #fff;
+    height: calc(100% - 57px);
+    min-height: 100%;
+}
+
+
+
+.navigationBar a.menuItem {
+    height: 73px;
+    width: 225px;
+    display: flex;
+    align-items: center;
+    color: #B2B2B2;
+    font-family: Ubuntu;
+    font-size: 15px;
+    line-height: 17px;
+    text-decoration: none;
+    border-bottom: 1px solid #ECECEC;
+    padding-left: 26px;
+}
+.navigationBar a.menuItem img {
+    margin: 0 15px 0 0;
+}
+.navigationBar a.menuItem:hover {
+    background: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+
+.navigationBar a.menuItem div {
+    display: flex;
+}
+.navigationBar a.menuItem .activeIcon {
+    display: none;
+}
+.navigationBar a.menuItem.active {
+    background: #53be4f;
+    color: #fff;
+}
+.navigationBar a.menuItem.active .icon {
+    display: none;
+}
+.navigationBar a.menuItem.active .activeIcon {
+    display: block;
+}

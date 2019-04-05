@@ -1,0 +1,179 @@
+import React, {Component} from 'react'
+import { Tabs } from 'antd';
+import styles from './MyProducts.module.css'
+import 'antd/dist/antd.css';
+import  copyLink  from "../../../img/link-symbol.svg";
+import { Table} from 'antd';
+import PriceListTable from "../components/PriceListTable/PriceListTable";
+import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTable";
+import Products from "../components/Products/Products";
+
+
+const TabPane = Tabs.TabPane;
+
+function callback(key) {
+    console.log(key);
+}
+
+
+class MyProducts extends Component {
+
+
+    render() {
+        return (
+            <div>
+                <h3 className={styles.title}>Мои товары</h3>
+                <Tabs onChange={callback} type="card">
+                    <TabPane tab="Товари в продажу (174)" key="1">
+                        <div className={styles.filter}>
+                            <form>
+                                <div>
+                                    <label>Код товара</label>
+                                    <input type="text" className={styles.code}/>
+                                </div>
+                                <div>
+                                    <label>Артикул</label>
+                                    <input type="text" className={styles.vendorCode} />
+                                </div>
+                                <div>
+                                    <label>Название товара</label>
+                                    <input type="text" className={styles.productName} />
+                                </div>
+                                <div>
+                                    <label>Категория</label>
+                                    <select className={styles.category}>
+                                        <option>Телефоны</option>
+                                        <option>Телефоны</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Наличие</label>
+                                    <select className={styles.availability}>
+                                        <option>В наличии</option>
+                                        <option>Нет в наличии</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Цена от</label>
+                                    <input type="text" className={styles.priceMin} />
+                                </div>
+                                <div>
+                                    <label>До</label>
+                                    <input type="text" className={styles.priceMax}/>
+                                </div>
+                                <div>
+                                    <button className={styles.find}>Поиск</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div className={styles.inactiveGoodsTable}>
+                            <div className={styles.productsBtns}>
+                                <button className={styles.actbtn}>Добавить в YML</button>
+                                <button className={styles.actbtn}>Добавить товар</button>
+                                <button className={styles.actbtn}>Загрузить Exel файл</button>
+                            </div>
+                            <Products/>
+                        </div>
+                    </TabPane>
+                    <TabPane tab="Неактивні товари (233)" key="2">
+                        <div className={styles.filter}>
+                            <form>
+                                <div>
+                                    <label>Код товара</label>
+                                    <input type="text" className={styles.code}/>
+                                </div>
+                                <div>
+                                    <label>Артикул</label>
+                                    <input type="text" className={styles.vendorCode} />
+                                </div>
+                                <div>
+                                    <label>Название товара</label>
+                                    <input type="text" className={styles.productName} />
+                                </div>
+                                <div>
+                                    <label>Категория</label>
+                                    <select className={styles.category}>
+                                        <option>Телефоны</option>
+                                        <option>Телефоны</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Наличие</label>
+                                    <select className={styles.availability}>
+                                        <option>В наличии</option>
+                                        <option>Нет в наличии</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Цена от</label>
+                                    <input type="text" className={styles.priceMin} />
+                                </div>
+                                <div>
+                                    <label>До</label>
+                                    <input type="text" className={styles.priceMax}/>
+                                </div>
+                                <div>
+                                    <button className={styles.find}>Поиск</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div className={styles.inactiveGoodsTable}>
+                            <div className={styles.productsBtns}>
+                                <button className={styles.actbtn}>Добавить в YML</button>
+                                <button className={styles.actbtn}>Добавить товар</button>
+                                <button className={styles.actbtn}>Загрузить Exel файл</button>
+                            </div>
+                            <InactiveGoodsTable/>
+                        </div>
+                    </TabPane>
+                    <TabPane tab="Прайс-лист" key="3">
+                        <div className={styles.priceList}>
+                            <div>
+                                <p>Тип источника</p>
+                                <a href="#" className={styles.copyLink}><img src={copyLink} alt=""/> URL ссылка</a>
+                            </div>
+                            <div className={styles.priceAction}>
+                                <div className={styles.url}>
+                                    <label>URL на Прайс-лист</label>
+                                    <input type="text"/>
+                                </div>
+                                <div className={styles.actionbtn}>
+                                    <button className={styles.delete}>Удалить</button>
+                                    <button className={styles.downloadBtn}>Загрузить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 className={styles.title}>Прайс-листы на валидации</h3>
+                        <div className={styles.priceListTable}>
+                            <PriceListTable/>
+                        </div>
+                    </TabPane>
+                    <TabPane tab="Управління товарами" key="4">
+                        <div className={styles.management}>
+                            <a href="#" className={styles.uploadList} download>Загрузить список производителей в Exel</a>
+                            <h3>Управление категориями и параметрами</h3>
+                            <div className={styles.categories}>
+                                <div>
+                                    <label>Категория 1 уровня</label>
+                                    <select></select>
+                                </div>
+                                <div>
+                                    <label>Категория 2 уровня</label>
+                                    <select></select>
+                                </div>
+                                <button className={styles.export}>Экспорт параметров</button>
+                            </div>
+                        </div>
+                    </TabPane>
+                </Tabs>
+            </div>
+        );
+    }
+}
+
+export default MyProducts;
+
+
+
+
+

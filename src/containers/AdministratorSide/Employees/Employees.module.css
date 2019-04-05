@@ -82,3 +82,30 @@
     right: 0;
 
 }
+.addEmployee div {
+
+}
+
+.addEmployee label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.invite {
+    height: 40px;
+    width: 261px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-left: auto;
+    display: block;
+}

@@ -6,6 +6,7 @@
     "antd": "^3.15.2",
     "chart.js": "^2.8.0",
     "react": "^16.8.5",
+    "react-avatar-edit": "^0.8.2",
     "react-chartjs-2": "^2.7.6",
     "react-daypicker": "^3.0.8",
     "react-dom": "^16.8.5",

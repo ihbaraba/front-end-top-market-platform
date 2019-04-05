@@ -1,0 +1,248 @@
+.title {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 35px;
+    margin-bottom: 34px;
+}
+.uploadList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-bottom: 43px;
+}
+.management {
+    background: #fff;
+    padding: 35px 27px;
+}
+.management h3 {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    margin-bottom: 38px;
+}
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.categories label {
+    color: #808080;
+    font-family: Ubuntu;
+    font-size: 14px;
+    line-height: 16px;
+    display: block;
+    margin-bottom: 9px;
+}
+.categories select {
+    height: 41px;
+    width: 294px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    margin-right: 16px;
+}
+.export {
+    height: 40px;
+    width: 280px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-left: 27px;
+}
+
+.priceList {
+    background: #fff;
+    padding: 35px 27px;
+    display: flex;
+    margin-bottom: 36.5px;
+}
+.priceList p {
+    color: #808080;
+    font-family: Ubuntu;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 22px;
+}
+.copyLink {
+    color: #808080;
+    font-family: Ubuntu;
+    font-size: 14px;
+    line-height: 16px;
+    display: block;
+    margin-right: 67px;
+}
+.copyLink img {
+    margin-right: 14px;
+}
+
+.priceList label {
+    color: #808080;
+    font-family: Ubuntu;
+    font-size: 14px;
+    line-height: 16px;
+    display: block;
+    margin-bottom: 9.5px;
+}
+.priceList input {
+    height: 41px;
+    width: 506px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    padding-left: 20px;
+}
+.delete {
+    height: 40px;
+    width: 169px;
+    border-radius: 5px;
+    background-color: #C45151;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+}
+.downloadBtn {
+    height: 40px;
+    width: 169px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+
+}
+
+.priceAction {
+    display: flex;
+    align-items: flex-end;
+}
+.url {
+    margin-right: 41.5px;
+}
+.delete {
+    margin-right: 20px;
+}
+.priceListTable {
+    background: #fff;
+    padding: 31.5px 29px;
+}
+
+
+/* Filter */
+.filter {
+    padding: 30px;
+    background: #fff;
+    margin-bottom: 21px;
+}
+.filter form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    display: block;
+    margin-bottom: 8.5px;
+}
+.filter .code,
+.filter .vendorCode {
+    height: 31px;
+    width: 108px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+.filter .productName {
+    height: 31px;
+    width: 126px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+
+.filter .category {
+    height: 31px;
+    width: 157px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+
+.filter .availability {
+    height: 31px;
+    width: 107px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+.filter .priceMin,
+.filter .priceMax {
+    height: 31px;
+    width: 80px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+ .find {
+    height: 40px;
+    width: 169px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-top: 20px;
+    display: block;
+}
+
+ .inactiveGoodsTable {
+     background: #fff;
+     padding: 31px 30px;
+ }
+
+ .productsBtns  {
+     margin-bottom: 44px;
+     display: flex;
+     flex-wrap: wrap;
+ }
+ .actbtn {
+     border-radius: 5px;
+     background-color: #4A90E2;
+     padding: 10px 26px;
+     color: #FFFFFF;
+     font-family: Ubuntu;
+     font-size: 16px;
+     font-weight: bold;
+     line-height: 22px;
+     margin-right: 20px;
+ }

@@ -3,7 +3,6 @@ import { Tabs,Table, Divider, Tag } from 'antd';
 import styles from './ProfileSettings.module.css'
 import 'antd/dist/antd.css';
 import avatar from "../../../img/avatar.png";
-
 const TabPane = Tabs.TabPane;
 
 function callback(key) {
@@ -44,6 +43,7 @@ const columns = [{
 
 
 class ProfileSettings extends Component {
+
     render() {
         return (
             <div >

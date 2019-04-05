@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import styles from './Employees.module.css'
 import 'antd/dist/antd.css';
-import {Table} from "antd";
+import { Modal, Button,Table } from 'antd';
 import avatar from "../../../img/avatar.png";
+
 
 
 const dataSource = [{
@@ -84,12 +85,36 @@ const columns = [{
 
 
 class Employees extends Component {
+    state = { visible: false }
+
+    showModal = () => {
+        this.setState({
+            visible: true,
+        });
+    }
+
+    handleOk = (e) => {
+        console.log(e);
+        this.setState({
+            visible: false,
+        });
+    }
+
+    handleCancel = (e) => {
+        console.log(e);
+        this.setState({
+            visible: false,
+        });
+    }
+
     render() {
         return (
             <div>
                 <div className={styles.top}>
                     <h3 className={styles.title}>Сотрудники</h3>
-                    <button className={styles.addBtn}>Добавить сотрудника</button>
+                    <button  className={styles.addBtn} onClick={this.showModal}>
+                        Добавить сотрудника
+                    </button>
                 </div>
                 <div className={styles.employeesTable}>
                     <div className={styles.searchEmployees}>
@@ -112,6 +137,33 @@ class Employees extends Component {
                     </div>
                     <Table dataSource={dataSource} columns={columns} showHeader={false}  className={styles.productTable} />
                 </div>
+
+                <div className="addEmployeeModal">
+                    <Modal
+                        title="Добавить сотрудника"
+                        visible={this.state.visible}
+                        onOk={this.handleOk}
+                        onCancel={this.handleCancel}
+                        footer={null}
+                    >
+                        <form className={styles.addEmployee}>
+                            <div>
+                                <label>Укажите Email, на который будет отправлено приглашение</label>
+                                <input type="text"/>
+                            </div>
+                            <div>
+                                <label>Укажите имя приглашаемого сотрудника</label>
+                                <input type="text"/>
+                            </div>
+                            <div>
+                                <label>Укажите роль сотрудника</label>
+                                <input type="text"/>
+                            </div>
+                            <button className={styles.invite}>Пригласить</button>
+                        </form>
+                    </Modal>
+                </div>
+
             </div>
         );
     }

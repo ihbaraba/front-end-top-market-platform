@@ -8,6 +8,9 @@ import ProfileSettings from "./containers/AdministratorSide/ProfileSettings/Prof
 import Cart from "./containers/AdministratorSide/Cart/Cart";
 import AdditionalServices from "./containers/AdministratorSide/AdditionalServices/AdditionalServices";
 import Employees from "./containers/AdministratorSide/Employees/Employees";
+import MyProducts from "./containers/AdministratorSide/MyProducts/MyProducts";
+import Finance from "./containers/AdministratorSide/Finance/Finance";
+import Store from "./containers/AdministratorSide/Store/Store";
 
 
 const Routes = () => {
@@ -23,6 +26,9 @@ const Routes = () => {
                       <Route path='/admin/cart' component={Cart}/>
                       <Route path='/admin/additional-services' component={AdditionalServices}/>
                       <Route path='/admin/employees' component={Employees}/>
+                      <Route path='/admin/my-products' component={MyProducts}/>
+                      <Route path='/admin/finance' component={Finance}/>
+                      <Route path='/admin/store' component={Store}/>
 
 
                     </AdministratorSide>

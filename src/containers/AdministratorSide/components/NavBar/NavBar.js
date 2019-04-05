@@ -41,12 +41,12 @@ const menu = [
     {
         title: 'Финансы',
         icon: chart,
-        href: '/',
+        href: 'finance',
     },
     {
         title: 'Мои товары',
         icon: shopping,
-        href: '/',
+        href: 'my-products',
     },
     {
         title: 'База знаний',

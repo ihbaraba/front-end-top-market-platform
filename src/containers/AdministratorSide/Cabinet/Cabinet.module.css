@@ -410,6 +410,7 @@
 }
 .actionLink {
     margin-bottom: 25px;
+    display: flex;
 }
 .actionLink a {
     color: #9B9B9B;
@@ -417,6 +418,10 @@
     font-size: 14px;
     line-height: 16px;
     margin-right: 44px;
+    display: flex;
+}
+.actionLink a img {
+    margin-right: 15px;
 }
 .comments .yourComment {
     display: flex;
@@ -440,12 +445,30 @@
     margin-left: auto;
     display: block;
 }
-
-
-
-
-
-
+.payActions {
+    display: flex;
+    justify-content: space-between;
+}
+.payBtn {
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+}
+.modalContent {
+    margin-bottom: 48px;
+}
+.modalContent p {
+    color: #9B9B9B;
+    font-family: Ubuntu;
+    font-size: 16px;
+    line-height: 23px;
+}
 
 
 

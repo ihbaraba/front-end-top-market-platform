@@ -11,6 +11,9 @@ import Employees from "./containers/AdministratorSide/Employees/Employees";
 import MyProducts from "./containers/AdministratorSide/MyProducts/MyProducts";
 import Finance from "./containers/AdministratorSide/Finance/Finance";
 import Store from "./containers/AdministratorSide/Store/Store";
+import CompanySettings from "./containers/AdministratorSide/CompanySettings/CompanySettings";
+import Categories from "./containers/AdministratorSide/Categories/Categories";
+
 
 
 const Routes = () => {
@@ -29,8 +32,8 @@ const Routes = () => {
                       <Route path='/admin/my-products' component={MyProducts}/>
                       <Route path='/admin/finance' component={Finance}/>
                       <Route path='/admin/store' component={Store}/>
-
-
+                      <Route path='/admin/company-settings' component={CompanySettings}/>
+                      <Route path='/admin/categories' component={Categories}/>
                     </AdministratorSide>
                 )}>
                 </Route>

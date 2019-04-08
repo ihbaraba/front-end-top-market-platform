@@ -93,4 +93,11 @@
 .ant-table-body {
     overflow: scroll;
 }
-
+.ant-upload {
+    height: 30px;
+    width: 30px;
+    background-color: #4A90E2;
+}
+.ant-menu-sub {
+    width: 100%;
+}

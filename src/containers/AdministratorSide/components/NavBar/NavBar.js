@@ -26,12 +26,12 @@ const menu = [
     {
         title: 'Мой магазин',
         icon: home,
-        href: '/',
+        href: 'store',
     },
     {
         title: 'Все товары',
         icon: cart,
-        href: '/',
+        href: 'categories',
     },
     {
         title: 'Мои заказы',

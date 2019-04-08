@@ -16,7 +16,7 @@ const menu = (
             <Link to="/admin/profile-settings">Настройки профиля</Link>
         </Menu.Item>
         <Menu.Item>
-            <Link to="/">Настройки компании</Link>
+            <Link to="/admin/company-settings">Настройки компании</Link>
         </Menu.Item>
         <Menu.Item>
             <Link to="/admin/employees">Сотрудники</Link>

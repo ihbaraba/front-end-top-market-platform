@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {Route, Switch} from 'react-router-dom';
-import UserSide from './containers/UserSide/UserSide';
+
 import AdministratorSide from './containers/AdministratorSide/AdministratorSide';
 import Cabinet from "./containers/AdministratorSide/Cabinet/Cabinet";
 import KnowledgeBase from "./containers/AdministratorSide/KnowledgeBase/KnowledgeBase";
@@ -11,12 +11,15 @@ import Employees from "./containers/AdministratorSide/Employees/Employees";
 import MyProducts from "./containers/AdministratorSide/MyProducts/MyProducts";
 import Finance from "./containers/AdministratorSide/Finance/Finance";
 import Store from "./containers/AdministratorSide/Store/Store";
+import Login from "./containers/AdministratorSide/Login/Login";
 
 
 const Routes = () => {
     return (
         <Fragment>
             <Switch>
+                <Route exact path='/' component={Login}/>
+
                 {/*ADMIN SIDE*/}
                 <Route path='/admin' render={() => (
                     <AdministratorSide>
@@ -45,6 +48,6 @@ const Routes = () => {
             </Switch>
         </Fragment>
     )
-}
+};
 
 export default Routes;

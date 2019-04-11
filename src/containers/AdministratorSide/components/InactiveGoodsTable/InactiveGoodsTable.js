@@ -22,8 +22,6 @@ const columns = [ {
                 {productName}
             </span>
         </span>
-
-
     ),
     title: 'Название товара',
     dataIndex: 'productName',
@@ -73,7 +71,7 @@ class InactiveGoodsTable extends Component {
     onSelectChange = (selectedRowKeys) => {
         console.log('selectedRowKeys changed: ', selectedRowKeys);
         this.setState({ selectedRowKeys });
-    }
+    };
 
     render() {
         const { selectedRowKeys } = this.state;
@@ -118,6 +116,7 @@ class InactiveGoodsTable extends Component {
             }],
             onSelection: this.onSelection,
         };
+
         return (
             <div>
                 <Table rowSelection={rowSelection} columns={columns} dataSource={data} />

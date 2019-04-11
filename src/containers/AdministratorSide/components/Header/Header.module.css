@@ -10,8 +10,6 @@
     margin: 0 auto;
 }
 
-
-
 header {
     height: 100px;
     width: 100%;
@@ -21,6 +19,7 @@ header {
     padding-left: 18px;
     padding-right: 52px;
 }
+
 .logo {
     height: 79px;
     width: 160px;
@@ -74,8 +73,8 @@ header {
     display: flex;
     align-items: center;
     margin-left: auto;
-
 }
+
 .balanceBox {
     display: flex;
     align-items: center;
@@ -89,6 +88,7 @@ header {
     font-weight: bold;
     line-height: 26px;
 }
+
 .dollarIcon {
     height: 35px;
     width: 35px;

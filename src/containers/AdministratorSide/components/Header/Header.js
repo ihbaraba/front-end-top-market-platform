@@ -53,6 +53,7 @@ class Header extends Component {
                         <div>
                             <p>Баланс:</p>
                         </div>
+
                         <div className={styles.balanceBox}>
                             <div className={styles.dollarIcon}>
                                 <img src={dollar} alt=""/>
@@ -75,7 +76,6 @@ class Header extends Component {
                     </div>
                 </header>
             </div>
-
         )
     }
 }

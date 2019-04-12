@@ -31,11 +31,10 @@ jobs:
 
 workflows:
   version: 2
-  backend:
+  frontend:
     jobs:
       - build:
           filters:
             branches:
               only:
                 - master
-                - CI

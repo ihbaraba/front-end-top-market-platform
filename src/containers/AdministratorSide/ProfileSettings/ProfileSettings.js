@@ -1,12 +1,14 @@
-import React, {Component} from 'react'
-import {Tabs, Table} from 'antd';
+import React, {Component, Fragment} from 'react'
+import {Tabs, Table, Checkbox} from 'antd';
 import styles from './ProfileSettings.module.css'
-import avatar from "../../../img/avatar.png";
+import defaultAvatar from "../../../img/avatar.png";
 import Dropzone from 'react-dropzone'
+import { Modal } from 'antd'
 
 import {updateProfile} from '../../../actions/userActions';
 
-const TabPane = Tabs.TabPane;
+const TabPane = Tabs.TabPane,
+    CheckboxGroup = Checkbox.Group;
 
 const columns = [
     {
@@ -31,14 +33,36 @@ const columns = [
     }
 ];
 
+const emailOptions = [
+    {label: 'О новом заказе', value: '1'},
+    {label: 'Об изменении статуса ТТН', value: '2'},
+    {label: 'О получении счета на оплату', value: '3'},
+    {label: 'О получении отчета о продажах', value: '4'},
+    {label: 'О новом сообщении внутренней почты', value: '5'},
+    {label: 'Об отмене заказа', value: '6'},
+];
+const smsOptions = [
+    {label: 'О новом заказе', value: '1'},
+];
+
 
 class ProfileSettings extends Component {
     state = {
-        name: ''
+        name: '',
+        avatar: defaultAvatar,
+        emailNotifications: [],
+        smsNotifications: [],
+        visibleModal: false
     };
 
     callback = (key) => {
         console.log(key);
+    };
+
+    handleCancel = (e) => {
+        this.setState({
+            visibleModal: false,
+        });
     };
 
     handleChangeInput = ({target: {name, value}}) => {
@@ -47,14 +71,21 @@ class ProfileSettings extends Component {
         })
     };
 
+    handleChangeCheckbox = (e, type) => {
+        this.setState({
+            [`${type}Notifications`]: e
+        });
+        console.log(`${type}: ___ ${e}`);
+    };
+
     onDrop = (file) => {
-        console.log(file);
+        console.log(file[0]);
     };
 
     handleSaveProfile = async (e) => {
         e.preventDefault();
 
-       await updateProfile(this.state);
+        await updateProfile(this.state);
     };
 
     componentDidMount() {
@@ -62,10 +93,10 @@ class ProfileSettings extends Component {
     }
 
     render() {
-        const {name} = this.state;
+        const {name, visibleModal, emailNotifications, smsNotifications, avatar} = this.state;
 
         return (
-            <div>
+            <Fragment>
                 <Tabs onChange={this.callback} type="card">
                     <TabPane tab="Основные данные" key="1" className={styles.mainInfo}>
                         <div>
@@ -138,45 +169,23 @@ class ProfileSettings extends Component {
                                                     </div>
                                                 )}
                                             </Dropzone>
-                                            <button className={styles.btnPrimary}>Изменить пароль</button>
+                                            <button type='button' className={styles.btnPrimary} onClick={() => this.setState({visibleModal: true})}>Изменить пароль</button>
                                         </div>
                                     </div>
 
                                     <div className={styles.EmailNotifications}>
                                         <h3>Уведомления на E-mail</h3>
-                                        <div>
-                                            <input type="checkbox"/>
-                                            <label>О новом заказе</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox"/>
-                                            <label>Об изменении статуса ТТН</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox"/>
-                                            <label>О получении счета на оплату</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox"/>
-                                            <label>О получении отчета о продажах</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox"/>
-                                            <label>О новом сообщении внутренней почты</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox"/>
-                                            <label>Об отмене заказа</label>
-                                        </div>
+
+                                        <CheckboxGroup options={emailOptions} value={emailNotifications}
+                                                       onChange={e => this.handleChangeCheckbox(e, 'email')}/>
                                     </div>
 
                                     <div className={styles.smsNotifications}>
                                         <h3>SMS Уведомления</h3>
                                         <span className={styles.number}>+380997786633</span>
-                                        <div>
-                                            <input type="checkbox"/>
-                                            <label>О новом заказе</label>
-                                        </div>
+
+                                        <CheckboxGroup options={smsOptions} value={smsNotifications}
+                                                       onChange={e => this.handleChangeCheckbox(e, 'sms')}/>
                                     </div>
 
                                     <button className={styles.save}>Сохранить</button>
@@ -201,7 +210,20 @@ class ProfileSettings extends Component {
                         </div>
                     </TabPane>
                 </Tabs>
-            </div>
+
+                <Modal
+                    title="Изменение пароля"
+                    visible={visibleModal}
+                    onCancel={this.handleCancel}
+                    footer={false}
+                >
+                    <input type="text"/>
+                    <input type="text"/>
+                    <div className={styles.payActions}>
+                        <button className={styles.payBtn}>Изменить пароль</button>
+                    </div>
+                </Modal>
+            </Fragment>
         );
     }
 }

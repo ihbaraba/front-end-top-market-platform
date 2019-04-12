@@ -1,9 +1,9 @@
 const SERVERS = {
     PRODUCT: {
-        XHR: "http://159.65.110.137/api/v1/",
+        XHR: "http://api.topmarket.club/api/v1/",
     },
     DEV: {
-        XHR: "http://159.65.110.137/api/v1/",
+        XHR: "http://api.topmarket.club/api/v1/",
     },
 };
 
@@ -26,8 +26,8 @@ export const BASE_URL = document.location.hostname === "localhost"
  * */
 
 //USER
-export const LOGIN = 'auth/login';
+export const LOGIN = 'login';
 
-export const REGISTRATION = 'auth/registration';
+export const REGISTRATION = 'register';
 
 export const CONFIRM_EMAIL = 'auth/confirm';

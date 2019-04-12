@@ -23,10 +23,11 @@ const http = (method, url, data, type) => {
                 resolve(result.data);
             })
             .catch(error => {
-                notification.error({
-                    message: error.response.data.errorMessage,
-                    description: error.response.data.userMessage,
-                });
+                console.log(error);
+                // notification.error({
+                //     message: error.response.data.errorMessage,
+                //     description: error.response.data.userMessage,
+                // });
             });
     })
 };

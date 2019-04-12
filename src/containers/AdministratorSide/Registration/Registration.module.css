@@ -1,0 +1,9 @@
+.Form {
+    width: 400px;
+    margin: 10% auto;
+}
+
+.loginFormButton {
+    display: block;
+    width: 100%;
+}

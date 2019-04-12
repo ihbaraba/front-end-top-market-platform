@@ -26,17 +26,17 @@ const menu = [
     {
         title: 'Мой магазин',
         icon: home,
-        href: '/',
+        href: '',
     },
     {
         title: 'Все товары',
         icon: cart,
-        href: '/',
+        href: '',
     },
     {
         title: 'Мои заказы',
         icon: list,
-        href: '/',
+        href: '',
     },
     {
         title: 'Финансы',
@@ -61,7 +61,7 @@ const menu = [
     {
         title: 'Обуч. модуль',
         icon: study,
-        href: '/',
+        href: '',
     },
 
 ];
@@ -71,10 +71,10 @@ class NavBar extends Component {
 
         return (
             <div className={styles.navigationBar}>
-                {menu.map((item) => (
+                {menu.map((item, index) => (
                     <NavLink
                         className={styles.menuItem}
-                        key={item.href}
+                        key={index}
                         to={`/admin/${item.href}`}>
                         <img src={item.icon} alt="" className={styles.icon} />
                         <img src={item.activeIcon} alt="" className={styles.activeIcon} />

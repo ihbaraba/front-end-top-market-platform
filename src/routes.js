@@ -12,6 +12,8 @@ import MyProducts from "./containers/AdministratorSide/MyProducts/MyProducts";
 import Finance from "./containers/AdministratorSide/Finance/Finance";
 import Store from "./containers/AdministratorSide/Store/Store";
 import Login from "./containers/AdministratorSide/Login/Login";
+import Registration from "./containers/AdministratorSide/Registration/Registration";
+import ConfirmRegistration from "./containers/AdministratorSide/Registration/ConfirmRegistration";
 
 
 const Routes = () => {
@@ -19,6 +21,8 @@ const Routes = () => {
         <Fragment>
             <Switch>
                 <Route exact path='/' component={Login}/>
+                <Route path='/registration' component={Registration}/>
+                <Route path='/confirm_email' component={ConfirmRegistration}/>
 
                 {/*ADMIN SIDE*/}
                 <Route path='/admin' render={() => (

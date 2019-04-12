@@ -1,90 +1,123 @@
 import React, {Component} from 'react'
-import {Tabs, Table, Divider, Tag} from 'antd';
+import {Tabs, Table} from 'antd';
 import styles from './ProfileSettings.module.css'
-import 'antd/dist/antd.css';
 import avatar from "../../../img/avatar.png";
+import Dropzone from 'react-dropzone'
+
+import {updateProfile} from '../../../actions/userActions';
 
 const TabPane = Tabs.TabPane;
 
-const dataSource = [{
-    key: '1',
-    name: 'Mike',
-    id: 32,
-    profit: '+ 100.00 грн',
-    registrationDate: '03/03/2019 14:12'
-}, {
-    key: '2',
-    name: 'John',
-    id: 42,
-    profit: '+ 100.00 грн',
-    registrationDate: '03/03/2019 14:12'
-}];
-
-const columns = [{
-    title: 'Имя',
-    dataIndex: 'name',
-    key: 'name',
-}, {
-    title: 'ID',
-    dataIndex: 'id',
-    key: 'id',
-}, {
-    title: 'Прибыль',
-    dataIndex: 'profit',
-    key: 'profit',
-}, {
-    title: 'Дата регистрации',
-    dataIndex: 'registrationDate',
-    key: 'registrationDate',
-}];
+const columns = [
+    {
+        title: 'Имя',
+        dataIndex: 'name',
+        key: 'name',
+    },
+    {
+        title: 'ID',
+        dataIndex: 'id',
+        key: 'id',
+    },
+    {
+        title: 'Прибыль',
+        dataIndex: 'profit',
+        key: 'profit',
+    },
+    {
+        title: 'Дата регистрации',
+        dataIndex: 'registrationDate',
+        key: 'registrationDate',
+    }
+];
 
 
 class ProfileSettings extends Component {
-
+    state = {
+        name: ''
+    };
 
     callback = (key) => {
         console.log(key);
     };
 
+    handleChangeInput = ({target: {name, value}}) => {
+        this.setState({
+            [name]: value
+        })
+    };
+
+    onDrop = (file) => {
+        console.log(file);
+    };
+
+    handleSaveProfile = async (e) => {
+        e.preventDefault();
+
+       await updateProfile(this.state);
+    };
+
+    componentDidMount() {
+
+    }
+
     render() {
+        const {name} = this.state;
+
         return (
             <div>
                 <Tabs onChange={this.callback} type="card">
                     <TabPane tab="Основные данные" key="1" className={styles.mainInfo}>
                         <div>
-                            <form className={styles.userMainInfo}>
+                            <form className={styles.userMainInfo} onSubmit={this.handleSaveProfile}>
                                 <div className={styles.formInputs}>
                                     <div>
                                         <label>Имя</label>
-                                        <input type="text"/>
+                                        <input type="text"
+                                               name='name'
+                                               value={name}
+                                               onChange={this.handleChangeInput}
+                                        />
                                     </div>
                                     <div>
                                         <label>Фамилия</label>
-                                        <input type="text"/>
+                                        <input type="text"
+                                               name='secondName'
+                                            // value={}
+                                               onChange={this.handleChangeInput}
+                                        />
                                     </div>
                                     <div>
                                         <label>Отчество</label>
-                                        <input type="text"/>
+                                        <input type="text"
+                                               name=''
+                                            // value={}
+                                               onChange={this.handleChangeInput}
+                                        />
                                     </div>
                                     <div>
                                         <label>E-mail</label>
-                                        <input type="email"/>
+                                        <input type="email"
+                                               name=''
+                                            // value={}
+                                               onChange={this.handleChangeInput}
+                                        />
                                     </div>
                                     <div>
                                         <label>Телефон</label>
-                                        <input type="tel"/>
+                                        <input type="tel"
+                                               name=''
+                                            // value={}
+                                               onChange={this.handleChangeInput}
+                                        />
                                     </div>
                                     <div>
                                         <label>Веб-сайт</label>
-                                        <input type="text"/>
-                                    </div>
-                                    <div>
-                                        <label>Новый пароль</label>
-                                        <input type="text"/>
-                                    </div>
-                                    <div>
-                                        <label>Текущий пароль</label>
-                                        <input type="text"/>
+                                        <input type="text"
+                                               name=''
+                                            // value={}
+                                               onChange={this.handleChangeInput}
+                                        />
                                     </div>
                                 </div>
 
@@ -97,8 +130,15 @@ class ProfileSettings extends Component {
                                             <h3>Изменить аватар</h3>
                                             <span>Размер аватара должен быть не меньше 150х150 пикселей</span>
 
-
-                                            <button className={styles.btnPrimary}>Изменить аватар</button>
+                                            <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">
+                                                {({getRootProps, getInputProps}) => (
+                                                    <div {...getRootProps({className: 'dropzone'})}>
+                                                        <input {...getInputProps()} />
+                                                        <button className={styles.btnPrimary}>Изменить аватар</button>
+                                                    </div>
+                                                )}
+                                            </Dropzone>
+                                            <button className={styles.btnPrimary}>Изменить пароль</button>
                                         </div>
                                     </div>
 
@@ -138,6 +178,7 @@ class ProfileSettings extends Component {
                                             <label>О новом заказе</label>
                                         </div>
                                     </div>
+
                                     <button className={styles.save}>Сохранить</button>
                                 </div>
                             </form>
@@ -151,8 +192,11 @@ class ProfileSettings extends Component {
                                 <input type="text"/>
                                 <span>Дейте эту ссылку человеку, и при регистрации он станет Вашим рефералом</span>
                             </div>
+
                             <div className={styles.table}>
-                                <Table dataSource={dataSource} columns={columns}/>
+                                <Table
+                                    columns={columns}
+                                />
                             </div>
                         </div>
                     </TabPane>

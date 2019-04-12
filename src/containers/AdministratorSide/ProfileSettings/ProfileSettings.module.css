@@ -1,9 +1,11 @@
 * {
     outline: none;
 }
+
 .mainInfo {
     background: #000;
 }
+
 .mainInfo form {
     background: #fff;
 }
@@ -26,9 +28,11 @@
 
 form.userMainInfo {
     display: flex;
+    padding: 45px 0;
 }
 
 form input[type="text"],
+form input[type="password"],
 form input[type="email"],
 form input[type="tel"] {
     height: 41px;
@@ -39,7 +43,6 @@ form input[type="tel"] {
     padding-left: 20px;
     margin-bottom: 17.5px;
 }
-
 
 .userInfo {
     padding-top: 30px;
@@ -55,11 +58,10 @@ form input[type="tel"] {
     width: 200px;
     margin-right: 29px;
 }
+
 .userAvatar img {
     width: 100%;
 }
-
-
 
 .ChangeAvatar h3 {
     color: #4A4A4A;
@@ -73,7 +75,8 @@ form input[type="tel"] {
 .userAvatarInfo {
     width: 261px;
 }
-.ChangeAvatar  span {
+
+.ChangeAvatar span {
     color: #9B9B9B;
     font-family: Ubuntu;
     font-size: 14px;
@@ -94,9 +97,11 @@ form input[type="tel"] {
     font-weight: bold;
     line-height: 22px;
 }
+
 .EmailNotifications {
     margin-bottom: 33px;
 }
+
 .EmailNotifications div,
 .smsNotifications div {
     display: flex;
@@ -111,12 +116,14 @@ form input[type="tel"] {
     font-weight: bold;
     line-height: 28px;
 }
+
 .EmailNotifications input[type="checkbox"],
 .smsNotifications input[type="checkbox"] {
     margin-right: 19px;
 }
-.EmailNotifications  label
-.smsNotifications  label {
+
+.EmailNotifications label,
+.smsNotifications label {
     color: #969696 !important;
     font-family: Ubuntu;
     font-size: 16px;
@@ -130,6 +137,7 @@ form input[type="tel"] {
     font-weight: bold;
     line-height: 28px;
 }
+
 .smsNotifications span {
     color: #969696;
     font-family: Ubuntu;
@@ -167,6 +175,7 @@ form input[type="tel"] {
     align-items: center;
     margin-bottom: 35px;
 }
+
 .copyLink input {
     height: 41px;
     width: 532px;
@@ -175,7 +184,6 @@ form input[type="tel"] {
     background-color: #FFFFFF;
     padding-left: 20px;
 }
-
 
 .ant-table table {
     text-align: center !important;

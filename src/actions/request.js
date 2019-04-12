@@ -1,7 +1,10 @@
 import axios from 'axios';
 import {notification} from 'antd';
+import { loadProgressBar } from 'axios-progress-bar';
 
 import {BASE_URL} from '../constants/APIURLS';
+
+loadProgressBar();
 
 const http = (method, url, data, type) => {
     const token = localStorage.getItem('TOKEN');

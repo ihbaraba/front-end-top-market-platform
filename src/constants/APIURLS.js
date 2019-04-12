@@ -29,3 +29,7 @@ export const BASE_URL = document.location.hostname === "localhost"
 
 //USER
 export const LOGIN = 'auth/login';
+
+export const REGISTRATION = 'auth/registration';
+
+export const CONFIRM_EMAIL = 'auth/confirm';

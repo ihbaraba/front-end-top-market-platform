@@ -169,6 +169,7 @@ class ProfileSettings extends Component {
                                                     </div>
                                                 )}
                                             </Dropzone>
+
                                             <button type='button' className={styles.btnPrimary} onClick={() => this.setState({visibleModal: true})}>Изменить пароль</button>
                                         </div>
                                     </div>

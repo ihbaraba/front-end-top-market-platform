@@ -55,9 +55,9 @@ class Login extends Component {
                     )}
                 </FormItem>
 
-                <a className="login-form-forgot" href="">
-                    Forgot password
-                </a>
+                {/*<a className="login-form-forgot" href="">*/}
+                    {/*Forgot password*/}
+                {/*</a>*/}
 
                 <Button
                     type="primary"

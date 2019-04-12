@@ -1,9 +1,9 @@
 const SERVERS = {
     PRODUCT: {
-        XHR: "",
+        XHR: "http://159.65.110.137/api/v1/",
     },
     DEV: {
-        XHR: "",
+        XHR: "http://159.65.110.137/api/v1/",
     },
 };
 
@@ -13,12 +13,10 @@ const SERVERS = {
 * If it is not "localhost" setting SERVERS.PRODUCT
 * */
 
-
 const generatedDetected = {
     XHR: `https://${document.location.hostname}/api/v1/`,
     SOCKET: `wss://${document.location.hostname}/`,
 };
-
 
 export const BASE_URL = document.location.hostname === "localhost"
     ? SERVERS.DEV.XHR /* <=== set here server what needs for developing -  */

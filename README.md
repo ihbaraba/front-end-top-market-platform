@@ -1,8 +1,9 @@
 ###Node - v10.13.0
 
 
-###npm run build
+1)npm run build
 
+2) copy ./build/*
 _________________________________________________________________________________________________________
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

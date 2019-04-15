@@ -10,26 +10,31 @@ import  cart  from "../../../../img/cart.svg";
 import  dollar  from "../../../../img/dollar.svg";
 
 
-const menu = (
-    <Menu>
-        <Menu.Item>
-            <Link to="/admin/profile-settings">Настройки профиля</Link>
-        </Menu.Item>
-        <Menu.Item>
-            <Link to="/">Настройки компании</Link>
-        </Menu.Item>
-        <Menu.Item>
-            <Link to="/admin/employees">Сотрудники</Link>
-        </Menu.Item>
-        <Menu.Item>
-            <Link to="/">Выход</Link>
-        </Menu.Item>
-    </Menu>
-);
 
 
 class Header extends Component {
+
+    handleLogout = () => {
+        sessionStorage.removeItem('token');
+    };
+
     render() {
+        const menu = (
+            <Menu>
+                <Menu.Item>
+                    <Link to="/admin/profile_settings">Настройки профиля</Link>
+                </Menu.Item>
+                <Menu.Item>
+                    <Link to="/admin/company_settings">Настройки компании</Link>
+                </Menu.Item>
+                <Menu.Item>
+                    <Link to="/admin/employees">Сотрудники</Link>
+                </Menu.Item>
+                <Menu.Item onClick={this.handleLogout}>
+                    <Link to="/">Выход</Link>
+                </Menu.Item>
+            </Menu>
+        );
         return (
             <div className='container'>
                 <header>

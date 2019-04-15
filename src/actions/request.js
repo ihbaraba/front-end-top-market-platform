@@ -1,33 +1,40 @@
 import axios from 'axios';
 import {notification} from 'antd';
-import { loadProgressBar } from 'axios-progress-bar';
+import {loadProgressBar} from 'axios-progress-bar';
 
 import {BASE_URL} from '../constants/APIURLS';
 
 loadProgressBar();
 
 const http = (method, url, data, type) => {
-    const token = localStorage.getItem('TOKEN');
+    const token = sessionStorage.getItem('token');
 
     return new Promise((resolve, reject) => {
         axios({
             method: method,
-            url: BASE_URL + url,
+            url: `${BASE_URL}${url}/`,
             data: data,
-            headers: {
+            headers: token ? {
                 'Content-Type': type || 'application/json',
                 'authorization': `Bearer ${token}`
+            } : {
+                'Content-Type': type || 'application/json',
             }
         })
             .then((result) => {
                 resolve(result.data);
             })
             .catch(error => {
-                console.log(error);
-                // notification.error({
-                //     message: error.response.data.errorMessage,
-                //     description: error.response.data.userMessage,
-                // });
+                if (error.response) {
+                    for (let key in error.response.data) {
+                        if (key !== 'messages') {
+                            notification.error({
+                                message: key,
+                                description: error.response.data[key][0],
+                            });
+                        }
+                    }
+                }
             });
     })
 };

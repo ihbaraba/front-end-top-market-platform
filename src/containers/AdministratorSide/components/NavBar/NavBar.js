@@ -46,17 +46,17 @@ const menu = [
     {
         title: 'Мои товары',
         icon: shopping,
-        href: 'my-products',
+        href: 'my_products',
     },
     {
         title: 'База знаний',
         icon: database,
-        href: 'knowledge-base',
+        href: 'knowledge_base',
     },
     {
         title: 'Доп. услуги',
         icon: services,
-        href: 'additional-services',
+        href: 'additional_services',
     },
     {
         title: 'Обуч. модуль',

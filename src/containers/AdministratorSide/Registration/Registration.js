@@ -17,6 +17,12 @@ class Registration extends Component {
             if (!err) {
                 console.log("Received values of form: ", user);
                 registration(user)
+                    .then(res => {
+                        window.open(res.confirmUrl,'_blank');
+                    })
+                    .then(() => {
+                        this.props.history.push('/')
+                    })
             }
         });
     };

@@ -1,23 +1,22 @@
 import React, {Component} from 'react';
 import {Form, Icon, Input, Button} from "antd";
 import {Link} from 'react-router-dom';
+import styles from './Reset.module.css';
 
-import styles from './Login.module.css';
-
-import {login} from '../../../actions/userActions';
+import {resetPassword} from '../../../actions/userActions';
 
 const FormItem = Form.Item;
 
-class Login extends Component {
+class ResetPassword extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
 
         this.props.form.validateFields((err, user) => {
             if (!err) {
-                login(user)
+                resetPassword(user)
                     .then(() => {
-                        this.props.history.push('/admin/cabinet')
+                        this.props.history.push('/')
                     })
             }
         });
@@ -41,37 +40,20 @@ class Login extends Component {
                     )}
                 </FormItem>
 
-                <FormItem>
-                    {getFieldDecorator("password", {
-                        rules: [{required: true, message: "Please input your Password!"}]
-                    })(
-                        <Input
-                            prefix={<Icon type="lock" style={{fontSize: 13}}/>}
-                            type="password"
-                            placeholder="Password"
-                        />
-                    )}
-                </FormItem>
-
-                <Link to='/reset_password'>
-                    Forgot password
-                </Link>
-
                 <Button
                     type="primary"
                     htmlType="submit"
                     className={styles.loginFormButton}
                 >
-                    Log in
+                    Reset
                 </Button>
 
-                Or <Link to='/registration'>register now!</Link>
-
+                <Link to='/'>Login</Link>
             </Form>
         );
     }
 }
 
-const WrappedNormalLoginForm = Form.create()(Login);
+const WrappedNormalResetForm = Form.create()(ResetPassword);
 
-export default WrappedNormalLoginForm;
+export default WrappedNormalResetForm;

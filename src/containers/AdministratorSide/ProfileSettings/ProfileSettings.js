@@ -1,14 +1,16 @@
 import React, {Component, Fragment} from 'react'
-import {Tabs, Table, Checkbox} from 'antd';
+import {Tabs, Table, Checkbox, Form, Icon, Input, Button} from 'antd';
 import styles from './ProfileSettings.module.css'
 import defaultAvatar from "../../../img/avatar.png";
 import Dropzone from 'react-dropzone'
-import { Modal } from 'antd'
+import {Modal} from 'antd'
 
-import {updateProfile} from '../../../actions/userActions';
+import {getProfile, updateProfile, changePassword, registration} from '../../../actions/userActions';
 
 const TabPane = Tabs.TabPane,
-    CheckboxGroup = Checkbox.Group;
+    CheckboxGroup = Checkbox.Group,
+    FormItem = Form.Item;
+
 
 const columns = [
     {
@@ -34,24 +36,27 @@ const columns = [
 ];
 
 const emailOptions = [
-    {label: 'О новом заказе', value: '1'},
-    {label: 'Об изменении статуса ТТН', value: '2'},
-    {label: 'О получении счета на оплату', value: '3'},
-    {label: 'О получении отчета о продажах', value: '4'},
-    {label: 'О новом сообщении внутренней почты', value: '5'},
-    {label: 'Об отмене заказа', value: '6'},
+    {label: 'О новом заказе', value: 'newOrder'},
+    {label: 'Об изменении статуса ТТН', value: 'ttnChange'},
+    {label: 'О получении счета на оплату', value: 'orderPaid'},
+    {label: 'О получении отчета о продажах', value: 'salesReport'},
+    {label: 'О новом сообщении внутренней почты', value: 'newMessage'},
+    {label: 'Об отмене заказа', value: 'cancelOrder'},
 ];
 const smsOptions = [
-    {label: 'О новом заказе', value: '1'},
+    {label: 'О новом заказе', value: 'newOrder'},
 ];
 
 
 class ProfileSettings extends Component {
     state = {
-        name: '',
-        avatar: defaultAvatar,
+        firstName: '',
+        lastName: '',
+        patronymic: '',
+        email: '',
+        avatarImage: '',
         emailNotifications: [],
-        smsNotifications: [],
+        phoneNotifications: [],
         visibleModal: false
     };
 
@@ -79,21 +84,87 @@ class ProfileSettings extends Component {
     };
 
     onDrop = (file) => {
-        console.log(file[0]);
+        this.getBase64(file[0], (result) => {
+            this.setState({
+                avatarImage: result
+            })
+        });
     };
+
+    getBase64(file, cb) {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            cb(reader.result)
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
 
     handleSaveProfile = async (e) => {
         e.preventDefault();
 
-        await updateProfile(this.state);
+        let emailNot = {},
+            smsNot = {};
+
+        this.state.emailNotifications.forEach(item => {
+            emailNot[item] = true
+        });
+        this.state.phoneNotifications.forEach(item => {
+            smsNot[item] = true
+        });
+
+        await updateProfile({
+            ...this.state,
+            emailNotifications: emailNot,
+            phoneNotifications: smsNot
+        });
     };
 
-    componentDidMount() {
+    handleUpdatePassword = async (e) => {
+        e.preventDefault();
 
+        this.props.form.validateFields((err, user) => {
+            if (!err) {
+                changePassword(user)
+                    .then(() => {
+                        this.setState({
+                            visibleModal: false
+                        }, () => this.props.form.resetFields())
+                    });
+            }
+        });
+    };
+
+    async componentDidMount() {
+        const res = await getProfile();
+        let emailNot = [],
+            smsNot = [];
+
+        for (let key in res.emailNotifications) {
+            if (res.emailNotifications[key] === true) {
+                emailNot.push(key)
+            }
+        }
+
+        for (let key in res.phoneNotifications) {
+            if (res.phoneNotifications[key] === true) {
+                smsNot.push(key)
+            }
+        }
+
+
+        this.setState({
+            ...res,
+            emailNotifications: emailNot,
+            phoneNotifications: smsNot
+        })
     }
 
     render() {
-        const {name, visibleModal, emailNotifications, smsNotifications, avatar} = this.state;
+        const {firstName, lastName, patronymic, email, visibleModal, emailNotifications, phoneNotifications, avatarImage} = this.state;
+        const {getFieldDecorator} = this.props.form;
 
         return (
             <Fragment>
@@ -105,32 +176,32 @@ class ProfileSettings extends Component {
                                     <div>
                                         <label>Имя</label>
                                         <input type="text"
-                                               name='name'
-                                               value={name}
+                                               name='firstName'
+                                               value={firstName || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
                                     <div>
                                         <label>Фамилия</label>
                                         <input type="text"
-                                               name='secondName'
-                                            // value={}
+                                               name='lastName'
+                                               value={lastName || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
                                     <div>
                                         <label>Отчество</label>
                                         <input type="text"
-                                               name=''
-                                            // value={}
+                                               name='patronymic'
+                                               value={patronymic || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
                                     <div>
                                         <label>E-mail</label>
                                         <input type="email"
-                                               name=''
-                                            // value={}
+                                               name='email'
+                                               value={email || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
@@ -155,7 +226,7 @@ class ProfileSettings extends Component {
                                 <div className={styles.userInfo}>
                                     <div className={styles.ChangeAvatar}>
                                         <div className={styles.userAvatar}>
-                                            <img src={avatar} alt=""/>
+                                            <img src={avatarImage ? avatarImage : defaultAvatar} alt=""/>
                                         </div>
                                         <div className={styles.userAvatarInfo}>
                                             <h3>Изменить аватар</h3>
@@ -170,7 +241,9 @@ class ProfileSettings extends Component {
                                                 )}
                                             </Dropzone>
 
-                                            <button type='button' className={styles.btnPrimary} onClick={() => this.setState({visibleModal: true})}>Изменить пароль</button>
+                                            <button type='button' className={styles.btnPrimary}
+                                                    onClick={() => this.setState({visibleModal: true})}>Изменить пароль
+                                            </button>
                                         </div>
                                     </div>
 
@@ -185,8 +258,8 @@ class ProfileSettings extends Component {
                                         <h3>SMS Уведомления</h3>
                                         <span className={styles.number}>+380997786633</span>
 
-                                        <CheckboxGroup options={smsOptions} value={smsNotifications}
-                                                       onChange={e => this.handleChangeCheckbox(e, 'sms')}/>
+                                        <CheckboxGroup options={smsOptions} value={phoneNotifications}
+                                                       onChange={e => this.handleChangeCheckbox(e, 'phone')}/>
                                     </div>
 
                                     <button className={styles.save}>Сохранить</button>
@@ -218,18 +291,59 @@ class ProfileSettings extends Component {
                     onCancel={this.handleCancel}
                     footer={false}
                 >
-                    <input type="text"/>
-                    <input type="text"/>
-                    <div className={styles.payActions}>
-                        <button className={styles.payBtn}>Изменить пароль</button>
-                    </div>
+                    <Form onSubmit={this.handleUpdatePassword} className={styles.Form}>
+                        <FormItem>
+                            {getFieldDecorator("oldPassword", {
+                                rules: [
+                                    {required: true, message: "Please input your old Password!"},
+                                ]
+                            })(
+                                <Input
+                                    placeholder="Old password"
+                                />
+                            )}
+                        </FormItem>
+
+                        <FormItem>
+                            {getFieldDecorator("newPassword", {
+                                rules: [{required: true, message: "Please input your Password!"}]
+                            })(
+                                <Input
+                                    type="password"
+                                    placeholder="New password"
+                                />
+                            )}
+                        </FormItem>
+
+                        <FormItem>
+                            {getFieldDecorator("confirmPassword", {
+                                rules: [{required: true, message: "Please input your Password!"}]
+                            })(
+                                <Input
+                                    type="password"
+                                    placeholder="Confirm password"
+                                />
+                            )}
+                        </FormItem>
+
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            className={styles.loginFormButton}
+                        >
+                            Send
+                        </Button>
+                    </Form>
                 </Modal>
             </Fragment>
         );
     }
 }
 
-export default ProfileSettings;
+const WrappedNormalProfileForm = Form.create()(ProfileSettings);
+
+
+export default WrappedNormalProfileForm;
 
 
 

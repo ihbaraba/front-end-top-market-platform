@@ -1,9 +1,9 @@
 const SERVERS = {
     PRODUCT: {
-        XHR: "http://api.topmarket.club/api/v1/",
+        XHR: "https://api.topmarket.club/api/v1/",
     },
     DEV: {
-        XHR: "http://api.topmarket.club/api/v1/",
+        XHR: "https://api.topmarket.club/api/v1/",
     },
 };
 
@@ -31,3 +31,9 @@ export const LOGIN = 'login';
 export const REGISTRATION = 'register';
 
 export const CONFIRM_EMAIL = 'auth/confirm';
+
+export const PROFILE = 'profile';
+
+export const PASSWORD = 'password_change';
+
+export const RESET_PASSWORD = 'password_reset';

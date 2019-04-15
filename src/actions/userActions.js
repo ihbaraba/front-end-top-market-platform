@@ -30,7 +30,7 @@ export const getProfile = user => {
 };
 
 export const updateProfile = user => {
-    return api('put', PROFILE, user)
+    return api('patch', PROFILE, user)
 };
 
 export const changePassword = pass => {

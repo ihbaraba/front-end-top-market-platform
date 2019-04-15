@@ -14,8 +14,8 @@ const SERVERS = {
 * */
 
 const generatedDetected = {
-    XHR: `https://${document.location.hostname}/api/v1/`,
-    SOCKET: `wss://${document.location.hostname}/`,
+    XHR: `https://api.${document.location.hostname}/api/v1/`,
+    SOCKET: `wss://api.${document.location.hostname}/`,
 };
 
 export const BASE_URL = document.location.hostname === "localhost"

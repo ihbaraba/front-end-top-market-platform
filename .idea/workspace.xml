@@ -14,13 +14,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProfileSettings.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProfileSettings.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="182" column="42" lean-forward="true" selection-start-line="182" selection-start-column="42" selection-end-line="182" selection-end-column="42" />
+            <state relative-caret-position="329">
+              <caret line="168" column="16" lean-forward="true" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="16" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userActions.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/actions/userActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,7 +104,6 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ResetPassword/Reset.module.css" />
         <option value="$PROJECT_DIR$/src/constants/APIURLS.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ResetPassword/ResetPassword.js" />
-        <option value="$PROJECT_DIR$/src/actions/userActions.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.module.css" />
         <option value="$PROJECT_DIR$/src/routes.js" />
@@ -102,6 +113,7 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/GeneralInformation.js" />
         <option value="$PROJECT_DIR$/src/actions/request.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js" />
+        <option value="$PROJECT_DIR$/src/actions/userActions.js" />
       </list>
     </option>
   </component>
@@ -298,7 +310,7 @@
       <workItem from="1555144609195" duration="435000" />
       <workItem from="1555231092707" duration="9354000" />
       <workItem from="1555310795144" duration="4789000" />
-      <workItem from="1555318555823" duration="10537000" />
+      <workItem from="1555318555823" duration="10974000" />
     </task>
     <task id="LOCAL-00001" summary="add CI, add Dockerfile">
       <created>1555070821463</created>
@@ -311,11 +323,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57888000" />
+    <option name="totallyTimeSpent" value="58325000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49235475" visible="true" weight="0.20072332" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -325,7 +336,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
       <window_info id="npm" order="2" sideWeight="0.50764525" side_tool="true" weight="0.20072332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32923076" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32923076" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
@@ -578,16 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/userActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/constants/APIURLS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -675,10 +676,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="182" column="42" lean-forward="true" selection-start-line="182" selection-start-column="42" selection-end-line="182" selection-end-column="42" />
+        <state relative-caret-position="329">
+          <caret line="168" column="16" lean-forward="true" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="16" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/userActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

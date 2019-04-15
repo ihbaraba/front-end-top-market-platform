@@ -54,7 +54,10 @@ class ProfileSettings extends Component {
         lastName: '',
         patronymic: '',
         email: '',
+        webSite: '',
+        phone: '',
         avatarImage: '',
+        updateImage: false,
         emailNotifications: [],
         phoneNotifications: [],
         visibleModal: false
@@ -86,7 +89,8 @@ class ProfileSettings extends Component {
     onDrop = (file) => {
         this.getBase64(file[0], (result) => {
             this.setState({
-                avatarImage: result
+                avatarImage: result,
+                updateImage: true
             })
         });
     };
@@ -105,6 +109,8 @@ class ProfileSettings extends Component {
     handleSaveProfile = async (e) => {
         e.preventDefault();
 
+        let requestData = this.state;
+
         let emailNot = {},
             smsNot = {};
 
@@ -115,8 +121,10 @@ class ProfileSettings extends Component {
             smsNot[item] = true
         });
 
+        if (!this.state.updateImage) delete requestData.avatarImage;
+
         await updateProfile({
-            ...this.state,
+            ...requestData,
             emailNotifications: emailNot,
             phoneNotifications: smsNot
         });
@@ -163,7 +171,7 @@ class ProfileSettings extends Component {
     }
 
     render() {
-        const {firstName, lastName, patronymic, email, visibleModal, emailNotifications, phoneNotifications, avatarImage} = this.state;
+        const {firstName, lastName, patronymic, email, visibleModal, emailNotifications, phoneNotifications, avatarImage, webSite, phone} = this.state;
         const {getFieldDecorator} = this.props.form;
 
         return (
@@ -208,16 +216,16 @@ class ProfileSettings extends Component {
                                     <div>
                                         <label>Телефон</label>
                                         <input type="tel"
-                                               name=''
-                                            // value={}
+                                               name='phone'
+                                               value={phone || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
                                     <div>
                                         <label>Веб-сайт</label>
                                         <input type="text"
-                                               name=''
-                                            // value={}
+                                               name='webSite'
+                                               value={webSite || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>

@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import {Form, Icon, Input, Button} from "antd";
+import {Form, Icon, Input, Button, Select} from "antd";
 import {Link} from 'react-router-dom';
 
 import styles from './Registration.module.css';
 
 import {registration} from '../../../actions/userActions';
 
-const FormItem = Form.Item;
+const FormItem = Form.Item,
+    Option = Select.Option;
 
 class Registration extends Component {
 
@@ -42,6 +43,19 @@ class Registration extends Component {
                             prefix={<Icon type="user" style={{fontSize: 13}}/>}
                             placeholder="Email"
                         />
+                    )}
+                </FormItem>
+
+                <FormItem>
+                    {getFieldDecorator("role", {
+                        rules: [
+                            {required: true, message: "Please input your email!"},
+                        ]
+                    })(
+                        <Select>
+                            <Option value='CONTRACTOR'>поставщик</Option>
+                            <Option value='PARTNER'>партнер</Option>
+                        </Select>
                     )}
                 </FormItem>
 

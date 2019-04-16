@@ -1,19 +1,35 @@
 import React, {Component} from 'react';
 import {Icon} from 'antd';
-import {getDocuments} from "../../../actions/companyActions";
+import {getDocuments, uploadDocuments} from "../../../actions/companyActions";
 import styles from './CompanySettings.module.css';
 
 import Dropzone from 'react-dropzone'
 
 class Documents extends Component {
-    state = {};
+    state = {
+        type: '',
+        passport: [],
+        ukStatistic: [],
+        certificate: [],
+        taxPayer: [],
+        payerRegister: [],
+        payerCertificate: []
+    };
 
-    onDrop = (file, type) => {
-        this.getBase64(file[0], (result) => {
-            this.setState({
-                avatarImage: result
-            })
+    onDrop = async (files) => {
+        const typeDoc = this.state.type;
+        let arrFiles = [];
+
+        await files.forEach(file => {
+            this.getBase64(file, (result) => {
+                arrFiles.push(result)
+            });
         });
+
+
+        this.setState({
+            [typeDoc]: arrFiles
+        })
     };
 
     getBase64(file, cb) {
@@ -27,6 +43,11 @@ class Documents extends Component {
         };
     };
 
+    handleUploadDocuments = () => {
+        uploadDocuments(this.state)
+    };
+
+
     async componentDidMount() {
         const res = getDocuments();
 
@@ -38,34 +59,34 @@ class Documents extends Component {
             {
                 title: 'Паспорт',
                 description: '(стр. 1, 2, 3 и место регистрации личности)',
-                type: 'passport'
+                typeDoc: 'passport'
             },
             {
                 title: 'Справка Государственного комитета статистики Украины',
                 description: '(если договор подписывается с юр.лицом - обязательно, если с \n' +
                 'физ.лицом - в случае, если такую справку получало это лицо)',
-                type: 'ukStatistic'
+                typeDoc: 'ukStatistic'
             },
             {
                 title: 'Свидетельство о гос.регистрации или выписка с ЕГРПОУ',
                 description: '',
-                type: 'certificate'
+                typeDoc: 'certificate'
             },
             {
                 title: 'Справка 4 Учета плательщика налогов',
                 description: '',
-                type: 'taxPayer'
+                typeDoc: 'taxPayer'
             },
             {
                 title: 'Свидетельство, выписка плательщика налога на добавленную \n' +
                 'стоимость, выписка из реестра плательщиков НДС',
                 description: '',
-                type: 'payerRegister'
+                typeDoc: 'payerRegister'
             },
             {
                 title: 'Свидетельство плательщика единого налога',
                 description: '(если лицо является плательщиком по упрощенной системе)',
-                type: 'payerCertificate'
+                typeDoc: 'payerCertificate'
             },
         ];
 
@@ -74,24 +95,30 @@ class Documents extends Component {
                 Изображение должно быть в форматах pdf. jpeg или png. размер файла до 2Мб
 
                 {documents.map((item) => (
-                    <div key={item.type} >
+                    <div key={item.typeDoc} className={styles.documentBlock}>
                         <div className="title">
                             {item.title}
-
                             <span className="description">{item.description}</span>
                         </div>
 
-                        <Dropzone onDrop={e => this.onDrop(e, item.type)} accept=".png, .svg, .jpg">
+                        <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">
                             {({getRootProps, getInputProps}) => (
                                 <div {...getRootProps({className: 'dropzone'})}>
                                     <input {...getInputProps()} />
-                                    <Icon type="plus-circle" theme="filled" />
+                                    {this.state[item.typeDoc].length > 0 ?
+                                        <Icon type="check-circle" theme="filled"/>
+                                        :
+                                        <Icon type="plus-circle" theme="filled"
+                                              onClick={() => this.setState({type: item.typeDoc})}/>}
+
+
                                 </div>
                             )}
                         </Dropzone>
                     </div>
                 ))}
 
+                <button onClick={this.handleUploadDocuments}>Сохранить</button>
             </div>
         )
     }

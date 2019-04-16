@@ -18,3 +18,15 @@
     display: flex;
     flex-direction: column;
 }
+
+.documentBlock {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.documentBlock i {
+    font-size: 30px !important;
+    color: #4A90E2;
+    cursor: pointer;
+}

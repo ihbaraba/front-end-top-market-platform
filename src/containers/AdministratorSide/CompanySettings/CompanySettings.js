@@ -1,31 +1,18 @@
-import React, {Component, Fragment} from 'react'
-import {Tabs, Checkbox, Form} from 'antd';
-import styles from './CompanySettings.module.css'
-
+import React, {Component} from 'react'
+import {Tabs} from 'antd';
 
 import GeneralInformation from './GeneralInformation';
 import Documents from "./Documents";
+import AboutCompany from "./AboutCompany";
+import CompanyPitch from "./CompanyPitch";
 
-const TabPane = Tabs.TabPane,
-    CheckboxGroup = Checkbox.Group,
-    FormItem = Form.Item;
-
+const TabPane = Tabs.TabPane;
 
 class CompanySettings extends Component {
 
     callback = (key) => {
         console.log(key);
     };
-
-
-
-
-
-    // handleSaveProfile = async (e) => {
-    //     e.preventDefault();
-    //
-    //     await updateProfile(this.state);
-    // };
 
 
     render() {
@@ -41,9 +28,11 @@ class CompanySettings extends Component {
                 </TabPane>
 
                 <TabPane tab="Страница компании" key="3">
+                    <AboutCompany />
                 </TabPane>
 
                 <TabPane tab="Питч о компании" key="4">
+                    <CompanyPitch />
                 </TabPane>
             </Tabs>
         );

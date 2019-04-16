@@ -63,9 +63,9 @@ class GeneralInformation extends Component {
 
         this.setState({
             ...profile,
-            companyTypeOptions: companyType,
-            activityAreaOptions: activityArea,
-            serviceIndustryOptions: serviceIndustry
+            companyTypeOptions: companyType.results,
+            activityAreaOptions: activityArea.results,
+            serviceIndustryOptions: serviceIndustry.results
         })
     }
 

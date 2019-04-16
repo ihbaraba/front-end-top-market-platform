@@ -39,13 +39,15 @@ export const PASSWORD = 'password_change';
 export const RESET_PASSWORD = 'password_reset';
 
 //COMPANY
-export const COMPANY_PROFILE = 'company';
+export const COMPANY_PROFILE = 'company/detail';
 
-export const GET_COMPANY_TYPE = 'company_type';
+export const UPDATE_COMPANY_PROFILE = 'company/update';
 
-export const GET_ACTIVITY_AREAS = 'activity_areas';
+export const GET_COMPANY_TYPE = 'company/company_type';
 
-export const GET_SERVICE_INDUSTRY = 'service_industry';
+export const GET_ACTIVITY_AREAS = 'company/activity_areas';
+
+export const GET_SERVICE_INDUSTRY = 'company/service_industry';
 
 export const COMPANY_DOCUMENTS = 'company/documents';
 

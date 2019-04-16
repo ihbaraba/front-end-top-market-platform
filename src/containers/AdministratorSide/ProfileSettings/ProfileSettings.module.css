@@ -23,12 +23,10 @@
 .formInputs {
     width: 532px;
     margin-right: 68.5px;
-    padding: 0 29px;
 }
 
 form.userMainInfo {
     display: flex;
-    padding: 45px 0;
 }
 
 form input[type="text"],

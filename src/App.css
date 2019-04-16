@@ -105,3 +105,17 @@ body {
     overflow: scroll;
 }
 
+/*TABS*/
+.ant-tabs-content {
+    background: #fff;
+    border: 1px solid #ECECEC;
+    padding: 25px;
+}
+/*FORM*/
+.ant-form-item {
+    margin: 0;
+}
+
+.ant-checkbox-wrapper + .ant-checkbox-wrapper {
+    margin: 0;
+}

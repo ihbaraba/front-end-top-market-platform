@@ -25,16 +25,17 @@ const http = (method, url, data, type) => {
                 resolve(result.data);
             })
             .catch(error => {
-                if (error.response) {
-                    for (let key in error.response.data) {
-                        if (key !== 'messages') {
-                            notification.error({
-                                message: key,
-                                description: error.response.data[key][0],
-                            });
-                        }
-                    }
-                }
+                console.log(error);
+                // if (error.response) {
+                //     for (let key in error.response.data) {
+                //         if (key !== 'messages') {
+                //             notification.error({
+                //                 message: key,
+                //                 description: error.response.data[key][0],
+                //             });
+                //         }
+                //     }
+                // }
             });
     })
 };

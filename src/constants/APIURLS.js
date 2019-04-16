@@ -37,3 +37,15 @@ export const PROFILE = 'profile';
 export const PASSWORD = 'password_change';
 
 export const RESET_PASSWORD = 'password_reset';
+
+//COMPANY
+export const COMPANY_PROFILE = 'company';
+
+export const GET_COMPANY_TYPE = 'company_type';
+
+export const GET_ACTIVITY_AREAS = 'activity_areas';
+
+export const GET_SERVICE_INDUSTRY = 'service_industry';
+
+export const COMPANY_DOCUMENTS = 'company/documents';
+

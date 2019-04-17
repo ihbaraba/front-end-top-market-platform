@@ -53,3 +53,9 @@ export const COMPANY_DOCUMENTS = 'company/documents';
 
 export const COMPANY_PITCH = 'company/pitch';
 
+//PRODUCTS
+export const CONTRACTOR_PRODUCTS = 'catalog/contractor_products';
+
+export const UPLOAD_PRODUCTS = 'catalog/products_upload';
+
+

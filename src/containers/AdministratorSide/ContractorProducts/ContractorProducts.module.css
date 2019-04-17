@@ -1,0 +1,120 @@
+.title {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 35px;
+    margin-bottom: 29px;
+}
+.top {
+    display: flex;
+    /*align-items: center;*/
+    justify-content: space-between;
+}
+.howToAdd {
+    color: #4A90E2;
+    font-family: Ubuntu;
+    font-size: 16px;
+    display: block;
+}
+.categoryList {
+    flex: 1;
+    width: auto;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    margin-right: 29px;
+}
+.dropdownMenu {
+    height: 767px;
+    width: 836px;
+    padding: 25px;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    /*display: flex;*/
+}
+.dropdownMenu h5 {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 26px;
+    text-align: center;
+}
+.dropdownMenuList {
+    display: flex;
+    width: 100%;
+    /*flex-direction: column;*/
+    align-items: center;
+}
+
+.dropdownMenu ul li a {
+    display: block;
+}
+
+.categories {
+    display: flex;
+}
+.categoriesBlock {
+    flex: 1;
+    width: 80%;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 34px 30px;
+}
+.actions {
+    display: flex;
+}
+.addToMyProducts {
+    height: 40px;
+    width: 234px;
+    border-radius: 5px;
+    background-color: #B1B1B1;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-right: 20px;
+}
+.downloadExel {
+    height: 40px;
+    width: 206px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-right: 20px;
+}
+.search {
+    display: flex;
+    width: 100%;
+    position: relative;
+    width: 297px;
+}
+input[type=search] {
+    height: 41px;
+    width: 297px;
+    padding-left: 20px;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    margin-bottom: 25px;
+    position: relative;
+}
+input[type=submit] {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 45px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    background-image: url("../../../img/search.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+}

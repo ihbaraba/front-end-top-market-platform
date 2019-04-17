@@ -1,14 +1,11 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import styles from './Store.module.css'
-import  nike  from "../../../img/iphone.png";
-
+import  nike  from "../../../img/nike.jpg";
 
 class Store extends Component {
 
-
     render() {
-
         return (
             <div >
                 <h3 className={styles.title}>Управление интернет магазином</h3>

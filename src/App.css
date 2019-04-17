@@ -103,6 +103,19 @@ body {
 
 .ant-table-body {
     overflow: scroll;
+    padding: 0;
+}
+.ant-upload {
+    height: 30px;
+    width: 30px;
+    background-color: #4A90E2;
+}
+.ant-menu-sub {
+    width: 100%;
+}
+.ant-tabs-bar {
+    border-bottom: none;
+    /*margin-bottom: 30px;*/
 }
 
 /*TABS*/

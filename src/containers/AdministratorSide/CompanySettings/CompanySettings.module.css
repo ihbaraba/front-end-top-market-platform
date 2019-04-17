@@ -29,4 +29,219 @@
     font-size: 30px !important;
     color: #4A90E2;
     cursor: pointer;
+.title {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.generalInformation {
+    padding: 35px 36px 35px 29px;
+    background: #fff;
+    border: 1px solid #ECECEC;
+    border-top: none;
+    display: flex;
+    justify-content: space-between;
+}
+.generalInformation h4 {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+.generalInformation span {
+    color: #9B9B9B;
+    font-family: Ubuntu;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 45px;
+    display: block;
+}
+.generalInformation label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    display: block;
+    margin-bottom: 10px;
+}
+.right {
+    width: 532px;
+}
+.generalInformation input[type=text],
+.generalInformation select {
+    height: 41px;
+    width: 100%;
+    border: 1px solid #ECECEC;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    padding-left: 20px;
+}
+.generalInformation div {
+    margin-bottom: 17px;
+}
+.generalInformation h5 {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    margin-bottom: 21px;
+    margin-top: 20px;
+}
+.type div {
+    display: flex;
+}
+.type div label {
+    color: #969696;
+    font-family: Ubuntu;
+    font-size: 16px;
+    line-height: 10px;
+    font-weight: normal;
+    display: block;
+}
+.type div input[type=checkbox] {
+    margin-right: 19px;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+}
+
+.logo {
+    display: flex;
+}
+.logoImg {
+    width: 200px;
+    height: 200px;
+    margin-right: 29px;
+}
+.logoImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.logoInfo {
+    width: 261px;
+}
+.logoInfo h4 {
+    margin-bottom: 34px;
+}
+.logo  p {
+    color: #9B9B9B;
+    font-family: Ubuntu;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 59px;
+}
+.change {
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+}
+.left {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.left h4 {
+    margin-bottom:35px;
+}
+.save {
+    height: 40px;
+    width: 261px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-left: auto;
+    display: block;
+}
+
+.companyPage {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ECECEC;
+    border-top: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.companyPage  textarea {
+    height: 192px;
+    width: 751px;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    resize: none;
+    padding: 20px;
+}
+.companyPage .info  {
+    width: 311px;
+}
+.companyPage .info  p {
+    color: #D3D3D3;
+    font-family: Ubuntu;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
+.pitch {
+    padding: 30px 24px;
+    background: #fff;
+    border: 1px solid #ECECEC;
+    border-top: none;
+}
+.pitch label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    display: block;
+    margin-bottom: 10px;
+}
+.pitch div {
+    margin-bottom: 17px;
+}
+.pitch div:last-child {
+    margin-bottom: 0;
+}
+.pitch input[type=text] {
+    height: 41px;
+    width: 532px;
+    border: 1px solid #ECECEC;
+    border-radius: 3px;
+    padding-left: 20px;
+    background-color: #FFFFFF;
+}
+.last {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+.last .save {
+    margin-bottom: 15px;
+}
+
+.documents {
+    background: #fff;
+    padding: 30px 24px;
+    border: 1px solid #ECECEC;
+    border-top: none;
 }

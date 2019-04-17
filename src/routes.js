@@ -40,8 +40,12 @@ const Routes = () => {
                       <Route path='/admin/my_products' component={MyProducts}/>
                       <Route path='/admin/finance' component={Finance}/>
                       <Route path='/admin/store' component={Store}/>
-
-
+                      <Route path='/admin/company-settings' component={CompanySettings}/>
+                      <Route path='/admin/categories' component={Categories}/>
+                      <Route path='/admin/learning' component={LearningModule}/>
+                      <Route path='/admin/lessons' component={Lessons}/>
+                      <Route path='/admin/instruction' component={Instruction}/>
+                      <Route path='/admin/orders' component={Orders}/>
                     </AdministratorSide>
                 )}>
                 </Route>

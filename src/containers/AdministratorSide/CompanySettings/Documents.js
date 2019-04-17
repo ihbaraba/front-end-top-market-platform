@@ -1,127 +1,58 @@
-import React, {Component} from 'react';
-import {Icon} from 'antd';
-import {getDocuments, uploadDocuments} from "../../../actions/companyActions";
-import styles from './CompanySettings.module.css';
+import React, {Component} from 'react'
+import 'antd/dist/antd.css';
+import styles from './CompanySettings.module.css'
 
-import Dropzone from 'react-dropzone'
+import {
+    Upload, message, Button, Icon,
+} from 'antd';
+
+
+const props = {
+    name: 'file',
+    action: '//jsonplaceholder.typicode.com/posts/',
+    headers: {
+        authorization: 'authorization-text',
+    },
+    onChange(info) {
+        if (info.file.status !== 'uploading') {
+            console.log(info.file, info.fileList);
+        }
+        if (info.file.status === 'done') {
+            message.success(`${info.file.name} file uploaded successfully`);
+        } else if (info.file.status === 'error') {
+            message.error(`${info.file.name} file upload failed.`);
+        }
+    },
+};
+
+
 
 class Documents extends Component {
-    state = {
-        type: '',
-        passport: [],
-        ukStatistic: [],
-        certificate: [],
-        taxPayer: [],
-        payerRegister: [],
-        payerCertificate: []
-    };
-
-    onDrop = async (files) => {
-        const typeDoc = this.state.type;
-        let arrFiles = [];
-
-        await files.forEach(file => {
-            this.getBase64(file, (result) => {
-                arrFiles.push(result)
-            });
-        });
 
 
-        this.setState({
-            [typeDoc]: arrFiles
-        })
-    };
-
-    getBase64(file, cb) {
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function () {
-            cb(reader.result)
-        };
-        reader.onerror = function (error) {
-            console.log('Error: ', error);
-        };
-    };
-
-    handleUploadDocuments = () => {
-        uploadDocuments(this.state)
-    };
-
-
-    async componentDidMount() {
-        const res = getDocuments();
-
-        this.setState(res)
-    }
 
     render() {
-        const documents = [
-            {
-                title: 'Паспорт',
-                description: '(стр. 1, 2, 3 и место регистрации личности)',
-                typeDoc: 'passport'
-            },
-            {
-                title: 'Справка Государственного комитета статистики Украины',
-                description: '(если договор подписывается с юр.лицом - обязательно, если с \n' +
-                'физ.лицом - в случае, если такую справку получало это лицо)',
-                typeDoc: 'ukStatistic'
-            },
-            {
-                title: 'Свидетельство о гос.регистрации или выписка с ЕГРПОУ',
-                description: '',
-                typeDoc: 'certificate'
-            },
-            {
-                title: 'Справка 4 Учета плательщика налогов',
-                description: '',
-                typeDoc: 'taxPayer'
-            },
-            {
-                title: 'Свидетельство, выписка плательщика налога на добавленную \n' +
-                'стоимость, выписка из реестра плательщиков НДС',
-                description: '',
-                typeDoc: 'payerRegister'
-            },
-            {
-                title: 'Свидетельство плательщика единого налога',
-                description: '(если лицо является плательщиком по упрощенной системе)',
-                typeDoc: 'payerCertificate'
-            },
-        ];
 
         return (
-            <div>
-                Изображение должно быть в форматах pdf. jpeg или png. размер файла до 2Мб
+            <div className={styles.documents}>
+                <p>Изображение должно быть в форматах pdf. jpeg или png. размер файла до 2Мб</p>
+                <div>
+                    <h4>Паспорт</h4>
+                    <Upload {...props}>
+                        <Button>
+                            <Icon type="upload" /> Click to Upload
+                        </Button>
+                    </Upload>
+                </div>
 
-                {documents.map((item) => (
-                    <div key={item.typeDoc} className={styles.documentBlock}>
-                        <div className="title">
-                            {item.title}
-                            <span className="description">{item.description}</span>
-                        </div>
-
-                        <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">
-                            {({getRootProps, getInputProps}) => (
-                                <div {...getRootProps({className: 'dropzone'})}>
-                                    <input {...getInputProps()} />
-                                    {this.state[item.typeDoc].length > 0 ?
-                                        <Icon type="check-circle" theme="filled"/>
-                                        :
-                                        <Icon type="plus-circle" theme="filled"
-                                              onClick={() => this.setState({type: item.typeDoc})}/>}
-
-
-                                </div>
-                            )}
-                        </Dropzone>
-                    </div>
-                ))}
-
-                <button onClick={this.handleUploadDocuments}>Сохранить</button>
             </div>
-        )
+        );
     }
 }
 
 export default Documents;
+
+
+
+
+

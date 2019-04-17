@@ -7,6 +7,7 @@ import { Table} from 'antd';
 import PriceListTable from "../components/PriceListTable/PriceListTable";
 import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTable";
 import Products from "../components/Products/Products";
+import NewProduct from "../components/Modal/NewProduct";
 
 
 const TabPane = Tabs.TabPane;
@@ -69,7 +70,7 @@ class MyProducts extends Component {
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
                                 <button className={styles.actbtn}>Добавить в YML</button>
-                                <button className={styles.actbtn}>Добавить товар</button>
+                                <NewProduct/>
                                 <button className={styles.actbtn}>Загрузить Exel файл</button>
                             </div>
                             <Products/>
@@ -120,7 +121,7 @@ class MyProducts extends Component {
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
                                 <button className={styles.actbtn}>Добавить в YML</button>
-                                <button className={styles.actbtn}>Добавить товар</button>
+                                <NewProduct/>
                                 <button className={styles.actbtn}>Загрузить Exel файл</button>
                             </div>
                             <InactiveGoodsTable/>

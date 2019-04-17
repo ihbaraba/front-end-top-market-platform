@@ -24,7 +24,8 @@
 .navigationBar a.menuItem img {
     margin: 0 15px 0 0;
 }
-.navigationBar a.menuItem:hover {
+.navigationBar a.menuItem:hover,
+.navigationBar a.menuItem:focus {
     background: #4A90E2;
     color: #FFFFFF;
     font-family: Ubuntu;

@@ -6,6 +6,7 @@ import TransactionHistory from "./TransactionHistory";
 import SettlementTable from "./SettlementTable";
 import InvoiceForPayment from "./InvoiceForPayment";
 import SalesReport from "./SalesReport";
+import Recharge from "../components/Modal/Recharge";
 const TabPane = Tabs.TabPane;
 
 function callback(key) {
@@ -44,7 +45,7 @@ class Finance extends Component {
                             </div>
                             <div className={styles.balanceActions}>
                                 <button className={styles.withdraw}>Вывести</button>
-                                <button className={styles.replenish}>Пополнить</button>
+                                <Recharge/>
                             </div>
                         </div>
 

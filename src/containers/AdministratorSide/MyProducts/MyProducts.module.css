@@ -246,3 +246,147 @@
      line-height: 22px;
      margin-right: 20px;
  }
+
+
+ .mainInfo {
+     padding-top: 30px;
+ }
+
+ .mainInfo label {
+     color: #4A4A4A;
+     font-family: Ubuntu;
+     font-size: 14px;
+     font-weight: bold;
+     line-height: 19px;
+     margin-bottom: 10px;
+     display: block;
+ }
+
+.mainInfo input[type=text] {
+    height: 41px;
+    width: 287px;
+    border: 1px solid #ECECEC;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+.inputsGroup {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.mainInfo textarea {
+    height: 131px;
+    width: 100%;
+    border: 1px solid #ECECEC;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    resize: none;
+    padding: 10px 20px;
+    margin-bottom: 17px;
+}
+ .save {
+    height: 40px;
+    width: 187px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    display: block;
+    margin-left: auto;
+}
+
+.selectCategory,
+.selectPrice,
+.addPicture {
+    padding-top: 31px;
+}
+ .selectCategory label,
+ .selectPrice label {
+     color: #4A4A4A;
+     font-family: Ubuntu;
+     font-size: 14px;
+     font-weight: bold;
+     line-height: 19px;
+     margin-bottom: 10px;
+     display: block;
+ }
+.selectCategory select {
+    height: 41px;
+    width: 100%;
+    border: 1px solid #ECECEC;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    margin-bottom: 15px;
+}
+.addPicture input[type=file] {
+    display: none;
+}
+
+.addPicture label {
+    height: 40px;
+    width: 226px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+}
+.upload {
+    display: flex;
+    justify-content: space-between;
+}
+.addUrl {
+    position: relative;
+    margin-bottom: 48px;
+}
+.addUrl input[type=text] {
+    height: 41px;
+    width: 362px;
+    border: 1px solid #ECECEC;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    padding-left: 20px;
+    position: relative;
+}
+.addUrlBtn {
+    height: 40px;
+    width: 170px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    position: absolute;
+    right: 0;
+}
+.uploadInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.uploadInfo span {
+    width: 250px;
+}
+
+.download {
+    height: 40px;
+    width: 187px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+}
+

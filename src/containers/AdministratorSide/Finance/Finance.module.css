@@ -214,3 +214,6 @@
 .empty {
     height: 31px;
 }
+.balanceActions {
+    display: flex;
+}

@@ -24,9 +24,9 @@ const contractorMenu = [
         href: 'cabinet',
     },
     {
-        title: 'Мой магазин',
-        icon: home,
-        href: 'store',
+        title: 'Мои товары',
+        icon: shopping,
+        href: 'products',
     },
     {
         title: 'Мои заказы',
@@ -37,11 +37,6 @@ const contractorMenu = [
         title: 'Финансы',
         icon: chart,
         href: 'finance',
-    },
-    {
-        title: 'Мои товары',
-        icon: shopping,
-        href: 'products',
     },
     {
         title: 'База знаний',

@@ -7,6 +7,9 @@ import cabinet from '../../../../img/user.svg';
 import cabinetActive from '../../../../img/user2.svg';
 
 import home from '../../../../img/home.svg';
+import homeActive from '../../../../img/home-active.svg';
+
+
 import cart from '../../../../img/shopping-cart.svg';
 import list from '../../../../img/list.svg';
 import chart from '../../../../img/pie-chart.svg';
@@ -27,11 +30,12 @@ const contractorMenu = [
         title: 'Мой магазин',
         icon: home,
         href: 'store',
+        activeIcon: homeActive,
     },
     {
         title: 'Мои заказы',
         icon: list,
-        href: '',
+        href: 'orders',
     },
     {
         title: 'Финансы',

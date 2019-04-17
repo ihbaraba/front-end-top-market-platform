@@ -1,7 +1,5 @@
 .Form {
-    margin: 10% auto;
-
-
+    margin: 40px auto;
     height: 362px;
     width: 691px;
     border: 1px solid #D3D3D3;
@@ -55,4 +53,22 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+}
+.regBtn {
+    height: 40px;
+    width: 210px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #E2E2E2;
 }

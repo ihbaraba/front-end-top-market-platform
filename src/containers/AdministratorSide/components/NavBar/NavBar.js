@@ -31,7 +31,7 @@ const contractorMenu = [
     {
         title: 'Мои заказы',
         icon: list,
-        href: '',
+        href: 'orders',
     },
     {
         title: 'Финансы',

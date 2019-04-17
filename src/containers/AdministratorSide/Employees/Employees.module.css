@@ -37,10 +37,12 @@
     position: relative;
 }
 .searchEmployees input[type=search] {
+    height: 46px;
     position: inherit;
+    width: 100%;
 }
 .searchEmployees input[type=submit] {
-    position: relative;
+    position: absolute;
     height: 45px;
     width: 45px;
     border-radius: 5px;

@@ -50,4 +50,5 @@
 }
 .navigationBar a.menuItem.active .activeIcon {
     display: block;
+    color: #fff;
 }

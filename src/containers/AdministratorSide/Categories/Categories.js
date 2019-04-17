@@ -25,7 +25,6 @@ const columns = [{
     title: 'Address',
     dataIndex: 'address',
 }];
-
 const data = [];
 for (let i = 0; i < 46; i++) {
     data.push({
@@ -35,7 +34,6 @@ for (let i = 0; i < 46; i++) {
         address: `London, Park Lane no. ${i}`,
     });
 }
-
 
 
 class Categories extends Component {

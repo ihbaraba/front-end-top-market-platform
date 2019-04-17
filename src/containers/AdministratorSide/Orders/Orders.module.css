@@ -1,0 +1,85 @@
+.title {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.searchOrders {
+    width: 100%;
+    background: #fff;
+    padding: 24px 29px;
+    display: flex;
+    /*align-items: flex-end;*/
+    flex-wrap: wrap;
+    border: 1px solid #ECECEC;
+    /*border-top: none;*/
+    margin-bottom: 24px;
+}
+.searchOrders label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    margin-bottom: 9px;
+    display: block;
+}
+.searchOrders .orderNumber,
+.searchOrders .orderStatus,
+.searchOrders .name {
+    margin-right: 19px;
+}
+.searchOrders .orderNumber  input {
+    height: 31px;
+    width: 116px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+.searchOrders .orderDate input {
+    height: 31px;
+    width: 112px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    padding-left: 10px;
+    margin-right: 24px;
+}
+.searchOrders .orderStatus select {
+    height: 31px;
+    width: 130px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    display: block;
+}
+.searchOrders .name input {
+    height: 31px;
+    width: 138px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+.searchOrders  .phone input {
+    height: 31px;
+    width: 162px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+.searchOrders .find {
+    height: 40px;
+    width: 169px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+}

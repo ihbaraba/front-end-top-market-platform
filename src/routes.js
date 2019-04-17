@@ -13,6 +13,11 @@ import Finance from "./containers/AdministratorSide/Finance/Finance";
 import Store from "./containers/AdministratorSide/Store/Store";
 import CompanySettings from "./containers/AdministratorSide/CompanySettings/CompanySettings";
 import Categories from "./containers/AdministratorSide/Categories/Categories";
+import LearningModule from "./containers/AdministratorSide/LearningModule/LearningModule";
+import Lessons from "./containers/AdministratorSide/LearningModule/Lessons";
+import Instruction from "./containers/AdministratorSide/Instruction/Instruction";
+import Orders from "./containers/AdministratorSide/Orders/Orders";
+
 
 
 
@@ -34,6 +39,10 @@ const Routes = () => {
                       <Route path='/admin/store' component={Store}/>
                       <Route path='/admin/company-settings' component={CompanySettings}/>
                       <Route path='/admin/categories' component={Categories}/>
+                      <Route path='/admin/learning' component={LearningModule}/>
+                      <Route path='/admin/lessons' component={Lessons}/>
+                      <Route path='/admin/instruction' component={Instruction}/>
+                      <Route path='/admin/orders' component={Orders}/>
                     </AdministratorSide>
                 )}>
                 </Route>

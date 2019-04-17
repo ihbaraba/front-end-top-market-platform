@@ -36,7 +36,7 @@ const menu = [
     {
         title: 'Мои заказы',
         icon: list,
-        href: '/',
+        href: 'orders',
     },
     {
         title: 'Финансы',
@@ -61,7 +61,7 @@ const menu = [
     {
         title: 'Обуч. модуль',
         icon: study,
-        href: '/',
+        href: 'learning',
     },
 
 ];

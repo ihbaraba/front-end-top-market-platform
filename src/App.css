@@ -92,6 +92,7 @@
 }
 .ant-table-body {
     overflow: scroll;
+    padding: 0;
 }
 .ant-upload {
     height: 30px;
@@ -100,4 +101,11 @@
 }
 .ant-menu-sub {
     width: 100%;
+}
+.ant-tabs-bar {
+    border-bottom: none;
+    /*margin-bottom: 30px;*/
+}
+.ant-modal-body {
+    padding-bottom: 0;
 }

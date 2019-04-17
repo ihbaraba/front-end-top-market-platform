@@ -1,0 +1,146 @@
+.title,
+.lessonsTitle {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 35px;
+    margin-bottom: 34px;
+}
+.lessonsTitle {
+    margin-bottom: 27px;
+}
+
+.learningModule {
+    height: auto;
+    width: 100%;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 43px 86.5px 43px 36px;
+    display: flex;
+
+}
+.previewImg {
+    height: 276px;
+    width: 386px;
+    background: url("../../../img/learning.png") no-repeat center center;
+    margin-right: 35px;
+}
+.previewImg img {
+    width: 100%;
+}
+
+.aboutModule {
+    width: 100%;
+}
+.top {
+    display: flex;
+    margin-bottom: 33px;
+}
+.aboutModule h5 {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+}
+.modulePrice {
+    color: #019D45;
+    font-family: Ubuntu;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    display: block;
+    margin-left: auto;
+}
+.description {
+    margin-bottom: 33px;
+}
+.description p {
+    color: #808080;
+    font-family: Ubuntu;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.buy {
+    height: 40px;
+    width: 194px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-left: auto;
+    display: block;
+}
+.payActions {
+    display: flex;
+    justify-content: space-between;
+}
+.payBtn {
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+}
+.modalContent  {
+    margin-bottom: 48px;
+}
+
+.lessonsBlock {
+    height: auto;
+    width: 100%;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 39px 86px 39px 33px;
+}
+.lessonItem {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #E2E2E2;
+    padding-bottom: 30px;
+    margin-bottom: 28px;
+}
+
+.lessonItem:last-child {
+    border-bottom: none;
+}
+
+.lessonImgPreview {
+    height: 188px;
+    width: 265px;
+    margin-right: 20px;
+    background: url("../../../img/learning.png") no-repeat center center;
+}
+.lessonImgPreview img {
+    width: 100%;
+}
+.aboutLesson {
+    width: 100%;
+}
+
+.aboutLesson h5 {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    margin-bottom: 29px;
+}
+.aboutLesson p {
+    color: #808080;
+    font-family: Ubuntu;
+    font-size: 16px;
+    line-height: 23px;
+}

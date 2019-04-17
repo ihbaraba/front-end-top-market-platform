@@ -7,6 +7,19 @@ import CategoryList from "./CategoryList";
 
 
 const columns = [{
+
+    render: (name, item) => (
+        <span className={styles.productItemName}>
+            <span className={styles.productImg}>
+                <img src={item.product} alt=""/>
+            </span>
+            <span>
+                {name}
+            </span>
+        </span>
+
+
+    ),
     title: 'Название товара',
     dataIndex: 'name',
 }, {
@@ -19,21 +32,24 @@ const columns = [{
     title: 'Цена',
     dataIndex: 'price',
 }, {
-    title: 'Address',
-    dataIndex: 'address',
+    title: 'Прибыль',
+    dataIndex: 'profit',
 }, {
-    title: 'Address',
-    dataIndex: 'address',
+    title: 'Наличие',
+    dataIndex: 'availability',
 }];
-const data = [];
-for (let i = 0; i < 46; i++) {
-    data.push({
-        key: i,
-        name: `Edward King ${i}`,
-        age: 32,
-        address: `London, Park Lane no. ${i}`,
-    });
-}
+// const data = [];
+// for (let i = 0; i < 46; i++) {
+//     data.push({
+//         key: i,
+//         name: `iPhone XR 64GB ${i}`,
+//         brand: 'Apple',
+//         provider: 'Rozetka',
+//         price: '23844.00 грн',
+//         profit: '839.00 грн',
+//         availability: 'В наличии',
+//     });
+// }
 
 
 class Categories extends Component {
@@ -108,7 +124,7 @@ class Categories extends Component {
                                <input type="submit" value=" "/>
                            </div>
                        </div>
-                        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+                        <Table rowSelection={rowSelection} columns={columns} />
                     </div>
                 </div>
             </div>

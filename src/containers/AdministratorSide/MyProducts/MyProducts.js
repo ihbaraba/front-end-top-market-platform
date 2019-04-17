@@ -9,6 +9,26 @@ import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTa
 import Products from "../components/Products/Products";
 import NewProduct from "../components/Modal/NewProduct";
 
+import { Menu, Dropdown, Icon } from 'antd';
+
+const menu = (
+    <Menu>
+        <form className={styles.addtoYml}>
+            <div className={styles.top}>
+                <h5>Выберите YML для вашего магазина</h5>
+            </div>
+            <div className={styles.body}>
+                <div>
+                    <label>Стандартная</label>
+                    <input type="text"/>
+                    <button className={styles.copy}>Копировать</button>
+                </div>
+            </div>
+        </form>
+    </Menu>
+);
+
+
 
 const TabPane = Tabs.TabPane;
 
@@ -70,6 +90,9 @@ class MyProducts extends Component {
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
                                 <button className={styles.actbtn}>Добавить в YML</button>
+
+
+
                                 <NewProduct/>
                                 <button className={styles.actbtn}>Загрузить Exel файл</button>
                             </div>

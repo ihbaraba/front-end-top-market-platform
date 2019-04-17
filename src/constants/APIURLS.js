@@ -51,3 +51,5 @@ export const GET_SERVICE_INDUSTRY = 'company/service_industry';
 
 export const COMPANY_DOCUMENTS = 'company/documents';
 
+export const COMPANY_PITCH = 'company/pitch';
+

@@ -4,7 +4,6 @@ import styles from './CompanySettings.module.css';
 import {getProfile, updateProfile} from "../../../actions/companyActions";
 
 
-
 class AboutCompany extends Component {
     state = {
         aboutCompany: '',
@@ -13,7 +12,9 @@ class AboutCompany extends Component {
     handleUpdateCompanyProfile = e => {
         e.preventDefault();
 
-        updateProfile(this.state);
+        updateProfile({
+            aboutCompany: this.state.aboutCompany
+        });
     };
 
     handleChangeInput = ({target: {name, value}}) => {
@@ -37,13 +38,15 @@ class AboutCompany extends Component {
 
         return (
             <Form onSubmit={this.handleUpdateCompanyProfile} className={styles.Form}>
+                <div style={{width: '90%'}}>
                     <textarea
                         type="text"
                         name='aboutCompany'
                         value={aboutCompany || ''}
+                        style={{width: '100%'}}
                         onChange={this.handleChangeInput}
-                    ></textarea>
-
+                    />
+                </div>
                 <div>
                     <span>Информация, которая будет отображена на странице компании, по адресу https://gofriends.pro/ru/company-marketplace-nazar-inc</span>
                     <Button

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Form, Button} from 'antd';
 import styles from './CompanySettings.module.css';
+import {getCompanyPitch, updateCompanyPitch} from "../../../actions/companyActions";
 
 const FormItem = Form.Item;
 
@@ -21,9 +22,17 @@ class CompanyPitch extends Component {
         })
     };
 
-    componentDidMount() {
+    handleUpdateCompanyPitch = (e) => {
+        e.preventDefault();
 
-    }
+        updateCompanyPitch(this.state)
+    };
+
+    async componentDidMount() {
+      const res = await getCompanyPitch();
+
+      this.setState(res)
+    };
 
     render() {
         const {
@@ -36,7 +45,7 @@ class CompanyPitch extends Component {
         } = this.state;
 
         return (
-            <Form onSubmit={this.handleUpdateCompanyProfile} className={styles.Form}>
+            <Form onSubmit={this.handleUpdateCompanyPitch} className={styles.Form}>
                 <div>
                     <FormItem>
                         <label htmlFor="">Кто вы?</label>
@@ -97,7 +106,6 @@ class CompanyPitch extends Component {
                             onChange={this.handleChangeInput}
                         />
                     </FormItem>
-
 
                     <Button
                         type="primary"

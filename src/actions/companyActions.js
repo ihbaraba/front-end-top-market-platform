@@ -6,7 +6,8 @@ import {
     GET_COMPANY_TYPE,
     GET_ACTIVITY_AREAS,
     GET_SERVICE_INDUSTRY,
-    COMPANY_DOCUMENTS
+    COMPANY_DOCUMENTS,
+    COMPANY_PITCH
 } from '../constants/APIURLS';
 
 
@@ -28,6 +29,14 @@ export const getDocuments = () => {
 
 export const uploadDocuments = (documents) => {
     return api('put', COMPANY_DOCUMENTS, documents)
+};
+
+export const getCompanyPitch = () => {
+    return api('get', COMPANY_PITCH)
+};
+
+export const updateCompanyPitch = (pitch) => {
+    return api('patch', COMPANY_PITCH, pitch)
 };
 
 

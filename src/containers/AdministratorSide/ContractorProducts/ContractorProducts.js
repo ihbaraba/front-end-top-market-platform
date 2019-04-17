@@ -1,54 +1,61 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
-import { Link } from 'react-router-dom'
-import { Table } from 'antd';
-import styles from './Categories.module.css'
+import {Link} from 'react-router-dom'
+import {Table} from 'antd';
+import styles from './ContractorProducts.module.css'
 import CategoryList from "./CategoryList";
+import {getContractorProducts, uploadXls} from '../../../actions/products';
 
+const columns = [
+    {
+        title: 'Название товара',
+        dataIndex: 'name',
+    },
+    {
+        title: 'Бренд',
+        dataIndex: 'brand',
+    },
+    {
+        title: 'Поставщик',
+        dataIndex: 'provider',
+    },
+    {
+        title: 'Цена',
+        dataIndex: 'price',
+    },
+    {
+        title: 'Address',
+        dataIndex: 'address',
+    },
+    {
+        title: 'Address',
+        dataIndex: 'address',
+    }
+];
 
-const columns = [{
-    title: 'Название товара',
-    dataIndex: 'name',
-}, {
-    title: 'Бренд',
-    dataIndex: 'brand',
-}, {
-    title: 'Поставщик',
-    dataIndex: 'provider',
-}, {
-    title: 'Цена',
-    dataIndex: 'price',
-}, {
-    title: 'Address',
-    dataIndex: 'address',
-}, {
-    title: 'Address',
-    dataIndex: 'address',
-}];
-const data = [];
-for (let i = 0; i < 46; i++) {
-    data.push({
-        key: i,
-        name: `Edward King ${i}`,
-        age: 32,
-        address: `London, Park Lane no. ${i}`,
-    });
-}
-
-
-class Categories extends Component {
+class ContractorProducts extends Component {
     state = {
         selectedRowKeys: [],
+        products: []
     };
 
     onSelectChange = (selectedRowKeys) => {
-        console.log('selectedRowKeys changed: ', selectedRowKeys);
-        this.setState({ selectedRowKeys });
+        this.setState({selectedRowKeys});
     };
 
+    handleUploadFile = async (file) => {
+        const res = await uploadXls();
+
+    }
+
+    async componentDidMount() {
+        const res = await getContractorProducts();
+
+        this.setState(res)
+    }
 
     render() {
-        const { selectedRowKeys } = this.state;
+        const {selectedRowKeys, products} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -72,7 +79,7 @@ class Categories extends Component {
                         }
                         return true;
                     });
-                    this.setState({ selectedRowKeys: newSelectedRowKeys });
+                    this.setState({selectedRowKeys: newSelectedRowKeys});
                 },
             }, {
                 key: 'even',
@@ -85,7 +92,7 @@ class Categories extends Component {
                         }
                         return false;
                     });
-                    this.setState({ selectedRowKeys: newSelectedRowKeys });
+                    this.setState({selectedRowKeys: newSelectedRowKeys});
                 },
             }],
             onSelection: this.onSelection,
@@ -99,16 +106,22 @@ class Categories extends Component {
                 </div>
                 <div className={styles.categories}>
                     <CategoryList/>
+
                     <div className={styles.categoriesBlock}>
-                       <div className={styles.actions}>
-                           <button className={styles.addToMyProducts}>Добавить в мои товары</button>
-                           <button className={styles.downloadExel}>Загрузить Exel файл</button>
-                           <div className={styles.search}>
-                               <input type="search" placeholder="Search" />
-                               <input type="submit" value=" "/>
-                           </div>
-                       </div>
-                        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+                        <div className={styles.actions}>
+                            <button className={styles.addToMyProducts}>Добавить товар</button>
+                            <button className={styles.downloadExel}>Загрузить Exel файл</button>
+                            <div className={styles.search}>
+                                <input type="search" placeholder="Search"/>
+                                <input type="submit" value=" "/>
+                            </div>
+                        </div>
+
+                        <Table
+                            rowSelection={rowSelection}
+                            columns={columns}
+                            dataSource={products}
+                        />
                     </div>
                 </div>
             </div>
@@ -116,7 +129,7 @@ class Categories extends Component {
     }
 }
 
-export default Categories;
+export default ContractorProducts;
 
 
 

@@ -16,7 +16,7 @@ import services from '../../../../img/add-button-inside-black-circle.svg';
 import study from '../../../../img/teacher-reading.svg';
 
 
-const menu = [
+const contractorMenu = [
     {
         title: 'Мой кабинет',
         icon: cabinet,
@@ -26,12 +26,56 @@ const menu = [
     {
         title: 'Мой магазин',
         icon: home,
+        href: 'store',
+    },
+    {
+        title: 'Мои заказы',
+        icon: list,
         href: '',
+    },
+    {
+        title: 'Финансы',
+        icon: chart,
+        href: 'finance',
+    },
+    {
+        title: 'Мои товары',
+        icon: shopping,
+        href: 'products',
+    },
+    {
+        title: 'База знаний',
+        icon: database,
+        href: 'knowledge_base',
+    },
+    {
+        title: 'Доп. услуги',
+        icon: services,
+        href: 'additional_services',
+    },
+    {
+        title: 'Обуч. модуль',
+        icon: study,
+        href: 'learning',
+    },
+];
+
+const partnerMenu = [
+    {
+        title: 'Мой кабинет',
+        icon: cabinet,
+        activeIcon: cabinetActive,
+        href: 'cabinet',
+    },
+    {
+        title: 'Мой магазин',
+        icon: home,
+        href: 'store',
     },
     {
         title: 'Все товары',
         icon: cart,
-        href: '',
+        href: 'categories',
     },
     {
         title: 'Мои заказы',
@@ -61,9 +105,8 @@ const menu = [
     {
         title: 'Обуч. модуль',
         icon: study,
-        href: '',
-    },
-
+        href: 'learning',
+    }
 ];
 
 class NavBar extends Component {
@@ -71,7 +114,7 @@ class NavBar extends Component {
 
         return (
             <div className={styles.navigationBar}>
-                {menu.map((item, index) => (
+                {contractorMenu.map((item, index) => (
                     <NavLink
                         className={styles.menuItem}
                         key={index}

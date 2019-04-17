@@ -89,7 +89,7 @@ class Cabinet extends Component {
                                 <p>Веб-сайт:<span> www.gofriends.com</span></p>
                             </div>
                         </div>
-                        <Link to="/admin/profile-settings" className={styles.editBtn}>Редактировать профиль</Link>
+                        <Link to="/admin/profile_settings" className={styles.editBtn}>Редактировать профиль</Link>
                         <div className={styles.description}>
                             <p>Для того чтобы пользоватся услугами Маркетплейса, Вы должны
                                 приобрести один из вариантов пакетов доступа, цена на которые 35

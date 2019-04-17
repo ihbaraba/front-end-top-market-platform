@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import styles from './Store.module.css'
-import  nike  from "../../../img/nike.jpg";
+import  nike  from "../../../img/iphone.png";
 
 
 class Store extends Component {

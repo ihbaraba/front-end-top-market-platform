@@ -16,7 +16,11 @@ import Registration from "./containers/AdministratorSide/Registration/Registrati
 import ConfirmRegistration from "./containers/AdministratorSide/Registration/ConfirmRegistration";
 import ResetPassword from "./containers/AdministratorSide/ResetPassword/ResetPassword";
 import CompanySettings from "./containers/AdministratorSide/CompanySettings/CompanySettings";
-
+import Categories from "./containers/AdministratorSide/Categories/Categories";
+import LearningModule from "./containers/AdministratorSide/LearningModule/LearningModule";
+import Lessons from "./containers/AdministratorSide/LearningModule/Lessons";
+import Instruction from "./containers/AdministratorSide/Instruction/Instruction";
+import Orders from "./containers/AdministratorSide/Orders/Orders";
 
 const Routes = () => {
     return (
@@ -60,6 +64,6 @@ const Routes = () => {
             </Switch>
         </Fragment>
     )
-};
+}
 
 export default Routes;

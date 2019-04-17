@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import styles from './Instruction.module.css'
 import  ava  from "../../../img/ava.png";
-import  img1  from "../../../img/iphone.png";
-import  img2  from "../../../img/iphone.png";
-import  img3  from "../../../img/iphone.png";
-import  img4  from "../../../img/iphone.png";
-import  img5  from "../../../img/iphone.png";
-import  img6  from "../../../img/iphone.png";
-import  img7  from "../../../img/iphone.png";
+import  img1  from "../../../img/img1.png";
+import  img2  from "../../../img/img2.png";
+import  img3  from "../../../img/img3.png";
+import  img4  from "../../../img/img4.png";
+import  img5  from "../../../img/img5.png";
+import  img6  from "../../../img/img6.png";
+import  img7  from "../../../img/img7.png";
 
 class Instruction extends Component {
 

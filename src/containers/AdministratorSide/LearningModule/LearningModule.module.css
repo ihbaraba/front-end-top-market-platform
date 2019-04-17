@@ -24,7 +24,7 @@
 .previewImg {
     height: 276px;
     width: 386px;
-    /*background: url("../../../img/learning.png") no-repeat center center;*/
+    background: url("../../../img/learning.png") no-repeat center center;
     margin-right: 35px;
 }
 .previewImg img {
@@ -121,7 +121,7 @@
     height: 188px;
     width: 265px;
     margin-right: 20px;
-    /*background: url("../../../img/learning.png") no-repeat center center;*/
+    background: url("../../../img/learning.png") no-repeat center center;
 }
 .lessonImgPreview img {
     width: 100%;

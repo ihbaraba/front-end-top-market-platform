@@ -132,3 +132,16 @@ body {
 .ant-checkbox-wrapper + .ant-checkbox-wrapper {
     margin: 0;
 }
+
+.ant-form-item-control {
+    line-height: 0;
+}
+
+.ant-select-selection--single {
+    height: 46px;
+    width: 630px;
+    border: 1px solid #D3D3D3;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    /*margin-bottom: 42px;*/
+}

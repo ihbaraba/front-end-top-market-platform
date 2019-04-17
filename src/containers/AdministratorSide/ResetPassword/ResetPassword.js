@@ -27,28 +27,37 @@ class ResetPassword extends Component {
 
         return (
             <Form onSubmit={this.handleSubmit} className={styles.Form}>
+                <h3 className={styles.title}>Восстановление пароля</h3>
+                <p>Введите ваш email, после этого вы получите письмо с инструкцией на вашу почту</p>
                 <FormItem>
+                    <label>Ваш email</label>
                     {getFieldDecorator("email", {
                         rules: [
-                            {required: true, message: "Please input your email!"},
+                            {required: true, message: "Пожалуйста введите Ваш Email"},
                         ]
                     })(
                         <Input
-                            prefix={<Icon type="user" style={{fontSize: 13}}/>}
+                            // prefix={<Icon type="user" style={{fontSize: 13}}/>}
                             placeholder="Email"
                         />
                     )}
                 </FormItem>
 
-                <Button
-                    type="primary"
-                    htmlType="submit"
-                    className={styles.loginFormButton}
-                >
-                    Reset
-                </Button>
 
-                <Link to='/'>Login</Link>
+                <div className={styles.actions}>
+                    <Link to='/'>Попробовать войти</Link>
+                    <Button
+                        type="primary"
+                        htmlType="submit"
+                        className={styles.loginFormButton}
+                    >
+                        Отправить
+                    </Button>
+                </div>
+
+
+
+
             </Form>
         );
     }

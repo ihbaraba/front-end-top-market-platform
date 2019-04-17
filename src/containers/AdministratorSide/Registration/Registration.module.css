@@ -1,9 +1,49 @@
 .Form {
-    width: 400px;
     margin: 10% auto;
+    height: auto;
+    width: 691px;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 28px 30px 45px 30px;
 }
 
 .loginFormButton {
+    height: 40px;
+    width: 261px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-left: auto;
     display: block;
-    width: 100%;
+}
+.Form label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    margin-bottom: 9.5px;
+    display: block;
+}
+
+.title {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 35px;
+    border-bottom: 1px solid #E2E2E2;
+    padding-bottom: 25px;
+    margin-bottom: 23px;
+}
+
+.actions {
+    margin-top: 42px;
+    display: flex;
+    align-items: center;
 }

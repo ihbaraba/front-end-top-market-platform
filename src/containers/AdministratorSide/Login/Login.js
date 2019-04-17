@@ -28,44 +28,57 @@ class Login extends Component {
 
         return (
             <Form onSubmit={this.handleSubmit} className={styles.Form}>
+                <h3 className={styles.title}>Войти</h3>
                 <FormItem>
+                    <label>Ваш email</label>
                     {getFieldDecorator("email", {
                         rules: [
                             {required: true, message: "Please input your email!"},
                         ]
                     })(
                         <Input
-                            prefix={<Icon type="user" style={{fontSize: 13}}/>}
+                            // prefix={<Icon type="user" style={{fontSize: 13}}/>}
                             placeholder="Email"
                         />
                     )}
                 </FormItem>
 
                 <FormItem>
+                    <label>Номер телефона</label>
                     {getFieldDecorator("password", {
                         rules: [{required: true, message: "Please input your Password!"}]
                     })(
                         <Input
-                            prefix={<Icon type="lock" style={{fontSize: 13}}/>}
+                            // prefix={<Icon type="lock" style={{fontSize: 13}}/>}
                             type="password"
-                            placeholder="Password"
                         />
                     )}
                 </FormItem>
 
-                <Link to='/reset_password'>
-                    Forgot password
+
+
+                <Link to='/reset_password' className={styles.reset}>
+                    Забыл пароль
                 </Link>
 
-                <Button
-                    type="primary"
-                    htmlType="submit"
-                    className={styles.loginFormButton}
-                >
-                    Log in
-                </Button>
 
-                Or <Link to='/registration'>register now!</Link>
+
+
+                <div className={styles.actions}>
+                    <Link to='/registration' className={styles.registration}>Регистрация</Link>
+
+                    <Button
+                        type="primary"
+                        htmlType="submit"
+                        className={styles.loginFormButton}
+                    >
+                        Войти
+                    </Button>
+                </div>
+
+
+
+
 
             </Form>
         );

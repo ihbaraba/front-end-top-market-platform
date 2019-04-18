@@ -6,12 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import configureStore from './store';
+import {PersistGate} from 'redux-persist/integration/react';
 
 render(
-    <Provider store={configureStore()}>
-        <Router>
-            <App/>
-        </Router>
+    <Provider store={configureStore().store}>
+        <PersistGate loading={null} persistor={configureStore().persistor}>
+            <Router>
+                <App/>
+            </Router>
+        </PersistGate>
     </Provider>,
     document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change

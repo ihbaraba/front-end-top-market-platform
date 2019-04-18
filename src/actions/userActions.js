@@ -10,10 +10,19 @@ import {
 } from '../constants/APIURLS';
 
 
-export const login = user => {
+export const login = (user) => dispatch => {
+    // console.log("login_request this.props", this.props);
     return api('post', LOGIN, user)
         .then(res => {
-            sessionStorage.setItem('token', res.access)
+            sessionStorage.setItem('token', res.access);
+
+            getProfile()
+                .then(res => {
+                    dispatch({
+                        type: 'UPDATE_PROFILE',
+                        payload: res
+                    })
+                })
         })
 };
 
@@ -29,8 +38,14 @@ export const getProfile = user => {
     return api('get', PROFILE, user)
 };
 
-export const updateProfile = user => {
+export const updateProfile = user => dispatch => {
     return api('patch', PROFILE, user)
+        .then(res => {
+            dispatch({
+                type: 'UPDATE_PROFILE',
+                payload: res
+            })
+        })
 };
 
 export const changePassword = pass => {

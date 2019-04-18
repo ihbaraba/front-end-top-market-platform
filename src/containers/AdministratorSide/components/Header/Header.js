@@ -1,40 +1,44 @@
 import React, {Component} from 'react'
-import { Menu, Dropdown, Icon } from 'antd';
-import { Link } from 'react-router-dom'
+import {Menu, Dropdown, Icon} from 'antd';
+import {Link} from 'react-router-dom'
 import styles from './Header.module.css'
 import 'antd/dist/antd.css';
 import logo from "../../../../img/logo.png";
-import  avatar  from "../../../../img/ava.png";
-import  notification  from "../../../../img/notification.svg";
-import  cart  from "../../../../img/cart.svg";
-import  dollar  from "../../../../img/dollar.svg";
-
-
+import avatar from "../../../../img/ava.png";
+import notification from "../../../../img/notification.svg";
+import cart from "../../../../img/cart.svg";
+import dollar from "../../../../img/dollar.svg";
+import {connect} from "react-redux";
 
 
 class Header extends Component {
+    state = {
+        firstName: 'User'
+    };
+
 
     handleLogout = () => {
         sessionStorage.removeItem('token');
     };
 
     render() {
-        const menu = (
-            <Menu>
-                <Menu.Item>
-                    <Link to="/admin/profile_settings">Настройки профиля</Link>
-                </Menu.Item>
-                <Menu.Item>
-                    <Link to="/admin/company_settings">Настройки компании</Link>
-                </Menu.Item>
-                <Menu.Item>
-                    <Link to="/admin/employees">Сотрудники</Link>
-                </Menu.Item>
-                <Menu.Item onClick={this.handleLogout}>
-                    <Link to="/">Выход</Link>
-                </Menu.Item>
-            </Menu>
-        );
+        const {user} = this.props,
+            menu = (
+                <Menu>
+                    <Menu.Item>
+                        <Link to="/admin/profile_settings">Настройки профиля</Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Link to="/admin/company_settings">Настройки компании</Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Link to="/admin/employees">Сотрудники</Link>
+                    </Menu.Item>
+                    <Menu.Item onClick={this.handleLogout}>
+                        <Link to="/">Выход</Link>
+                    </Menu.Item>
+                </Menu>
+            );
         return (
             <div className='container'>
                 <header>
@@ -75,7 +79,7 @@ class Header extends Component {
                         </div>
                         <Dropdown overlay={menu}>
                             <a className="ant-dropdown-link" href="#">
-                                <span className={styles.name}>Назар</span><Icon type="down" />
+                                <span className={styles.name}>{user.firstName || 'User'}</span><Icon type="down"/>
                             </a>
                         </Dropdown>
                     </div>
@@ -85,4 +89,13 @@ class Header extends Component {
     }
 }
 
-export default Header
+
+const mapStateToProps = state => ({
+    user: state.user
+});
+
+const mapDispatchToProps = dispatch => ({
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
+

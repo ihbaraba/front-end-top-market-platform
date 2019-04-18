@@ -118,3 +118,9 @@ input[type=submit] {
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+.historyPage {
+    width: 100%;
+    padding: 25px;
+    background: #fff;
+}

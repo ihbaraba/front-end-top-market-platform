@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Form, Icon, Input, Button} from "antd";
 import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
 
 import styles from './Login.module.css';
 
@@ -16,7 +17,7 @@ class Login extends Component {
 
         this.props.form.validateFields((err, user) => {
             if (!err) {
-                login(user)
+                this.props.login(user)
                     .then(() => {
                         this.props.history.push('/admin/cabinet')
                     })
@@ -37,6 +38,7 @@ class Login extends Component {
                         <Link to='/registration'><button className={styles.regBtn}>Регистрация</button></Link>
                     </header>
                 </div>
+
                 <Form onSubmit={this.handleSubmit} className={styles.Form}>
                     <h3 className={styles.title}>Войти</h3>
                     <FormItem>
@@ -65,14 +67,9 @@ class Login extends Component {
                         )}
                     </FormItem>
 
-
-
                     <Link to='/reset_password' className={styles.reset}>
                         Забыл пароль
                     </Link>
-
-
-
 
                     <div className={styles.actions}>
                         <Link to='/registration' className={styles.registration}>Регистрация</Link>
@@ -85,11 +82,6 @@ class Login extends Component {
                             Войти
                         </Button>
                     </div>
-
-
-
-
-
                 </Form>
             </div>
 
@@ -99,4 +91,12 @@ class Login extends Component {
 
 const WrappedNormalLoginForm = Form.create()(Login);
 
-export default WrappedNormalLoginForm;
+
+const mapStateToProps = state => ({
+});
+
+const mapDispatchToProps = dispatch => ({
+    login: (user) => dispatch(login(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(WrappedNormalLoginForm);

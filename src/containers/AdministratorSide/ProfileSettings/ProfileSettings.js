@@ -1,11 +1,12 @@
 import React, {Component, Fragment} from 'react'
-import {Tabs, Table, Checkbox, Form, Icon, Input, Button} from 'antd';
+import {Tabs, Table, Checkbox, Form, Input, Button} from 'antd';
 import styles from './ProfileSettings.module.css'
 import defaultAvatar from "../../../img/avatar.png";
 import Dropzone from 'react-dropzone'
 import {Modal} from 'antd'
 
-import {getProfile, updateProfile, changePassword, registration} from '../../../actions/userActions';
+import {getProfile, updateProfile, changePassword, login} from '../../../actions/userActions';
+import {connect} from "react-redux";
 
 const TabPane = Tabs.TabPane,
     CheckboxGroup = Checkbox.Group,
@@ -123,7 +124,7 @@ class ProfileSettings extends Component {
 
         if (!this.state.updateImage) delete requestData.avatarImage;
 
-        await updateProfile({
+        await this.props.updateProfile({
             ...requestData,
             emailNotifications: emailNot,
             phoneNotifications: smsNot
@@ -350,9 +351,14 @@ class ProfileSettings extends Component {
 
 const WrappedNormalProfileForm = Form.create()(ProfileSettings);
 
+const mapStateToProps = state => ({
+});
 
-export default WrappedNormalProfileForm;
+const mapDispatchToProps = dispatch => ({
+    updateProfile: (user) => dispatch(updateProfile(user)),
+});
 
+export default connect(mapStateToProps, mapDispatchToProps)(WrappedNormalProfileForm);
 
 
 

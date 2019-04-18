@@ -1,12 +1,12 @@
 export default function userState(state = {}, action) {
     const {payload} = action;
+    console.log(action);
 
     switch (action.type) {
-        case 'LOGIN_REQUEST':
+        case 'UPDATE_PROFILE':
             return {
                 ...state,
-                // user: {...state.user, request: "sent"},
-                request: "sent",
+                ...payload
             };
 
         default:

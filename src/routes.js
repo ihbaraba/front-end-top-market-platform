@@ -22,6 +22,7 @@ import Lessons from "./containers/AdministratorSide/LearningModule/Lessons";
 import Instruction from "./containers/AdministratorSide/Instruction/Instruction";
 import Orders from "./containers/AdministratorSide/Orders/Orders";
 import ContractorProducts from "./containers/AdministratorSide/ContractorProducts/ContractorProducts";
+import DownloadHistory from "./containers/AdministratorSide/ContractorProducts/DownloadHistory";
 
 const Routes = () => {
     return (
@@ -51,7 +52,8 @@ const Routes = () => {
                       <Route path='/admin/instruction' component={Instruction}/>
                       <Route path='/admin/orders' component={Orders}/>
 
-                      <Route path='/admin/products' component={ContractorProducts}/>
+                      <Route exact path='/admin/products' component={ContractorProducts}/>
+                      <Route path='/admin/products/download_history' component={DownloadHistory}/>
                     </AdministratorSide>
                 )}>
                 </Route>

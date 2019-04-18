@@ -58,4 +58,6 @@ export const CONTRACTOR_PRODUCTS = 'catalog/contractor_products';
 
 export const UPLOAD_PRODUCTS = 'catalog/products_upload';
 
+export const DOWNLOADS_STATUS = 'catalog/yml-handler';
+
 

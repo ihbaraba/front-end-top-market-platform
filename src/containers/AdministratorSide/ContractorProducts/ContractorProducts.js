@@ -5,7 +5,7 @@ import {Table} from 'antd';
 import Dropzone from 'react-dropzone';
 import styles from './ContractorProducts.module.css'
 import CategoryList from "./CategoryList";
-import {getContractorProducts, uploadXls} from '../../../actions/products';
+import {getContractorProducts, uploadXls} from '../../../actions/productsActions';
 
 const columns = [
     {
@@ -112,6 +112,7 @@ class ContractorProducts extends Component {
                     <h3 className={styles.title}>Категории</h3>
                     <Link to="/admin/instruction" className={styles.howToAdd}>Как добавить товар?</Link>
                 </div>
+
                 <div className={styles.categories}>
                     <CategoryList/>
 
@@ -119,7 +120,7 @@ class ContractorProducts extends Component {
                         <div className={styles.actions}>
                             <button className={styles.addToMyProducts}>Добавить товар</button>
 
-                            <Dropzone onDrop={this.handleUploadFile} accept=".xls" multiple={false}>
+                            <Dropzone onDrop={this.handleUploadFile} accept=".xls, .xlsx" multiple={false}>
                                 {({getRootProps, getInputProps}) => (
                                     <div {...getRootProps({className: 'dropzone'})}>
                                         <input {...getInputProps()} />
@@ -128,10 +129,14 @@ class ContractorProducts extends Component {
                                 )}
                             </Dropzone>
 
-                            <div className={styles.search}>
-                                <input type="search" placeholder="Search"/>
-                                <input type="submit" value=" "/>
-                            </div>
+                            <button className={styles.downloadExel}
+                                    onClick={() => this.props.history.push('/admin/products/download_history')}>
+                                История загрузок
+                            </button>
+                            {/*<div className={styles.search}>*/}
+                            {/*<input type="search" placeholder="Search"/>*/}
+                            {/*<input type="submit" value=" "/>*/}
+                            {/*</div>*/}
                         </div>
 
                         <Table

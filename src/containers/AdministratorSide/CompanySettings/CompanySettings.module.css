@@ -2,6 +2,13 @@
     display: flex;
     justify-content: space-between;
 }
+.Form label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+}
 
 
 .firstColumn {
@@ -12,6 +19,9 @@
 .secondColumn {
     flex: 1;
     margin: 0 0 0 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .CheckboxGroup {
@@ -23,6 +33,9 @@
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
+    border-bottom: 1px solid #E2E2E2;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .documentBlock i {
@@ -30,6 +43,7 @@
     color: #4A90E2;
     cursor: pointer;
 }
+
 
 .title {
     color: #4A4A4A;
@@ -95,18 +109,20 @@
     margin-bottom: 21px;
     margin-top: 20px;
 }
-.type div {
-    display: flex;
+.type  {
+    /*display: flex;*/
+    margin-bottom: 30px;
 }
-.type div label {
+.type  label {
     color: #969696;
     font-family: Ubuntu;
     font-size: 16px;
     line-height: 10px;
     font-weight: normal;
     display: block;
+    margin-bottom: 17px !important;
 }
-.type div input[type=checkbox] {
+.type  input[type=checkbox] {
     margin-right: 19px;
     height: 15px;
     width: 15px;
@@ -160,9 +176,9 @@
 .left h4 {
     margin-bottom:35px;
 }
-.save {
+.loginFormButton {
     height: 40px;
-    width: 261px;
+    width: 311px;
     border-radius: 5px;
     background-color: #4A90E2;
     color: #FFFFFF;
@@ -175,9 +191,7 @@
 }
 
 .companyPage {
-    padding: 30px;
     background: #fff;
-    border: 1px solid #ECECEC;
     border-top: none;
     display: flex;
     justify-content: space-between;
@@ -191,6 +205,7 @@
     border-radius: 5px;
     resize: none;
     padding: 20px;
+    margin-right: 22px;
 }
 .companyPage .info  {
     width: 311px;
@@ -203,9 +218,7 @@
     margin-bottom: 20px;
 }
 .pitch {
-    padding: 30px 24px;
     background: #fff;
-    border: 1px solid #ECECEC;
     border-top: none;
 }
 .pitch label {
@@ -237,8 +250,19 @@
     flex-wrap: wrap;
     margin-bottom: 0;
 }
-.last .save {
+.save {
     margin-bottom: 15px;
+    height: 40px;
+    width: 260px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    display: block;
+    margin-left: auto;
 }
 
 .documents {
@@ -246,4 +270,44 @@
     padding: 30px 24px;
     border: 1px solid #ECECEC;
     border-top: none;
+}
+
+.documentTitle {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    margin-bottom: 15px;
+}
+.description {
+    color: #D3D3D3;
+    font-family: Ubuntu;
+    font-size: 18px;
+    line-height: 21px;
+}
+.information {
+    color: #D3D3D3;
+    font-family: Ubuntu;
+    font-size: 18px;
+    line-height: 21px;
+}
+.type .Checkbox {
+    margin-bottom: 17px;
+}
+.typeTitle {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    margin-bottom: 21px;
+}
+.sectionDescription {
+    color: #9B9B9B;
+    font-family: Ubuntu;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 45px;
+    display: block;
 }

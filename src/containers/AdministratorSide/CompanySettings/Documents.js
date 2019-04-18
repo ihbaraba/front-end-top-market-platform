@@ -92,13 +92,13 @@ class Documents extends Component {
 
         return (
             <div>
-                Изображение должно быть в форматах pdf. jpeg или png. размер файла до 2Мб
+                <h4 className={styles.information}>Изображение должно быть в форматах pdf. jpeg или png. размер файла до 2Мб</h4>
 
                 {documents.map((item) => (
                     <div key={item.typeDoc} className={styles.documentBlock}>
                         <div className="title">
-                            {item.title}
-                            <span className="description">{item.description}</span>
+                            <h6 className={styles.documentTitle}>{item.title}</h6>
+                            <span className={styles.description}>{item.description}</span>
                         </div>
 
                         <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">
@@ -118,7 +118,7 @@ class Documents extends Component {
                     </div>
                 ))}
 
-                <button onClick={this.handleUploadDocuments}>Сохранить</button>
+                <button onClick={this.handleUploadDocuments} className={styles.save}>Сохранить</button>
             </div>
         )
     }

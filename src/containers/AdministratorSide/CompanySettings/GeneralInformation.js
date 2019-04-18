@@ -100,9 +100,8 @@ class GeneralInformation extends Component {
             <Form onSubmit={this.handleUpdateCompanyProfile} className={styles.Form}>
                 <div className={styles.firstColumn}>
                     <div className='section-title'>
-                        Общая информация
-
-                        <span className='section-description'>
+                        <h3 className={styles.title}>Общая информация</h3>
+                        <span className={styles.sectionDescription}>
                             Эта информация нужна для начала работ. Ее будут видеть другие участники системы.
                         </span>
                     </div>
@@ -187,8 +186,8 @@ class GeneralInformation extends Component {
                         />
                     </FormItem>
 
-                    <div className={styles.CheckboxGroup}>
-                        <h3>Тип деятельности для розничной торговли:</h3>
+                    <div className={styles.CheckboxGroup, styles.type}>
+                        <h3 className={styles.typeTitle}>Тип деятельности для розничной торговли:</h3>
 
                         <Checkbox
                             checked={isInternetShop}
@@ -219,8 +218,8 @@ class GeneralInformation extends Component {
                     </div>
 
 
-                    <div className={styles.CheckboxGroup}>
-                        <h3>Тип деятельности для оптовой торговли:</h3>
+                    <div className={styles.CheckboxGroup, styles.type}>
+                        <h3 className={styles.typeTitle}>Тип деятельности для оптовой торговли:</h3>
 
                         <Checkbox
                             checked={distributor}
@@ -288,50 +287,50 @@ class GeneralInformation extends Component {
                 </div>
 
                 <div className={styles.secondColumn}>
-                    <div className='section-title'>
-                        Контактные данные
+                    <div>
+                        <div className='section-title'>
+                            <h3 className={styles.title}>Контактные данные</h3>
+                        </div>
+                        <FormItem>
+                            <label htmlFor="">Веб-сайт</label>
+                            <input
+                                type="text"
+                                name='webSite'
+                                value={webSite || ''}
+                                onChange={this.handleChangeInput}
+                            />
+                        </FormItem>
+
+                        <FormItem>
+                            <label htmlFor="">Телефон</label>
+                            <input
+                                type="text"
+                                name='phone'
+                                value={phone || ''}
+                                onChange={this.handleChangeInput}
+                            />
+                        </FormItem>
+
+                        <FormItem>
+                            <label htmlFor="">E-mail</label>
+                            <input
+                                type="text"
+                                name='email'
+                                value={email || ''}
+                                onChange={this.handleChangeInput}
+                            />
+                        </FormItem>
+
+                        <FormItem>
+                            <label htmlFor="">Кому видны контактные данные ?</label>
+                            <input
+                                type="text"
+                                name='whoSeeContact'
+                                value={whoSeeContact || ''}
+                                onChange={this.handleChangeInput}
+                            />
+                        </FormItem>
                     </div>
-
-                    <FormItem>
-                        <label htmlFor="">Веб-сайт</label>
-                        <input
-                            type="text"
-                            name='webSite'
-                            value={webSite || ''}
-                            onChange={this.handleChangeInput}
-                        />
-                    </FormItem>
-
-                    <FormItem>
-                        <label htmlFor="">Телефон</label>
-                        <input
-                            type="text"
-                            name='phone'
-                            value={phone || ''}
-                            onChange={this.handleChangeInput}
-                        />
-                    </FormItem>
-
-                    <FormItem>
-                        <label htmlFor="">E-mail</label>
-                        <input
-                            type="text"
-                            name='email'
-                            value={email || ''}
-                            onChange={this.handleChangeInput}
-                        />
-                    </FormItem>
-
-                    <FormItem>
-                        <label htmlFor="">Кому видны контактные данные ?</label>
-                        <input
-                            type="text"
-                            name='whoSeeContact'
-                            value={whoSeeContact || ''}
-                            onChange={this.handleChangeInput}
-                        />
-                    </FormItem>
-
 
                     <Button
                         type="primary"

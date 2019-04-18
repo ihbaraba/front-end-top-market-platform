@@ -45,7 +45,7 @@ class Registration extends Component {
                         <div className={styles.logo}>
                             <img src={logo} alt=""/>
                         </div>
-                        <Link to='/registration'><button className={styles.regBtn}>Регистрация</button></Link>
+                        <Link to='/'><button className={styles.regBtn}>Войти</button></Link>
                     </header>
                 </div>
                 <Form onSubmit={this.handleSubmit} className={styles.Form}>

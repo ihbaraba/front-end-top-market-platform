@@ -37,18 +37,17 @@ class AboutCompany extends Component {
         } = this.state;
 
         return (
-            <Form onSubmit={this.handleUpdateCompanyProfile} className={styles.Form}>
+            <Form onSubmit={this.handleUpdateCompanyProfile} className={styles.Form, styles.companyPage}>
                 <div style={{width: '90%'}}>
                     <textarea
                         type="text"
                         name='aboutCompany'
                         value={aboutCompany || ''}
-                        style={{width: '100%'}}
                         onChange={this.handleChangeInput}
                     />
                 </div>
-                <div>
-                    <span>Информация, которая будет отображена на странице компании, по адресу https://gofriends.pro/ru/company-marketplace-nazar-inc</span>
+                <div className={styles.info}>
+                    <p>Информация, которая будет отображена на странице компании, по адресу https://gofriends.pro/ru/company-marketplace-nazar-inc</p>
                     <Button
                         type="primary"
                         htmlType="submit"

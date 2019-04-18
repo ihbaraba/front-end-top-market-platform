@@ -45,7 +45,7 @@ class CompanyPitch extends Component {
         } = this.state;
 
         return (
-            <Form onSubmit={this.handleUpdateCompanyPitch} className={styles.Form}>
+            <Form onSubmit={this.handleUpdateCompanyPitch} className={styles.Form, styles.pitch}>
                 <div>
                     <FormItem>
                         <label htmlFor="">Кто вы?</label>

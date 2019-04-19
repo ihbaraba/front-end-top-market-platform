@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="" />
+    <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,14 +18,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LandingPage.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LandingPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-158">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            <state relative-caret-position="300">
+              <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LandingPage.module.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="APIURLS.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/constants/APIURLS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -55,6 +77,8 @@
       <find>auto</find>
       <find>categories</find>
       <find>Link</find>
+      <find>Войти</find>
+      <find>regBtn</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/containers</dir>
@@ -71,8 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/bin/universal-deploy.sh" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.docker/default.conf" />
         <option value="$PROJECT_DIR$/Dockerfile" />
@@ -82,7 +104,6 @@
         <option value="$USER_HOME$/Desktop/Новая папка/index.html" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ResetPassword/Reset.module.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ResetPassword/ResetPassword.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.module.css" />
         <option value="$PROJECT_DIR$/src/reducers/rootReducer.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/rootReducer.js" />
@@ -122,6 +143,9 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/CategoryList.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js" />
+        <option value="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" />
+        <option value="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css" />
       </list>
     </option>
   </component>
@@ -209,8 +233,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Header" type="462c0819:PsiDirectoryNode" />
+              <item name="Registration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
@@ -218,6 +241,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="UserSide" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="UserSide" type="462c0819:PsiDirectoryNode" />
+              <item name="LandingPage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -330,13 +361,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131121000" />
+    <option name="totallyTimeSpent" value="131925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48623854" visible="true" weight="0.20072332" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48623854" visible="true" weight="0.20072332" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -344,7 +375,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
       <window_info id="npm" order="2" sideWeight="0.51376146" side_tool="true" weight="0.20072332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32923076" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32923076" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
@@ -413,13 +444,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="add CI, add Dockerfile" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/Новая папка/russian_names.json" />
     <entry file="file://$USER_HOME$/Desktop/Новая папка/index.html" />
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ResetPassword/Reset.module.css">
@@ -518,13 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="102" column="50" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -564,6 +581,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -611,16 +631,6 @@
           <caret line="66" column="26" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -721,13 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/APIURLS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="53" column="46" lean-forward="true" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/productsActions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -755,13 +758,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-158">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        <state relative-caret-position="259">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/APIURLS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
         </state>
       </provider>
     </entry>

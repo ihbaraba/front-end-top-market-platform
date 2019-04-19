@@ -28,7 +28,7 @@ class Registration extends Component {
                         window.open(res.confirmUrl,'_blank');
                     })
                     .then(() => {
-                        this.props.history.push('/')
+                        this.props.history.push('/login')
                     })
             }
         });

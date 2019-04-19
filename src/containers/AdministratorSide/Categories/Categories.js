@@ -16,8 +16,8 @@ const columns = [
         dataIndex: 'brand',
     },
     {
-        title: 'Поставщик',
-        dataIndex: 'provider',
+        title: 'Количество',
+        dataIndex: 'count',
     },
     {
         title: 'Цена',
@@ -40,7 +40,7 @@ class Categories extends Component {
     getProducts = async () => {
         const res = await getAllProducts();
         this.setState({
-            products: res.result
+            products: res
         })
     };
 

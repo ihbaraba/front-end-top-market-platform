@@ -10,8 +10,6 @@ import  man  from "../../../img/man.png";
 import {Link} from "react-router-dom";
 
 
-
-
 class LandingPage extends Component {
     render() {
         return (
@@ -21,7 +19,9 @@ class LandingPage extends Component {
                         <a href="#" className={styles.logo}><img src={logo} alt="logo" />SMART Lead</a>
                         <div>
                             <a href="tel:+380931377674" className={styles.tel}>+38 (093) 137-76-74</a>
-                            <Link to='/registration'><button className={styles.regBtn}>Регистрация</button></Link>
+                            <Link to='/registration' className={styles.regBtn}>Регистрация</Link>
+
+                            <Link to='/login' className={styles.regBtn}>Войти</Link>
                         </div>
                     </div>
                 </header>

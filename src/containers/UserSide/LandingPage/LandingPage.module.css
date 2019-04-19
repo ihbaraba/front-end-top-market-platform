@@ -62,19 +62,16 @@ header .container {
     letter-spacing: 0.45px;
     line-height: 32px;
     text-align: center;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 .regBtn {
-    height: 40px;
-    width: 210px;
-    border-radius: 5px;
-    background-color: #4A90E2;
-    color: #FFFFFF;
+    color: #4A90E2;
     font-family: Ubuntu;
     font-size: 16px;
     font-weight: bold;
     line-height: 22px;
     text-align: center;
+    margin: 0 0 0 30px;
 }
 .btn {
     height: 60px;

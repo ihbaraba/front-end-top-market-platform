@@ -6,7 +6,8 @@ import {
     ALL_CATEGORIES,
     UPLOAD_PRODUCTS,
     DOWNLOADS_STATUS,
-    NEW_PRODUCTS
+    NEW_PRODUCTS,
+    ALL_PRODUCTS
 } from '../constants/APIURLS';
 
 
@@ -43,5 +44,5 @@ export const updateProduct = (product) => {
 
 //partner
 export const getAllProducts = () => {
-    return api('get', `${ALL_CATEGORIES}`)
+    return api('get', `${ALL_PRODUCTS}`)
 };

@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import {Link} from 'react-router-dom'
-import {Table} from 'antd';
+import {Table, Icon} from 'antd';
 import Dropzone from 'react-dropzone';
 import styles from './ContractorProducts.module.css'
 import CategoryList from "./CategoryList";
 import {getContractorProducts, uploadXls} from '../../../actions/productsActions';
+import NewProduct from "../components/Modal/NewProduct";
 
 const columns = [
     {
@@ -13,31 +14,37 @@ const columns = [
         dataIndex: 'name',
     },
     {
+        title: 'Код товара',
+        dataIndex: 'id',
+    },
+    {
         title: 'Бренд',
         dataIndex: 'brand',
     },
     {
-        title: 'Поставщик',
-        dataIndex: 'provider',
-    },
-    {
         title: 'Цена',
         dataIndex: 'price',
+        render: (price) => (
+            <span>{price} грн</span>
+        )
     },
     {
-        title: 'Address',
-        dataIndex: 'address',
+        title: 'Наличие',
+        dataIndex: 'count',
     },
     {
-        title: 'Address',
-        dataIndex: 'address',
+        title: '',
+        dataIndex: 'actions',
+        render: (e, product) => (
+            <Icon type="edit" theme="filled"/>
+        )
     }
 ];
 
 class ContractorProducts extends Component {
     state = {
         selectedRowKeys: [],
-        products: []
+        results: []
     };
 
     onSelectChange = (selectedRowKeys) => {
@@ -53,17 +60,21 @@ class ContractorProducts extends Component {
             file[0]
         );
         const res = await uploadXls(formData);
-        console.log(res);
+        this.getMyProducts()
     };
 
-    async componentDidMount() {
+    getMyProducts = async () => {
         const res = await getContractorProducts();
 
         this.setState(res)
+    };
+
+    componentDidMount() {
+        this.getMyProducts()
     }
 
     render() {
-        const {selectedRowKeys, products} = this.state;
+        const {selectedRowKeys, results} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -118,7 +129,9 @@ class ContractorProducts extends Component {
 
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
-                            <button className={styles.addToMyProducts}>Добавить товар</button>
+                            <NewProduct
+                                onUpdate={this.getMyProducts}
+                            />
 
                             <Dropzone onDrop={this.handleUploadFile} accept=".xls, .xlsx" multiple={false}>
                                 {({getRootProps, getInputProps}) => (
@@ -142,7 +155,7 @@ class ContractorProducts extends Component {
                         <Table
                             rowSelection={rowSelection}
                             columns={columns}
-                            dataSource={products}
+                            dataSource={results}
                         />
                     </div>
                 </div>

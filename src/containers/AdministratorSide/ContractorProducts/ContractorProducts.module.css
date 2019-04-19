@@ -18,8 +18,7 @@
     display: block;
 }
 .categoryList {
-    flex: 1;
-    width: auto;
+    width: 25%;
     border: 1px solid #ECECEC;
     border-radius: 5px;
     background-color: #FFFFFF;

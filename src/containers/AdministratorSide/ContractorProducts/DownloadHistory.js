@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import styles from './ContractorProducts.module.css';
 import {getDownloadsStatus} from '../../../actions/productsActions';
 
@@ -18,13 +18,19 @@ class DownloadHistory extends Component {
         const {results} = this.state;
 
         return (
-            <div className={styles.historyPage}>
-                {results.map(item => (
-                    <div>
-                        {item.description}
-                    </div>
-                ))}
-            </div>
+            <Fragment>
+                <div className={styles.top}>
+                    <h3 className={styles.title}></h3>
+                </div>
+
+                <div className={styles.historyPage}>
+                    {results.map(item => (
+                        <div>
+                            {item.description}
+                        </div>
+                    ))}
+                </div>
+            </Fragment>
         )
     }
 }

@@ -10,12 +10,10 @@ import  comment  from "../../../img/comments.svg";
 import 'react-daypicker/lib/DayPicker.css';
 import DayPicker from 'react-daypicker';
 import { Table} from 'antd';
-
+import {connect} from "react-redux";
 import { Modal } from 'antd'
-
-
-
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+
 const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400},];
 
 const dataSource = [{
@@ -49,25 +47,25 @@ const columns = [{
 
 class Cabinet extends Component {
 
-    state = { visible: false }
+    state = { visible: false };
 
     showModal = () => {
         this.setState({
             visible: true,
         });
-    }
+    };
 
     handleOk = (e) => {
         this.setState({
             visible: false,
         });
-    }
+    };
 
     handleCancel = (e) => {
         this.setState({
             visible: false,
         });
-    }
+    };
 
         render() {
         return (
@@ -99,53 +97,56 @@ class Cabinet extends Component {
                             </p>
                         </div>
                     </div>
-                    <div className={styles.chooseTariff}>
-                        <h3>Приобретите пакет</h3>
-                        <div className={styles.tariffsBox}>
-                            <div className={styles.tariffItem}>
-                                <div className={styles.tariffHead}>
-                                    <p>Базовый</p>
-                                    <p><span><span className={styles.tariffPrice}>35.000</span>грн</span></p>
+
+                    {this.props.user.role === 'CONTRACTOR' ? '' :
+                        <div className={styles.chooseTariff}>
+                            <h3>Приобретите пакет</h3>
+                            <div className={styles.tariffsBox}>
+                                <div className={styles.tariffItem}>
+                                    <div className={styles.tariffHead}>
+                                        <p>Базовый</p>
+                                        <p><span><span className={styles.tariffPrice}>35.000</span>грн</span></p>
+                                    </div>
+                                    <div className={styles.tariffBody}>
+                                        <ul>
+                                            <li>Полный доступ к платформе</li>
+                                            <li>Возможность неограниченно редактировать товары</li>
+                                            <li>Поддержка 24/7</li>
+                                            <li>Полный доступ к платформе</li>
+                                            <li>Возможность неограниченно редактировать товары</li>
+                                            <li>Поддержка 24/7</li>
+                                            <li>Полный доступ к платформе</li>
+                                            <li>Возможность неограниченно редактировать товары</li>
+                                        </ul>
+                                    </div>
+                                    <button  className={styles.buyBtn} onClick={this.showModal}>
+                                        Купить
+                                    </button>
                                 </div>
-                                <div className={styles.tariffBody}>
-                                    <ul>
-                                        <li>Полный доступ к платформе</li>
-                                        <li>Возможность неограниченно редактировать товары</li>
-                                        <li>Поддержка 24/7</li>
-                                        <li>Полный доступ к платформе</li>
-                                        <li>Возможность неограниченно редактировать товары</li>
-                                        <li>Поддержка 24/7</li>
-                                        <li>Полный доступ к платформе</li>
-                                        <li>Возможность неограниченно редактировать товары</li>
-                                    </ul>
+                                <div className={styles.tariffItem}>
+                                    <div className={styles.tariffHead}>
+                                        <p>Базовый</p>
+                                        <p><span><span className={styles.tariffPrice}>50.000</span>грн</span></p>
+                                    </div>
+                                    <div className={styles.tariffBody}>
+                                        <ul>
+                                            <li>Полный доступ к платформе</li>
+                                            <li>Возможность неограниченно редактировать товары</li>
+                                            <li>Поддержка 24/7</li>
+                                            <li>Полный доступ к платформе</li>
+                                            <li>Возможность неограниченно редактировать товары</li>
+                                            <li>Поддержка 24/7</li>
+                                            <li>Полный доступ к платформе</li>
+                                            <li>Возможность неограниченно редактировать товары</li>
+                                        </ul>
+                                    </div>
+                                    <button  className={styles.buyBtn} onClick={this.showModal}>
+                                        Купить
+                                    </button>
                                 </div>
-                                <button  className={styles.buyBtn} onClick={this.showModal}>
-                                    Купить
-                                </button>
-                            </div>
-                            <div className={styles.tariffItem}>
-                                <div className={styles.tariffHead}>
-                                    <p>Базовый</p>
-                                    <p><span><span className={styles.tariffPrice}>50.000</span>грн</span></p>
-                                </div>
-                                <div className={styles.tariffBody}>
-                                    <ul>
-                                        <li>Полный доступ к платформе</li>
-                                        <li>Возможность неограниченно редактировать товары</li>
-                                        <li>Поддержка 24/7</li>
-                                        <li>Полный доступ к платформе</li>
-                                        <li>Возможность неограниченно редактировать товары</li>
-                                        <li>Поддержка 24/7</li>
-                                        <li>Полный доступ к платформе</li>
-                                        <li>Возможность неограниченно редактировать товары</li>
-                                    </ul>
-                                </div>
-                                <button  className={styles.buyBtn} onClick={this.showModal}>
-                                    Купить
-                                </button>
                             </div>
                         </div>
-                    </div>
+                    }
                 </div>
                 {/*<div className={styles.userCard}>*/}
                     {/*<div className={styles.userContacts}>*/}
@@ -309,7 +310,17 @@ class Cabinet extends Component {
     }
 }
 
-export default Cabinet;
+
+
+
+const mapStateToProps = state => ({
+    user: state.user
+});
+
+const mapDispatchToProps = dispatch => ({
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cabinet);
 
 
 

@@ -2,8 +2,8 @@
     width: 226px;
     border: 1px solid #ECECEC;
     background: #fff;
-    height: calc(100% - 57px);
     min-height: 100%;
+    margin: 0 0 30px 0;
 }
 
 

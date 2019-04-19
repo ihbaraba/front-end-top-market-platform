@@ -151,3 +151,13 @@ a.active {
     background-color: #FFFFFF;
     /*margin-bottom: 42px;*/
 }
+
+/*modal*/
+
+.modal .ant-tabs-content {
+    padding: 0 16px !important;
+    border: 0 !important;
+}
+.modal .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+    border: 0 !important;
+}

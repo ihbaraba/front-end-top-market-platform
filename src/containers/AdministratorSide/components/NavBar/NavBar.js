@@ -14,6 +14,7 @@ import shopping from '../../../../img/shopping-bag.svg';
 import database from '../../../../img/database.svg';
 import services from '../../../../img/add-button-inside-black-circle.svg';
 import study from '../../../../img/teacher-reading.svg';
+import {connect} from "react-redux";
 
 
 const contractorMenu = [
@@ -105,17 +106,19 @@ const partnerMenu = [
 ];
 
 class NavBar extends Component {
+
     render() {
+        const navigation = this.props.user.role === 'CONTRACTOR' ? contractorMenu : partnerMenu;
 
         return (
             <div className={styles.navigationBar}>
-                {contractorMenu.map((item, index) => (
+                {navigation.map((item, index) => (
                     <NavLink
                         className={styles.menuItem}
                         key={index}
                         to={`/admin/${item.href}`}>
-                        <img src={item.icon} alt="" className={styles.icon} />
-                        <img src={item.activeIcon} alt="" className={styles.activeIcon} />
+                        <img src={item.icon} alt="" className={styles.icon}/>
+                        <img src={item.activeIcon} alt="" className={styles.activeIcon}/>
 
                         {item.title}
                     </NavLink>
@@ -126,4 +129,11 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar
+
+const mapStateToProps = state => ({
+    user: state.user
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

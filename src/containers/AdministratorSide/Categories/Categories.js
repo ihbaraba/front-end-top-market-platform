@@ -44,6 +44,10 @@ class Categories extends Component {
         })
     };
 
+    handleTableChange = (e) => {
+        console.log(e);
+    }
+
     async componentDidMount() {
         const res = await getAllCategories();
         this.setState({
@@ -88,6 +92,7 @@ class Categories extends Component {
                             rowSelection={rowSelection}
                             columns={columns}
                             dataSource={products}
+                            onChange={this.handleTableChange}
                         />
                     </div>
                 </div>

@@ -56,7 +56,7 @@ class Login extends Component {
                     </FormItem>
 
                     <FormItem>
-                        <label>Номер телефона</label>
+                        <label>Пароль</label>
                         {getFieldDecorator("password", {
                             rules: [{required: true, message: "Please input your Password!"}]
                         })(

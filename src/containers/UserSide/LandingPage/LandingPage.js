@@ -30,7 +30,7 @@ class LandingPage extends Component {
                         <div className={styles.left}>
                             <h3>Smart Lead 2.0</h3>
                             <p>Авторская система продаж</p>
-                            <a href="#" className={styles.btn}>CTAРТ</a>
+                            <Link to='/registration'><button className={styles.btn}>CTAРТ</button></Link>
                         </div>
                         <div className={styles.macbook}>
                             <img src={macbook} alt="macbook" />

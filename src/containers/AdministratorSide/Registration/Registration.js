@@ -38,14 +38,13 @@ class Registration extends Component {
         const {getFieldDecorator} = this.props.form;
 
         return (
-
             <div>
                 <div className='container'>
                     <header>
                         <div className={styles.logo}>
                             <img src={logo} alt=""/>
                         </div>
-                        <Link to='/'><button className={styles.regBtn}>Войти</button></Link>
+                        <Link to='/login'><button className={styles.regBtn}>Войти</button></Link>
                     </header>
                 </div>
                 <Form onSubmit={this.handleSubmit} className={styles.Form}>

@@ -60,6 +60,6 @@ export const UPLOAD_PRODUCTS = 'catalog/products_upload';
 
 export const NEW_PRODUCTS = 'catalog/contractor_products';
 
-export const DOWNLOADS_STATUS = 'catalog/yml-handler';
+export const DOWNLOADS_STATUS = 'catalog/contractor_products/upload_history';
 
 

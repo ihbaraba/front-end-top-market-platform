@@ -23,7 +23,8 @@ class NewProduct extends Component {
         category: '',
         description: '',
         price: '',
-        imageUrls: '',
+        imageUrls: [],
+        coverImages: [],
 
         visible: false,
         activeTabKey: '1'
@@ -48,12 +49,20 @@ class NewProduct extends Component {
         });
     };
 
-    onDrop = (file) => {
-        this.getBase64(file[0], (result) => {
-            this.setState({
-                coverImages: result,
-            })
+    onDrop = async (files) => {
+        let arrFiles = [];
+
+        await files.forEach(file => {
+            this.getBase64(file, (result) => {
+                arrFiles.push({
+                    imageDecoded: result
+                })
+            });
         });
+
+        this.setState({
+            coverImages: arrFiles
+        })
     };
 
     getBase64(file, cb) {

@@ -12,7 +12,7 @@ const http = (method, url, data, type) => {
     return new Promise((resolve, reject) => {
         axios({
             method: method,
-            url: `${BASE_URL}${url}/`,
+            url: `${BASE_URL}${url}`,
             data: data,
             headers: token ? {
                 'Content-Type': type || 'application/json',

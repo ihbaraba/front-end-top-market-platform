@@ -19,7 +19,7 @@ export const getContractorCategories = () => {
 };
 
 export const getAllCategories = () => {
-    return api('get', ALL_CATEGORIES)
+    return api('get', `${ALL_CATEGORIES}?page=1`)
 };
 
 export const uploadXls = (file) => {

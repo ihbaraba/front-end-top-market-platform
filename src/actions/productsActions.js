@@ -3,6 +3,7 @@ import api from './request';
 import {
     CONTRACTOR_PRODUCTS,
     CONTRACTOR_CATEGORIES,
+    ALL_CATEGORIES,
     UPLOAD_PRODUCTS,
     DOWNLOADS_STATUS,
     NEW_PRODUCTS
@@ -15,6 +16,10 @@ export const getContractorProducts = () => {
 
 export const getContractorCategories = () => {
     return api('get', CONTRACTOR_CATEGORIES)
+};
+
+export const getAllCategories = () => {
+    return api('get', ALL_CATEGORIES)
 };
 
 export const uploadXls = (file) => {

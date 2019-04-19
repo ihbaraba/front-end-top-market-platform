@@ -5,7 +5,7 @@ import {Modal} from 'antd';
 import styles from "../../MyProducts/MyProducts.module.css";
 import stylesModal from "./Modal.module.css";
 import {Tabs} from 'antd';
-import {createNewProduct} from '../../../../actions/productsActions';
+import {createNewProduct, getAllCategories} from '../../../../actions/productsActions';
 import Dropzone from 'react-dropzone';
 
 const TabPane = Tabs.TabPane;
@@ -27,7 +27,8 @@ class NewProduct extends Component {
         coverImages: [],
 
         visible: false,
-        activeTabKey: '1'
+        activeTabKey: '1',
+        categories: []
     };
 
     showModal = () => {
@@ -108,6 +109,15 @@ class NewProduct extends Component {
         });
     };
 
+    async componentDidMount() {
+        const res = await getAllCategories();
+
+        console.log(res);
+        this.setState({
+            categories: res.results
+        })
+    }
+
     render() {
         const {
             name,
@@ -118,6 +128,7 @@ class NewProduct extends Component {
             description,
             price,
             imageUrls,
+            categories,
             activeTabKey
         } = this.state;
         return (
@@ -194,9 +205,9 @@ class NewProduct extends Component {
                                     <div>
                                         <label>Выберите категорию для вашего товара</label>
                                         <select onChange={this.handleChangeSelect}>
-                                            <option value="1">Телефоны</option>
-                                            <option value="2">MP3</option>
-                                            <option value="3">Ноутбуки</option>
+                                            {categories.map(item => (
+                                                <option key={item.id} value={item.id}>{item.name}</option>
+                                            ))}
                                         </select>
                                     </div>
 

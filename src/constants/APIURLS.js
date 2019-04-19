@@ -58,6 +58,8 @@ export const CONTRACTOR_PRODUCTS = 'catalog/contractor_products';
 
 export const CONTRACTOR_CATEGORIES = 'catalog/contractor_products/contractor_categories';
 
+export const ALL_CATEGORIES = 'catalog/categories';
+
 export const UPLOAD_PRODUCTS = 'catalog/products_upload';
 
 export const NEW_PRODUCTS = 'catalog/contractor_products';

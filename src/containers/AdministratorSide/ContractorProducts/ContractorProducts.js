@@ -8,50 +8,12 @@ import CategoryList from "./CategoryList";
 import {getContractorProducts, uploadXls, getContractorCategories} from '../../../actions/productsActions';
 import NewProduct from "../components/Modal/NewProduct";
 
-const columns = [
-    {
-        title: 'Название товара',
-        dataIndex: 'name',
-        render: (name, item) => (
-            <span className={styles.productName}>
-                <img src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : ''} alt=""/>
-                {name}
-            </span>
-        )
-    },
-    {
-        title: 'Код товара',
-        dataIndex: 'id',
-    },
-    {
-        title: 'Бренд',
-        dataIndex: 'brand',
-    },
-    {
-        title: 'Цена',
-        dataIndex: 'price',
-        render: (price) => (
-            <span>{price} грн</span>
-        )
-    },
-    {
-        title: 'Наличие',
-        dataIndex: 'count',
-    },
-    {
-        title: '',
-        dataIndex: 'actions',
-        render: (e, product) => (
-            <Icon type="edit" theme="filled"/>
-        )
-    }
-];
-
 class ContractorProducts extends Component {
     state = {
         categories: [],
         selectedRowKeys: [],
-        products: []
+        products: [],
+        product: {}
     };
 
     onSelectChange = (selectedRowKeys) => {
@@ -85,55 +47,67 @@ class ContractorProducts extends Component {
         })
     };
 
+    openProduct = (product) => {
+        this.setState({
+            product: product
+        })
+    };
+
     componentDidMount() {
         this.getMyProducts();
         this.getCategories();
     }
 
     render() {
-        const {selectedRowKeys, products, categories} = this.state;
+        const {selectedRowKeys, products, categories, product} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
             hideDefaultSelections: true,
-            // selections: [{
-            //     key: 'all-data',
-            //     text: 'Select All Data',
-            //     onSelect: () => {
-            //         this.setState({
-            //             selectedRowKeys: [...Array(46).keys()], // 0...45
-            //         });
-            //     },
-            // }, {
-            //     key: 'odd',
-            //     text: 'Select Odd Row',
-            //     onSelect: (changableRowKeys) => {
-            //         let newSelectedRowKeys = [];
-            //         newSelectedRowKeys = changableRowKeys.filter((key, index) => {
-            //             if (index % 2 !== 0) {
-            //                 return false;
-            //             }
-            //             return true;
-            //         });
-            //         this.setState({selectedRowKeys: newSelectedRowKeys});
-            //     },
-            // }, {
-            //     key: 'even',
-            //     text: 'Select Even Row',
-            //     onSelect: (changableRowKeys) => {
-            //         let newSelectedRowKeys = [];
-            //         newSelectedRowKeys = changableRowKeys.filter((key, index) => {
-            //             if (index % 2 !== 0) {
-            //                 return true;
-            //             }
-            //             return false;
-            //         });
-            //         this.setState({selectedRowKeys: newSelectedRowKeys});
-            //     },
-            // }],
             onSelection: this.onSelection,
         };
 
+
+        const columns = [
+            {
+                title: 'Название товара',
+                dataIndex: 'name',
+                render: (name, item) => (
+                    <span className={styles.productName}>
+                <img src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : ''} alt=""/>
+                        {name}
+            </span>
+                )
+            },
+            {
+                title: 'Код товара',
+                dataIndex: 'id',
+            },
+            {
+                title: 'Бренд',
+                dataIndex: 'brand',
+            },
+            {
+                title: 'Цена',
+                dataIndex: 'price',
+                render: (price) => (
+                    <span>{price} грн</span>
+                )
+            },
+            {
+                title: 'Наличие',
+                dataIndex: 'count',
+            },
+            {
+                title: '',
+                dataIndex: 'actions',
+                render: (e, product) => (
+                    <Icon onClick={() => this.openProduct(product)} type="edit" theme="filled"/>
+                )
+            }
+        ];
+
+        console.log(product)
         return (
             <div>
                 <div className={styles.top}>
@@ -150,6 +124,8 @@ class ContractorProducts extends Component {
                         <div className={styles.actions}>
                             <NewProduct
                                 onUpdate={this.getMyProducts}
+                                product={product}
+                                update={product.id ? true : false}
                             />
 
                             <Dropzone onDrop={this.handleUploadFile} accept=".xls, .xlsx" multiple={false}>

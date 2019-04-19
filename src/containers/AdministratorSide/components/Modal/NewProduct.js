@@ -5,7 +5,7 @@ import {Modal} from 'antd';
 import styles from "../../MyProducts/MyProducts.module.css";
 import stylesModal from "./Modal.module.css";
 import {Tabs} from 'antd';
-import {createNewProduct, getAllCategories} from '../../../../actions/productsActions';
+import {createNewProduct, getAllCategories, updateProduct} from '../../../../actions/productsActions';
 import Dropzone from 'react-dropzone';
 
 const TabPane = Tabs.TabPane;
@@ -38,6 +38,7 @@ class NewProduct extends Component {
     };
 
     handleOk = (e) => {
+
         this.setState({
             visible: false,
         });
@@ -45,8 +46,19 @@ class NewProduct extends Component {
 
     handleCancel = (e) => {
         this.setState({
+            name: '',
+            brand: '',
+            vendorCode: '',
+            count: '',
+            category: '',
+            description: '',
+            price: '',
+            imageUrls: [],
+            coverImages: [],
+
             visible: false,
-            activeTabKey: '1'
+            activeTabKey: '1',
+            id: ''
         });
     };
 
@@ -78,6 +90,8 @@ class NewProduct extends Component {
     }
 
     handleChangeInput = ({target: {value, name}}) => {
+        console.log(value);
+        console.log(name);
         this.setState({
             [name]: value
         })
@@ -94,32 +108,47 @@ class NewProduct extends Component {
         const res = await createNewProduct(this.state);
         this.props.onUpdate();
 
-        this.handleOk();
-        this.setState({
-            name: '',
-            brand: '',
-            vendorCode: '',
-            count: '',
-            category: '',
-            description: '',
-            price: '',
-
-            visible: false,
-            activeTabKey: '1'
-        });
+        this.handleCancel();
     };
+
+    updateProduct = async () => {
+        await updateProduct(this.state);
+
+        this.props.onUpdate();
+    };
+
+    // static getDerivedStateFromProps(nextProps, prevState) {
+    //     console.log(prevState);
+    //     console.log(nextProps);
+    //     if (nextProps.update) {
+    //         return {
+    //             ...nextProps.product,
+    //             visible: true
+    //         };
+    //     }
+    //     else return null;
+    // }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.update) {
+            this.setState({
+                ...nextProps.product,
+                visible: true
+            })
+        }
+    }
 
     async componentDidMount() {
         const res = await getAllCategories();
-
         console.log(res);
         this.setState({
-            categories: res.results
+            categories: res
         })
     }
 
     render() {
         const {
+            id,
             name,
             brand,
             vendorCode,
@@ -131,6 +160,7 @@ class NewProduct extends Component {
             categories,
             activeTabKey
         } = this.state;
+
         return (
             <div>
                 <button className={styles.actbtn} onClick={this.showModal}>Добавить товар</button>
@@ -193,10 +223,17 @@ class NewProduct extends Component {
                                         />
                                     </div>
 
-                                    <button type='button' className={styles.save}
-                                            onClick={() => this.setState({activeTabKey: '2'})}>
-                                        Далее
-                                    </button>
+                                    {id ?
+                                        <button type='button' className={styles.save}
+                                                onClick={this.updateProduct}>
+                                            Сохранить
+                                        </button>
+                                        :
+                                        <button type='button' className={styles.save}
+                                                onClick={() => this.setState({activeTabKey: '2'})}>
+                                            Далее
+                                        </button>
+                                    }
                                 </form>
                             </TabPane>
 

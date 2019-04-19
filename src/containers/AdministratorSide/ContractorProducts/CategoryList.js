@@ -19,10 +19,11 @@ const CategoryList = ({categories}) => {
         <Menu onClick={handleClick} className={styles.categoryList}>
             {categories.map(category => (
                 <SubMenu key={category.id} title={<span>{category.name}</span>}>
-                    <Menu.Item key="9">Option 9</Menu.Item>
-                    <Menu.Item key="10">Option 10</Menu.Item>
-                    <Menu.Item key="11">Option 11</Menu.Item>
-                    <Menu.Item key="12">Option 12</Menu.Item>
+                    {category.subcategories ? category.subcategories.map(item => (
+                        <Menu.Item key={item.id}>
+                            {item.name}
+                            </Menu.Item>
+                    )) : ''}
                 </SubMenu>
             ))}
         </Menu>

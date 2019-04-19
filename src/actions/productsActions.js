@@ -10,6 +10,12 @@ import {
 } from '../constants/APIURLS';
 
 
+
+export const getAllCategories = () => {
+    return api('get', `${ALL_CATEGORIES}`)
+};
+
+//Contractor
 export const getContractorProducts = () => {
     return api('get', CONTRACTOR_PRODUCTS)
 };
@@ -18,9 +24,6 @@ export const getContractorCategories = () => {
     return api('get', CONTRACTOR_CATEGORIES)
 };
 
-export const getAllCategories = () => {
-    return api('get', `${ALL_CATEGORIES}?page=1`)
-};
 
 export const uploadXls = (file) => {
     return api('post', UPLOAD_PRODUCTS, file)
@@ -32,4 +35,13 @@ export const getDownloadsStatus = () => {
 
 export const createNewProduct = (product) => {
     return api('post', NEW_PRODUCTS, product)
+};
+
+export const updateProduct = (product) => {
+    return api('patch', `${NEW_PRODUCTS}${product.id}/`, product)
+};
+
+//partner
+export const getAllProducts = () => {
+    return api('get', `${ALL_CATEGORIES}`)
 };

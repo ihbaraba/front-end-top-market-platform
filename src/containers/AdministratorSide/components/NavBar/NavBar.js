@@ -76,7 +76,7 @@ const partnerMenu = [
     {
         title: 'Мои заказы',
         icon: list,
-        href: '',
+        href: 'orders',
     },
     {
         title: 'Финансы',

@@ -12,6 +12,12 @@ const columns = [
     {
         title: 'Название товара',
         dataIndex: 'name',
+        render: (name, item) => (
+            <span className={styles.productName}>
+                <img src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : ''} alt=""/>
+                {name}
+            </span>
+        )
     },
     {
         title: 'Код товара',

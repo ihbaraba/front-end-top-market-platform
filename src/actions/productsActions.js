@@ -2,6 +2,7 @@ import api from './request';
 
 import {
     CONTRACTOR_PRODUCTS,
+    CONTRACTOR_CATEGORIES,
     UPLOAD_PRODUCTS,
     DOWNLOADS_STATUS,
     NEW_PRODUCTS
@@ -10,6 +11,10 @@ import {
 
 export const getContractorProducts = () => {
     return api('get', CONTRACTOR_PRODUCTS)
+};
+
+export const getContractorCategories = () => {
+    return api('get', CONTRACTOR_CATEGORIES)
 };
 
 export const uploadXls = (file) => {

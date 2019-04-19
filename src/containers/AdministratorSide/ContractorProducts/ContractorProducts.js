@@ -5,7 +5,7 @@ import {Table, Icon} from 'antd';
 import Dropzone from 'react-dropzone';
 import styles from './ContractorProducts.module.css'
 import CategoryList from "./CategoryList";
-import {getContractorProducts, uploadXls} from '../../../actions/productsActions';
+import {getContractorProducts, uploadXls, getContractorCategories} from '../../../actions/productsActions';
 import NewProduct from "../components/Modal/NewProduct";
 
 const columns = [
@@ -49,8 +49,9 @@ const columns = [
 
 class ContractorProducts extends Component {
     state = {
+        categories: [],
         selectedRowKeys: [],
-        results: []
+        products: []
     };
 
     onSelectChange = (selectedRowKeys) => {
@@ -69,18 +70,28 @@ class ContractorProducts extends Component {
         this.getMyProducts()
     };
 
+    getCategories = async () => {
+        const res = await getContractorCategories();
+
+        this.setState({
+            categories: res
+        })
+    };
     getMyProducts = async () => {
         const res = await getContractorProducts();
 
-        this.setState(res)
+        this.setState({
+            products: res.results
+        })
     };
 
     componentDidMount() {
-        this.getMyProducts()
+        this.getMyProducts();
+        this.getCategories();
     }
 
     render() {
-        const {selectedRowKeys, results} = this.state;
+        const {selectedRowKeys, products, categories} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -131,7 +142,9 @@ class ContractorProducts extends Component {
                 </div>
 
                 <div className={styles.categories}>
-                    <CategoryList/>
+                    <CategoryList
+                        categories={categories}
+                    />
 
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
@@ -161,7 +174,7 @@ class ContractorProducts extends Component {
                         <Table
                             rowSelection={rowSelection}
                             columns={columns}
-                            dataSource={results}
+                            dataSource={products}
                         />
                     </div>
                 </div>

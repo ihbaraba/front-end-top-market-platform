@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {Route, Switch} from 'react-router-dom';
 
 import AdministratorSide from './containers/AdministratorSide/AdministratorSide';
+import UserSide from './containers/UserSide/UserSide';
 import Cabinet from "./containers/AdministratorSide/Cabinet/Cabinet";
 import KnowledgeBase from "./containers/AdministratorSide/KnowledgeBase/KnowledgeBase";
 import ProfileSettings from "./containers/AdministratorSide/ProfileSettings/ProfileSettings";
@@ -22,12 +23,14 @@ import Lessons from "./containers/AdministratorSide/LearningModule/Lessons";
 import Instruction from "./containers/AdministratorSide/Instruction/Instruction";
 import Orders from "./containers/AdministratorSide/Orders/Orders";
 import ContractorProducts from "./containers/AdministratorSide/ContractorProducts/ContractorProducts";
+import LandingPage from "./containers/UserSide/LandingPage/LandingPage";
 
 const Routes = () => {
     return (
         <Fragment>
             <Switch>
-                <Route exact path='/' component={Login}/>
+                <Route exact path='/' component={LandingPage}/>
+                <Route exact path='/login' component={Login}/>
                 <Route path='/registration' component={Registration}/>
                 <Route path='/reset_password' component={ResetPassword}/>
                 <Route path='/confirm_email' component={ConfirmRegistration}/>
@@ -60,6 +63,7 @@ const Routes = () => {
                 {/*<Route path='' render={() => (*/}
                     {/*<UserSide>*/}
                        {/*/!*<Route exact path='/' component={HomePage}/>*!/*/}
+                       {/*<Route path='/' component={LandingPage}/>*/}
                     {/*</UserSide>*/}
                 {/*)}>*/}
                 {/*</Route>*/}

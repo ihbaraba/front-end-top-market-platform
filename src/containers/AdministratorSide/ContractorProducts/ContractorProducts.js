@@ -5,6 +5,7 @@ import {Table} from 'antd';
 import styles from './ContractorProducts.module.css'
 import CategoryList from "./CategoryList";
 import {getContractorProducts, uploadXls} from '../../../actions/products';
+import NewProduct from "../MyProducts/MyProducts";
 
 const columns = [
     {
@@ -110,6 +111,7 @@ class ContractorProducts extends Component {
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
                             <button className={styles.addToMyProducts}>Добавить товар</button>
+                            {/*<NewProduct/>*/}
                             <button className={styles.downloadExel}>Загрузить Exel файл</button>
                             <div className={styles.search}>
                                 <input type="search" placeholder="Search"/>

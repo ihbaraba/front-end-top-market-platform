@@ -23,6 +23,9 @@ class GeneralInformation extends Component {
         name: '',
         officialRepresentative: false,
         phone: '',
+        activityArea: 1,
+        serviceIndustry: 1,
+        companyType: 1,
         retailNetwork: false,
         subDealer: false,
         town: '',
@@ -30,7 +33,6 @@ class GeneralInformation extends Component {
         webSite: '',
         whoSeeContact: '',
         workingConditions: '',
-        activityArea: ''
     };
 
     handleUpdateCompanyProfile = e => {
@@ -52,6 +54,7 @@ class GeneralInformation extends Component {
     };
 
     handleChangeSelect = (value, name) => {
+        console.log(value);
         this.setState({
             [name]: value
         })
@@ -90,6 +93,9 @@ class GeneralInformation extends Component {
             subDealer,
             exporter,
             officialRepresentative,
+            activityArea,
+            serviceIndustry,
+            companyType,
 
             activityAreaOptions = [],
             companyTypeOptions = [],
@@ -119,9 +125,9 @@ class GeneralInformation extends Component {
                     <FormItem>
                         <label htmlFor="">Сферы деятельности</label>
 
-                        <Select onChange={e => this.handleChangeSelect(e, 'activityArea')}>
+                        <Select onChange={e => this.handleChangeSelect(e, 'activityArea')} required  value={activityArea}>
                             {activityAreaOptions.map(item => (
-                                <Option value={item.name}>{item.name}</Option>
+                                <Option key={item.id} value={item.id}>{item.name}</Option>
                             ))}
                         </Select>
                     </FormItem>
@@ -129,9 +135,9 @@ class GeneralInformation extends Component {
                     <FormItem>
                         <label htmlFor="">Сферы услуг</label>
 
-                        <Select onChange={e => this.handleChangeSelect(e, 'serviceIndustry')}>
+                        <Select onChange={e => this.handleChangeSelect(e, 'serviceIndustry')} required value={serviceIndustry}>
                             {serviceIndustryOptions.map(item => (
-                                <Option value={item.name}>{item.name}</Option>
+                                <Option key={item.id} value={item.id}>{item.name}</Option>
                             ))}
                         </Select>
                     </FormItem>
@@ -159,9 +165,9 @@ class GeneralInformation extends Component {
                     <FormItem>
                         <label htmlFor="">Тип компании</label>
 
-                        <Select onChange={e => this.handleChangeSelect(e, 'companyType')}>
+                        <Select onChange={e => this.handleChangeSelect(e, 'companyType')} required value={companyType}>
                             {companyTypeOptions.map(item => (
-                                <Option value={item.name}>{item.name}</Option>
+                                <Option key={item.id}  value={item.id}>{item.name}</Option>
                             ))}
                         </Select>
                     </FormItem>

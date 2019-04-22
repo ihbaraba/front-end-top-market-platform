@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {Table} from 'antd';
 import styles from './Categories.module.css'
 import CategoryList from "./CategoryList";
-import {getAllProducts, getAllCategories} from '../../../actions/productsActions';
+import {getAllProducts, getAllCategories, copyProducts} from '../../../actions/productsActions';
 
 const columns = [
     {
@@ -44,14 +44,34 @@ class Categories extends Component {
         })
     };
 
+    handleTableChange = (e) => {
+        console.log(e);
+    };
+
+    handleCopyProducts = async () => {
+        let arr = [];
+
+        await this.state.selectedRowKeys.forEach(item => {
+            arr.push(this.state.products[item].id)
+        });
+
+        await copyProducts({
+            productListIds: arr
+        });
+
+        this.setState({
+            selectedRowKeys: []
+        });
+    };
+
     async componentDidMount() {
+        this.getProducts();
+
         const res = await getAllCategories();
         this.setState({
             categories: res
         });
-
-        this.getProducts();
-    }
+    };
 
 
     render() {
@@ -76,7 +96,12 @@ class Categories extends Component {
 
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
-                            <button className={styles.addToMyProducts}>Добавить в мои товары</button>
+                            <button
+                                disabled={selectedRowKeys.length === 0}
+                                className='btn'
+                                onClick={this.handleCopyProducts}>
+                                Добавить в мои товары
+                            </button>
                             {/*<button className={styles.downloadExel}>Загрузить Exel файл</button>*/}
                             <div className={styles.search}>
                                 <input type="search" placeholder="Search"/>
@@ -88,6 +113,7 @@ class Categories extends Component {
                             rowSelection={rowSelection}
                             columns={columns}
                             dataSource={products}
+                            onChange={this.handleTableChange}
                         />
                     </div>
                 </div>

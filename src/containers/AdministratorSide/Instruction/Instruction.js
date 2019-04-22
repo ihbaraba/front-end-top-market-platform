@@ -8,6 +8,9 @@ import  img4  from "../../../img/img4.png";
 import  img5  from "../../../img/img5.png";
 import  img6  from "../../../img/img6.png";
 import  img7  from "../../../img/img7.png";
+import  img8  from "../../../img/Screenshot.png";
+
+import file from '../../../img/example_product.xlsx';
 
 class Instruction extends Component {
 
@@ -68,6 +71,14 @@ class Instruction extends Component {
                     <div className={styles.img7}>
                         <img src={img7} alt="img7"/>
                     </div>
+
+                    <h3 className={styles.title} style={{margin: '30px 0 0 0'}}>Добавить товары из таблицы</h3>
+                    <div className={styles.img7}>
+                        <img src={img8} alt="img7"/>
+                    </div>
+
+                    <a href={file} className={styles.link}>Скачать пример файла</a>
+
                 </div>
             </div>
         );

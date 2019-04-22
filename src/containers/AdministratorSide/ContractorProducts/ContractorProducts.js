@@ -5,7 +5,12 @@ import {Table, Icon} from 'antd';
 import Dropzone from 'react-dropzone';
 import styles from './ContractorProducts.module.css'
 import CategoryList from "./CategoryList";
-import {getContractorProducts, uploadXls, getContractorCategories} from '../../../actions/productsActions';
+import {
+    getContractorProducts,
+    uploadXls,
+    getContractorCategories,
+    removeContractorProduct
+} from '../../../actions/productsActions';
 import NewProduct from "../components/Modal/NewProduct";
 
 class ContractorProducts extends Component {
@@ -13,7 +18,10 @@ class ContractorProducts extends Component {
         categories: [],
         selectedRowKeys: [],
         products: [],
-        product: {}
+        product: {},
+
+        count: 0,
+        currentPage: 1
     };
 
     onSelectChange = (selectedRowKeys) => {
@@ -28,8 +36,8 @@ class ContractorProducts extends Component {
             'xls_file',
             file[0]
         );
-        const res = await uploadXls(formData);
-        this.getMyProducts()
+        await uploadXls(formData);
+        this.handleUpdate();
     };
 
     getCategories = async () => {
@@ -39,12 +47,35 @@ class ContractorProducts extends Component {
             categories: res
         })
     };
+
+    handleRemoveProducts = async () => {
+        let idArr = [];
+        await this.state.selectedRowKeys.forEach(item => {
+            idArr.push(this.state.products[item].id)
+        });
+
+        console.log(idArr);
+        await removeContractorProduct({productListIds: idArr});
+
+        this.handleUpdate()
+    };
+
     getMyProducts = async () => {
-        const res = await getContractorProducts();
+        const {currentPage} = this.state;
+
+        const url = `?page=${currentPage}`;
+        const res = await getContractorProducts(url);
 
         this.setState({
-            products: res.results
+            products: res.results,
+            count: res.count
         })
+    };
+
+    handleChangeTable = ({current}) => {
+        this.setState({
+            currentPage: current
+        }, () => this.getMyProducts())
     };
 
     openProduct = (product) => {
@@ -53,13 +84,22 @@ class ContractorProducts extends Component {
         })
     };
 
+    handleUpdate = () => {
+        this.getMyProducts();
+        this.getCategories();
+        this.setState({
+            selectedRowKeys: [],
+            product: {}
+        })
+    }
+
     componentDidMount() {
         this.getMyProducts();
         this.getCategories();
     }
 
     render() {
-        const {selectedRowKeys, products, categories, product} = this.state;
+        const {selectedRowKeys, products, categories, product, count, currentPage} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -107,9 +147,16 @@ class ContractorProducts extends Component {
             }
         ];
 
-        console.log(product)
+        const config = {
+            pagination: {
+                pageSize: 10,
+                total: count,
+                current: currentPage
+            }
+        };
+
         return (
-            <div>
+            <div className={styles.Page}>
                 <div className={styles.top}>
                     <h3 className={styles.title}>Категории</h3>
                     <Link to="/admin/instruction" className={styles.howToAdd}>Как добавить товар?</Link>
@@ -123,7 +170,7 @@ class ContractorProducts extends Component {
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
                             <NewProduct
-                                onUpdate={this.getMyProducts}
+                                onUpdate={this.handleUpdate}
                                 product={product}
                                 update={product.id ? true : false}
                             />
@@ -141,17 +188,21 @@ class ContractorProducts extends Component {
                                     onClick={() => this.props.history.push('/admin/products/download_history')}>
                                 История загрузок
                             </button>
-                            {/*<div className={styles.search}>*/}
-                            {/*<input type="search" placeholder="Search"/>*/}
-                            {/*<input type="submit" value=" "/>*/}
-                            {/*</div>*/}
+
                         </div>
 
                         <Table
+                            {...config}
                             rowSelection={rowSelection}
                             columns={columns}
                             dataSource={products}
+                            onChange={this.handleChangeTable}
                         />
+
+                        <button className={`btn-remove ${styles.removeBtn}`}
+                                onClick={this.handleRemoveProducts}>
+                            Удалить товары
+                        </button>
                     </div>
                 </div>
             </div>

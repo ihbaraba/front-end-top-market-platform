@@ -77,7 +77,7 @@ class Instruction extends Component {
                         <img src={img8} alt="img7"/>
                     </div>
 
-                    <a href={file} className={styles.link}>Скачать пример</a>
+                    <a href={file} className={styles.link}>Скачать пример файла</a>
 
                 </div>
             </div>

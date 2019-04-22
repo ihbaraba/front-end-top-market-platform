@@ -57,11 +57,11 @@ class Categories extends Component {
 
         await copyProducts({
             productListIds: arr
-        })
+        });
 
         this.setState({
             selectedRowKeys: []
-        })
+        });
     };
 
     async componentDidMount() {

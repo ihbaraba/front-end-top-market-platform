@@ -143,6 +143,21 @@ a.active {
     /*line-height: 0;*/
 }
 
+.btn {
+}
+
+.btn-remove {
+    border-radius: 5px;
+    background-color: #e20013;
+    padding: 10px 15px;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-right: 20px;
+}
+
 .ant-select-selection--single {
     height: 46px;
     width: 630px;

@@ -18,6 +18,37 @@ class Documents extends Component {
 
     onDrop = async (files) => {
         const typeDoc = this.state.type;
+        let uploadType = '';
+
+        switch (typeDoc) {
+            case 'passport':
+                uploadType = 'passDocDecoded';
+                break;
+
+            case 'ukStatistic':
+                uploadType = 'ukDoc';
+                break;
+
+            case 'certificate':
+                uploadType = 'certDoc';
+                break;
+
+            case 'taxPayer':
+                uploadType = 'taxDoc';
+                break;
+
+            case 'payerRegister':
+                uploadType = 'payerRegDoc';
+                break;
+
+            case 'payerCertificate':
+                uploadType = 'payerCertDoc';
+                break;
+
+            default:
+                break
+        }
+
         let arrFiles = [];
 
         await files.forEach(file => {
@@ -28,7 +59,7 @@ class Documents extends Component {
 
 
         this.setState({
-            [typeDoc]: arrFiles
+            [typeDoc]: {[uploadType]: arrFiles}
         })
     };
 
@@ -92,7 +123,8 @@ class Documents extends Component {
 
         return (
             <div>
-                <h4 className={styles.information}>Изображение должно быть в форматах pdf. jpeg или png. размер файла до 2Мб</h4>
+                <h4 className={styles.information}>Изображение должно быть в форматах pdf. jpeg или png. размер файла до
+                    2Мб</h4>
 
                 {documents.map((item) => (
                     <div key={item.typeDoc} className={styles.documentBlock}>

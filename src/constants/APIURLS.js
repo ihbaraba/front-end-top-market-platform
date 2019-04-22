@@ -60,12 +60,19 @@ export const ALL_PRODUCTS = 'catalog/partner_products/products_by_contractors/';
 
 export const CONTRACTOR_CATEGORIES = 'catalog/contractor_products/contractor_categories/';
 
-export const ALL_CATEGORIES = 'catalog/categories/first_level/';
-
 export const UPLOAD_PRODUCTS = 'catalog/products_upload/';
+
+export const REMOVE_CONTRACTOR_PRODUCTS = 'catalog/contractor_products/delete_list_of_products/';
 
 export const NEW_PRODUCTS = 'catalog/contractor_products/';
 
 export const DOWNLOADS_STATUS = 'catalog/contractor_products/upload_history/';
+
+//CATEGORIES
+export const ALL_CATEGORIES = 'catalog/categories/';
+
+export const FIRST_LEVEL_CATEGORIES = 'catalog/categories/first_level/';
+
+
 
 

@@ -1,11 +1,14 @@
 import React, {Component} from 'react'
-// import styles from './MyProducts.module.css'
 import 'antd/dist/antd.css';
-import {Modal} from 'antd';
+import {Modal, Cascader, Tabs} from 'antd';
 import styles from "../../MyProducts/MyProducts.module.css";
 import stylesModal from "./Modal.module.css";
-import {Tabs} from 'antd';
-import {createNewProduct, getAllCategories, updateProduct} from '../../../../actions/productsActions';
+import {
+    createNewProduct,
+    getFirstLevelCategories,
+    updateProduct,
+    getCategoriesById
+} from '../../../../actions/productsActions';
 import Dropzone from 'react-dropzone';
 
 const TabPane = Tabs.TabPane;
@@ -28,7 +31,8 @@ class NewProduct extends Component {
 
         visible: false,
         activeTabKey: '1',
-        categories: []
+        categories: [],
+        selectedCategories: []
     };
 
     showModal = () => {
@@ -58,7 +62,8 @@ class NewProduct extends Component {
 
             visible: false,
             activeTabKey: '1',
-            id: ''
+            id: '',
+            selectedCategories: []
         });
     };
 
@@ -96,11 +101,6 @@ class NewProduct extends Component {
             [name]: value
         })
     };
-    handleChangeSelect = (e) => {
-        this.setState({
-            category: e.target.value
-        })
-    };
 
     handleCreateProduct = async (e) => {
         e.preventDefault();
@@ -115,19 +115,15 @@ class NewProduct extends Component {
         await updateProduct(this.state);
 
         this.props.onUpdate();
+        this.handleCancel();
     };
 
-    // static getDerivedStateFromProps(nextProps, prevState) {
-    //     console.log(prevState);
-    //     console.log(nextProps);
-    //     if (nextProps.update) {
-    //         return {
-    //             ...nextProps.product,
-    //             visible: true
-    //         };
-    //     }
-    //     else return null;
-    // }
+    onChangeCascader = (e) => {
+        this.setState({
+            selectedCategories: e,
+            category: e[e.length - 1]
+        });
+    };
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.update) {
@@ -138,11 +134,40 @@ class NewProduct extends Component {
         }
     }
 
-    async componentDidMount() {
-        const res = await getAllCategories();
-        console.log(res);
+    loadData = async (selectedOptions) => {
+        const targetOption = selectedOptions[selectedOptions.length - 1];
+        targetOption.loading = true;
+        console.log(targetOption);
+
+        const res = await getCategoriesById(targetOption.value);
+
+        // load options lazily
+        targetOption.loading = false;
+        targetOption.children = res.map(item => (
+            {
+                label: item.name,
+                value: item.id,
+                isLeaf: !item.isHaveChildren
+            }
+        ))
+
         this.setState({
-            categories: res
+            categories: [...this.state.categories],
+        });
+    };
+
+    async componentDidMount() {
+        const res = await getFirstLevelCategories();
+        console.log(res);
+
+        this.setState({
+            categories: res.map(item => (
+                {
+                    label: item.name,
+                    value: item.id,
+                    isLeaf: !item.isHaveChildren
+                }
+            ))
         })
     }
 
@@ -153,11 +178,11 @@ class NewProduct extends Component {
             brand,
             vendorCode,
             count,
-            category,
             description,
             price,
             imageUrls,
             categories,
+            selectedCategories,
             activeTabKey
         } = this.state;
 
@@ -241,11 +266,22 @@ class NewProduct extends Component {
                                 <form className={styles.selectCategory}>
                                     <div>
                                         <label>Выберите категорию для вашего товара</label>
-                                        <select onChange={this.handleChangeSelect}>
-                                            {categories.map(item => (
-                                                <option key={item.id} value={item.id}>{item.name}</option>
-                                            ))}
-                                        </select>
+                                        <Cascader
+                                            value={selectedCategories}
+                                            options={categories}
+                                            onChange={this.onChangeCascader}
+                                            loadData={this.loadData}
+                                            changeOnSelect
+                                            placeholder="Please select"
+
+                                        />
+
+
+                                        {/*<select onChange={this.handleChangeSelect}>*/}
+                                        {/*{categories.map(item => (*/}
+                                        {/*<option key={item.id} value={item.id}>{item.name}</option>*/}
+                                        {/*))}*/}
+                                        {/*</select>*/}
                                     </div>
 
                                     <button type='button' className={styles.save}

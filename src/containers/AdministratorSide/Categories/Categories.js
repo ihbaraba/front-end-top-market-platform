@@ -46,16 +46,17 @@ class Categories extends Component {
 
     handleTableChange = (e) => {
         console.log(e);
-    }
+    };
 
     async componentDidMount() {
+        this.getProducts();
+
         const res = await getAllCategories();
         this.setState({
             categories: res
         });
 
-        this.getProducts();
-    }
+    };
 
 
     render() {

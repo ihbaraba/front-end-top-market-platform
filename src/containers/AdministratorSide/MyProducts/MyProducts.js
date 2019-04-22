@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
-import { Tabs } from 'antd';
+import {Tabs} from 'antd';
 import styles from './MyProducts.module.css'
 import 'antd/dist/antd.css';
-import  copyLink  from "../../../img/link-symbol.svg";
-import { Table} from 'antd';
+import copyLink from "../../../img/link-symbol.svg";
+import {Table} from 'antd';
 import PriceListTable from "../components/PriceListTable/PriceListTable";
 import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTable";
 import Products from "../components/Products/Products";
 import NewProduct from "../components/Modal/NewProduct";
-
+import {getPartnerProducts} from '../../../actions/productsActions';
 
 const TabPane = Tabs.TabPane;
 
@@ -18,9 +18,25 @@ function callback(key) {
 
 
 class MyProducts extends Component {
+    state = {
+        products: []
+    };
 
+    getMyProducts = async () => {
+        const res = await getPartnerProducts();
+
+        this.setState({
+            products: res.results
+        })
+    };
+
+    componentDidMount() {
+        this.getMyProducts();
+    }
 
     render() {
+        const {products} = this.state;
+
         return (
             <div>
                 <h3 className={styles.title}>Мои товары</h3>
@@ -34,11 +50,11 @@ class MyProducts extends Component {
                                 </div>
                                 <div>
                                     <label>Артикул</label>
-                                    <input type="text" className={styles.vendorCode} />
+                                    <input type="text" className={styles.vendorCode}/>
                                 </div>
                                 <div>
                                     <label>Название товара</label>
-                                    <input type="text" className={styles.productName} />
+                                    <input type="text" className={styles.productName}/>
                                 </div>
                                 <div>
                                     <label>Категория</label>
@@ -56,7 +72,7 @@ class MyProducts extends Component {
                                 </div>
                                 <div>
                                     <label>Цена от</label>
-                                    <input type="text" className={styles.priceMin} />
+                                    <input type="text" className={styles.priceMin}/>
                                 </div>
                                 <div>
                                     <label>До</label>
@@ -70,12 +86,16 @@ class MyProducts extends Component {
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
                                 <button className={styles.actbtn}>Добавить в YML</button>
-                                <NewProduct/>
-                                <button className={styles.actbtn}>Загрузить Exel файл</button>
+                                {/*<NewProduct/>*/}
+                                {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
                             </div>
-                            <Products/>
+
+                            <Products
+                                products={products}
+                            />
                         </div>
                     </TabPane>
+
                     <TabPane tab="Неактивні товари (233)" key="2">
                         <div className={styles.filter}>
                             <form>
@@ -85,11 +105,11 @@ class MyProducts extends Component {
                                 </div>
                                 <div>
                                     <label>Артикул</label>
-                                    <input type="text" className={styles.vendorCode} />
+                                    <input type="text" className={styles.vendorCode}/>
                                 </div>
                                 <div>
                                     <label>Название товара</label>
-                                    <input type="text" className={styles.productName} />
+                                    <input type="text" className={styles.productName}/>
                                 </div>
                                 <div>
                                     <label>Категория</label>
@@ -107,7 +127,7 @@ class MyProducts extends Component {
                                 </div>
                                 <div>
                                     <label>Цена от</label>
-                                    <input type="text" className={styles.priceMin} />
+                                    <input type="text" className={styles.priceMin}/>
                                 </div>
                                 <div>
                                     <label>До</label>
@@ -121,8 +141,8 @@ class MyProducts extends Component {
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
                                 <button className={styles.actbtn}>Добавить в YML</button>
-                                <NewProduct/>
-                                <button className={styles.actbtn}>Загрузить Exel файл</button>
+                                {/*<NewProduct/>*/}
+                                {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
                             </div>
                             <InactiveGoodsTable/>
                         </div>
@@ -151,7 +171,8 @@ class MyProducts extends Component {
                     </TabPane>
                     <TabPane tab="Управління товарами" key="4">
                         <div className={styles.management}>
-                            <a href="#" className={styles.uploadList} download>Загрузить список производителей в Exel</a>
+                            <a href="#" className={styles.uploadList} download>Загрузить список производителей в
+                                Exel</a>
                             <h3>Управление категориями и параметрами</h3>
                             <div className={styles.categories}>
                                 <div>

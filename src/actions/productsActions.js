@@ -9,7 +9,9 @@ import {
     DOWNLOADS_STATUS,
     NEW_PRODUCTS,
     ALL_PRODUCTS,
-    REMOVE_CONTRACTOR_PRODUCTS
+    REMOVE_CONTRACTOR_PRODUCTS,
+    COPY_TO_MY_PRODUCTS,
+    PARTNER_PRODUCTS
 } from '../constants/APIURLS';
 
 
@@ -59,4 +61,12 @@ export const removeContractorProduct = (products) => {
 //partner
 export const getAllProducts = () => {
     return api('get', `${ALL_PRODUCTS}`)
+};
+
+export const copyProducts = (products) => {
+    return api('post', `${COPY_TO_MY_PRODUCTS}`, products)
+};
+
+export const getPartnerProducts = () => {
+    return api('get', `${PARTNER_PRODUCTS}`)
 };

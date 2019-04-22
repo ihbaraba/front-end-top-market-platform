@@ -6,47 +6,52 @@ import iphone from "../../../../img/iphone.png";
 import edit from "../../../../img/edit.svg";
 
 
-const columns = [ {
-    title: 'Код товара',
-    dataIndex: 'productCode',
-}, {
-    title: 'Артикул',
-    dataIndex: 'vendorCode',
-}, {
-    render: (productName, item) => (
-        <span className={styles.productItemName}>
+const columns = [
+    {
+        title: 'Код товара',
+        dataIndex: 'id',
+    },
+    {
+        title: 'Артикул',
+        dataIndex: 'vendorCode',
+    },
+    {
+
+        title: 'Название товара',
+        dataIndex: 'name',
+        render: (productName, item) => (
+            <span className={styles.productItemName}>
             <span className={styles.productImg}>
-                <img src={item.product} alt=""/>
+                <img src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : ''} alt=""/>
             </span>
             <span>
                 {productName}
             </span>
         </span>
-
-
-    ),
-    title: 'Название товара',
-    dataIndex: 'productName',
-}, {
-    title: 'Категория',
-    dataIndex: 'category',
-}, {
-    title: 'Цена',
-    dataIndex: 'price',
-}, {
-    title: 'Наличие',
-    dataIndex: 'availability',
-    render: (availability, item) => (
-        <span className={styles.editBlock}>
+        )
+    },
+    {
+        title: 'Категория',
+        dataIndex: 'category',
+    },
+    {
+        title: 'Цена',
+        dataIndex: 'price',
+    },
+    {
+        title: 'Наличие',
+        dataIndex: 'count',
+        render: (availability, item) => (
+            <span className={styles.editBlock}>
             <span className={styles.availability}>
                 {availability}
             </span>
-            <button className={styles.edit}>
-                <img src={item.edit} alt=""/>
-            </button>
+                {/*<button className={styles.edit}>*/}
+                {/*<img src={item.edit} alt=""/>*/}
+                {/*</button>*/}
         </span>
-    ),
-},
+        ),
+    },
 ];
 
 const data = [];
@@ -72,11 +77,11 @@ class Products extends Component {
 
     onSelectChange = (selectedRowKeys) => {
         console.log('selectedRowKeys changed: ', selectedRowKeys);
-        this.setState({ selectedRowKeys });
+        this.setState({selectedRowKeys});
     }
 
     render() {
-        const { selectedRowKeys } = this.state;
+        const {selectedRowKeys} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -100,7 +105,7 @@ class Products extends Component {
                         }
                         return true;
                     });
-                    this.setState({ selectedRowKeys: newSelectedRowKeys });
+                    this.setState({selectedRowKeys: newSelectedRowKeys});
                 },
             }, {
                 key: 'even',
@@ -113,14 +118,18 @@ class Products extends Component {
                         }
                         return false;
                     });
-                    this.setState({ selectedRowKeys: newSelectedRowKeys });
+                    this.setState({selectedRowKeys: newSelectedRowKeys});
                 },
             }],
             onSelection: this.onSelection,
         };
         return (
             <div>
-                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+                <Table
+                    rowSelection={rowSelection}
+                    columns={columns}
+                    dataSource={this.props.products}
+                />
             </div>
         );
     }

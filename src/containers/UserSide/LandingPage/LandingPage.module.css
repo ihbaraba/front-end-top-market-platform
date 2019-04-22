@@ -287,7 +287,7 @@ header .container {
 .consultation input[type=text],
 .consultation input[type=tel] {
     height: 75px;
-    width: 445px;
+    width: 100%;
     border: 1px solid #4A90E2;
     background-color: rgba(216,216,216,0.39);
     margin-bottom: 39px;
@@ -305,23 +305,29 @@ header .container {
 
 /* description  */
 .description {
-    /*padding-top: 79px;
-    height: 699px;*/
+    /*!*padding-top: 79px;*/
+    height: auto;
+    padding-bottom: 70px;
     background: #fff;
 }
 .description .container {
     padding-top: 79px;
     height: 699px;
     display: flex;
+    flex-wrap: wrap;
 }
 .description  h3 {
     margin-bottom: 51px;
 }
-.description-text {
-    width: 753px;
-    /*margin-bottom: 75px;*/
+.founder {
+    width: 60%;
+    height: 100%
 }
-.description-text ul {
+.descriptiontext {
+    /*margin-bottom: 75px;*/
+    height: 100%
+}
+.descriptiontext ul {
     height: 256px;
     width: 80%;
     color: #434343;
@@ -337,8 +343,14 @@ header .container {
     margin-right: 100px;
 }
 .man {
+    width: 40%;
+    height: auto;
     display: flex;
     align-items: flex-end;
+}
+
+.man img {
+    width: 100%;
 }
 
 .videoblock  {
@@ -377,7 +389,352 @@ header .container {
         padding-bottom: 50px;
     }
     .benefits {
-        padding: 50px 20px;
+        padding: 20px 40px;
+    }
+    .savingtime {
+        padding: 20px;
+    }
+    .savingtime h3 {
+        margin-top: 50px;
+    }
+    .timeimg {
+        padding-top: 150px;
+    }
+    .about {
+        padding: 20px 20px 60px 20px;
+    }
+    .description {
+        padding: 20px 20px 100px 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h3 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .videoblock {
+        padding: 20px;
+    }
+    .video {
+        width: 100%;
+    }
+    .savingtime {
+        padding: 20px;
+    }
+    .savingtime .container {
+        flex-wrap: wrap;
+    }
+    .timeimg {
+        padding-top: 160px;
+    }
+    .timeimg img {
+        width: 100%;
+    }
+    .savingtime {
+        padding-bottom: 50px;
+    }
+
+    .savingtime ul {
+        width: 100%;
+        margin-bottom: 55px;
+    }
+    .savingtime h3 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .benefits {
+        padding: 20px;
+    }
+    .benefitslist div {
+        padding-top: 40px;
+    }
+    .benefitslist ul li {
+        letter-spacing: 0;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .benefitsimg img {
+        width: 100%;
+    }
+    .benefits {
+        height: auto;
+    }
+    .benefitslist {
+        width: 85%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .benefitslist div {
+        padding-top: 20px;
+    }
+
+
+    .benefits .container {
+        flex-wrap: wrap;
+    }
+    .about {
+        padding: 20px;
+    }
+    .abouttext {
+        width: 50%;
+        margin-right: 0;
+        padding-top: 40px;
+    }
+    .consultation {
+        width: 50%;
+        height: 100%;
+    }
+    .consultation h5 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .consultation input[type=text],
+    .consultation input[type=tel] {
+        height: 50px;
+        padding-left: 10px;
+        font-size: 19px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    .consultation .btn {
+        margin: 0 auto;
+        height: 50px;
+        width: 100%;
+    }
+    .about p {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .macbook {
+        width: 50%;
+        height: auto;
+        padding-top: 85px;
+    }
+    .left {
+        padding-top: 40px;
+    }
+
+    .macbook img {
+        width: 100%;
+    }
+
+    .home p {
+        margin-bottom: 50px;
+    }
+    .description {
+        padding: 20px;
+        padding-bottom: 80px;
+    }
+    .description .container {
+        padding-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    h3 {
+        font-size: 35px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .logo {
+        margin: 0 auto;
+    }
+    header {
+        height: auto;
+        padding: 10px 20px;
+    }
+    .headerRight {
+        width: 100%;
+        text-align: center;
+    }
+    .regBtn {
+        margin-right: 25px;
+    }
+    .tel {
+        margin-right: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .features {
+        width: 100%;
+    }
+
+    .description .container {
+        height: auto;
+    }
+    .man img {
+        width: 100%;
+    }
+    .btn {
+        margin: 0 auto;
+    }
+    .descriptiontext {
+        width: 100%;
+    }
+    .descriptiontext ul {
+        width: 100%;
+        height: 100%;
+    }
+    .description .btn {
+        margin: 0 auto;
+    }
+    .left {
+        width: 100%;
+        padding-top: 20px;
+    }
+    .home .container {
+        flex-wrap: wrap;
+    }
+    .macbook {
+        width: 100%;
+        height: auto;
+    }
+    .macbook img {
+        width: 100%;
+    }
+    .home p {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 16px;
+    }
+    .benefits {
+        height: auto;
+    }
+    .benefitslist {
+        width: 85%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .benefitslist div {
+        padding-top: 20px;
+    }
+    .benefitslist .btn {
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    .benefitslist ul:last-child {
+        margin-bottom: 20px;
+    }
+    .benefitslist ul li {
+        margin-bottom: 10px;
+    }
+    .benefits .container {
+        flex-wrap: wrap;
+    }
+    .benefitsimg {
+        width: 100%;
+    }
+    .benefitsimg img {
+        width: 100%;
+    }
+    .list {
+        flex-wrap: wrap;
+        /*justify-content: center;*/
+    }
+    .timeimg {
+        width: 100%;
+        padding-top: 40px;
+    }
+    .timeimg img {
+        width: 100%;
+    }
+    .savingtime {
+        padding-bottom: 50px;
+    }
+    .savingtime ul {
+        width: 85%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+    .savingtime  .btn {
+       margin: 0 auto;
+    }
+    .savingtime h3 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .aboutinfo {
+        flex-wrap: wrap;
+    }
+    .consultation {
+        width: 100%;
+        height: auto;
+    }
+    .consultation h5 {
+        font-size: 13px;
+        line-height: 25px;
+        margin-bottom: 25px;
+    }
+    .consultation input[type=text],
+    .consultation input[type=tel] {
+        height: 50px;
+        padding-left: 10px;
+        font-size: 19px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    .consultation .btn {
+        margin: 0 auto;
+        height: 50px;
+        width: 100%;
+    }
+    .aboutinfo {
+        padding: 20px;
+    }
+    .about {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    .about p {
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .abouttext {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .abouttext div {
+        margin-bottom: 30px;
+    }
+    .founder {
+        width: 100%;
+        padding: 20px;
+    }
+    .man {
+        width: 100%;
+    }
+    .man img {
+        width: 100%;
+    }
+    .description {
+        padding-bottom: 0;
+    }
+    .description .container {
+        padding-top: 10px;
+    }
+    .description h3 {
+        margin-bottom: 20px;
+    }
+    .descriptiontext ul {
+        margin-bottom: 30px;
+        font-size: 14px;
+    }
+    .videoblock {
+        height: auto;
+    }
+    .videoblock h3 {
+        margin-bottom: 30px;
+    }
+    .macbook {
+        padding-top: 30px;
     }
 }
 

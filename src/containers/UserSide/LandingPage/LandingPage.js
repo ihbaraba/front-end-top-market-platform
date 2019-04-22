@@ -17,7 +17,7 @@ class LandingPage extends Component {
                 <header>
                     <div className={styles.container}>
                         <a href="#" className={styles.logo}><img src={logo} alt="logo" />SMART Lead</a>
-                        <div>
+                        <div className={styles.headerRight}>
                             <a href="tel:+380931377674" className={styles.tel}>+38 (093) 137-76-74</a>
                             <Link to='/registration' className={styles.regBtn}>Регистрация</Link>
 
@@ -43,7 +43,7 @@ class LandingPage extends Component {
                     </div>
                     <div  className={styles.container}>
                         <div  className={styles.benefitslist}>
-                            <div>
+                            <div className={styles.list}>
                                 <ul>
                                     <li>Автоматизированная «кнопка деньги</li>
                                     <li>Удобство управления всеми <br/> заявками/продажами</li>
@@ -106,7 +106,7 @@ class LandingPage extends Component {
                 </section>
                 <section  className={styles.description}>
                     <div  className={styles.container}>
-                        <div>
+                        <div className={styles.founder}>
                             <div className={styles.descriptiontext}>
                                 <h3>Основатель проекта</h3>
                                 <ul>

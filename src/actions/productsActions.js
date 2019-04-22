@@ -11,7 +11,8 @@ import {
     ALL_PRODUCTS,
     REMOVE_CONTRACTOR_PRODUCTS,
     COPY_TO_MY_PRODUCTS,
-    PARTNER_PRODUCTS
+    PARTNER_PRODUCTS,
+    YML
 } from '../constants/APIURLS';
 
 
@@ -69,4 +70,8 @@ export const copyProducts = (products) => {
 
 export const getPartnerProducts = () => {
     return api('get', `${PARTNER_PRODUCTS}`)
+};
+
+export const generateYml = (products) => {
+    return api('post', `${YML}`, products)
 };

@@ -3,14 +3,15 @@ import {Tabs} from 'antd';
 import styles from './MyProducts.module.css'
 import 'antd/dist/antd.css';
 import copyLink from "../../../img/link-symbol.svg";
-import {Table} from 'antd';
+import {Table, Popover} from 'antd';
 import PriceListTable from "../components/PriceListTable/PriceListTable";
 import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTable";
 import Products from "../components/Products/Products";
 import NewProduct from "../components/Modal/NewProduct";
-import {getPartnerProducts} from '../../../actions/productsActions';
+import {getPartnerProducts, generateYml} from '../../../actions/productsActions';
 
 const TabPane = Tabs.TabPane;
+
 
 function callback(key) {
     console.log(key);
@@ -19,7 +20,11 @@ function callback(key) {
 
 class MyProducts extends Component {
     state = {
-        products: []
+        products: [],
+        selectedProducts: [],
+
+        rozetkaUrl: '',
+        promUrl: ''
     };
 
     getMyProducts = async () => {
@@ -30,12 +35,47 @@ class MyProducts extends Component {
         })
     };
 
+    handleGenerateYml = async () => {
+        console.log(this.state.selectedProducts);
+        let arr = [];
+        await this.state.selectedProducts.forEach(item => {
+            arr.push(this.state.products[item].id);
+        });
+
+        const [rozetka, prom] = await Promise.all([
+            generateYml({
+                ymlType: 'rozetka',
+                productIds: arr
+            }),
+
+            generateYml({
+                ymlType: 'prom',
+                productIds: arr
+            }),
+        ]);
+
+        this.setState({
+            rozetkaUrl: rozetka,
+            promUrl: prom
+        })
+    };
+
     componentDidMount() {
         this.getMyProducts();
     }
 
     render() {
-        const {products} = this.state;
+        const {products, selectedProducts, promUrl, rozetkaUrl} = this.state;
+
+        const popoverContent = (
+            <div>
+                <h4>Для Prom.ua</h4>
+                <span>{promUrl}</span>
+
+                <h4>Для Rozetka</h4>
+                <span>{rozetkaUrl}</span>
+            </div>
+        );
 
         return (
             <div>
@@ -85,13 +125,19 @@ class MyProducts extends Component {
                         </div>
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
-                                <button className={styles.actbtn}>Добавить в YML</button>
+                                <Popover placement="bottom" trigger="click" content={popoverContent}
+                                         title="Выберите YML для вашего магазина">
+                                    <button onClick={this.handleGenerateYml} className={styles.YMLbtn}>Добавить в YML
+                                    </button>
+                                </Popover>
+
                                 {/*<NewProduct/>*/}
                                 {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
                             </div>
 
                             <Products
                                 products={products}
+                                onSelectedProducts={e => this.setState({selectedProducts: e})}
                             />
                         </div>
                     </TabPane>

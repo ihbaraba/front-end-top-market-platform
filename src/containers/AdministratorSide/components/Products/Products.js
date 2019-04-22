@@ -76,6 +76,8 @@ class Products extends Component {
     };
 
     onSelectChange = (selectedRowKeys) => {
+        this.props.onSelectedProducts(selectedRowKeys);
+
         console.log('selectedRowKeys changed: ', selectedRowKeys);
         this.setState({selectedRowKeys});
     }

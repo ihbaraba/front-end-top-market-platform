@@ -75,7 +75,7 @@ class Header extends Component {
 
                     <div className={styles.userBlock}>
                         <div className={styles.avatar}>
-                            <img src={avatar} alt=""/>
+                            <img src={user.avatarImage || avatar} alt=""/>
                         </div>
                         <Dropdown overlay={menu}>
                             <a className="ant-dropdown-link" href="#">

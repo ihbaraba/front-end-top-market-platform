@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Tabs, Checkbox, Form, Button, Select} from 'antd';
 import styles from './CompanySettings.module.css';
 import {getProfile, updateProfile, getSelectParams} from "../../../actions/companyActions";
+import {notification} from "antd/lib/index";
 
 
 const Option = Select.Option,
@@ -38,7 +39,11 @@ class GeneralInformation extends Component {
     handleUpdateCompanyProfile = e => {
         e.preventDefault();
 
-        updateProfile(this.state);
+        updateProfile(this.state)
+            .then(() => notification.success({
+                    message: 'Сохранено',
+                })
+            )
     };
 
     handleChangeInput = ({target: {name, value}}) => {
@@ -125,7 +130,8 @@ class GeneralInformation extends Component {
                     <FormItem>
                         <label htmlFor="">Сферы деятельности</label>
 
-                        <Select onChange={e => this.handleChangeSelect(e, 'activityArea')} required  value={activityArea}>
+                        <Select onChange={e => this.handleChangeSelect(e, 'activityArea')} required
+                                value={activityArea}>
                             {activityAreaOptions.map(item => (
                                 <Option key={item.id} value={item.id}>{item.name}</Option>
                             ))}
@@ -135,7 +141,8 @@ class GeneralInformation extends Component {
                     <FormItem>
                         <label htmlFor="">Сферы услуг</label>
 
-                        <Select onChange={e => this.handleChangeSelect(e, 'serviceIndustry')} required value={serviceIndustry}>
+                        <Select onChange={e => this.handleChangeSelect(e, 'serviceIndustry')} required
+                                value={serviceIndustry}>
                             {serviceIndustryOptions.map(item => (
                                 <Option key={item.id} value={item.id}>{item.name}</Option>
                             ))}
@@ -167,7 +174,7 @@ class GeneralInformation extends Component {
 
                         <Select onChange={e => this.handleChangeSelect(e, 'companyType')} required value={companyType}>
                             {companyTypeOptions.map(item => (
-                                <Option key={item.id}  value={item.id}>{item.name}</Option>
+                                <Option key={item.id} value={item.id}>{item.name}</Option>
                             ))}
                         </Select>
                     </FormItem>

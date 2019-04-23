@@ -3,7 +3,7 @@ import {Tabs, Table, Checkbox, Form, Input, Button} from 'antd';
 import styles from './ProfileSettings.module.css'
 import defaultAvatar from "../../../img/avatar.png";
 import Dropzone from 'react-dropzone'
-import {Modal} from 'antd'
+import {Modal, notification} from 'antd'
 
 import {getProfile, updateProfile, changePassword, login} from '../../../actions/userActions';
 import {connect} from "react-redux";
@@ -128,7 +128,11 @@ class ProfileSettings extends Component {
             ...requestData,
             emailNotifications: emailNot,
             phoneNotifications: smsNot
-        });
+        })
+            .then(() => notification.success({
+                    message: 'Сохранено',
+                })
+            )
     };
 
     handleUpdatePassword = async (e) => {
@@ -351,8 +355,7 @@ class ProfileSettings extends Component {
 
 const WrappedNormalProfileForm = Form.create()(ProfileSettings);
 
-const mapStateToProps = state => ({
-});
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
     updateProfile: (user) => dispatch(updateProfile(user)),

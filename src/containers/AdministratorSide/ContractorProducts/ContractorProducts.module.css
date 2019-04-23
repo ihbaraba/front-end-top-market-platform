@@ -11,6 +11,14 @@
     margin-bottom: 29px;
 }
 
+.title i {
+   margin: 0 20px 0 0;
+}
+.title i:hover {
+    color: #4A90E2;
+    cursor: pointer;
+}
+
 .top {
     display: flex;
     /*align-items: center;*/
@@ -177,4 +185,80 @@ input[type=submit] {
 .removeBtn {
     position: absolute;
     bottom: 50px;
+}
+
+
+/* Filter */
+.filter {
+    padding: 30px 0 0 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.filter label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    display: block;
+    margin-bottom: 8.5px;
+}
+.filter .code,
+.filter .vendorCode {
+    height: 31px;
+    width: 108px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+.filter .productName {
+    height: 31px;
+    width: 126px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+
+.filter .category {
+    height: 31px;
+    width: 157px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+
+.filter .availability {
+    height: 31px;
+    width: 107px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+.filter .priceMin,
+.filter .priceMax {
+    height: 31px;
+    width: 80px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+.find {
+    height: 40px;
+    width: 169px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-top: 20px;
+    display: block;
 }

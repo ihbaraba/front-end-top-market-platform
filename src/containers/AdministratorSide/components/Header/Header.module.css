@@ -104,6 +104,10 @@ header {
     width: 61px;
     border-radius: 50%;
     margin-right: 19px;
+    overflow: hidden;
+}
+.avatar img {
+    width: 100%;
 }
 .name {
     color: #9B9B9B;

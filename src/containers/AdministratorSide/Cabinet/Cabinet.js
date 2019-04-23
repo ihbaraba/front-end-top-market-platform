@@ -11,7 +11,7 @@ import 'react-daypicker/lib/DayPicker.css';
 import DayPicker from 'react-daypicker';
 import {Table} from 'antd';
 import {connect} from "react-redux";
-import {Modal} from 'antd'
+import {Modal, Tooltip as TooltipAntd} from 'antd'
 import {LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip} from 'recharts';
 
 import {getProfile} from '../../../actions/userActions';
@@ -93,7 +93,7 @@ class Cabinet extends Component {
                     <div className={styles.userBlock}>
                         <div className={styles.userContacts}>
                             <div className={styles.userImg}>
-                                <img src={avatar} alt=""/>
+                                <img src={user.avatarImage || avatar} alt=""/>
                             </div>
                             <div className={styles.userInfo}>
                                 <h5 className={styles.userName}> {`${user.firstName || "User"} ${user.lastName || ''}`}</h5>
@@ -319,8 +319,10 @@ class Cabinet extends Component {
                             </p>
                         </div>
                         <div className={styles.payActions}>
-                            <button className={styles.payBtn}>Оплатить через LiqPay</button>
-                            <button className={styles.payBtn}>Отправить счет фактуру на e-mail</button>
+                            <TooltipAntd placement="top" title='Находится в разработке'>
+                                <button className={styles.payBtn}>Оплатить через LiqPay</button>
+                                <button className={styles.payBtn}>Отправить счет фактуру на e-mail</button>
+                            </TooltipAntd>
                         </div>
                     </Modal>
                 </div>

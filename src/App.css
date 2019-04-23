@@ -156,6 +156,11 @@ a.active {
     margin-right: 20px;
 }
 
+.btn:hover {
+    background-color: #3870af !important;
+    cursor: pointer;
+}
+
 button:disabled {
     background-color: #B1B1B1 !important;
     color: #FFFFFF;

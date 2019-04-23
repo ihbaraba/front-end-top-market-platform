@@ -17,7 +17,8 @@ class KnowledgeBase extends Component {
     render() {
         return (
             <div >
-                <h3 className={styles.title}>База знаний</h3>
+                <h3 className={styles.title}>База знаний (Находится в разработке)</h3>
+
                 <div className={styles.search}>
                     <input type="search" placeholder="Search" />
                     <input type="submit" value=" "/>

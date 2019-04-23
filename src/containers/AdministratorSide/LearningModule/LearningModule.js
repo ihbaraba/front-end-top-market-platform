@@ -36,7 +36,7 @@ class LearningModule extends Component {
 
         return (
             <div>
-                <h3 className={styles.title}>Обучающий модуль</h3>
+                <h3 className={styles.title}>Обучающий модуль (Находится в разработке)</h3>
                 <div className={styles.learningModule}>
                     <div className={styles.previewImg}></div>
                     <div className={styles.aboutModule}>

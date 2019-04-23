@@ -13,7 +13,8 @@ class AdditionalServices extends Component {
     render() {
         return (
             <div >
-                <h3 className={styles.title}>Дополнительные услуги</h3>
+                <h3 className={styles.title}>Дополнительные услуги (Находится в разработке)</h3>
+
                 <div className={styles.servicesBlock}>
                     <div className={styles.servicesItem}>
                         <div className={styles.item}>

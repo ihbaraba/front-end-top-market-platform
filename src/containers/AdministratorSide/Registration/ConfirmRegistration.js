@@ -10,9 +10,9 @@ class ConfirmRegistration extends Component {
 
     componentDidMount() {
         let urlParams = queryString.parseUrl(document.location.search).query;
-        console.log(urlParams);
+        console.log();
 
-        // confirmEmail(urlParams);
+        confirmEmail(urlParams.token);
     }
 
     render() {

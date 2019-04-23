@@ -132,7 +132,7 @@ class NavBar extends Component {
                 {navigation.map((item, index) => {
                     if (item.developing) {
                         return (
-                            <Tooltip placement="right" title='В разработке'>
+                            <Tooltip placement="right" title='Находится в разработке'>
                                 <NavLink
                                     className={styles.menuItem}
                                     key={index}

@@ -8,16 +8,13 @@ function callback(key) {
     console.log(key);
 }
 
-
 class Orders extends Component {
-
-
-
 
     render() {
         return (
             <div>
-                <h3 className={styles.title}>Мои заказы</h3>
+                <h3 className={styles.title}>Мои заказы (Находится в разработке)</h3>
+
                 <Tabs onChange={callback} type="card">
                     <TabPane tab="Заказы из Rozetka (10)" key="1">
                         <OrdersFromRozetka/>

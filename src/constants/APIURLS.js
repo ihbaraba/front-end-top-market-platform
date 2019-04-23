@@ -30,7 +30,7 @@ export const LOGIN = 'login/';
 
 export const REGISTRATION = 'register/';
 
-export const CONFIRM_EMAIL = 'auth/confirm/';
+export const CONFIRM_EMAIL = 'activate/';
 
 export const PROFILE = 'profile/';
 

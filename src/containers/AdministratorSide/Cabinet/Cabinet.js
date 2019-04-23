@@ -116,7 +116,7 @@ class Cabinet extends Component {
                         </div>
                     </div>
 
-                    {/*{this.props.user.role === 'CONTRACTOR' ? '' :*/}
+                    {this.props.user.role === 'CONTRACTOR' ? '' :
                         <div className={styles.chooseTariff}>
                             <h3>Приобретите пакет</h3>
                             <div className={styles.tariffsBox}>
@@ -125,6 +125,7 @@ class Cabinet extends Component {
                                         <p>Базовый</p>
                                         <p><span><span className={styles.tariffPrice}>35.000</span>грн</span></p>
                                     </div>
+
                                     <div className={styles.tariffBody}>
                                         <ul>
                                             <li>Полный доступ к платформе</li>
@@ -137,6 +138,7 @@ class Cabinet extends Component {
                                             <li>Возможность неограниченно редактировать товары</li>
                                         </ul>
                                     </div>
+
                                     <button className={styles.buyBtn} onClick={this.showModal}>
                                         Купить
                                     </button>
@@ -164,7 +166,7 @@ class Cabinet extends Component {
                                 </div>
                             </div>
                         </div>
-                    {/*}*/}
+                    }
                 </div>
                 {/*<div className={styles.userCard}>*/}
                 {/*<div className={styles.userContacts}>*/}

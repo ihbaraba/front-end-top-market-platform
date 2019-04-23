@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Form, Icon, Input, Button, Select, Dropdown} from "antd";
 import {Link} from 'react-router-dom';
+import {Modal} from 'antd';
 
 import styles from './Registration.module.css';
 
 import {registration} from '../../../actions/userActions';
 import logo from "../../../img/logo.png";
-import notification from "../../../img/notification.svg";
 import cart from "../../../img/cart.svg";
 import dollar from "../../../img/dollar.svg";
 import avatar from "../../../img/ava.png";
@@ -15,6 +15,17 @@ import Header from "../components/Header/Header";
 const FormItem = Form.Item,
     Option = Select.Option;
 
+function success() {
+    Modal.success({
+        title: 'Регистрация успешна',
+        content: 'Проверьте почту',
+        onOk() {
+            this.props.history.push('/login')
+        },
+    });
+}
+
+
 class Registration extends Component {
 
     handleSubmit = (e) => {
@@ -22,13 +33,11 @@ class Registration extends Component {
 
         this.props.form.validateFields((err, user) => {
             if (!err) {
-                console.log("Received values of form: ", user);
                 registration(user)
                     .then(res => {
-                        window.open(res.confirmUrl,'_blank');
-                    })
-                    .then(() => {
-                        this.props.history.push('/login')
+                        success()
+
+                        // window.open(res.confirmUrl,'_blank');
                     })
             }
         });

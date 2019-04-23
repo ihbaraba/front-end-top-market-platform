@@ -59,6 +59,8 @@ class Categories extends Component {
             productListIds: arr
         });
 
+        this.getProducts();
+
         this.setState({
             selectedRowKeys: []
         });

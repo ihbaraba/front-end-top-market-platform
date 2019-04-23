@@ -81,7 +81,7 @@ class MyProducts extends Component {
             <div>
                 <h3 className={styles.title}>Мои товары</h3>
                 <Tabs onChange={callback} type="card">
-                    <TabPane tab="Товари в продажу (174)" key="1">
+                    <TabPane tab={`Товари в продажу ${products.length}`} key="1">
                         <div className={styles.filter}>
                             <form>
                                 <div>

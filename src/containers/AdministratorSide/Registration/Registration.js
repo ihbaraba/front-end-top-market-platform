@@ -15,18 +15,18 @@ import Header from "../components/Header/Header";
 const FormItem = Form.Item,
     Option = Select.Option;
 
-function success() {
-    Modal.success({
-        title: 'Регистрация успешна',
-        content: 'Проверьте почту',
-        onOk() {
-            this.props.history.push('/login')
-        },
-    });
-}
-
 
 class Registration extends Component {
+
+     success = () => {
+        Modal.success({
+            title: 'Регистрация успешна',
+            content: 'Проверьте почту',
+            onOk() {
+                window.location.href = `${window.location.origin}/login`;
+            },
+        });
+    };
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -35,7 +35,7 @@ class Registration extends Component {
             if (!err) {
                 registration(user)
                     .then(res => {
-                        success()
+                        this.success()
 
                         // window.open(res.confirmUrl,'_blank');
                     })

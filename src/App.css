@@ -13,7 +13,6 @@ a.active {
     background-color: #4A90E2;
 }
 
-
 .container {
     width: 100%;
     max-width: 1440px;
@@ -111,14 +110,17 @@ a.active {
     overflow: scroll;
     padding: 0;
 }
+
 .ant-upload {
     height: 30px;
     width: 30px;
     background-color: #4A90E2;
 }
+
 .ant-menu-sub {
     width: 100%;
 }
+
 .ant-tabs-bar {
     border-bottom: none;
     /*margin-bottom: 30px;*/
@@ -130,6 +132,7 @@ a.active {
     border: 1px solid #ECECEC;
     padding: 25px;
 }
+
 /*FORM*/
 .ant-form-item {
     margin: 0;
@@ -155,6 +158,7 @@ a.active {
     line-height: 22px;
     margin-right: 20px;
 }
+
 .btn button {
     height: 40px;
     width: 206px;
@@ -211,6 +215,18 @@ button:disabled:hover {
     padding: 0 16px !important;
     border: 0 !important;
 }
+
 .modal .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
     border: 0 !important;
+}
+
+.ant-modal-confirm-success {
+    width: max-content !important;
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto !important;
+    height: 300px;
 }

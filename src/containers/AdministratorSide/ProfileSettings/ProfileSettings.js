@@ -4,6 +4,7 @@ import styles from './ProfileSettings.module.css'
 import defaultAvatar from "../../../img/avatar.png";
 import Dropzone from 'react-dropzone'
 import {Modal, notification} from 'antd'
+import {Modal, Icon} from 'antd'
 
 import {getProfile, updateProfile, changePassword, login} from '../../../actions/userActions';
 import {connect} from "react-redux";
@@ -240,19 +241,18 @@ class ProfileSettings extends Component {
                                     <div className={styles.ChangeAvatar}>
                                         <div className={styles.userAvatar}>
                                             <img src={avatarImage ? avatarImage : defaultAvatar} alt=""/>
-                                        </div>
-                                        <div className={styles.userAvatarInfo}>
-                                            <h3>Изменить аватар</h3>
-                                            <span>Размер аватара должен быть не меньше 150х150 пикселей</span>
-
                                             <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">
                                                 {({getRootProps, getInputProps}) => (
                                                     <div {...getRootProps({className: 'dropzone'})}>
                                                         <input {...getInputProps()} />
-                                                        <button className={styles.btnPrimary}>Изменить аватар</button>
+                                                        <button className={styles.uploadBtn}><Icon type="camera" /></button>
                                                     </div>
                                                 )}
                                             </Dropzone>
+                                        </div>
+                                        <div className={styles.userAvatarInfo}>
+                                            <h3>Изменить аватар</h3>
+                                            <span>Размер аватара должен быть не меньше 150х150 пикселей</span>
 
                                             <button type='button' className={styles.btnPrimary}
                                                     onClick={() => this.setState({visibleModal: true})}>Изменить пароль
@@ -308,33 +308,33 @@ class ProfileSettings extends Component {
                         <FormItem>
                             {getFieldDecorator("oldPassword", {
                                 rules: [
-                                    {required: true, message: "Please input your old Password!"},
+                                    {required: true, message: "Пожалуйста введите Ваш старый пароль!"},
                                 ]
                             })(
                                 <Input
-                                    placeholder="Old password"
+                                    placeholder="Старый пароль"
                                 />
                             )}
                         </FormItem>
 
                         <FormItem>
                             {getFieldDecorator("newPassword", {
-                                rules: [{required: true, message: "Please input your Password!"}]
+                                rules: [{required: true, message: "Пожалуйста введите Ваш пароль!"}]
                             })(
                                 <Input
                                     type="password"
-                                    placeholder="New password"
+                                    placeholder="Новый пароль"
                                 />
                             )}
                         </FormItem>
 
                         <FormItem>
                             {getFieldDecorator("confirmPassword", {
-                                rules: [{required: true, message: "Please input your Password!"}]
+                                rules: [{required: true, message: "Пожалуйста введите Ваш пароль!"}]
                             })(
                                 <Input
                                     type="password"
-                                    placeholder="Confirm password"
+                                    placeholder="Подтвердите пароль"
                                 />
                             )}
                         </FormItem>
@@ -344,7 +344,7 @@ class ProfileSettings extends Component {
                             htmlType="submit"
                             className={styles.loginFormButton}
                         >
-                            Send
+                            Сохранить
                         </Button>
                     </Form>
                 </Modal>

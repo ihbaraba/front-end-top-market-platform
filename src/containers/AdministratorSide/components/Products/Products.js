@@ -3,7 +3,9 @@ import 'antd/dist/antd.css';
 import {Table} from "antd";
 import styles from './Products.module.css'
 import iphone from "../../../../img/iphone.png";
+import iphonexr from "../../../../img/iphonexr.jpg";
 import edit from "../../../../img/edit.svg";
+import { Modal, Button } from 'antd';
 
 
 const columns = [
@@ -72,7 +74,8 @@ for (let i = 0; i < 46; i++) {
 class Products extends Component {
 
     state = {
-        selectedRowKeys: [], // Check here to configure the default column
+        selectedRowKeys: [],
+        visible: false// Check here to configure the default column
     };
 
     onSelectChange = (selectedRowKeys) => {
@@ -81,6 +84,31 @@ class Products extends Component {
         console.log('selectedRowKeys changed: ', selectedRowKeys);
         this.setState({selectedRowKeys});
     }
+
+
+    showModal = () => {
+        console.log('tteet');
+        this.setState({
+            visible: true,
+        });
+    }
+
+    handleOk = (e) => {
+        console.log(e);
+        this.setState({
+            visible: false,
+        });
+    }
+
+    handleCancel = (e) => {
+        console.log(e);
+        this.setState({
+            visible: false,
+        });
+    }
+
+
+
 
     render() {
         const {selectedRowKeys} = this.state;
@@ -131,7 +159,79 @@ class Products extends Component {
                     rowSelection={rowSelection}
                     columns={columns}
                     dataSource={this.props.products}
+                    onRow={(record, rowIndex) => {
+                        return {
+                            onClick: (event) => {
+                                this.showModal()
+                            },        // click row
+                            onDoubleClick: (event) => {},  // double click row
+                            onContextMenu: (event) => {},  // right button click row
+                            onMouseEnter: (event) => {},   // mouse enter row
+                            onMouseLeave: (event) => {},   // mouse leave row
+                        };
+                    }}
                 />
+                <div>
+                    <Modal
+                        title="iPhone XR 64GB Space Grey"
+                        visible={this.state.visible}
+                        onOk={this.handleOk}
+                        onCancel={this.handleCancel}
+                        footer={false}
+                        className={styles.productCard}
+                    >
+                        <div className={styles.productInfo}>
+                            <div className={styles.productInfoImg}>
+                                <img src={iphonexr} alt=""/>
+                            </div>
+
+                            <div className={styles.specifications}>
+                                <div className={styles.specificationsItems}>
+                                    <div>
+                                        <label>Поставщик</label>
+                                        <span>Nazar Market</span>
+                                    </div>
+                                    <div>
+                                        <label>Наличие</label>
+                                        <span>В наличии</span>
+                                    </div>
+                                    <div>
+                                        <label>Цена</label>
+                                        <span>23844.00 грн</span>
+                                    </div>
+                                </div>
+                                <div className={styles.specificationsItems}>
+                                    <div>
+                                        <label>Артикул</label>
+                                        <span>Jf21414dS</span>
+                                    </div>
+                                    <div>
+                                        <label>Категория</label>
+                                        <span>Телефоны, MP3, GPS</span>
+                                    </div>
+                                    <div>
+                                        <label>Бренд</label>
+                                        <span>Apple</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 className={styles.descriptionTitle}>Описание</h5>
+                            <div className={styles.descriptionText}>
+                                <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
+                                    Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                    В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+                                    используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил
+                                    без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации
+                                    в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и,
+                                    в более недавнее время,  программы электронной вёрстки типа Aldus PageMaker, в шаблонах
+                                    которых используется Lorem Ipsum.</p>
+                            </div>
+                        </div>
+
+                    </Modal>
+                </div>
             </div>
         );
     }

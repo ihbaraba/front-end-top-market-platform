@@ -15,6 +15,7 @@ import shopping from '../../../../img/shopping-bag.svg';
 import database from '../../../../img/database.svg';
 import services from '../../../../img/add-button-inside-black-circle.svg';
 import study from '../../../../img/teacher-reading.svg';
+import сontacts from '../../../../img/contact.svg';
 import {connect} from "react-redux";
 
 
@@ -62,6 +63,10 @@ const contractorMenu = [
         href: 'learning',
         developing: true
     },
+    {
+        title: 'Контактная форма',
+        href: 'contacts-form',
+    }
 ];
 
 const partnerMenu = [
@@ -119,6 +124,11 @@ const partnerMenu = [
         icon: study,
         href: 'learning',
         developing: true
+    },
+    {
+        title: 'Контактная форма',
+        icon: сontacts,
+        href: 'contacts-form',
     }
 ];
 

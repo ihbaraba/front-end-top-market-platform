@@ -25,20 +25,23 @@ const http = (method, url, data, type) => {
                 resolve(result.data);
             })
             .catch(error => {
-                if (typeof error.response.data === 'object') {
-                    for (let key in error.response.data) {
-                        if (key !== 'messages') {
-                            notification.error({
-                                // message: key,
-                                // description: error.response.data[key][0],
-                                message: error.response.data[key][0],
-                            });
+                console.log(error.response == null);
+                if (error.response != null) {
+                    if (typeof error.response.data === 'object') {
+                        for (let key in error.response.data) {
+                            if (key !== 'messages') {
+                                notification.error({
+                                    // message: key,
+                                    // description: error.response.data[key][0],
+                                    message: error.response.data[key][0],
+                                });
+                            }
                         }
+                    } else {
+                        notification.error({
+                            message: 'Сервер не отвечает',
+                        });
                     }
-                } else {
-                    notification.error({
-                        message: 'Сервер не отвечает',
-                    });
                 }
             });
     })

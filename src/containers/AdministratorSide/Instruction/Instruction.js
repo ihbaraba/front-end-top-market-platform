@@ -1,46 +1,76 @@
 import React, {Component} from 'react'
 import styles from './Instruction.module.css'
-import  ava  from "../../../img/ava.png";
-import  img1  from "../../../img/img1.png";
-import  img2  from "../../../img/img2.png";
-import  img3  from "../../../img/img3.png";
-import  img4  from "../../../img/img4.png";
-import  img5  from "../../../img/img5.png";
-import  img6  from "../../../img/img6.png";
-import  img7  from "../../../img/img7.png";
-import  img8  from "../../../img/Screenshot.png";
-
+import ava from "../../../img/ava.png";
+import img1 from "../../../img/img1.png";
+import img2 from "../../../img/img2.png";
+import img3 from "../../../img/img3.png";
+import img4 from "../../../img/img4.png";
+import img5 from "../../../img/img5.png";
+import img6 from "../../../img/img6.png";
+import img7 from "../../../img/img7.png";
+import img8 from "../../../img/Screenshot.png";
+import {Tree} from 'antd';
+import {getAllCategories} from '../../../actions/productsActions';
 import file from '../../../img/example_product.xlsx';
 
-class Instruction extends Component {
+const {TreeNode} = Tree;
 
+
+class Instruction extends Component {
+    state = {
+        categories: []
+    };
+
+    async componentDidMount() {
+        const res = await getAllCategories();
+
+        this.setState({
+            categories: res
+        })
+    }
 
     render() {
+        const {categories} = this.state;
+
+        const renderCategories = (categories) => {
+            return (
+                categories.map(item => (
+                    <TreeNode title={`${item.name} - ${item.id}`} key={item.id}>
+                        {item.subcategories.length > 0 ? renderCategories(item.subcategories) : ''}
+                    </TreeNode>
+                ))
+            )
+        };
 
         return (
             <div>
                 <h3 className={styles.title}>Инструкция по добавлению товаров</h3>
 
                 <div className={styles.instructionBlock}>
-                        <div className={styles.user}>
-                            <div className={styles.userAvatar}>
-                                <img src={ava} alt=""/>
-                            </div>
-                            <div className={styles.userInfo}>
-                                <span className={styles.name}>Hexagon</span>
-                                <span className={styles.date}>13/03/2019  в 11:23</span>
-                            </div>
+                    <div className={styles.user}>
+                        <div className={styles.userAvatar}>
+                            <img src={ava} alt=""/>
                         </div>
+                        <div className={styles.userInfo}>
+                            <span className={styles.name}>Hexagon</span>
+                            <span className={styles.date}>13/03/2019  в 11:23</span>
+                        </div>
+                    </div>
                     <div className={styles.video}>
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KCCqqPqDqSY" frameBorder="0"
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KCCqqPqDqSY"
+                                frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen></iframe>
                     </div>
                     <p>
-                        Зайдите во вкладку «Все товары». Здесь находится полный каталог товаров поставщиков . Для вашего удобства
-                        вы можете фильтровать их по разным критериям (артикул, наличие, бренд, название, категория товара, розничная
-                        цена, топ-товары/товары со скидкой), а ещё выбрать интересующую вас категорию с помощью панели слева. Обратите внимание,
-                        что также вы можете выбрать товары, которые были добавлены за определённый период или за последнюю неделю (Отобразить новинки).
+                        Зайдите во вкладку «Все товары». Здесь находится полный каталог товаров поставщиков . Для вашего
+                        удобства
+                        вы можете фильтровать их по разным критериям (артикул, наличие, бренд, название, категория
+                        товара, розничная
+                        цена, топ-товары/товары со скидкой), а ещё выбрать интересующую вас категорию с помощью панели
+                        слева. Обратите внимание,
+                        что также вы можете выбрать товары, которые были добавлены за определённый период или за
+                        последнюю неделю (Отобразить новинки).
                     </p>
                     <div className={styles.img1}>
                         <img src={img1} alt="img1"/>
@@ -49,10 +79,12 @@ class Instruction extends Component {
                     <div className={styles.img2}>
                         <img src={img2} alt="img2"/>
                     </div>
-                    <p>После того как вы определились с категорией или определенными товарами, выделите их с помощью галочки
+                    <p>После того как вы определились с категорией или определенными товарами, выделите их с помощью
+                        галочки
                         (поштучно или массово). Максимальное количество отображаемых товаров на одной странице,
                         которые можно выбрать, не более 500.</p>
-                    <p>Как только выделите товары, у вас активируется кнопка «Добавить в Мои товары». Нажмите её и все выделенные
+                    <p>Как только выделите товары, у вас активируется кнопка «Добавить в Мои товары». Нажмите её и все
+                        выделенные
                         карточки попадут в ваш каталог (автоматически попадёте в данную вкладку).</p>
                     <p>Здесь также можете воспользоваться фильтрами, а также отредактировать карточку
                         товара под свой интернет-магазин. Важно! Цену изменять нельзя!</p>
@@ -78,6 +110,18 @@ class Instruction extends Component {
                     </div>
 
                     <a href={file} className={styles.link}>Скачать пример файла</a>
+
+
+                    <h3 className={styles.title} style={{margin: '30px 0 0 0'}}>Категории</h3>
+
+                    <Tree
+                        showLine
+                        multiple
+                        defaultExpandedKeys={['0-0-0']}
+                        onSelect={this.onSelect}
+                    >
+                        {renderCategories(categories)}
+                    </Tree>
 
                 </div>
             </div>

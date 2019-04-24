@@ -32,7 +32,6 @@ class ContractorProducts extends Component {
     };
 
     getMyProducts = async () => {
-        console.log(this.state.filters)
         const {currentPage, filters: {category_id, name, vendor_code, min_price, max_price}} = this.state;
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',
@@ -44,7 +43,6 @@ class ContractorProducts extends Component {
 
 
         const url = `?page=${currentPage + urlParams.join('')}`;
-        console.log(url);
         const res = await getContractorProducts(url);
 
         this.setState({

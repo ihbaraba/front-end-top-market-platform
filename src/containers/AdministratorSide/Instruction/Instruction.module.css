@@ -118,6 +118,11 @@
 
 .img7 {
     width: 691px;
+    margin: 20px 0;
+}
+
+.img7 img{
+    width: 100%;
 }
 
 .link {

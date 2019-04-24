@@ -9,6 +9,13 @@ import img5 from "../../../img/img5.png";
 import img6 from "../../../img/img6.png";
 import img7 from "../../../img/img7.png";
 import img8 from "../../../img/Screenshot.png";
+
+import img9 from "../../../img/instru/1.png";
+import img10 from "../../../img/instru/2.jpg";
+import img11 from "../../../img/instru/3.png";
+import img12 from "../../../img/instru/4.png";
+import img13 from "../../../img/instru/5.png";
+
 import {Tree} from 'antd';
 import {getAllCategories} from '../../../actions/productsActions';
 import file from '../../../img/example_product.xlsx';
@@ -127,10 +134,14 @@ class Instruction extends Component {
                     <strong>age_group</strong><br/>
                     <strong>material</strong><br/>
 
+                    <img src={img9} alt="" style={{margin: '20px 0'}}/>
+
 
                     <p> В поле <strong>category_id</strong> необходимо ввести <strong>id</strong> категории товара
                         которой он соответствует.
                         Id необходимой категории можно найти в блоке <a href="#tree">категорий</a>:</p>
+
+                    <img src={img10} alt="" style={{margin: '20px 0'}}/>
 
                     <p>
                         В поле <strong>id</strong> необходимо указать id товара который уже есть в системе topmarket в
@@ -170,7 +181,7 @@ class Instruction extends Component {
 
 
                     <div className={styles.img7}>
-                        <img src={img8} alt="img7"/>
+                        <img src={img13} alt="img7"/>
                     </div>
 
 
@@ -178,15 +189,20 @@ class Instruction extends Component {
                     <h3 className={styles.title} style={{margin: '50px 0 30px 0'}}>Инструкция по импорту товаров c
                         Rozetka</h3>
                     <p>Для того чтобы импортировать товары с Rozetka marketplace необходимо перейти в раздел “Товары”,
-                        который находится в <a href="https://seller.rozetka.com.ua">личном кабинете Rozetka </a>
+                        который находится в <a href="https://seller.rozetka.com.ua" target='_blank'>личном кабинете
+                            Rozetka </a>
                         Для экспорта товаров в Exel нажмите кнопку “Загрузить файл”
                     </p>
-
+                    <div className={styles.img7}>
+                        <img src={img11} alt="img7"/>
+                    </div>
                     <p>
                         Сохраните файл на вашем ПК. <br/>
                         В разделе платформы “Мои товары” импортируйте сохраненный файл
                     </p>
-
+                    <div className={styles.img7}>
+                        <img src={img12} alt="img7"/>
+                    </div>
 
                     <h3 className={styles.title} style={{margin: '30px 0 0 0'}}>Категории</h3>
 

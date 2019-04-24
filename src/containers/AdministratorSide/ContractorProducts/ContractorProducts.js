@@ -24,7 +24,9 @@ class ContractorProducts extends Component {
             name: '',
             vendor_code: '',
             min_price: '',
-            max_price: ''
+            max_price: '',
+            brand: '',
+            in_stock: ''
         },
 
         count: 0,
@@ -32,10 +34,12 @@ class ContractorProducts extends Component {
     };
 
     getMyProducts = async () => {
-        const {currentPage, filters: {category_id, name, vendor_code, min_price, max_price}} = this.state;
+        const {currentPage, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',
             name ? `&name=${name}` : '',
+            brand ? `&brand=${brand}` : '',
+            in_stock ? `&in_stock=${in_stock}` : '',
             vendor_code ? `&vendor_code=${vendor_code}` : '',
             min_price ? `&min_price=${min_price}` : '',
             max_price ? `&max_price=${max_price}` : '',
@@ -116,6 +120,16 @@ class ContractorProducts extends Component {
         })
     };
 
+    handleSelectCategory = (category) => {
+        this.setState({
+            filters: {
+                ...this.state.filters,
+                category_id: category.key
+            }
+        }, () => this.getMyProducts())
+    };
+
+
     componentDidMount() {
         this.getMyProducts();
         this.getCategories();
@@ -129,10 +143,13 @@ class ContractorProducts extends Component {
             product,
             count,
             currentPage,
-            name,
-            vendor_code,
-            min_price,
-            max_price,
+            filters: {
+                name,
+                vendor_code,
+                min_price,
+                max_price,
+                brand,
+            }
         } = this.state;
 
         const rowSelection = {
@@ -155,12 +172,16 @@ class ContractorProducts extends Component {
                 )
             },
             {
-                title: 'Код товара',
-                dataIndex: 'id',
+                title: 'Артикул',
+                dataIndex: 'vendorCode',
             },
             {
                 title: 'Бренд',
                 dataIndex: 'brand',
+            },
+            {
+                title: 'Категория',
+                dataIndex: 'category',
             },
             {
                 title: 'Цена',
@@ -195,9 +216,10 @@ class ContractorProducts extends Component {
                 <div className={styles.top}>
                     <h3 className={styles.title}>
                         <Popover placement="bottom" content={(
-                                <CategoryList
-                                    categories={categories}
-                                />
+                            <CategoryList
+                                categories={categories}
+                                onSelectCategory={this.handleSelectCategory}
+                            />
                         )}>
                             <Icon type="bars"/>
                         </Popover>
@@ -245,27 +267,6 @@ class ContractorProducts extends Component {
 
                         <div className={styles.filter}>
                             <div>
-                                <label>Код товара</label>
-                                <input
-                                    type="text"
-                                    className={styles.productName}
-                                    name='name'
-                                    value={name}
-                                    onChange={this.handleChangeFilters}
-                                />
-                            </div>
-                            <div>
-                                <label>Артикул</label>
-                                <input
-                                    type="text"
-                                    className={styles.productName}
-                                    name='vendor_code'
-                                    value={vendor_code}
-                                    onChange={this.handleChangeFilters}
-                                />
-
-                            </div>
-                            <div>
                                 <label>Название товара</label>
                                 <input
                                     type="text"
@@ -275,20 +276,44 @@ class ContractorProducts extends Component {
                                     onChange={this.handleChangeFilters}
                                 />
                             </div>
-                            {/*<div>*/}
-                            {/*<label>Категория</label>*/}
-                            {/*<select className={styles.category}>*/}
-                            {/*<option>Телефоны</option>*/}
-                            {/*<option>Телефоны</option>*/}
-                            {/*</select>*/}
-                            {/*</div>*/}
+
+                            <div>
+                                <label>Артикул</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='vendor_code'
+                                    value={vendor_code}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+
+                            <div>
+                                <label>Бренд</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='brand'
+                                    value={brand}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+
                             <div>
                                 <label>Наличие</label>
-                                <select className={styles.availability}>
-                                    <option>В наличии</option>
-                                    <option>Нет в наличии</option>
+                                <select className={styles.availability}
+                                        onChange={({target: {value}}) => this.setState({
+                                            filters: {
+                                                ...this.state.filters,
+                                                in_stock: value
+                                            }
+                                        })}>
+                                    <option value=''>Все</option>
+                                    <option value={true}>В наличии</option>
+                                    <option value={false}>Нет в наличии</option>
                                 </select>
                             </div>
+
                             <div>
                                 <label>Цена от</label>
                                 <input

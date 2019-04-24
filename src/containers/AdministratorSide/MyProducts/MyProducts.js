@@ -6,7 +6,8 @@ import copyLink from "../../../img/link-symbol.svg";
 import {Table, Popover, Tooltip} from 'antd';
 import PriceListTable from "../components/PriceListTable/PriceListTable";
 import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTable";
-import {getPartnerProducts, generateYml} from '../../../actions/productsActions';
+import {getPartnerProducts, generateYml, getAllCategories} from '../../../actions/productsActions';
+import CategoryList from "./CategoryList";
 
 
 import {Menu, Dropdown, Icon} from 'antd';
@@ -49,6 +50,7 @@ class MyProducts extends Component {
     state = {
         products: [],
         selectedProducts: [],
+        categories: [],
         filters: {
             category_id: '',
             name: '',
@@ -84,6 +86,16 @@ class MyProducts extends Component {
             count: res.count
         })
     };
+
+    handleSelectCategory = (category) => {
+        this.setState({
+            filters: {
+                ...this.state.filters,
+                category_id: category.key
+            }
+        }, () => this.getMyProducts())
+    };
+
 
     handleChangeTable = ({current}) => {
         this.setState({
@@ -128,13 +140,19 @@ class MyProducts extends Component {
         })
     };
 
-    componentDidMount() {
+   async componentDidMount() {
         this.getMyProducts();
+
+
+        const res = await getAllCategories();
+        this.setState({
+            categories: res
+        });
     }
 
 
     render() {
-        const {products, selectedProducts, promUrl, rozetkaUrl, count, currentPage, filters: {brand, name, vendor_code, min_price, max_price}} = this.state;
+        const {products, selectedProducts, promUrl, categories, rozetkaUrl, count, currentPage, filters: {brand, name, vendor_code, min_price, max_price}} = this.state;
         const rowSelection = {
             selectedProducts,
             onChange: this.onSelectChange,
@@ -184,7 +202,17 @@ class MyProducts extends Component {
 
         return (
             <div>
-                <h3 className={styles.title}>Мои товары</h3>
+                <h3 className={styles.title}>
+                    <Popover placement="bottom" content={(
+                        <CategoryList
+                            categories={categories}
+                            onSelectCategory={this.handleSelectCategory}
+                        />
+                    )}>
+                        <Icon type="bars"/>
+                    </Popover>
+
+                    Мои товары</h3>
                 <Tabs onChange={callback} type="card">
                     <TabPane tab={`Товари в продажу - ${products.length}`} key="1">
 

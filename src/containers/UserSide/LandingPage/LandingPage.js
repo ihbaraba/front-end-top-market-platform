@@ -16,7 +16,7 @@ class LandingPage extends Component {
             <div>
                 <header>
                     <div className={styles.container}>
-                        <a href="#" className={styles.logo}><img src={logo} alt="logo" />SMART Lead</a>
+                        <a href="#" className={styles.logo}><img src={logo} alt="logo" />SMART Lead 2.0</a>
                         <div className={styles.headerRight}>
                             <a href="tel:+380931377674" className={styles.tel}>+38 (093) 137-76-74</a>
                             <Link to='/contacts-form' className={styles.regBtn}>Обратная связь</Link>
@@ -89,7 +89,7 @@ class LandingPage extends Component {
                                 <div>
                                     <p>У вас есть возможность,<br/> присоединиться к нам по<br/> сниженной цене.</p>
                                     <p  className={styles.rozetka}>
-                                        <img src={rozetka} alt="rozetka" />
+                                        {/*<img src={rozetka} alt="rozetka" />*/}
                                             Начните успешно<br/> продавать на Розетке!
                                     </p>
                                 </div>

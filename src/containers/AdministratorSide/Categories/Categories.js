@@ -113,6 +113,16 @@ class Categories extends Component {
         })
     };
 
+    handleSelectCategory = (category) => {
+        console.log(category);
+        this.setState({
+            filters: {
+                ...this.state.filters,
+                category_id: category.key
+            }
+        }, () => this.getProducts())
+    };
+
     async componentDidMount() {
         this.getProducts();
 
@@ -147,6 +157,7 @@ class Categories extends Component {
                         <Popover placement="bottom" content={(
                             <CategoryList
                                 categories={categories}
+                                onSelectCategory={this.handleSelectCategory}
                             />
                         )}>
                             <Icon type="bars"/>

@@ -1,13 +1,12 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
-import styles from './ContractorProducts.module.css'
+import styles from '../Categories/Categories.module.css'
 
 
 import {Menu, Icon} from 'antd';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
-
 
 const renderCategories = (categories) => {
     return (
@@ -25,7 +24,6 @@ const renderCategories = (categories) => {
 
 
 const CategoryList = ({categories, onSelectCategory}) => {
-
     return (
         <Menu onClick={onSelectCategory}>
             {renderCategories(categories)}

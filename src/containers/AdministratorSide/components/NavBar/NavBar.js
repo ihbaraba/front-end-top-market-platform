@@ -54,6 +54,10 @@ const contractorMenu = [
         icon: study,
         href: 'learning',
     },
+    {
+        title: 'Контактная форма',
+        href: 'contacts-form',
+    }
 ];
 
 const partnerMenu = [
@@ -102,6 +106,10 @@ const partnerMenu = [
         title: 'Обуч. модуль',
         icon: study,
         href: 'learning',
+    },
+    {
+        title: 'Контактная форма',
+        href: 'contacts-form',
     }
 ];
 

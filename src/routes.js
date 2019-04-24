@@ -25,6 +25,8 @@ import Orders from "./containers/AdministratorSide/Orders/Orders";
 import ContractorProducts from "./containers/AdministratorSide/ContractorProducts/ContractorProducts";
 import DownloadHistory from "./containers/AdministratorSide/ContractorProducts/DownloadHistory";
 import LandingPage from "./containers/UserSide/LandingPage/LandingPage";
+import ContactsForm from "./containers/AdministratorSide/ContactsForm/ContactsForm";
+import ContactsForm2 from "./containers/UserSide/ContactsForm2/ContactsForm";
 
 const Routes = () => {
     return (
@@ -54,6 +56,8 @@ const Routes = () => {
                       <Route path='/admin/lessons' component={Lessons}/>
                       <Route path='/admin/instruction' component={Instruction}/>
                       <Route path='/admin/orders' component={Orders}/>
+                      <Route path='/admin/contacts-form' component={ContactsForm}/>
+
 
                       <Route exact path='/admin/products' component={ContractorProducts}/>
                       <Route path='/admin/products/download_history' component={DownloadHistory}/>
@@ -62,12 +66,14 @@ const Routes = () => {
                 </Route>
 
                 {/*USER SIDE*/}
-                {/*<Route path='' render={() => (*/}
-                    {/*<UserSide>*/}
-                       {/*/!*<Route exact path='/' component={HomePage}/>*!/*/}
-                    {/*</UserSide>*/}
-                {/*)}>*/}
-                {/*</Route>*/}
+                <Route path='' render={() => (
+                    <UserSide>
+                       {/*<Route exact path='/' component={HomePage}/>*/}
+
+                        <Route path='/contacts-form' component={ContactsForm2}/>
+                    </UserSide>
+                )}>
+                </Route>
             </Switch>
         </Fragment>
     )

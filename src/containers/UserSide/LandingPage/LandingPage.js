@@ -19,8 +19,8 @@ class LandingPage extends Component {
                         <a href="#" className={styles.logo}><img src={logo} alt="logo" />SMART Lead</a>
                         <div className={styles.headerRight}>
                             <a href="tel:+380931377674" className={styles.tel}>+38 (093) 137-76-74</a>
+                            <Link to='/contacts-form' className={styles.regBtn}>Обратная связь</Link>
                             <Link to='/registration' className={styles.regBtn}>Регистрация</Link>
-
                             <Link to='/login' className={styles.regBtn}>Войти</Link>
                         </div>
                     </div>

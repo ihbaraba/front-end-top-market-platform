@@ -27,3 +27,71 @@
 .editBlock {
     display: flex;
 }
+
+.productCard {
+
+}
+
+.productInfo {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.productInfoImg {
+    height: 161px;
+    width: 161px;
+    border: 1px solid #ECECEC;
+    background-color: #FFFFFF;
+    margin-right: 40px;
+    display: block;
+}
+
+.productInfoImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.specifications {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.specificationsItems {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.specificationsItems label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    display: block;
+    margin-bottom: 14px;
+}
+.specificationsItems span {
+    color: #9B9B9B;
+    font-family: Ubuntu;
+    font-size: 14px;
+    line-height: 16px;
+    width: 110px;
+    display: block;
+}
+
+.descriptionTitle {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+}
+
+.descriptionText p {
+    color: #9B9B9B;
+    font-family: Ubuntu;
+    font-size: 14px;
+    line-height: 20px;
+}

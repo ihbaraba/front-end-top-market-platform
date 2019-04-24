@@ -10,12 +10,57 @@ import Products from "../components/Products/Products";
 import NewProduct from "../components/Modal/NewProduct";
 import {getPartnerProducts, generateYml} from '../../../actions/productsActions';
 
+
+import { Menu, Dropdown, Icon } from 'antd';
+
 const TabPane = Tabs.TabPane;
 
 
 function callback(key) {
     console.log(key);
 }
+
+const menu = (
+    <Menu>
+        {/*<Menu.Item key="0">*/}
+            {/*<a href="http://www.alipay.com/">1st menu item</a>*/}
+        {/*</Menu.Item>*/}
+        {/*<Menu.Item key="1">*/}
+            {/*<a href="http://www.taobao.com/">2nd menu item</a>*/}
+        {/*</Menu.Item>*/}
+        {/*<Menu.Divider />*/}
+        {/*<Menu.Item key="3">3rd menu item</Menu.Item>*/}
+
+        <div className={styles.addYml}>
+            <div className={styles.top}>
+                <h5>Выберите YML для вашего магазина</h5>
+            </div>
+            <div className={styles.body}>
+                <div>
+                    <label>Стандартная</label>
+                    <input type="text"/>
+                    <button className={styles.copy}>Копировать</button>
+                </div>
+                <div>
+                    <label>Для Prom.ua</label>
+                    <input type="text"/>
+                    <button className={styles.copy}>Копировать</button>
+                </div>
+                <div>
+                    <label>Для Rozetka</label>
+                    <input type="text"/>
+                    <button className={styles.copy}>Копировать</button>
+                </div>
+                <div>
+                    <label>Для Top Market</label>
+                    <input type="text"/>
+                    <button className={styles.copy}>Копировать</button>
+                </div>
+            </div>
+        </div>
+    </Menu>
+);
+
 
 
 class MyProducts extends Component {
@@ -64,6 +109,9 @@ class MyProducts extends Component {
         this.getMyProducts();
     }
 
+
+
+
     render() {
         const {products, selectedProducts, promUrl, rozetkaUrl} = this.state;
 
@@ -94,6 +142,21 @@ class MyProducts extends Component {
 
                                 {/*<NewProduct/>*/}
                                 {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
+                            </div>
+
+                            <div className={styles.inactiveGoodsTable}>
+                                <div className={styles.productsBtns}>
+                                    <Dropdown overlay={menu} trigger={['click']}>
+                                        <button className={styles.actbtn}>Добавить в YML</button>
+                                    </Dropdown>
+                                    {/*<NewProduct/>*/}
+                                    {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
+                                </div>
+
+                                <Products
+                                    products={products}
+                                    onSelectedProducts={e => this.setState({selectedProducts: e})}
+                                />
                             </div>
 
                             <div className={styles.filter}>

@@ -22,15 +22,6 @@ function callback(key) {
 
 const menu = (
     <Menu>
-        {/*<Menu.Item key="0">*/}
-            {/*<a href="http://www.alipay.com/">1st menu item</a>*/}
-        {/*</Menu.Item>*/}
-        {/*<Menu.Item key="1">*/}
-            {/*<a href="http://www.taobao.com/">2nd menu item</a>*/}
-        {/*</Menu.Item>*/}
-        {/*<Menu.Divider />*/}
-        {/*<Menu.Item key="3">3rd menu item</Menu.Item>*/}
-
         <div className={styles.addYml}>
             <div className={styles.top}>
                 <h5>Выберите YML для вашего магазина</h5>
@@ -174,7 +165,7 @@ class MyProducts extends Component {
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
                                 <Dropdown overlay={menu} trigger={['click']}>
-                                    <button className={styles.actbtn}>Добавить в YML</button>
+                                    <button className="btn">Добавить в YML</button>
                                 </Dropdown>
                                 {/*<NewProduct/>*/}
                                 {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
@@ -232,7 +223,7 @@ class MyProducts extends Component {
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
                                 <Dropdown overlay={menu} trigger={['click']}>
-                                    <button className={styles.actbtn}>Добавить в YML</button>
+                                    <button className="btn">Добавить в YML</button>
                                 </Dropdown>
                                 {/*<NewProduct/>*/}
                                 {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}

@@ -30,7 +30,7 @@ class ConfirmRegistration extends Component {
                 </div>
 
                 <div className={`container ${styles.confirmBlock}`} >
-                    <h1>Спасибо за реестрацию</h1>
+                    <h1>Спасибо за регистрацию</h1>
                     <Link to='/login'>Перейти на страницу авторизации</Link>
                 </div>
             </Fragment>

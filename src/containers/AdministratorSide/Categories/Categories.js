@@ -79,7 +79,7 @@ class Categories extends Component {
     handleChangeTable = ({current}) => {
         this.setState({
             currentPage: current
-        }, () => this.getMyProducts())
+        }, () => this.getProducts())
     };
 
 
@@ -234,7 +234,7 @@ class Categories extends Component {
                                 />
                             </div>
                             <div>
-                                <button className='btn' onClick={this.getMyProducts}>Поиск</button>
+                                <button className='btn' onClick={this.getProducts}>Поиск</button>
                             </div>
                         </div>
 

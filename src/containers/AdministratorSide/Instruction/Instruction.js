@@ -104,25 +104,102 @@ class Instruction extends Component {
                         <img src={img7} alt="img7"/>
                     </div>
 
-                    <h3 className={styles.title} style={{margin: '30px 0 0 0'}}>Добавить товары из таблицы</h3>
+                    {/*-----------------------*/}
+                    <h3 className={styles.title} style={{margin: '50px 0 30px 0'}}>Инструкция по импорту товаров через
+                        Exel файл</h3>
+                    <a href={file} className={styles.link}>Скачать пример файла</a>
+
+                    <p>Файл содержит следующие поля с данными о товаре которые необходимо заполнить.</p>
+                    <strong>category_id</strong><br/>
+                    <strong>id</strong><br/>
+                    <strong>product_type</strong><br/>
+                    <strong>brand</strong><br/>
+                    <strong>name</strong><br/>
+                    <strong>variety_type</strong><br/>
+                    <strong>vendor_code</strong><br/>
+                    <strong>warranty_duration</strong><br/>
+                    <strong>vendor_country</strong><br/>
+                    <strong>box_size</strong><br/>
+                    <strong>count</strong><br/>
+                    <strong>price</strong><br/>
+                    <strong>description</strong><br/>
+                    <strong>extra_description</strong><br/>
+                    <strong>age_group</strong><br/>
+                    <strong>material</strong><br/>
+
+
+                    <p> В поле <strong>category_id</strong> необходимо ввести <strong>id</strong> категории товара
+                        которой он соответствует.
+                        Id необходимой категории можно найти в блоке <a href="#tree">категорий</a>:</p>
+
+                    <p>
+                        В поле <strong>id</strong> необходимо указать id товара который уже есть в системе topmarket в
+                        этом случае данные
+                        по товару обновятся или оставить поле <strong>id</strong> незаполненным. Если айди не указано -
+                        система создаст
+                        этот товар как новый.
+                    </p>
+
+                    <ul>
+                        <li>Поле <strong>product_type</strong> должно содержать тип продукта, например “Мобільный
+                            телефон Apple”
+                        </li>
+                        <li>В поле <strong>brand</strong> указывается название бренда</li>
+                        <li>Поле <strong>name</strong> должно содержать имя продукта например “iPhone Xs Max”</li>
+                        <li>Поле <strong>variety_type</strong> должно содержать разновидность продукта</li>
+                        <li>Поле <strong>vendor_code</strong> должно содержать артикул продукта</li>
+                        <li>Поле <strong>warranty_duration</strong> должно содержать срок гарантии (количество дней)
+                        </li>
+                        <li>В поле <strong>vendor_country</strong> необходимо указать страну производителя</li>
+                        <li>Поле <strong>box_size</strong> удолжно содержать размер коробки товара</li>
+                        <li>Поле <strong>count</strong> должно содержать количество товара, его остаток на складе</li>
+                        <li>Поле <strong>price</strong> должно содержать цену товара</li>
+                        <li>Поле <strong>description</strong> должно содержать полное описание товара</li>
+                        <li>Поле <strong>extra_description</strong> может содержать дополнительное короткое описание
+                            товара, является не обязательным полем
+                        </li>
+                        <li>Поле <strong>age_group</strong> может содержать возрастную категорию для этого товара,
+                            является не обязательным полем
+                        </li>
+                        <li>Поле <strong>material</strong> может содержать название материала товара, является не
+                            обязательным полем
+                        </li>
+                    </ul>
+
+                    <p>После внесения товаров в Exel файл, выполните его загрузку.</p>
+
+
                     <div className={styles.img7}>
                         <img src={img8} alt="img7"/>
                     </div>
 
-                    <a href={file} className={styles.link}>Скачать пример файла</a>
+
+                    {/*-----------------------*/}
+                    <h3 className={styles.title} style={{margin: '50px 0 30px 0'}}>Инструкция по импорту товаров c
+                        Rozetka</h3>
+                    <p>Для того чтобы импортировать товары с Rozetka marketplace необходимо перейти в раздел “Товары”,
+                        который находится в <a href="https://seller.rozetka.com.ua">личном кабинете Rozetka </a>
+                        Для экспорта товаров в Exel нажмите кнопку “Загрузить файл”
+                    </p>
+
+                    <p>
+                        Сохраните файл на вашем ПК. <br/>
+                        В разделе платформы “Мои товары” импортируйте сохраненный файл
+                    </p>
 
 
                     <h3 className={styles.title} style={{margin: '30px 0 0 0'}}>Категории</h3>
 
-                    <Tree
-                        showLine
-                        multiple
-                        defaultExpandedKeys={['0-0-0']}
-                        onSelect={this.onSelect}
-                    >
-                        {renderCategories(categories)}
-                    </Tree>
-
+                    <div id='tree'>
+                        <Tree
+                            showLine
+                            multiple
+                            defaultExpandedKeys={['0-0-0']}
+                            onSelect={this.onSelect}
+                        >
+                            {renderCategories(categories)}
+                        </Tree>
+                    </div>
                 </div>
             </div>
         );

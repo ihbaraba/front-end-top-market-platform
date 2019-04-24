@@ -38,6 +38,8 @@ export const PASSWORD = 'password_change/';
 
 export const RESET_PASSWORD = 'password_reset/';
 
+export const CONTACT_FORM = 'marketplace/base/contact_us/';
+
 //COMPANY
 export const COMPANY_PROFILE = 'company/detail/';
 

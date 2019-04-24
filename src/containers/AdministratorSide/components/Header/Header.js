@@ -19,6 +19,7 @@ class Header extends Component {
 
     handleLogout = () => {
         sessionStorage.removeItem('token');
+        window.location.href = `${window.location.origin}/`;
     };
 
     render() {
@@ -35,7 +36,7 @@ class Header extends Component {
                         <Link to="/admin/employees">Сотрудники</Link>
                     </Menu.Item>
                     <Menu.Item onClick={this.handleLogout}>
-                        <Link to="/">Выход</Link>
+                        Выход
                     </Menu.Item>
                 </Menu>
             );
@@ -43,7 +44,7 @@ class Header extends Component {
             <div className='container'>
                 <header>
                     <div className={styles.logo}>
-                        <img src={logo} alt="logo" />SMART Lead 2.0
+                        <img src={logo} alt="logo"/>SMART Lead 2.0
                     </div>
 
                     <div className={styles.notification}>
@@ -95,8 +96,7 @@ const mapStateToProps = state => ({
     user: state.user
 });
 
-const mapDispatchToProps = dispatch => ({
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
 

@@ -6,7 +6,8 @@ import {
     CONFIRM_EMAIL,
     PROFILE,
     PASSWORD,
-    RESET_PASSWORD
+    RESET_PASSWORD,
+    CONTACT_FORM
 } from '../constants/APIURLS';
 
 
@@ -54,4 +55,8 @@ export const changePassword = pass => {
 
 export const resetPassword = email => {
     return api('post', RESET_PASSWORD, email)
+};
+
+export const sendContactForm = form => {
+    return api('post', CONTACT_FORM, form)
 };

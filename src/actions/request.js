@@ -25,16 +25,25 @@ const http = (method, url, data, type) => {
                 resolve(result.data);
             })
             .catch(error => {
-                console.log(error.response == null);
                 if (error.response != null) {
                     if (typeof error.response.data === 'object') {
+
                         for (let key in error.response.data) {
                             if (key !== 'messages') {
-                                notification.error({
-                                    // message: key,
-                                    // description: error.response.data[key][0],
-                                    message: error.response.data[key][0],
-                                });
+                                if (typeof error.response.data[key] === 'string') {
+                                    notification.error({
+                                        // message: key,
+                                        // description: error.response.data[key][0],
+                                        message: error.response.data[key],
+                                    });
+                                } else {
+                                    notification.error({
+                                        // message: key,
+                                        // description: error.response.data[key][0],
+                                        message: error.response.data[key][0],
+                                    });
+                                }
+
                             }
                         }
                     } else {

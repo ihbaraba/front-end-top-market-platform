@@ -25,8 +25,7 @@ import Orders from "./containers/AdministratorSide/Orders/Orders";
 import ContractorProducts from "./containers/AdministratorSide/ContractorProducts/ContractorProducts";
 import DownloadHistory from "./containers/AdministratorSide/ContractorProducts/DownloadHistory";
 import LandingPage from "./containers/UserSide/LandingPage/LandingPage";
-import ContactsForm from "./containers/AdministratorSide/ContactsForm/ContactsForm";
-import ContactsForm2 from "./containers/UserSide/ContactsForm2/ContactsForm";
+import ContactsForm from "./containers/UserSide/ContactsForm2/ContactsForm";
 
 const Routes = () => {
     return (
@@ -70,7 +69,7 @@ const Routes = () => {
                     <UserSide>
                        {/*<Route exact path='/' component={HomePage}/>*/}
 
-                        <Route path='/contacts-form' component={ContactsForm2}/>
+                        <Route path='/contacts-form' component={ContactsForm}/>
                     </UserSide>
                 )}>
                 </Route>

@@ -6,17 +6,28 @@
     line-height: 35px;
     margin-bottom: 29px;
 }
+
+.title i {
+    margin: 0 20px 0 0;
+}
+.title i:hover {
+    color: #4A90E2;
+    cursor: pointer;
+}
+
 .top {
     display: flex;
     /*align-items: center;*/
     justify-content: space-between;
 }
+
 .howToAdd {
     color: #4A90E2;
     font-family: Ubuntu;
     font-size: 16px;
     display: block;
 }
+
 .categoryList {
     height: auto;
     width: 271px;
@@ -25,15 +36,17 @@
     background-color: #FFFFFF;
     margin-right: 29px;
 }
+
 .dropdownMenu {
     height: 767px;
-    width: 836px;
+    width: 100%;
     padding: 25px;
     border: 1px solid #ECECEC;
     border-radius: 5px;
     background-color: #FFFFFF;
     /*display: flex;*/
- }
+}
+
 .dropdownMenu h5 {
     color: #4A4A4A;
     font-family: Ubuntu;
@@ -42,6 +55,7 @@
     line-height: 26px;
     text-align: center;
 }
+
 .dropdownMenuList {
     display: flex;
     width: 100%;
@@ -50,23 +64,27 @@
 }
 
 .dropdownMenu ul li a {
-     display: block;
+    display: block;
 }
 
 .categories {
+    width: 100%;
     display: flex;
 }
+
 .categoriesBlock {
-    height: 767px;
-    width: 836px;
+    height: max-content;
+    width: 100%;
     border: 1px solid #ECECEC;
     border-radius: 5px;
     background-color: #FFFFFF;
     padding: 34px 30px;
 }
+
 .actions {
     display: flex;
 }
+
 .addToMyProducts {
     height: 40px;
     width: 234px;
@@ -79,6 +97,7 @@
     line-height: 22px;
     margin-right: 20px;
 }
+
 .downloadExel {
     height: 40px;
     width: 206px;
@@ -91,12 +110,14 @@
     line-height: 22px;
     margin-right: 20px;
 }
+
 .search {
     display: flex;
     width: 100%;
     position: relative;
     width: 297px;
 }
+
 input[type=search] {
     height: 41px;
     width: 297px;
@@ -107,6 +128,7 @@ input[type=search] {
     margin-bottom: 25px;
     position: relative;
 }
+
 input[type=submit] {
     position: absolute;
     right: 0;
@@ -117,4 +139,80 @@ input[type=submit] {
     background-image: url("../../../img/search.svg");
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+
+/* Filter */
+.filter {
+    padding: 30px 0 0 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.filter label {
+    color: #4A4A4A;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    display: block;
+    margin-bottom: 8.5px;
+}
+.filter .code,
+.filter .vendorCode {
+    height: 31px;
+    width: 108px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+.filter .productName {
+    height: 31px;
+    width: 126px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+
+.filter .category {
+    height: 31px;
+    width: 157px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+
+.filter .availability {
+    height: 31px;
+    width: 107px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+.filter .priceMin,
+.filter .priceMax {
+    height: 31px;
+    width: 80px;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+.find {
+    height: 40px;
+    width: 169px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-top: 20px;
+    display: block;
 }

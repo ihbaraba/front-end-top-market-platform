@@ -41,7 +41,6 @@ class ContractorProducts extends Component {
             max_price ? `&max_price=${max_price}` : '',
         ];
 
-
         const url = `?page=${currentPage + urlParams.join('')}`;
         const res = await getContractorProducts(url);
 

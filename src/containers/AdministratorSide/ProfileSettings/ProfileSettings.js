@@ -3,7 +3,7 @@ import {Tabs, Table, Checkbox, Form, Input, Button} from 'antd';
 import styles from './ProfileSettings.module.css'
 import defaultAvatar from "../../../img/avatar.png";
 import Dropzone from 'react-dropzone'
-import {Modal, Icon, notification} from 'antd'
+import {Modal, notification, Icon} from 'antd'
 
 import {getProfile, updateProfile, changePassword, login} from '../../../actions/userActions';
 import {connect} from "react-redux";

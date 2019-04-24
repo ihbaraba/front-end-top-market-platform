@@ -60,8 +60,9 @@ export const removeContractorProduct = (products) => {
 };
 
 //partner
-export const getAllProducts = () => {
-    return api('get', `${ALL_PRODUCTS}`)
+export const getAllProducts = (url) => {
+    console.log(url);
+    return api('get', `${ALL_PRODUCTS + url}`)
 };
 
 export const copyProducts = (products) => {

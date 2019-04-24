@@ -31,7 +31,9 @@ class DownloadHistory extends Component {
                     {files.map((item, index) => (
                         <div key={index} className={styles.fileBlock}>
                             <span className={styles.fileName}>
-                            {item.xlsFile}
+                           <a href={`https://api.topmarket.club${item.xlsFile}`}>
+                               {item.xlsFile.split('/')[item.xlsFile.split('/').length - 1]}
+                           </a>
 
                                 <span className={styles.errorsBlock}>
                                 {item.errors}

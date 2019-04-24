@@ -30,7 +30,7 @@ export const LOGIN = 'login/';
 
 export const REGISTRATION = 'register/';
 
-export const CONFIRM_EMAIL = 'auth/confirm/';
+export const CONFIRM_EMAIL = 'activate/';
 
 export const PROFILE = 'profile/';
 
@@ -56,7 +56,6 @@ export const COMPANY_PITCH = 'company/pitch/';
 //PRODUCTS
 export const CONTRACTOR_PRODUCTS = 'catalog/contractor_products/';
 
-// export const PARTNER_PRODUCTS = 'catalog/partner_products/products_by_contractors/';
 export const PARTNER_PRODUCTS = 'catalog/partner_products/';
 
 export const ALL_PRODUCTS = 'catalog/partner_products/products_by_contractors/';
@@ -71,8 +70,9 @@ export const NEW_PRODUCTS = 'catalog/contractor_products/';
 
 export const DOWNLOADS_STATUS = 'catalog/contractor_products/upload_history/';
 
-
 export const COPY_TO_MY_PRODUCTS = 'catalog/partner_products/copy_to_my_products/';
+
+export const YML = 'catalog/yml-handler/';
 
 
 

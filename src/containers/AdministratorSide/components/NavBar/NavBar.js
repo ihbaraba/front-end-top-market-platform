@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {Tooltip} from 'antd';
 import {NavLink} from 'react-router-dom';
 import styles from './NavBar.module.css'
 import 'antd/dist/antd.css';
@@ -25,36 +26,43 @@ const contractorMenu = [
         icon: cabinet,
         activeIcon: cabinetActive,
         href: 'cabinet',
+        developing: false
     },
     {
         title: 'Мои товары',
         icon: shopping,
         href: 'products',
+        developing: false
     },
     {
         title: 'Мои заказы',
         icon: list,
         href: 'orders',
+        developing: true
     },
     {
         title: 'Финансы',
         icon: chart,
         href: 'finance',
+        developing: true
     },
     {
         title: 'База знаний',
         icon: database,
         href: 'knowledge_base',
+        developing: true
     },
     {
         title: 'Доп. услуги',
         icon: services,
         href: 'additional_services',
+        developing: true
     },
     {
         title: 'Обуч. модуль',
         icon: study,
         href: 'learning',
+        developing: true
     },
     {
         title: 'Контактная форма',
@@ -69,46 +77,55 @@ const partnerMenu = [
         icon: cabinet,
         activeIcon: cabinetActive,
         href: 'cabinet',
+        developing: false
     },
     {
         title: 'Мой магазин',
         icon: home,
         href: 'store',
+        developing: true
     },
     {
         title: 'Все товары',
         icon: cart,
         href: 'categories',
+        developing: false
     },
     {
         title: 'Мои заказы',
         icon: list,
         href: 'orders',
+        developing: true
     },
     {
         title: 'Финансы',
         icon: chart,
         href: 'finance',
+        developing: true
     },
     {
         title: 'Мои товары',
         icon: shopping,
         href: 'my_products',
+        developing: false
     },
     {
         title: 'База знаний',
         icon: database,
         href: 'knowledge_base',
+        developing: true
     },
     {
         title: 'Доп. услуги',
         icon: services,
         href: 'additional_services',
+        developing: true
     },
     {
         title: 'Обуч. модуль',
         icon: study,
         href: 'learning',
+        developing: true
     },
     {
         title: 'Контактная форма',
@@ -125,18 +142,35 @@ class NavBar extends Component {
 
         return (
             <div className={styles.navigationBar}>
-                {navigation.map((item, index) => (
-                    <NavLink
-                        className={styles.menuItem}
-                        key={index}
-                        to={`/admin/${item.href}`}>
-                        <img src={item.icon} alt="" className={styles.icon}/>
-                        <img src={item.activeIcon} alt="" className={styles.activeIcon}/>
+                {navigation.map((item, index) => {
+                    if (item.developing) {
+                        return (
+                            <Tooltip placement="right" title='Находится в разработке'>
+                                <NavLink
+                                    className={styles.menuItem}
+                                    key={index}
+                                    to={`/admin/${item.href}`}>
+                                    <img src={item.icon} alt="" className={styles.icon}/>
+                                    <img src={item.activeIcon} alt="" className={styles.activeIcon}/>
 
-                        {item.title}
-                    </NavLink>
+                                    {item.title}
+                                </NavLink>
+                            </Tooltip>
+                        )
+                    } else {
+                        return (
+                            <NavLink
+                                className={styles.menuItem}
+                                key={index}
+                                to={`/admin/${item.href}`}>
+                                <img src={item.icon} alt="" className={styles.icon}/>
+                                <img src={item.activeIcon} alt="" className={styles.activeIcon}/>
 
-                ))}
+                                {item.title}
+                            </NavLink>
+                        )
+                    }
+                })}
             </div>
         )
     }

@@ -91,31 +91,33 @@ class Employees extends Component {
         this.setState({
             visible: true,
         });
-    }
+    };
 
     handleOk = (e) => {
         console.log(e);
         this.setState({
             visible: false,
         });
-    }
+    };
 
     handleCancel = (e) => {
         console.log(e);
         this.setState({
             visible: false,
         });
-    }
+    };
 
     render() {
         return (
             <div>
                 <div className={styles.top}>
-                    <h3 className={styles.title}>Сотрудники</h3>
+                    <h3 className={styles.title}>Сотрудники (Находится в разработке)</h3>
+
                     <button  className={styles.addBtn} onClick={this.showModal}>
                         Добавить сотрудника
                     </button>
                 </div>
+
                 <div className={styles.employeesTable}>
                     <div className={styles.searchEmployees}>
                         <input type="search"/>
@@ -163,7 +165,6 @@ class Employees extends Component {
                         </form>
                     </Modal>
                 </div>
-
             </div>
         );
     }

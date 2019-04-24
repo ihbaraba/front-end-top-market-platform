@@ -60,6 +60,15 @@
     text-align: center;
 }
 
+.confirmBlock {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.confirmBlock h1 {
+    font-size: 40px;
+}
+
 header {
     display: flex;
     justify-content: space-between;

@@ -8,7 +8,8 @@ class Store extends Component {
     render() {
         return (
             <div >
-                <h3 className={styles.title}>Управление интернет магазином</h3>
+                <h3 className={styles.title}>Управление интернет магазином (Находится в разработке)</h3>
+
                 <form className={styles.storeManagement}>
                     <div className={styles.domen}>
                         <div>

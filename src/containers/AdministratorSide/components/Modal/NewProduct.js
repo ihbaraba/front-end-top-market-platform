@@ -188,7 +188,7 @@ class NewProduct extends Component {
 
         return (
             <div>
-                <button className={styles.actbtn} onClick={this.showModal}>Добавить товар</button>
+                <button className='btn' onClick={this.showModal}>Добавить товар</button>
 
                 <Modal
                     title="Новый товар"

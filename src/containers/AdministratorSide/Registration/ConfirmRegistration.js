@@ -1,21 +1,41 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, Component} from 'react';
 import {Link} from 'react-router-dom';
 import queryString from 'query-string';
+import logo from "../../../img/logo.png";
+import styles from './Registration.module.css';
 
 import {confirmEmail} from '../../../actions/userActions';
 
-const ConfirmRegistration = () => {
-    let urlParams = queryString.parseUrl(document.location.search).query;
-    console.log(urlParams);
+class ConfirmRegistration extends Component {
 
-    confirmEmail(urlParams);
+    componentDidMount() {
+        let urlParams = queryString.parseUrl(document.location.search).query;
+        console.log();
 
-    return (
-        <Fragment>
-            <h1>Ok</h1>
-            <Link to='/'>go to login page</Link>
-        </Fragment>
-    )
-};
+        confirmEmail(urlParams.token);
+    }
+
+    render() {
+        return (
+            <Fragment>
+                <div className='container'>
+                    <header>
+                        <div className={styles.logo}>
+                            <img src={logo} alt=""/>
+                        </div>
+                        <Link to='/login'>
+                            <button className={styles.regBtn}>Войти</button>
+                        </Link>
+                    </header>
+                </div>
+
+                <div className={`container ${styles.confirmBlock}`} >
+                    <h1>Спасибо за реестрацию</h1>
+                    <Link to='/login'>Перейти на страницу авторизации</Link>
+                </div>
+            </Fragment>
+        )
+    }
+}
 
 export default ConfirmRegistration;

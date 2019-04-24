@@ -56,7 +56,7 @@ class Cart extends Component {
     render() {
         return (
             <div >
-                <h3 className={styles.title}>Корзина</h3>
+                <h3 className={styles.title}>Корзина (Находится в разработке)</h3>
 
                 <form className={styles.cartForm}>
                     <div>

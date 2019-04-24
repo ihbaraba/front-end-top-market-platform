@@ -3,17 +3,18 @@ import {Tabs} from 'antd';
 import styles from './MyProducts.module.css'
 import 'antd/dist/antd.css';
 import copyLink from "../../../img/link-symbol.svg";
-import {Table} from 'antd';
+import {Table, Popover} from 'antd';
 import PriceListTable from "../components/PriceListTable/PriceListTable";
 import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTable";
 import Products from "../components/Products/Products";
 import NewProduct from "../components/Modal/NewProduct";
-import {getPartnerProducts} from '../../../actions/productsActions';
+import {getPartnerProducts, generateYml} from '../../../actions/productsActions';
 
 
 import { Menu, Dropdown, Icon } from 'antd';
 
 const TabPane = Tabs.TabPane;
+
 
 function callback(key) {
     console.log(key);
@@ -64,7 +65,11 @@ const menu = (
 
 class MyProducts extends Component {
     state = {
-        products: []
+        products: [],
+        selectedProducts: [],
+
+        rozetkaUrl: '',
+        promUrl: ''
     };
 
     getMyProducts = async () => {
@@ -72,6 +77,31 @@ class MyProducts extends Component {
 
         this.setState({
             products: res.results
+        })
+    };
+
+    handleGenerateYml = async () => {
+        console.log(this.state.selectedProducts);
+        let arr = [];
+        await this.state.selectedProducts.forEach(item => {
+            arr.push(this.state.products[item].id);
+        });
+
+        const [rozetka, prom] = await Promise.all([
+            generateYml({
+                ymlType: 'rozetka',
+                productIds: arr
+            }),
+
+            generateYml({
+                ymlType: 'prom',
+                productIds: arr
+            }),
+        ]);
+
+        this.setState({
+            rozetkaUrl: rozetka,
+            promUrl: prom
         })
     };
 
@@ -83,13 +113,23 @@ class MyProducts extends Component {
 
 
     render() {
-        const {products} = this.state;
+        const {products, selectedProducts, promUrl, rozetkaUrl} = this.state;
+
+        const popoverContent = (
+            <div>
+                <h4>Для Prom.ua</h4>
+                <span>{promUrl}</span>
+
+                <h4>Для Rozetka</h4>
+                <span>{rozetkaUrl}</span>
+            </div>
+        );
 
         return (
             <div>
                 <h3 className={styles.title}>Мои товары</h3>
                 <Tabs onChange={callback} type="card">
-                    <TabPane tab="Товари в продажу (174)" key="1">
+                    <TabPane tab={`Товари в продажу ${products.length}`} key="1">
                         <div className={styles.filter}>
                             <form>
                                 <div>
@@ -142,6 +182,7 @@ class MyProducts extends Component {
 
                             <Products
                                 products={products}
+                                onSelectedProducts={e => this.setState({selectedProducts: e})}
                             />
                         </div>
                     </TabPane>

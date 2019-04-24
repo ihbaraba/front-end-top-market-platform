@@ -31,7 +31,7 @@ export const registration = user => {
 };
 
 export const confirmEmail = token => {
-    return api('post', CONFIRM_EMAIL, token)
+    return api('get', CONFIRM_EMAIL + token)
 };
 
 export const getProfile = user => {

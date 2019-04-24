@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import {Link} from 'react-router-dom'
-import {Table, Icon} from 'antd';
+import {Table, Icon, Popover} from 'antd';
 import Dropzone from 'react-dropzone';
 import styles from './ContractorProducts.module.css'
 import CategoryList from "./CategoryList";
@@ -19,18 +19,44 @@ class ContractorProducts extends Component {
         selectedRowKeys: [],
         products: [],
         product: {},
+        filters: {
+            category_id: '',
+            name: '',
+            vendor_code: '',
+            min_price: '',
+            max_price: ''
+        },
 
         count: 0,
         currentPage: 1
     };
+
+    getMyProducts = async () => {
+        const {currentPage, filters: {category_id, name, vendor_code, min_price, max_price}} = this.state;
+        const urlParams = [
+            category_id ? `&category_id=${category_id}` : '',
+            name ? `&name=${name}` : '',
+            vendor_code ? `&vendor_code=${vendor_code}` : '',
+            min_price ? `&min_price=${min_price}` : '',
+            max_price ? `&max_price=${max_price}` : '',
+        ];
+
+
+        const url = `?page=${currentPage + urlParams.join('')}`;
+        const res = await getContractorProducts(url);
+
+        this.setState({
+            products: res.results,
+            count: res.count
+        })
+    };
+
 
     onSelectChange = (selectedRowKeys) => {
         this.setState({selectedRowKeys});
     };
 
     handleUploadFile = async (file) => {
-        console.log(file[0]);
-
         const formData = new FormData();
         formData.append(
             'xls_file',
@@ -48,6 +74,15 @@ class ContractorProducts extends Component {
         })
     };
 
+    handleChangeFilters = ({target: {name, value}}) => {
+        this.setState({
+            filters: {
+                ...this.state.filters,
+                [name]: value
+            }
+        })
+    };
+
     handleRemoveProducts = async () => {
         let idArr = [];
         await this.state.selectedRowKeys.forEach(item => {
@@ -60,17 +95,6 @@ class ContractorProducts extends Component {
         this.handleUpdate()
     };
 
-    getMyProducts = async () => {
-        const {currentPage} = this.state;
-
-        const url = `?page=${currentPage}`;
-        const res = await getContractorProducts(url);
-
-        this.setState({
-            products: res.results,
-            count: res.count
-        })
-    };
 
     handleChangeTable = ({current}) => {
         this.setState({
@@ -91,15 +115,27 @@ class ContractorProducts extends Component {
             selectedRowKeys: [],
             product: {}
         })
-    }
+    };
 
     componentDidMount() {
         this.getMyProducts();
         this.getCategories();
-    }
+    };
 
     render() {
-        const {selectedRowKeys, products, categories, product, count, currentPage} = this.state;
+        const {
+            selectedRowKeys,
+            products,
+            categories,
+            product,
+            count,
+            currentPage,
+            name,
+            vendor_code,
+            min_price,
+            max_price,
+        } = this.state;
+
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -158,14 +194,22 @@ class ContractorProducts extends Component {
         return (
             <div className={styles.Page}>
                 <div className={styles.top}>
-                    <h3 className={styles.title}>Категории</h3>
+                    <h3 className={styles.title}>
+                        <Popover placement="bottom" content={(
+                                <CategoryList
+                                    categories={categories}
+                                />
+                        )}>
+                            <Icon type="bars"/>
+                        </Popover>
+
+                        Категории
+                    </h3>
                     <Link to="/admin/instruction" className={styles.howToAdd}>Как добавить товар?</Link>
                 </div>
 
                 <div className={styles.categories}>
-                    <CategoryList
-                        categories={categories}
-                    />
+
 
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
@@ -179,16 +223,87 @@ class ContractorProducts extends Component {
                                 {({getRootProps, getInputProps}) => (
                                     <div {...getRootProps({className: 'dropzone'})}>
                                         <input {...getInputProps()} />
-                                        <button className={styles.downloadExel}>Загрузить Exel файл</button>
+                                        <button className='btn'>Загрузить Exel файл</button>
                                     </div>
                                 )}
                             </Dropzone>
 
-                            <button className={styles.downloadExel}
+                            <button className='btn'
                                     onClick={() => this.props.history.push('/admin/products/download_history')}>
                                 История загрузок
                             </button>
 
+                        </div>
+
+                        <div className={styles.filter}>
+                            <div>
+                                <label>Код товара</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='name'
+                                    value={name}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+                            <div>
+                                <label>Артикул</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='vendor_code'
+                                    value={vendor_code}
+                                    onChange={this.handleChangeFilters}
+                                />
+
+                            </div>
+                            <div>
+                                <label>Название товара</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='name'
+                                    value={name}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+                            {/*<div>*/}
+                            {/*<label>Категория</label>*/}
+                            {/*<select className={styles.category}>*/}
+                            {/*<option>Телефоны</option>*/}
+                            {/*<option>Телефоны</option>*/}
+                            {/*</select>*/}
+                            {/*</div>*/}
+                            <div>
+                                <label>Наличие</label>
+                                <select className={styles.availability}>
+                                    <option>В наличии</option>
+                                    <option>Нет в наличии</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Цена от</label>
+                                <input
+                                    type="number"
+                                    className={styles.productName}
+                                    name='min_price'
+                                    value={min_price}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+                            <div>
+                                <label>До</label>
+                                <input
+                                    type="number"
+                                    className={styles.productName}
+                                    name='max_price'
+                                    value={max_price}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+                            <div>
+                                <button className='btn' onClick={this.getMyProducts}>Поиск</button>
+                            </div>
                         </div>
 
                         <Table

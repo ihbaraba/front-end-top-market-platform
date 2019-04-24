@@ -40,7 +40,7 @@ class Categories extends Component {
     getProducts = async () => {
         const res = await getAllProducts();
         this.setState({
-            products: res
+            products: res.results
         })
     };
 

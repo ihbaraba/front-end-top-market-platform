@@ -61,7 +61,6 @@ export const removeContractorProduct = (products) => {
 
 //partner
 export const getAllProducts = (url) => {
-    console.log(url);
     return api('get', `${ALL_PRODUCTS + url}`)
 };
 
@@ -69,10 +68,10 @@ export const copyProducts = (products) => {
     return api('post', `${COPY_TO_MY_PRODUCTS}`, products)
 };
 
-export const getPartnerProducts = () => {
-    return api('get', `${PARTNER_PRODUCTS}`)
+export const getPartnerProducts = (url) => {
+    return api('get', `${PARTNER_PRODUCTS + url}`)
 };
 
-export const generateYml = (products) => {
-    return api('post', `${YML}`, products)
+export const generateYml = (products, type) => {
+    return api('patch', `${YML}${type}/`, products)
 };

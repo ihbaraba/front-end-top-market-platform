@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import styles from './Login.module.css';
 
 import {login} from '../../../actions/userActions';
-import logo from "../../../img/logo.png";
+import logo from "../../../img/logo2.png";
 
 const FormItem = Form.Item;
 
@@ -33,7 +33,7 @@ class Login extends Component {
                 <div className='container'>
                     <header>
                         <div className={styles.logo}>
-                            <img src={logo} alt=""/>
+                            <img src={logo} alt="logo" />SMART Lead 2.0
                         </div>
                         <Link to='/registration'><button className={styles.regBtn}>Регистрация</button></Link>
                     </header>

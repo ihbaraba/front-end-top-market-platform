@@ -3,7 +3,7 @@ import {Menu, Dropdown, Icon} from 'antd';
 import {Link} from 'react-router-dom'
 import styles from './Header.module.css'
 import 'antd/dist/antd.css';
-import logo from "../../../../img/logo.png";
+import logo from "../../../../img/logo2.png";
 import avatar from "../../../../img/ava.png";
 import notification from "../../../../img/notification.svg";
 import cart from "../../../../img/cart.svg";
@@ -43,8 +43,9 @@ class Header extends Component {
             <div className='container'>
                 <header>
                     <div className={styles.logo}>
-                        <img src={logo} alt=""/>
+                        <img src={logo} alt="logo" />SMART Lead 2.0
                     </div>
+
                     <div className={styles.notification}>
                         <a href="#">
                             <img src={notification} alt=""/>

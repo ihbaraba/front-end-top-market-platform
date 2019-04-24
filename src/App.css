@@ -155,6 +155,18 @@ a.active {
     line-height: 22px;
     margin-right: 20px;
 }
+.btn button {
+    height: 40px;
+    width: 206px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-right: 20px;
+}
 
 .btn:hover {
     background-color: #3870af !important;

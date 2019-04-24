@@ -6,7 +6,7 @@ import {Modal} from 'antd';
 import styles from './Registration.module.css';
 
 import {registration} from '../../../actions/userActions';
-import logo from "../../../img/logo.png";
+import logo from "../../../img/logo2.png";
 import cart from "../../../img/cart.svg";
 import dollar from "../../../img/dollar.svg";
 import avatar from "../../../img/ava.png";
@@ -51,7 +51,7 @@ class Registration extends Component {
                 <div className='container'>
                     <header>
                         <div className={styles.logo}>
-                            <img src={logo} alt=""/>
+                            <img src={logo} alt="logo" />SMART Lead 2.0
                         </div>
                         <Link to='/login'><button className={styles.regBtn}>Войти</button></Link>
                     </header>

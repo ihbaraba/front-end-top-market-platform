@@ -22,12 +22,20 @@ header {
 
 .logo {
     height: 79px;
-    width: 160px;
     margin-right: 97px;
+
+    display: flex;
+    align-items: center;
+    color: #434343;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 30px;
 }
 
 .logo img {
-    width: 100%;
+    margin: 0 18px 0 0;
 }
 
 .notification {

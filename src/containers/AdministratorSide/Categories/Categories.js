@@ -12,16 +12,16 @@ const columns = [
         dataIndex: 'name',
     },
     {
+        title: 'Артикул',
+        dataIndex: 'vendorCode',
+    },
+    {
         title: 'Бренд',
         dataIndex: 'brand',
     },
     {
-        title: 'Артикул',
-        dataIndex: 'brand',
-    },
-    {
         title: 'Категория',
-        dataIndex: 'brand',
+        dataIndex: 'category',
     },
     {
         title: 'Количество',
@@ -45,7 +45,9 @@ class Categories extends Component {
             name: '',
             vendor_code: '',
             min_price: '',
-            max_price: ''
+            max_price: '',
+            brand: '',
+            in_stock: ''
         },
 
         count: 0,
@@ -57,17 +59,18 @@ class Categories extends Component {
     };
 
     getProducts = async () => {
-        const {currentPage, filters: {category_id, name, vendor_code, min_price, max_price}} = this.state;
+        const {currentPage, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',
             name ? `&name=${name}` : '',
+            brand ? `&brand=${brand}` : '',
+            in_stock ? `&in_stock=${in_stock}` : '',
             vendor_code ? `&vendor_code=${vendor_code}` : '',
             min_price ? `&min_price=${min_price}` : '',
             max_price ? `&max_price=${max_price}` : '',
         ];
 
         const url = `?page=${currentPage + urlParams.join('')}`;
-        console.log(url);
         const res = await getAllProducts(url);
 
         this.setState({
@@ -121,7 +124,7 @@ class Categories extends Component {
 
 
     render() {
-        const {selectedRowKeys, products, categories, count, currentPage, filters: {category_id, name, vendor_code, min_price, max_price}} = this.state;
+        const {selectedRowKeys, products, categories, count, currentPage, filters: {brand, name, vendor_code, min_price, max_price}} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -152,7 +155,7 @@ class Categories extends Component {
                         Категории
                     </h3>
 
-                    <Link to="/admin/instruction" className={styles.howToAdd}>Как добавить товар?</Link>
+                    {/*<Link to="/admin/instruction" className={styles.howToAdd}>Как добавить товар?</Link>*/}
                 </div>
 
                 <div className={styles.categories}>
@@ -169,27 +172,6 @@ class Categories extends Component {
 
                         <div className={styles.filter}>
                             <div>
-                                <label>Код товара</label>
-                                <input
-                                    type="text"
-                                    className={styles.productName}
-                                    name='name'
-                                    value={name}
-                                    onChange={this.handleChangeFilters}
-                                />
-                            </div>
-                            <div>
-                                <label>Артикул</label>
-                                <input
-                                    type="text"
-                                    className={styles.productName}
-                                    name='vendor_code'
-                                    value={vendor_code}
-                                    onChange={this.handleChangeFilters}
-                                />
-
-                            </div>
-                            <div>
                                 <label>Название товара</label>
                                 <input
                                     type="text"
@@ -199,20 +181,43 @@ class Categories extends Component {
                                     onChange={this.handleChangeFilters}
                                 />
                             </div>
-                            {/*<div>*/}
-                            {/*<label>Категория</label>*/}
-                            {/*<select className={styles.category}>*/}
-                            {/*<option>Телефоны</option>*/}
-                            {/*<option>Телефоны</option>*/}
-                            {/*</select>*/}
-                            {/*</div>*/}
+
+                            <div>
+                                <label>Артикул</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='vendor_code'
+                                    value={vendor_code}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+
+                            <div>
+                                <label>Бренд</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='brand'
+                                    value={brand}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+
                             <div>
                                 <label>Наличие</label>
-                                <select className={styles.availability}>
-                                    <option>В наличии</option>
-                                    <option>Нет в наличии</option>
+                                <select className={styles.availability} onChange={({target: {value}}) => this.setState({
+                                    filters: {
+                                        ...this.state.filters,
+                                        in_stock: value
+                                    }
+                                })}>
+                                    <option value=''>Все</option>
+                                    <option value={true}>В наличии</option>
+                                    <option value={false}>Нет в наличии</option>
                                 </select>
                             </div>
+
                             <div>
                                 <label>Цена от</label>
                                 <input
@@ -245,7 +250,6 @@ class Categories extends Component {
                             columns={columns}
                             dataSource={products}
                             onChange={this.handleChangeTable}
-
                         />
                     </div>
                 </div>

@@ -227,6 +227,15 @@ class ContractorProducts extends Component {
                                 )}
                             </Dropzone>
 
+                            <Dropzone onDrop={this.handleUploadFile} accept=".xls, .xlsx" multiple={false}>
+                                {({getRootProps, getInputProps}) => (
+                                    <div {...getRootProps({className: 'dropzone'})}>
+                                        <input {...getInputProps()} />
+                                        <button className='btn'>Загрузить с Rozetka</button>
+                                    </div>
+                                )}
+                            </Dropzone>
+
                             <button className='btn'
                                     onClick={() => this.props.history.push('/admin/products/download_history')}>
                                 История загрузок

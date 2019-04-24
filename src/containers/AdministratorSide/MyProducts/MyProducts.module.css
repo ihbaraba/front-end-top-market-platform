@@ -152,10 +152,9 @@
 .filter {
     padding: 30px 0 0 0;
     background: #fff;
-}
-.filter form {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 .filter label {

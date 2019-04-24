@@ -108,49 +108,12 @@ class Products extends Component {
     }
 
 
-
-
     render() {
         const {selectedRowKeys} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
             hideDefaultSelections: true,
-            selections: [{
-                key: 'all-data',
-                text: 'Select All Data',
-                onSelect: () => {
-                    this.setState({
-                        selectedRowKeys: [...Array(46).keys()], // 0...45
-                    });
-                },
-            }, {
-                key: 'odd',
-                text: 'Select Odd Row',
-                onSelect: (changableRowKeys) => {
-                    let newSelectedRowKeys = [];
-                    newSelectedRowKeys = changableRowKeys.filter((key, index) => {
-                        if (index % 2 !== 0) {
-                            return false;
-                        }
-                        return true;
-                    });
-                    this.setState({selectedRowKeys: newSelectedRowKeys});
-                },
-            }, {
-                key: 'even',
-                text: 'Select Even Row',
-                onSelect: (changableRowKeys) => {
-                    let newSelectedRowKeys = [];
-                    newSelectedRowKeys = changableRowKeys.filter((key, index) => {
-                        if (index % 2 !== 0) {
-                            return true;
-                        }
-                        return false;
-                    });
-                    this.setState({selectedRowKeys: newSelectedRowKeys});
-                },
-            }],
             onSelection: this.onSelection,
         };
         return (
@@ -164,10 +127,6 @@ class Products extends Component {
                             onClick: (event) => {
                                 this.showModal()
                             },        // click row
-                            onDoubleClick: (event) => {},  // double click row
-                            onContextMenu: (event) => {},  // right button click row
-                            onMouseEnter: (event) => {},   // mouse enter row
-                            onMouseLeave: (event) => {},   // mouse leave row
                         };
                     }}
                 />

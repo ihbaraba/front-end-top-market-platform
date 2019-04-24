@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import {Table} from "antd";
 import styles from './Products.module.css'
 import iphone from "../../../../img/iphone.png";
-import iphonexr from "../../../../img/iphonexr.jpg";
+import iphonexr from "../../../../img/iphone.png";
 import edit from "../../../../img/edit.svg";
 import { Modal, Button } from 'antd';
 

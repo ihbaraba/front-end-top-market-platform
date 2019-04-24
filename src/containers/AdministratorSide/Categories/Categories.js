@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import {Link} from 'react-router-dom'
-import {Table} from 'antd';
+import {Table, Popover, Icon} from 'antd';
 import styles from './Categories.module.css'
 import CategoryList from "./CategoryList";
 import {getAllProducts, getAllCategories, copyProducts} from '../../../actions/productsActions';
@@ -13,6 +13,14 @@ const columns = [
     },
     {
         title: 'Бренд',
+        dataIndex: 'brand',
+    },
+    {
+        title: 'Артикул',
+        dataIndex: 'brand',
+    },
+    {
+        title: 'Категория',
         dataIndex: 'brand',
     },
     {
@@ -30,7 +38,18 @@ class Categories extends Component {
     state = {
         selectedRowKeys: [],
         products: [],
-        categories: []
+        categories: [],
+
+        filters: {
+            category_id: '',
+            name: '',
+            vendor_code: '',
+            min_price: '',
+            max_price: ''
+        },
+
+        count: 0,
+        currentPage: 1
     };
 
     onSelectChange = (selectedRowKeys) => {
@@ -38,15 +57,31 @@ class Categories extends Component {
     };
 
     getProducts = async () => {
-        const res = await getAllProducts();
+        const {currentPage, filters: {category_id, name, vendor_code, min_price, max_price}} = this.state;
+        const urlParams = [
+            category_id ? `&category_id=${category_id}` : '',
+            name ? `&name=${name}` : '',
+            vendor_code ? `&vendor_code=${vendor_code}` : '',
+            min_price ? `&min_price=${min_price}` : '',
+            max_price ? `&max_price=${max_price}` : '',
+        ];
+
+        const url = `?page=${currentPage + urlParams.join('')}`;
+        console.log(url);
+        const res = await getAllProducts(url);
+
         this.setState({
-            products: res
+            products: res.results,
+            count: res.count
         })
     };
 
-    handleTableChange = (e) => {
-        console.log(e);
+    handleChangeTable = ({current}) => {
+        this.setState({
+            currentPage: current
+        }, () => this.getMyProducts())
     };
+
 
     handleCopyProducts = async () => {
         let arr = [];
@@ -66,6 +101,15 @@ class Categories extends Component {
         });
     };
 
+    handleChangeFilters = ({target: {name, value}}) => {
+        this.setState({
+            filters: {
+                ...this.state.filters,
+                [name]: value
+            }
+        })
+    };
+
     async componentDidMount() {
         this.getProducts();
 
@@ -77,7 +121,7 @@ class Categories extends Component {
 
 
     render() {
-        const {selectedRowKeys, products, categories} = this.state;
+        const {selectedRowKeys, products, categories, count, currentPage, filters: {category_id, name, vendor_code, min_price, max_price}} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -85,17 +129,33 @@ class Categories extends Component {
             onSelection: this.onSelection,
         };
 
+        const config = {
+            pagination: {
+                pageSize: 10,
+                total: count,
+                current: currentPage
+            }
+        };
+
         return (
             <div>
                 <div className={styles.top}>
-                    <h3 className={styles.title}>Категории</h3>
+                    <h3 className={styles.title}>
+                        <Popover placement="bottom" content={(
+                            <CategoryList
+                                categories={categories}
+                            />
+                        )}>
+                            <Icon type="bars"/>
+                        </Popover>
+
+                        Категории
+                    </h3>
+
                     <Link to="/admin/instruction" className={styles.howToAdd}>Как добавить товар?</Link>
                 </div>
-                <div className={styles.categories}>
-                    <CategoryList
-                        categories={categories}
-                    />
 
+                <div className={styles.categories}>
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
                             <button
@@ -105,17 +165,87 @@ class Categories extends Component {
                                 Добавить в мои товары
                             </button>
                             {/*<button className={styles.downloadExel}>Загрузить Exel файл</button>*/}
-                            <div className={styles.search}>
-                                <input type="search" placeholder="Search"/>
-                                <input type="submit" value=" "/>
+                        </div>
+
+                        <div className={styles.filter}>
+                            <div>
+                                <label>Код товара</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='name'
+                                    value={name}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+                            <div>
+                                <label>Артикул</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='vendor_code'
+                                    value={vendor_code}
+                                    onChange={this.handleChangeFilters}
+                                />
+
+                            </div>
+                            <div>
+                                <label>Название товара</label>
+                                <input
+                                    type="text"
+                                    className={styles.productName}
+                                    name='name'
+                                    value={name}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+                            {/*<div>*/}
+                            {/*<label>Категория</label>*/}
+                            {/*<select className={styles.category}>*/}
+                            {/*<option>Телефоны</option>*/}
+                            {/*<option>Телефоны</option>*/}
+                            {/*</select>*/}
+                            {/*</div>*/}
+                            <div>
+                                <label>Наличие</label>
+                                <select className={styles.availability}>
+                                    <option>В наличии</option>
+                                    <option>Нет в наличии</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Цена от</label>
+                                <input
+                                    type="number"
+                                    className={styles.productName}
+                                    name='min_price'
+                                    value={min_price}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+                            <div>
+                                <label>До</label>
+                                <input
+                                    type="number"
+                                    className={styles.productName}
+                                    name='max_price'
+                                    value={max_price}
+                                    onChange={this.handleChangeFilters}
+                                />
+                            </div>
+                            <div>
+                                <button className='btn' onClick={this.getMyProducts}>Поиск</button>
                             </div>
                         </div>
 
+
                         <Table
+                            {...config}
                             rowSelection={rowSelection}
                             columns={columns}
                             dataSource={products}
-                            onChange={this.handleTableChange}
+                            onChange={this.handleChangeTable}
+
                         />
                     </div>
                 </div>

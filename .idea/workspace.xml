@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/components/InactiveGoodsTable/InactiveGoodsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/InactiveGoodsTable/InactiveGoodsTable.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +18,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Categories.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Categories.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="233" column="34" lean-forward="true" selection-start-line="233" selection-start-column="34" selection-end-line="233" selection-end-column="34" />
+            <state relative-caret-position="352">
+              <caret line="225" column="33" lean-forward="true" selection-start-line="225" selection-start-column="33" selection-end-line="225" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyProducts.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="470">
+              <caret line="77" column="10" lean-forward="true" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InactiveGoodsTable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/InactiveGoodsTable/InactiveGoodsTable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="740">
+              <caret line="107" column="18" lean-forward="true" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyProducts.module.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="154" column="1" lean-forward="true" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -37,7 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>callback</find>
       <find>45px</find>
       <find>manufacturer</find>
       <find>initState</find>
@@ -67,6 +98,7 @@
       <find>767px</find>
       <find>getAllProducts</find>
       <find>title</find>
+      <find>21px</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/containers</dir>
@@ -83,7 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.module.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/LearningModule/LearningModule.module.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/СontractorProducts/СontractorProducts.js" />
         <option value="$PROJECT_DIR$/src/actions/products.js" />
@@ -101,8 +132,6 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Login/Login.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/UpdateProduct.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.module.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" />
@@ -134,6 +163,9 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/Products/Products.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.module.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/InactiveGoodsTable/InactiveGoodsTable.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" />
       </list>
     </option>
   </component>
@@ -208,15 +240,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
-              <item name="Categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
-              <item name="ContractorProducts" type="462c0819:PsiDirectoryNode" />
+              <item name="MyProducts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -334,17 +358,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187537000" />
+    <option name="totallyTimeSpent" value="188322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47897437" visible="true" weight="0.20072332" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47897437" visible="true" weight="0.20072332" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50030136" side_tool="true" weight="0.32923076" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32923076" />
       <window_info id="npm" order="2" sideWeight="0.52102566" side_tool="true" weight="0.20072332" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -409,6 +433,16 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -422,13 +456,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -658,20 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="225" column="1" lean-forward="true" selection-start-line="149" selection-end-line="225" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/DownloadHistory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -772,8 +785,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="233" column="34" lean-forward="true" selection-start-line="233" selection-start-column="34" selection-end-line="233" selection-end-column="34" />
+        <state relative-caret-position="352">
+          <caret line="225" column="33" lean-forward="true" selection-start-line="225" selection-start-column="33" selection-end-line="225" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="154" column="1" lean-forward="true" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/InactiveGoodsTable/InactiveGoodsTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="107" column="18" lean-forward="true" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="77" column="10" lean-forward="true" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

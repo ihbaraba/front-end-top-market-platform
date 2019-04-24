@@ -6,7 +6,7 @@ import iphone from "../../../../img/iphone.png";
 import edit from "../../../../img/edit.svg";
 
 
-const columns = [ {
+const columns = [{
     title: 'Код товара',
     dataIndex: 'productCode',
 }, {
@@ -39,28 +39,10 @@ const columns = [ {
             <span className={styles.availability}>
                 {availability}
             </span>
-            <button className={styles.edit}>
-                <img src={item.edit} alt=""/>
-            </button>
         </span>
     ),
 },
 ];
-
-const data = [];
-for (let i = 0; i < 46; i++) {
-    data.push({
-        key: i,
-        productCode: '141515d3234',
-        vendorCode: 'Jf21414dS',
-        product: iphone,
-        productName: `iPhone XR 64GB Space Grey ${i}`,
-        category: 'Телефоны,MP3, GPS',
-        price: '23844.00 грн',
-        availability: `Нет в наличии.`,
-        edit: edit,
-    });
-}
 
 class InactiveGoodsTable extends Component {
 
@@ -70,11 +52,11 @@ class InactiveGoodsTable extends Component {
 
     onSelectChange = (selectedRowKeys) => {
         console.log('selectedRowKeys changed: ', selectedRowKeys);
-        this.setState({ selectedRowKeys });
+        this.setState({selectedRowKeys});
     };
 
     render() {
-        const { selectedRowKeys } = this.state;
+        const {selectedRowKeys} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -98,7 +80,7 @@ class InactiveGoodsTable extends Component {
                         }
                         return true;
                     });
-                    this.setState({ selectedRowKeys: newSelectedRowKeys });
+                    this.setState({selectedRowKeys: newSelectedRowKeys});
                 },
             }, {
                 key: 'even',
@@ -111,7 +93,7 @@ class InactiveGoodsTable extends Component {
                         }
                         return false;
                     });
-                    this.setState({ selectedRowKeys: newSelectedRowKeys });
+                    this.setState({selectedRowKeys: newSelectedRowKeys});
                 },
             }],
             onSelection: this.onSelection,
@@ -119,7 +101,11 @@ class InactiveGoodsTable extends Component {
 
         return (
             <div>
-                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+                <Table
+                    rowSelection={rowSelection}
+                    columns={columns}
+                    // dataSource={data}
+                />
             </div>
         );
     }

@@ -75,6 +75,7 @@ class ContractorProducts extends Component {
         );
 
         await uploadXls(formData);
+        this.props.history.push('/admin/products/download_history');
         this.handleUpdate();
     };
 
@@ -144,7 +145,7 @@ class ContractorProducts extends Component {
             rozetkaArr = [];
 
         res.forEach(item => {
-            if(item.fileType === 'inner') {
+            if (item.fileType === 'inner') {
                 innerArr.push(item)
             } else {
                 rozetkaArr.push(item)
@@ -157,7 +158,7 @@ class ContractorProducts extends Component {
             })
         }
 
-        if(rozetkaArr.every(item => item.isUploaded)) {
+        if (rozetkaArr.every(item => item.isUploaded)) {
             this.setState({
                 uploadRozetka: true
             })

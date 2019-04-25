@@ -209,6 +209,13 @@ button:disabled:hover {
     /*margin-bottom: 42px;*/
 }
 
+.ant-menu-vertical {
+    border: 0 !important;
+}
+.ant-menu-submenu-arrow {
+    right: 0 !important;
+}
+
 /*modal*/
 
 .modal .ant-tabs-content {

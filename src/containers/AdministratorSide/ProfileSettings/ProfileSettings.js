@@ -234,6 +234,23 @@ class ProfileSettings extends Component {
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
+
+                                    <div>
+                                        <label>Rozetka username</label>
+                                        <input type="text"
+                                               name='rozetkaUsername'
+                                               // value={webSite || ''}
+                                               onChange={this.handleChangeInput}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label>Rozetka password</label>
+                                        <input type="text"
+                                               name='rozetkaPassword'
+                                               // value={webSite || ''}
+                                               onChange={this.handleChangeInput}
+                                        />
+                                    </div>
                                 </div>
 
                                 <div className={styles.userInfo}>

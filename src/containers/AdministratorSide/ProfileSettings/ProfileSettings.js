@@ -282,10 +282,10 @@ class ProfileSettings extends Component {
 
                     <TabPane tab="Реферальная программа" key="2">
                         <div className={styles.referralProgram}>
-                            <h5>Реферальная программа</h5>
+                            <h5>Реферальная ссылка</h5>
                             <div className={styles.copyLink}>
-                                <input type="text"/>
-                                <span>Дейте эту ссылку человеку, и при регистрации он станет Вашим рефералом</span>
+                                <input type="text" value={'Находится в разработке'} disabled/>
+                                <span>Отправьте ссылку вашим знакомым. После прохождения регистрации по этой ссылке новый пользователь станет вашим рефералом</span>
                             </div>
 
                             <div className={styles.table}>

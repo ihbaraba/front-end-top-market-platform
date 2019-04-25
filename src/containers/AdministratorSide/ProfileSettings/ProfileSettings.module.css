@@ -158,7 +158,6 @@ form input[type="tel"] {
 }
 
 .referralProgram {
-    padding: 0 66px 0 29px;
     background: #fff;
 }
 
@@ -174,7 +173,7 @@ form input[type="tel"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 35px;
+    margin: 0 0 35px 0;
 }
 
 .copyLink input {
@@ -184,6 +183,7 @@ form input[type="tel"] {
     border-radius: 3px;
     background-color: #FFFFFF;
     padding-left: 20px;
+    margin: 0 20px 0 0;
 }
 
 .ant-table table {

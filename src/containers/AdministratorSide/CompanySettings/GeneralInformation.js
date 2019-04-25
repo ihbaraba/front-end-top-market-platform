@@ -31,7 +31,6 @@ class GeneralInformation extends Component {
         subDealer: false,
         town: '',
         url: '',
-        webSite: '',
         whoSeeContact: '',
         workingConditions: '',
     };
@@ -87,7 +86,6 @@ class GeneralInformation extends Component {
             address,
             url,
             workingConditions,
-            webSite,
             isInternetShop,
             isOfflineShop,
             retailNetwork,
@@ -304,15 +302,6 @@ class GeneralInformation extends Component {
                         <div className='section-title'>
                             <h3 className={styles.title}>Контактные данные</h3>
                         </div>
-                        <FormItem>
-                            <label htmlFor="">Веб-сайт</label>
-                            <input
-                                type="text"
-                                name='webSite'
-                                value={webSite || ''}
-                                onChange={this.handleChangeInput}
-                            />
-                        </FormItem>
 
                         <FormItem>
                             <label htmlFor="">Телефон</label>

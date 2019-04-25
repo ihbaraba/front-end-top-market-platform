@@ -21,7 +21,7 @@ class Registration extends Component {
      success = () => {
         Modal.success({
             title: 'Регистрация успешна',
-            content: 'Проверьте почту',
+            content: 'Для подтверждения вашего адреса электронной почты мы отправили вам письмо',
             onOk() {
                 window.location.href = `${window.location.origin}/login`;
             },

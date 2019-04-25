@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Form, Button} from 'antd';
 import styles from './CompanySettings.module.css';
 import {getCompanyPitch, updateCompanyPitch} from "../../../actions/companyActions";
+import {notification} from "antd";
 
 const FormItem = Form.Item;
 
@@ -26,6 +27,10 @@ class CompanyPitch extends Component {
         e.preventDefault();
 
         updateCompanyPitch(this.state)
+            .then(() => notification.success({
+                    message: 'Сохранено',
+                })
+            )
     };
 
     async componentDidMount() {

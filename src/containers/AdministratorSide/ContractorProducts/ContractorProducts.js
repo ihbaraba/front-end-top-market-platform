@@ -9,7 +9,8 @@ import {
     getContractorProducts,
     uploadXls,
     getContractorCategories,
-    removeContractorProduct
+    removeContractorProduct,
+    getDownloadsStatus
 } from '../../../actions/productsActions';
 import NewProduct from "../components/Modal/NewProduct";
 
@@ -30,7 +31,10 @@ class ContractorProducts extends Component {
         },
 
         count: 0,
-        currentPage: 1
+        currentPage: 1,
+
+        uploadExel: false,
+        uploadRozetka: false,
     };
 
     getMyProducts = async () => {
@@ -59,12 +63,17 @@ class ContractorProducts extends Component {
         this.setState({selectedRowKeys});
     };
 
-    handleUploadFile = async (file) => {
+    handleUploadFile = async (file, type) => {
         const formData = new FormData();
         formData.append(
             'xls_file',
             file[0]
         );
+        formData.append(
+            'file_type',
+            type
+        );
+
         await uploadXls(formData);
         this.handleUpdate();
     };
@@ -129,10 +138,39 @@ class ContractorProducts extends Component {
         }, () => this.getMyProducts())
     };
 
+    checkUploader = async () => {
+        const res = await getDownloadsStatus();
+        let innerArr = [],
+            rozetkaArr = [];
+
+        res.forEach(item => {
+            if(item.fileType === 'inner') {
+                innerArr.push(item)
+            } else {
+                rozetkaArr.push(item)
+            }
+        });
+
+        if (innerArr.every(item => item.isUploaded)) {
+            this.setState({
+                uploadExel: true
+            })
+        }
+
+        if(rozetkaArr.every(item => item.isUploaded)) {
+            this.setState({
+                uploadRozetka: true
+            })
+        }
+
+        console.log(res);
+    };
+
 
     componentDidMount() {
         this.getMyProducts();
         this.getCategories();
+        this.checkUploader();
     };
 
     render() {
@@ -149,7 +187,9 @@ class ContractorProducts extends Component {
                 min_price,
                 max_price,
                 brand,
-            }
+            },
+            uploadExel,
+            uploadRozetka
         } = this.state;
 
         const rowSelection = {
@@ -240,20 +280,21 @@ class ContractorProducts extends Component {
                                 update={product.id ? true : false}
                             />
 
-                            <Dropzone onDrop={this.handleUploadFile} accept=".xls, .xlsx" multiple={false}>
+                            <Dropzone onDrop={e => this.handleUploadFile(e, 'inner')} accept=".xls, .xlsx"
+                                      multiple={false}>
                                 {({getRootProps, getInputProps}) => (
                                     <div {...getRootProps({className: 'dropzone'})}>
                                         <input {...getInputProps()} />
-                                        <button className='btn'>Загрузить Exel файл</button>
+                                        <button className='btn' disabled={!uploadExel}>Загрузить Exel файл</button>
                                     </div>
                                 )}
                             </Dropzone>
 
-                            <Dropzone onDrop={this.handleUploadFile} accept=".xls, .xlsx" multiple={false}>
+                            <Dropzone onDrop={e => this.handleUploadFile(e, 'rozetka')} multiple={false}>
                                 {({getRootProps, getInputProps}) => (
                                     <div {...getRootProps({className: 'dropzone'})}>
                                         <input {...getInputProps()} />
-                                        <button className='btn'>Загрузить с Rozetka</button>
+                                        <button className='btn' disabled={!uploadRozetka}>Загрузить с Rozetka</button>
                                     </div>
                                 )}
                             </Dropzone>

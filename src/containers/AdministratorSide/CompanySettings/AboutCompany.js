@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Form, Button} from 'antd';
 import styles from './CompanySettings.module.css';
 import {getProfile, updateProfile} from "../../../actions/companyActions";
+import {notification} from "antd";
 
 
 class AboutCompany extends Component {
@@ -14,7 +15,11 @@ class AboutCompany extends Component {
 
         updateProfile({
             aboutCompany: this.state.aboutCompany
-        });
+        })
+            .then(() => notification.success({
+                    message: 'Сохранено',
+                })
+            )
     };
 
     handleChangeInput = ({target: {name, value}}) => {
@@ -47,7 +52,8 @@ class AboutCompany extends Component {
                     />
                 </div>
                 <div className={styles.info}>
-                    <p>Информация, которая будет отображена на странице компании, по адресу https://gofriends.pro/ru/company-marketplace-nazar-inc</p>
+                    <p>Информация, которая будет отображена на странице компании, по адресу
+                        https://gofriends.pro/ru/company-marketplace-nazar-inc</p>
                     <Button
                         type="primary"
                         htmlType="submit"

@@ -2,6 +2,16 @@
     position: relative;;
 }
 
+.status {
+    position: absolute;
+    right: 0;
+    width: 30px;
+}
+
+.status img {
+    width: 100%;
+}
+
 .title {
     color: #4A4A4A;
     font-family: Ubuntu;
@@ -176,8 +186,6 @@ input[type=submit] {
 }
 
 .icon {
-    position: absolute;
-    right: 0;
     color: green;
     font-size: 20px;
 }

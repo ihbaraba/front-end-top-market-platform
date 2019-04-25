@@ -4,10 +4,12 @@ import {getDocuments, uploadDocuments} from "../../../actions/companyActions";
 import styles from './CompanySettings.module.css';
 
 import Dropzone from 'react-dropzone'
+import {notification} from "antd";
 
 class Documents extends Component {
     state = {
         type: '',
+        documents: [],
         passport: [],
         ukStatistic: [],
         certificate: [],
@@ -53,13 +55,13 @@ class Documents extends Component {
 
         await files.forEach(file => {
             this.getBase64(file, (result) => {
-                arrFiles.push(result)
+                arrFiles.push({[uploadType]: result})
             });
         });
 
 
         this.setState({
-            [typeDoc]: {[uploadType]: arrFiles}
+            [typeDoc]: arrFiles
         })
     };
 
@@ -76,13 +78,17 @@ class Documents extends Component {
 
     handleUploadDocuments = () => {
         uploadDocuments(this.state)
+            .then(() => notification.success({
+                    message: 'Сохранено',
+                })
+            )
     };
 
 
     async componentDidMount() {
         const res = getDocuments();
 
-        this.setState(res)
+        this.setState({documents: res})
     }
 
     render() {

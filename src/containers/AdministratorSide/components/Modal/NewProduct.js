@@ -230,9 +230,9 @@ class NewProduct extends Component {
                                             />
                                         </div>
                                         <div>
-                                            <label>Наличие</label>
+                                            <label>Количество</label>
                                             <input
-                                                type="text"
+                                                type="number"
                                                 name='count'
                                                 value={count}
                                                 onChange={this.handleChangeInput}
@@ -323,14 +323,15 @@ class NewProduct extends Component {
                                                     </div>
                                                 )}
                                             </Dropzone>
-
                                         </div>
+
                                         <div className={styles.addUrl}>
                                             <input type="text" name='imageUrls' value={imageUrls}
                                                    onChange={this.handleChangeInput}/>
                                             <button className={styles.addUrlBtn}>Добавить URL</button>
                                         </div>
                                     </div>
+
                                     <div className={styles.uploadInfo}>
                                         <span>
                                             Фотография должна быть не меньше

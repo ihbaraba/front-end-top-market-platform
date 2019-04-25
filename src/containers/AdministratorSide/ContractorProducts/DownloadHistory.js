@@ -3,19 +3,35 @@ import styles from './ContractorProducts.module.css';
 import {Icon} from 'antd';
 import moment from 'moment';
 import {getDownloadsStatus} from '../../../actions/productsActions';
-
+import progres from '../../../img/progress.gif';
 
 class DownloadHistory extends Component {
     state = {
         files: []
     };
 
-    async componentDidMount() {
-        const res = await getDownloadsStatus();
+    interval = '';
 
-        this.setState({
-            files: res
-        })
+    async componentDidMount() {
+        getDownloadsStatus()
+            .then(res => {
+                this.setState({
+                    files: res
+                })
+            });
+
+       this.interval = setInterval(() => {
+            getDownloadsStatus()
+                .then(res => {
+                    this.setState({
+                        files: res
+                    })
+                })
+        }, 5000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     render() {
@@ -40,10 +56,14 @@ class DownloadHistory extends Component {
                             </span>
                             </span>
                             <span className={styles.date}>
-                                {moment(item.created).format('DD-MM-YYYY')}
+                                {moment(item.created).format('DD-MM-YYYY HH:mm')}
                             </span>
 
-                            {item.isUploaded ? <Icon type="check" className={styles.icon}/> : ''}
+                            <span className={styles.status}>
+                                 {item.isUploaded ? <Icon type="check" className={styles.icon}/> :
+                                     <img src={progres} alt=""/>}
+                            </span>
+
                         </div>
                     ))}
                 </div>

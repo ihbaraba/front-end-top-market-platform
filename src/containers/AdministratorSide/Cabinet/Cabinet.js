@@ -106,14 +106,16 @@ class Cabinet extends Component {
                             </div>
                         </div>
                         <Link to="/admin/profile_settings" className={styles.editBtn}>Редактировать профиль</Link>
-                        <div className={styles.description}>
+
+                        {this.props.user.role === 'CONTRACTOR' ? '' :
+                            <div className={styles.description}>
                             <p>Для того чтобы пользоватся услугами Маркетплейса, Вы должны
                                 приобрести один из вариантов пакетов доступа, цена на которые 35
                                 000 грн и 50 000 грн/месяц. Все доступы которые дает кажыдй пакет
                                 указанны в описании.
                                 указанны в описании.
                             </p>
-                        </div>
+                        </div>}
                     </div>
 
                     {this.props.user.role === 'CONTRACTOR' ? '' :

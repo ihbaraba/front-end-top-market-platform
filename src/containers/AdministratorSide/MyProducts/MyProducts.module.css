@@ -268,7 +268,9 @@
      display: block;
  }
 
-.mainInfo input[type=text] {
+.mainInfo input[type=text],
+.mainInfo input[type=number]
+{
     height: 41px;
     width: 287px;
     border: 1px solid #ECECEC;

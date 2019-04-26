@@ -102,7 +102,7 @@ class Cabinet extends Component {
                                 <p>E-Mail: <span> {user.email}</span></p>
                                 <p>Компания:<span> {company.name}</span></p>
                                 <p>Телефон: <span> {company.phone}</span></p>
-                                <p>Веб-сайт:<span> {company.webSite}</span></p>
+                                <p>Веб-сайт:<span> {company.url}</span></p>
                             </div>
                         </div>
                         <Link to="/admin/profile_settings" className={styles.editBtn}>Редактировать профиль</Link>

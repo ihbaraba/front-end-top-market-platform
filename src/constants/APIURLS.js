@@ -84,5 +84,9 @@ export const ALL_CATEGORIES = 'catalog/categories/';
 export const FIRST_LEVEL_CATEGORIES = 'catalog/categories/first_level/';
 
 
+//ORDERS
+export const ORDERS = 'orders/';
+
+
 
 

@@ -19,8 +19,8 @@ class Orders extends Component {
                     <TabPane tab="Заказы из Rozetka (10)" key="1">
                         <OrdersFromRozetka/>
                     </TabPane>
-                    <TabPane tab="Заказы из Top Market (10)" key="2">Content of Tab Pane 2</TabPane>
-                    <TabPane tab="Заказы из Prom.ua (10)" key="3">Content of Tab Pane 3</TabPane>
+                    <TabPane tab="Заказы из Top Market (0)" disabled key="2">Content of Tab Pane 2</TabPane>
+                    <TabPane tab="Заказы из Prom.ua (0)" disabled key="3">Content of Tab Pane 3</TabPane>
                 </Tabs>
             </div>
         );

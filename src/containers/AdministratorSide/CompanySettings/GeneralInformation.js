@@ -24,9 +24,6 @@ class GeneralInformation extends Component {
         name: '',
         officialRepresentative: false,
         phone: '',
-        activityArea: 1,
-        serviceIndustry: 1,
-        companyType: 1,
         retailNetwork: false,
         subDealer: false,
         town: '',
@@ -37,6 +34,11 @@ class GeneralInformation extends Component {
 
     handleUpdateCompanyProfile = e => {
         e.preventDefault();
+
+        let letNewState = this.state;
+        delete letNewState.activityArea;
+        delete letNewState.companyType;
+        delete letNewState.serviceIndustry;
 
         updateProfile(this.state)
             .then(() => notification.success({
@@ -96,9 +98,6 @@ class GeneralInformation extends Component {
             subDealer,
             exporter,
             officialRepresentative,
-            activityArea,
-            serviceIndustry,
-            companyType,
 
             activityAreaOptions = [],
             companyTypeOptions = [],
@@ -125,27 +124,27 @@ class GeneralInformation extends Component {
                         />
                     </FormItem>
 
-                    <FormItem>
-                        <label htmlFor="">Сферы деятельности</label>
+                    {/*<FormItem>*/}
+                    {/*<label htmlFor="">Сферы деятельности</label>*/}
 
-                        <Select onChange={e => this.handleChangeSelect(e, 'activityArea')} required
-                                value={activityArea}>
-                            {activityAreaOptions.map(item => (
-                                <Option key={item.id} value={item.id}>{item.name}</Option>
-                            ))}
-                        </Select>
-                    </FormItem>
+                    {/*<Select onChange={e => this.handleChangeSelect(e, 'activityArea')} required*/}
+                    {/*value={activityArea}>*/}
+                    {/*{activityAreaOptions.map(item => (*/}
+                    {/*<Option key={item.id} value={item.id}>{item.name}</Option>*/}
+                    {/*))}*/}
+                    {/*</Select>*/}
+                    {/*</FormItem>*/}
 
-                    <FormItem>
-                        <label htmlFor="">Сферы услуг</label>
+                    {/*<FormItem>*/}
+                    {/*<label htmlFor="">Сферы услуг</label>*/}
 
-                        <Select onChange={e => this.handleChangeSelect(e, 'serviceIndustry')} required
-                                value={serviceIndustry}>
-                            {serviceIndustryOptions.map(item => (
-                                <Option key={item.id} value={item.id}>{item.name}</Option>
-                            ))}
-                        </Select>
-                    </FormItem>
+                    {/*<Select onChange={e => this.handleChangeSelect(e, 'serviceIndustry')} required*/}
+                    {/*value={serviceIndustry}>*/}
+                    {/*{serviceIndustryOptions.map(item => (*/}
+                    {/*<Option key={item.id} value={item.id}>{item.name}</Option>*/}
+                    {/*))}*/}
+                    {/*</Select>*/}
+                    {/*</FormItem>*/}
 
                     <FormItem>
                         <label htmlFor="">Город (территориальное размещение)</label>
@@ -167,15 +166,15 @@ class GeneralInformation extends Component {
                         />
                     </FormItem>
 
-                    <FormItem>
-                        <label htmlFor="">Тип компании</label>
+                    {/*<FormItem>*/}
+                    {/*<label htmlFor="">Тип компании</label>*/}
 
-                        <Select onChange={e => this.handleChangeSelect(e, 'companyType')} required value={companyType}>
-                            {companyTypeOptions.map(item => (
-                                <Option key={item.id} value={item.id}>{item.name}</Option>
-                            ))}
-                        </Select>
-                    </FormItem>
+                    {/*<Select onChange={e => this.handleChangeSelect(e, 'companyType')} required value={companyType}>*/}
+                    {/*{companyTypeOptions.map(item => (*/}
+                    {/*<Option key={item.id} value={item.id}>{item.name}</Option>*/}
+                    {/*))}*/}
+                    {/*</Select>*/}
+                    {/*</FormItem>*/}
 
                     <FormItem>
                         <label htmlFor="">URL</label>

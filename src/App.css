@@ -200,6 +200,15 @@ button:disabled:hover {
     margin-right: 20px;
 }
 
+.product-avatar{
+    height: 100px;
+    display: flex;
+}
+.product-avatar img{
+    width: 80px;
+    margin: 0 20px 0 0;
+}
+
 .ant-select-selection--single {
     height: 46px;
     width: 630px;
@@ -212,6 +221,7 @@ button:disabled:hover {
 .ant-menu-vertical {
     border: 0 !important;
 }
+
 .ant-menu-submenu-arrow {
     right: 0 !important;
 }

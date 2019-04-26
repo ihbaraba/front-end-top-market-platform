@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
-import {Link} from 'react-router-dom'
 import {Table, Popover, Icon} from 'antd';
 import styles from './Categories.module.css'
 import CategoryList from "./CategoryList";
@@ -10,6 +9,12 @@ const columns = [
     {
         title: 'Название товара',
         dataIndex: 'name',
+        render: (name, item) => (
+            <span className='product-avatar'>
+                <img src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls ? item.imageUrls [0].url : '')} alt=""/>
+                {name}
+            </span>
+        )
     },
     {
         title: 'Артикул',

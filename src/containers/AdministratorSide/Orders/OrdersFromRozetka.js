@@ -4,6 +4,7 @@ import {Tabs, Table} from 'antd';
 import SearchOrders from "./SearchOrders";
 import {getOrders} from '../../../actions/ordersAction';
 import moment from 'moment';
+import {statusList} from './statusList';
 
 const TabPane = Tabs.TabPane;
 
@@ -48,8 +49,14 @@ const columns = [
     },
     {
         title: 'Статус заказа',
-        dataIndex: 'statusOrder',
-        key: 'statusOrder'
+        dataIndex: 'status',
+        key: 'status',
+        render: (status) => {
+            let selectedStatus = statusList.find(item => item.id === status);
+            return(
+                <span>{selectedStatus.title}</span>
+            )
+        }
     },
 
 ];

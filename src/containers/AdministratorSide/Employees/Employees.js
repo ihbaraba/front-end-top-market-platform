@@ -113,7 +113,7 @@ class Employees extends Component {
                 <div className={styles.top}>
                     <h3 className={styles.title}>Сотрудники (Находится в разработке)</h3>
 
-                    <button  className={styles.addBtn} onClick={this.showModal}>
+                    <button  className={styles.addBtn} onClick={this.showModal} disabled>
                         Добавить сотрудника
                     </button>
                 </div>

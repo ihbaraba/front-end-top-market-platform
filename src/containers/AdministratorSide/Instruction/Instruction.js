@@ -18,7 +18,7 @@ import img13 from "../../../img/instru/5.png";
 
 import {Tree} from 'antd';
 import {getAllCategories} from '../../../actions/productsActions';
-import file from '../../../img/example_product.xlsx';
+import file from '../../../img/instru/template.xlsx';
 
 const {TreeNode} = Tree;
 
@@ -114,6 +114,9 @@ class Instruction extends Component {
                     {/*-----------------------*/}
                     <h3 className={styles.title} style={{margin: '50px 0 30px 0'}}>Инструкция по импорту товаров через
                         Excel файл</h3>
+                    <iframe width="1088" height="680" src="https://www.youtube.com/embed/wpS_Cn29ChA" frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen></iframe>
                     <a href={file} className={styles.link}>Скачать пример файла</a>
 
                     <p>Файл содержит следующие поля с данными о товаре которые необходимо заполнить.</p>
@@ -188,6 +191,9 @@ class Instruction extends Component {
                     {/*-----------------------*/}
                     <h3 className={styles.title} style={{margin: '50px 0 30px 0'}}>Инструкция по импорту товаров c
                         Rozetka</h3>
+                    <iframe width="1088" height="680" src="https://www.youtube.com/embed/8ew65FjJED0" frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen></iframe>
                     <p>Для того чтобы импортировать товары с Rozetka marketplace необходимо перейти в раздел “Товары”,
                         который находится в <a href="https://seller.rozetka.com.ua" target='_blank'>личном кабинете
                             Rozetka </a>

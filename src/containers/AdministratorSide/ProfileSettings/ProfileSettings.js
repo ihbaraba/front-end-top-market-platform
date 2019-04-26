@@ -3,7 +3,7 @@ import {Tabs, Table, Checkbox, Form, Input, Button} from 'antd';
 import styles from './ProfileSettings.module.css'
 import defaultAvatar from "../../../img/avatar.png";
 import Dropzone from 'react-dropzone'
-import {Modal, notification, Icon} from 'antd'
+import {Modal, notification, Icon, Tooltip} from 'antd'
 
 import {getProfile, updateProfile, changePassword, login} from '../../../actions/userActions';
 import {connect} from "react-redux";
@@ -239,7 +239,7 @@ class ProfileSettings extends Component {
                                         <label>Rozetka username</label>
                                         <input type="text"
                                                name='rozetkaUsername'
-                                               // value={webSite || ''}
+                                            // value={webSite || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
@@ -247,7 +247,7 @@ class ProfileSettings extends Component {
                                         <label>Rozetka password</label>
                                         <input type="text"
                                                name='rozetkaPassword'
-                                               // value={webSite || ''}
+                                            // value={webSite || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
@@ -261,7 +261,8 @@ class ProfileSettings extends Component {
                                                 {({getRootProps, getInputProps}) => (
                                                     <div {...getRootProps({className: 'dropzone'})}>
                                                         <input {...getInputProps()} />
-                                                        <button className={styles.uploadBtn}><Icon type="camera" /></button>
+                                                        <button className={styles.uploadBtn}><Icon type="camera"/>
+                                                        </button>
                                                     </div>
                                                 )}
                                             </Dropzone>
@@ -279,16 +280,20 @@ class ProfileSettings extends Component {
                                     <div className={styles.EmailNotifications}>
                                         <h3>Уведомления на E-mail</h3>
 
-                                        <CheckboxGroup options={emailOptions} value={emailNotifications}
-                                                       onChange={e => this.handleChangeCheckbox(e, 'email')}/>
+                                        <Tooltip title="Находится в разработке">
+                                            <CheckboxGroup options={emailOptions} value={emailNotifications}
+                                                           onChange={e => this.handleChangeCheckbox(e, 'email')}/>
+                                        </Tooltip>
                                     </div>
 
                                     <div className={styles.smsNotifications}>
                                         <h3>SMS Уведомления</h3>
                                         <span className={styles.number}>+380997786633</span>
+                                        <Tooltip title="Находится в разработке">
 
-                                        <CheckboxGroup options={smsOptions} value={phoneNotifications}
-                                                       onChange={e => this.handleChangeCheckbox(e, 'phone')}/>
+                                            <CheckboxGroup options={smsOptions} value={phoneNotifications}
+                                                           onChange={e => this.handleChangeCheckbox(e, 'phone')}/>
+                                        </Tooltip>
                                     </div>
 
                                     <button className={styles.save}>Сохранить</button>

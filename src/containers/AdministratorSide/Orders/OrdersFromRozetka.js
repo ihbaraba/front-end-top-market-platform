@@ -5,6 +5,7 @@ import SearchOrders from "./SearchOrders";
 import {getOrders} from '../../../actions/ordersAction';
 import moment from 'moment';
 import {statusList} from './statusList';
+import {connect} from "react-redux";
 
 const TabPane = Tabs.TabPane;
 
@@ -53,7 +54,7 @@ const columns = [
         key: 'status',
         render: (status) => {
             let selectedStatus = statusList.find(item => item.id === status);
-            return(
+            return (
                 <span>{selectedStatus.title}</span>
             )
         }
@@ -94,10 +95,23 @@ class OrdersFromRozetka extends Component {
     };
 
     componentDidMount() {
-        this.getOrders('')
+        if (this.props.user.role !== 'CONTRACTOR') {
+            this.getOrders('')
+        }
     };
 
     render() {
+
+        const {count, currentPage} = this.state,
+            config = {
+            pagination: {
+                pageSize: 10,
+                total: count,
+                current: currentPage
+            }
+        };
+
+
         const {orders} = this.state;
         return (
             <div>
@@ -109,6 +123,7 @@ class OrdersFromRozetka extends Component {
                     <TabPane tab="В обработке" key="1">
                         <div>
                             <Table
+                                {...config}
                                 columns={columns}
                                 expandedRowRender={record => <span>
                                     {record.description}
@@ -126,7 +141,14 @@ class OrdersFromRozetka extends Component {
     }
 }
 
-export default OrdersFromRozetka;
+
+const mapStateToProps = state => ({
+    user: state.user
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(OrdersFromRozetka);
 
 
 

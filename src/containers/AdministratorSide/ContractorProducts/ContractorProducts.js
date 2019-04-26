@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import {Link} from 'react-router-dom'
-import {Table, Icon, Popover} from 'antd';
+import {Table, Icon, Popover, Tooltip} from 'antd';
 import Dropzone from 'react-dropzone';
 import styles from './ContractorProducts.module.css'
 import CategoryList from "./CategoryList";
@@ -12,10 +12,12 @@ import {
     removeContractorProduct,
     getDownloadsStatus
 } from '../../../actions/productsActions';
+import {getProfile} from '../../../actions/userActions';
 import NewProduct from "../components/Modal/NewProduct";
 
 class ContractorProducts extends Component {
     state = {
+        haveRozetkaAkaunt: false,
         categories: [],
         selectedRowKeys: [],
         products: [],
@@ -168,14 +170,22 @@ class ContractorProducts extends Component {
     };
 
 
-    componentDidMount() {
+    async componentDidMount() {
         this.getMyProducts();
         this.getCategories();
         this.checkUploader();
+
+        const res = await getProfile();
+        if (res.rozetkaPassword && res.rozetkaUsername) {
+            this.setState({
+                haveRozetkaAkaunt: true
+            })
+        }
     };
 
     render() {
         const {
+            haveRozetkaAkaunt,
             selectedRowKeys,
             products,
             categories,
@@ -300,7 +310,17 @@ class ContractorProducts extends Component {
                                 {({getRootProps, getInputProps}) => (
                                     <div {...getRootProps({className: 'dropzone'})}>
                                         <input {...getInputProps()} />
-                                        <button className='btn' disabled={!uploadRozetka}>Загрузить с Rozetka</button>
+                                        {!haveRozetkaAkaunt ? <Tooltip title="Поля логин и пароль с «Rozetka marketplace» не заполнены">
+                                                <button className='btn'
+                                                        disabled>Загрузить с Rozetka
+                                                </button>
+                                            </Tooltip>
+                                            :
+                                            <button className='btn'
+                                                    disabled={!uploadRozetka}>Загрузить с
+                                                Rozetka</button>
+                                        }
+
                                     </div>
                                 )}
                             </Dropzone>

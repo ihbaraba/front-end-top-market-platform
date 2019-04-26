@@ -35,8 +35,8 @@ export const confirmEmail = token => {
     return api('get', CONFIRM_EMAIL + token)
 };
 
-export const getProfile = user => {
-    return api('get', PROFILE, user)
+export const getProfile = () => {
+    return api('get', PROFILE)
 };
 
 export const updateProfile = user => dispatch => {

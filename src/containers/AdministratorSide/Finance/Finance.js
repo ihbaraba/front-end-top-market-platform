@@ -45,7 +45,7 @@ class Finance extends Component {
                                 </span>
                             </div>
                             <div className={styles.balanceActions}>
-                                <button className={styles.withdraw}>Вывести</button>
+                                <button className={styles.withdraw} disabled>Вывести</button>
                                 <Recharge/>
                             </div>
                         </div>

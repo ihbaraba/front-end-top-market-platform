@@ -12,28 +12,28 @@ class Recharge extends Component {
         this.setState({
             visible: true,
         });
-    }
+    };
 
     handleOk = (e) => {
         console.log(e);
         this.setState({
             visible: false,
         });
-    }
+    };
 
     handleCancel = (e) => {
         console.log(e);
         this.setState({
             visible: false,
         });
-    }
+    };
 
 
     render() {
 
         return (
             <div>
-                <button className={styles.replenish} onClick={this.showModal}>Пополнить</button>
+                <button className={styles.replenish} onClick={this.showModal} disabled>Пополнить</button>
                 <Modal
                     title="Пополнение баланса"
                     visible={this.state.visible}

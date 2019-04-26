@@ -72,7 +72,7 @@ class OrdersFromRozetka extends Component {
 
     };
 
-    getOrders = async ({id, min_date, max_date, status, user_fio, user_phone}) => {
+    getOrders1 = async ({id, min_date, max_date, status, user_fio, user_phone, page=1}) => {
         const {currentPage} = this.state;
 
         const urlParams = [
@@ -83,36 +83,104 @@ class OrdersFromRozetka extends Component {
             user_fio ? `&user_fio=${user_fio}` : '',
             user_phone ? `&user_phone=${user_phone}` : '',
         ];
-        console.log(urlParams);
 
-        const url = `?page=${currentPage + urlParams.join('')}`;
-        const res = await getOrders(url);
+        const url1 = `?status_group=1&page=${page + urlParams.join('')}`;
+        const res1 = await getOrders(url1);
 
         this.setState({
-            orders: res.results,
-            count: res.count
+            orders1: res1.results,
+
+            count1: res1.count,
         })
+    };
+
+    getOrders2 = async ({id, min_date, max_date, status, user_fio, user_phone, page=1}) => {
+        const {currentPage} = this.state;
+
+        const urlParams = [
+            id ? `&id=${id}` : '',
+            min_date ? `&min_date=${min_date}` : '',
+            max_date ? `&max_date=${max_date}` : '',
+            status ? `&status=${status}` : '',
+            user_fio ? `&user_fio=${user_fio}` : '',
+            user_phone ? `&user_phone=${user_phone}` : '',
+        ];
+
+        const url2 = `?status_group=2&page=${page + urlParams.join('')}`;
+        const res2 = await getOrders(url2);
+
+        this.setState({
+            orders2: res2.results,
+            count2: res2.count,
+        })
+    };
+
+    getOrders3 = async ({id, min_date, max_date, status, user_fio, user_phone, page=1}) => {
+        const {currentPage} = this.state;
+
+        const urlParams = [
+            id ? `&id=${id}` : '',
+            min_date ? `&min_date=${min_date}` : '',
+            max_date ? `&max_date=${max_date}` : '',
+            status ? `&status=${status}` : '',
+            user_fio ? `&user_fio=${user_fio}` : '',
+            user_phone ? `&user_phone=${user_phone}` : '',
+        ];
+
+        const url3 = `?status_group=3&page=${page + urlParams.join('')}`;
+        const res3 = await getOrders(url3);
+
+        this.setState({
+            orders3: res3.results,
+            count3: res3.count,
+        })
+    };
+
+    handleChangeTable = (e, type) => {
+        if (type === '1') {
+            this.getOrders1({page: e.current})
+        } else if(type === '2') {
+            this.getOrders2({page: e.current})
+        } else if(type === '3') {
+            this.getOrders3({page: e.current})
+        }
     };
 
     componentDidMount() {
         if (this.props.user.role !== 'CONTRACTOR') {
-            this.getOrders('')
+            this.getOrders1('');
+            this.getOrders2('');
+            this.getOrders3('');
         }
     };
 
     render() {
+        const {count1, count2, count3, currentPage} = this.state,
 
-        const {count, currentPage} = this.state,
-            config = {
-            pagination: {
-                pageSize: 10,
-                total: count,
-                current: currentPage
-            }
-        };
+            config1 = {
+                pagination: {
+                    pageSize: 10,
+                    total: count1,
+                    current: currentPage
+                }
+            },
+            config2 = {
+                pagination: {
+                    pageSize: 10,
+                    total: count2,
+                    current: currentPage
+                }
+            },
+            config3 = {
+                pagination: {
+                    pageSize: 10,
+                    total: count3,
+                    current: currentPage
+                }
+            };
 
 
-        const {orders} = this.state;
+        const {orders1, orders2, orders3,} = this.state;
         return (
             <div>
                 <SearchOrders
@@ -123,18 +191,46 @@ class OrdersFromRozetka extends Component {
                     <TabPane tab="В обработке" key="1">
                         <div>
                             <Table
-                                {...config}
+                                {...config1}
                                 columns={columns}
                                 expandedRowRender={record => <span>
                                     {record.description}
                                 </span>}
-                                dataSource={orders}
+                                dataSource={orders1}
+                                onChange={(e) => this.handleChangeTable(e, '1')}
                             />
                         </div>
                     </TabPane>
 
-                    <TabPane tab="Успешно завершены" disabled key="2">Content of Tab Pane 2</TabPane>
-                    <TabPane tab="Неуспешно завершены" disabled key="3">Content of Tab Pane 3</TabPane>
+                    <TabPane tab="Успешно завершены" key="2">
+                        <div>
+                            <Table
+                                {...config2}
+                                columns={columns}
+                                expandedRowRender={record => <span>
+                                    {record.description}
+                                </span>}
+                                dataSource={orders2}
+                                onChange={(e) => this.handleChangeTable(e, '2')}
+                            />
+                        </div>
+
+                    </TabPane>
+
+                    <TabPane tab="Неуспешно завершены" key="3">
+                        <div>
+                            <Table
+                                {...config3}
+                                columns={columns}
+                                expandedRowRender={record => <span>
+                                    {record.description}
+                                </span>}
+                                dataSource={orders3}
+                                onChange={(e) => this.handleChangeTable(e, '3')}
+                            />
+                        </div>
+
+                    </TabPane>
                 </Tabs>
             </div>
         );

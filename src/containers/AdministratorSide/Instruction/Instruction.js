@@ -55,20 +55,20 @@ class Instruction extends Component {
 
                 <div className={styles.instructionBlock}>
                     <div className={styles.user}>
-                        <div className={styles.userAvatar}>
-                            <img src={ava} alt=""/>
-                        </div>
-                        <div className={styles.userInfo}>
-                            <span className={styles.name}>Hexagon</span>
-                            <span className={styles.date}>13/03/2019  в 11:23</span>
-                        </div>
+                        {/*<div className={styles.userAvatar}>*/}
+                            {/*<img src={ava} alt=""/>*/}
+                        {/*</div>*/}
+                        {/*<div className={styles.userInfo}>*/}
+                            {/*<span className={styles.name}>Hexagon</span>*/}
+                            {/*<span className={styles.date}>13/03/2019  в 11:23</span>*/}
+                        {/*</div>*/}
                     </div>
-                    <div className={styles.video}>
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KCCqqPqDqSY"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen></iframe>
-                    </div>
+                    {/*<div className={styles.video}>*/}
+                        {/*<iframe width="100%" height="100%" src="https://www.youtube.com/embed/KCCqqPqDqSY"*/}
+                                {/*frameBorder="0"*/}
+                                {/*allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"*/}
+                                {/*allowFullScreen></iframe>*/}
+                    {/*</div>*/}
                     <p>
                         Зайдите во вкладку «Все товары». Здесь находится полный каталог товаров поставщиков . Для вашего
                         удобства
@@ -113,7 +113,7 @@ class Instruction extends Component {
 
                     {/*-----------------------*/}
                     <h3 className={styles.title} style={{margin: '50px 0 30px 0'}}>Инструкция по импорту товаров через
-                        Exel файл</h3>
+                        Excel файл</h3>
                     <a href={file} className={styles.link}>Скачать пример файла</a>
 
                     <p>Файл содержит следующие поля с данными о товаре которые необходимо заполнить.</p>
@@ -177,7 +177,7 @@ class Instruction extends Component {
                         </li>
                     </ul>
 
-                    <p>После внесения товаров в Exel файл, выполните его загрузку.</p>
+                    <p>После внесения товаров в Excel файл, выполните его загрузку.</p>
 
 
                     <div className={styles.img7}>
@@ -191,13 +191,14 @@ class Instruction extends Component {
                     <p>Для того чтобы импортировать товары с Rozetka marketplace необходимо перейти в раздел “Товары”,
                         который находится в <a href="https://seller.rozetka.com.ua" target='_blank'>личном кабинете
                             Rozetka </a>
-                        Для экспорта товаров в Exel нажмите кнопку “Загрузить файл”
+                        Для экспорта товаров в Excel нажмите кнопку “Загрузить файл”
                     </p>
                     <div className={styles.img7}>
                         <img src={img11} alt="img7"/>
                     </div>
                     <p>
                         Сохраните файл на вашем ПК. <br/>
+                        Откройте файл в Excel и сохраните его с другим именем. (Файл -> Сохранить как...)<br/>
                         В разделе платформы “Мои товары” импортируйте сохраненный файл
                     </p>
                     <div className={styles.img7}>

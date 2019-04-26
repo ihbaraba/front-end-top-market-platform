@@ -20,7 +20,7 @@ class DownloadHistory extends Component {
                 })
             });
 
-       this.interval = setInterval(() => {
+        this.interval = setInterval(() => {
             getDownloadsStatus()
                 .then(res => {
                     this.setState({
@@ -51,6 +51,9 @@ class DownloadHistory extends Component {
                                {item.xlsFile.split('/')[item.xlsFile.split('/').length - 1]}
                            </a>
 
+                                {item.totalProductsCount ? <span className={styles.errorsBlock}>
+                               Загружено {item.totalProductsCount} товаров
+                            </span> : ''}
                                 <span className={styles.errorsBlock}>
                                 {item.errors}
                             </span>

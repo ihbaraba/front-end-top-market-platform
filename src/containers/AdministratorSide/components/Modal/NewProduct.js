@@ -28,7 +28,7 @@ class NewProduct extends Component {
         price: '',
         imageUrls: [],
         coverImages: [],
-
+        uploadImage: false,
         visible: false,
         activeTabKey: '1',
         categories: [],
@@ -42,7 +42,6 @@ class NewProduct extends Component {
     };
 
     handleOk = (e) => {
-
         this.setState({
             visible: false,
         });
@@ -59,7 +58,7 @@ class NewProduct extends Component {
             price: '',
             imageUrls: [],
             coverImages: [],
-
+            uploadImage: false,
             visible: false,
             activeTabKey: '1',
             id: '',
@@ -79,7 +78,8 @@ class NewProduct extends Component {
         });
 
         this.setState({
-            coverImages: arrFiles
+            coverImages: arrFiles,
+            uploadImage: true
         })
     };
 
@@ -95,8 +95,6 @@ class NewProduct extends Component {
     }
 
     handleChangeInput = ({target: {value, name}}) => {
-        console.log(value);
-        console.log(name);
         this.setState({
             [name]: value
         })
@@ -105,7 +103,7 @@ class NewProduct extends Component {
     handleCreateProduct = async (e) => {
         e.preventDefault();
 
-        const res = await createNewProduct(this.state);
+        await createNewProduct(this.state);
         this.props.onUpdate();
 
         this.handleCancel();
@@ -183,8 +181,12 @@ class NewProduct extends Component {
             imageUrls,
             categories,
             selectedCategories,
-            activeTabKey
+            activeTabKey,
+            coverImages,
+            uploadImage
         } = this.state;
+
+        console.log(coverImages);
 
         return (
             <div>
@@ -333,11 +335,13 @@ class NewProduct extends Component {
                                     </div>
 
                                     <div className={styles.uploadInfo}>
-                                        <span>
+                                        {uploadImage ? <span>
+                                            Изображение загружено
+                                        </span> : <span>
                                             Фотография должна быть не меньше
                                             150х150 пикселей, и не болше чем
                                             1000х1000 пикселей.
-                                        </span>
+                                        </span>}
                                         <button className={styles.download}
                                                 onClick={this.handleCreateProduct}>Сохранить
                                         </button>

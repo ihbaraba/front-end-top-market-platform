@@ -9,7 +9,7 @@ import {notification} from "antd";
 class Documents extends Component {
     state = {
         type: '',
-        documents: [],
+        documentsFromServer: {},
         passport: [],
         ukStatistic: [],
         certificate: [],
@@ -82,51 +82,56 @@ class Documents extends Component {
                     message: 'Сохранено',
                 })
             )
+            .then(() => this.getDocuments())
     };
 
+    getDocuments = async () => {
+        const res = await getDocuments();
+        console.log(res.passport.length);
+        this.setState({documentsFromServer: res})
+    };
 
     async componentDidMount() {
-        const res = getDocuments();
-
-        this.setState({documents: res})
+        this.getDocuments();
     }
 
     render() {
         const documents = [
-            {
-                title: 'Паспорт',
-                description: '(стр. 1, 2, 3 и место регистрации личности)',
-                typeDoc: 'passport'
-            },
-            {
-                title: 'Справка Государственного комитета статистики Украины',
-                description: '(если договор подписывается с юр.лицом - обязательно, если с \n' +
-                'физ.лицом - в случае, если такую справку получало это лицо)',
-                typeDoc: 'ukStatistic'
-            },
-            {
-                title: 'Свидетельство о гос.регистрации или выписка с ЕГРПОУ',
-                description: '',
-                typeDoc: 'certificate'
-            },
-            {
-                title: 'Справка 4 Учета плательщика налогов',
-                description: '',
-                typeDoc: 'taxPayer'
-            },
-            {
-                title: 'Свидетельство, выписка плательщика налога на добавленную \n' +
-                'стоимость, выписка из реестра плательщиков НДС',
-                description: '',
-                typeDoc: 'payerRegister'
-            },
-            {
-                title: 'Свидетельство плательщика единого налога',
-                description: '(если лицо является плательщиком по упрощенной системе)',
-                typeDoc: 'payerCertificate'
-            },
-        ];
-
+                {
+                    title: 'Паспорт',
+                    description: '(стр. 1, 2, 3 и место регистрации личности)',
+                    typeDoc: 'passport'
+                },
+                {
+                    title: 'Справка Государственного комитета статистики Украины',
+                    description: '(если договор подписывается с юр.лицом - обязательно, если с \n' +
+                    'физ.лицом - в случае, если такую справку получало это лицо)',
+                    typeDoc: 'ukStatistic'
+                },
+                {
+                    title: 'Свидетельство о гос.регистрации или выписка с ЕГРПОУ',
+                    description: '',
+                    typeDoc: 'certificate'
+                },
+                {
+                    title: 'Справка 4 Учета плательщика налогов',
+                    description: '',
+                    typeDoc: 'taxPayer'
+                },
+                {
+                    title: 'Свидетельство, выписка плательщика налога на добавленную \n' +
+                    'стоимость, выписка из реестра плательщиков НДС',
+                    description: '',
+                    typeDoc: 'payerRegister'
+                },
+                {
+                    title: 'Свидетельство плательщика единого налога',
+                    description: '(если лицо является плательщиком по упрощенной системе)',
+                    typeDoc: 'payerCertificate'
+                },
+            ],
+            {documentsFromServer} = this.state;
+        console.log(documentsFromServer);
         return (
             <div>
                 <h4 className={styles.information}>Изображение должно быть в форматах pdf. jpeg или png. размер файла до
@@ -135,8 +140,14 @@ class Documents extends Component {
                 {documents.map((item) => (
                     <div key={item.typeDoc} className={styles.documentBlock}>
                         <div className="title">
-                            <h6 className={styles.documentTitle}>{item.title}</h6>
+                            <h6 className={styles.documentTitle}>{`${item.title}  (Загружено ${documentsFromServer[item.typeDoc] ? documentsFromServer[item.typeDoc].length : 0} документов)`} </h6>
                             <span className={styles.description}>{item.description}</span>
+
+                            <div className={styles.docImg}>
+                                {documentsFromServer[item.typeDoc] ? documentsFromServer[item.typeDoc].map(item => (
+                                    <img src={item.passDocDecoded} alt=""/>
+                                )) : ''}
+                            </div>
                         </div>
 
                         <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">

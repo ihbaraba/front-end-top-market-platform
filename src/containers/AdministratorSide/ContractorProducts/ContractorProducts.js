@@ -305,6 +305,10 @@ class ContractorProducts extends Component {
                                 История загрузок
                             </button>
 
+                            <div className={styles.totalProducts}>
+                                Товаров: {products.length}
+                            </div>
+
                         </div>
 
                         <div className={styles.filter}>

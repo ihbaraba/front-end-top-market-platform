@@ -311,3 +311,14 @@
     margin-bottom: 45px;
     display: block;
 }
+
+.docImg {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.docImg img {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px 0 0;
+}

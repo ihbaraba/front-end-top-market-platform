@@ -208,7 +208,7 @@ class ContractorProducts extends Component {
                 render: (name, item) => (
                     <span className='product-avatar'>
                 <img
-                    src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls ? item.imageUrls [0].url : '')}
+                    src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls.length > 0 ? item.imageUrls [0].url : '')}
                     alt=""/>
                         {name}
             </span>

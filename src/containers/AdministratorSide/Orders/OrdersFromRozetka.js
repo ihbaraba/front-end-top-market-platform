@@ -61,21 +61,6 @@ const columns = [
 
 ];
 
-const data = [
-    {
-        key: 1, orderNumber: 123414415,
-        dateOrder: '03/03/2019 14:12',
-        product: 'New York No. 1 Lake Park',
-        provider: 'Nike Inc.',
-        amount: '5834.00 грн',
-        statusOrder: 'В пункте самовывоза ТТН: 20450123054480',
-        description: 'descriotion',
-
-    },
-
-];
-
-
 class OrdersFromRozetka extends Component {
 
     state = {

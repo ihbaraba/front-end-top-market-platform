@@ -190,7 +190,7 @@ class Categories extends Component {
                             </button>
 
                             <div className={styles.totalProducts}>
-                                Товаров: {products.length}
+                                Товаров: {count}
                             </div>
 
                             {/*<button className={styles.downloadExel}>Загрузить Exel файл</button>*/}

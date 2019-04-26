@@ -311,7 +311,7 @@ class ContractorProducts extends Component {
                             </button>
 
                             <div className={styles.totalProducts}>
-                                Товаров: {products.length}
+                                Товаров: {count}
                             </div>
 
                         </div>

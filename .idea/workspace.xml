@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/NewProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/NewProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,23 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Documents.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js">
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompanySettings.module.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.module.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="321" column="22" selection-start-line="321" selection-start-column="22" selection-end-line="321" selection-end-column="22" />
+            <state relative-caret-position="90">
+              <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -129,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/ConfirmRegistration.js" />
         <option value="$PROJECT_DIR$/src/routes.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/src/actions/userActions.js" />
         <option value="$PROJECT_DIR$/src/containers/UserSide/ContactsForm2/ContactsForm.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Instruction/Instruction.module.css" />
@@ -151,6 +133,7 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/NewProduct.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.module.css" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js" />
       </list>
     </option>
   </component>
@@ -230,7 +213,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
-              <item name="CompanySettings" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Header" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -339,7 +331,7 @@
       <workItem from="1556013875870" duration="10485000" />
       <workItem from="1556088890924" duration="9063000" />
       <workItem from="1556172875909" duration="22029000" />
-      <workItem from="1556260896928" duration="4730000" />
+      <workItem from="1556260896928" duration="5334000" />
     </task>
     <task id="LOCAL-00001" summary="add CI, add Dockerfile">
       <created>1555070821463</created>
@@ -352,7 +344,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228608000" />
+    <option name="totallyTimeSpent" value="229212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -505,6 +497,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="67" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -578,6 +573,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="79" column="57" lean-forward="true" selection-start-line="79" selection-start-column="57" selection-end-line="79" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -590,13 +588,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContactsForm/ContactsForm.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -654,6 +645,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1470">
           <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -726,6 +720,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -790,6 +787,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="307" column="24" lean-forward="true" selection-start-line="307" selection-start-column="24" selection-end-line="307" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="605">
@@ -800,10 +804,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.module.css">
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="321" column="22" selection-start-line="321" selection-start-column="22" selection-end-line="321" selection-end-column="22" />
+        <state relative-caret-position="90">
+          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
         </state>
       </provider>
     </entry>

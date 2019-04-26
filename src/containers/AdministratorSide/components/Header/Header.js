@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import styles from './Header.module.css'
 import 'antd/dist/antd.css';
 import logo from "../../../../img/logo2.png";
-import avatar from "../../../../img/ava.png";
+import avatar from "../../../../img/avatar.png";
 import notification from "../../../../img/notification.svg";
 import cart from "../../../../img/cart.svg";
 import dollar from "../../../../img/dollar.svg";

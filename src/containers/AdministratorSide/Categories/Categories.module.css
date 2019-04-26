@@ -15,6 +15,15 @@
     cursor: pointer;
 }
 
+.totalProducts {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 0 auto;
+
+}
+
 .top {
     display: flex;
     /*align-items: center;*/

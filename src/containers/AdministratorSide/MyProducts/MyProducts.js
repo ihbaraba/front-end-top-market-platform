@@ -31,6 +31,9 @@ const columns = [
     {
         title: 'Категория',
         dataIndex: 'category',
+        render: (category) => (
+            <span>{category ? category.name : ''}</span>
+        )
     },
     {
         title: 'Количество',

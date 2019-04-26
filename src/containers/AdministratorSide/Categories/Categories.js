@@ -22,6 +22,9 @@ const columns = [
     {
         title: 'Категория',
         dataIndex: 'category',
+        render: (category) => (
+            <span>{category ? category.name : ''}</span>
+        )
     },
     {
         title: 'Количество',
@@ -178,6 +181,11 @@ class Categories extends Component {
                                 onClick={this.handleCopyProducts}>
                                 Добавить в мои товары
                             </button>
+
+                            <div className={styles.totalProducts}>
+                                Товаров: {products.length}
+                            </div>
+
                             {/*<button className={styles.downloadExel}>Загрузить Exel файл</button>*/}
                         </div>
 

@@ -307,7 +307,7 @@ class ContractorProducts extends Component {
                                 {({getRootProps, getInputProps}) => (
                                     <div {...getRootProps({className: 'dropzone'})}>
                                         <input {...getInputProps()} />
-                                        <button className='btn' disabled={!uploadExel}>Загрузить Exel файл</button>
+                                        <button className='btn' disabled={!uploadExel}>Загрузить Excel файл</button>
                                     </div>
                                 )}
                             </Dropzone>

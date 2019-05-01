@@ -43,7 +43,7 @@ class ContractorProducts extends Component {
         const {currentPage, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',
-            name ? `&name__contains=${name}` : '',
+            name ? `&name=${name}` : '',
             brand ? `&brand=${brand}` : '',
             in_stock ? `&in_stock=${in_stock}` : '',
             vendor_code ? `&vendor_code=${vendor_code}` : '',

@@ -15,7 +15,7 @@ export const login = (user) => dispatch => {
     // console.log("login_request this.props", this.props);
     return api('post', LOGIN, user)
         .then(res => {
-            sessionStorage.setItem('token', res.access);
+            localStorage.setItem('token', res.access);
 
             getProfile()
                 .then(res => {

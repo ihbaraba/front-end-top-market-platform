@@ -126,6 +126,13 @@ class ContractorProducts extends Component {
     handleUpdate = () => {
         this.getMyProducts();
         this.getCategories();
+
+        this.setState({
+            selectedRowKeys: [],
+            product: {}
+        })
+    };
+    handleUpdateProduct = () => {
         this.setState({
             selectedRowKeys: [],
             product: {}
@@ -286,12 +293,11 @@ class ContractorProducts extends Component {
                 </div>
 
                 <div className={styles.categories}>
-
-
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
                             <NewProduct
                                 onUpdate={this.handleUpdate}
+                                onUpdateProduct={this.handleUpdateProduct}
                                 product={product}
                                 update={product.id ? true : false}
                             />

@@ -18,7 +18,7 @@ class Header extends Component {
 
 
     handleLogout = () => {
-        sessionStorage.removeItem('token');
+        localStorage.removeItem('token');
         window.location.href = `${window.location.origin}/`;
     };
 

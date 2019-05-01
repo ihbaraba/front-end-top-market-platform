@@ -14,7 +14,7 @@ class ContactsForm extends Component {
 
     handleSend = async (e) => {
         e.preventDefault();
-        const token = sessionStorage.getItem('token'),
+        const token = localStorage.getItem('token'),
             {name, email, subject, text} = this.state;
 
         if (token) {
@@ -53,7 +53,7 @@ class ContactsForm extends Component {
     };
 
     renderForm = () => {
-        const token = sessionStorage.getItem('token'),
+        const token = localStorage.getItem('token'),
             {name, email, subject, text} = this.state;
 
         if (token) {

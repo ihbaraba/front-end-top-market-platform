@@ -7,7 +7,7 @@ import {BASE_URL} from '../constants/APIURLS';
 loadProgressBar();
 
 const http = (method, url, data, type) => {
-    const token = sessionStorage.getItem('token');
+    const token = localStorage.getItem('token');
 
     return new Promise((resolve, reject) => {
         axios({

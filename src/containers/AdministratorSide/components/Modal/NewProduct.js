@@ -64,6 +64,8 @@ class NewProduct extends Component {
             id: '',
             selectedCategories: []
         });
+
+        this.props.onUpdateProduct();
     };
 
     onDrop = async (files) => {
@@ -110,7 +112,10 @@ class NewProduct extends Component {
     };
 
     updateProduct = async () => {
-        await updateProduct(this.state);
+        await updateProduct({
+            ...this.state,
+            category: this.state.categories.id
+        });
 
         this.props.onUpdate();
         this.handleCancel();
@@ -286,10 +291,17 @@ class NewProduct extends Component {
                                         {/*</select>*/}
                                     </div>
 
-                                    <button type='button' className={styles.save}
-                                            onClick={() => this.setState({activeTabKey: '3'})}>
-                                        Далее
-                                    </button>
+                                    {id ?
+                                        <button type='button' className={styles.save}
+                                                onClick={this.updateProduct}>
+                                            Сохранить
+                                        </button>
+                                        :
+                                        <button type='button' className={styles.save}
+                                                onClick={() => this.setState({activeTabKey: '3'})}>
+                                            Далее
+                                        </button>
+                                    }
                                 </form>
                             </TabPane>
 
@@ -305,10 +317,17 @@ class NewProduct extends Component {
                                         />
                                     </div>
 
-                                    <button type='button' className={styles.save}
-                                            onClick={() => this.setState({activeTabKey: '4'})}>
-                                        Далее
-                                    </button>
+                                    {id ?
+                                        <button type='button' className={styles.save}
+                                                onClick={this.updateProduct}>
+                                            Сохранить
+                                        </button>
+                                        :
+                                        <button type='button' className={styles.save}
+                                                onClick={() => this.setState({activeTabKey: '4'})}>
+                                            Далее
+                                        </button>
+                                    }
                                 </form>
                             </TabPane>
 
@@ -342,9 +361,17 @@ class NewProduct extends Component {
                                             150х150 пикселей, и не болше чем
                                             1000х1000 пикселей.
                                         </span>}
-                                        <button className={styles.download}
-                                                onClick={this.handleCreateProduct}>Сохранить
-                                        </button>
+
+                                        {id ?
+                                            <button type='button' className={styles.save}
+                                                    onClick={this.updateProduct}>
+                                                Сохранить
+                                            </button>
+                                            :
+                                            <button className={styles.download}
+                                                    onClick={this.handleCreateProduct}>Сохранить
+                                            </button>
+                                        }
                                     </div>
                                 </div>
                             </TabPane>

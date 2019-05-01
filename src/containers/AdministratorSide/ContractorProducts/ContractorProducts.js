@@ -37,10 +37,14 @@ class ContractorProducts extends Component {
 
         uploadExel: false,
         uploadRozetka: false,
+
+        inStock: 0,
+        notInStock: 0
     };
 
     getMyProducts = async () => {
         const {currentPage, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
+
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',
             name ? `&name=${name}` : '',
@@ -52,11 +56,14 @@ class ContractorProducts extends Component {
         ];
 
         const url = `?page=${currentPage + urlParams.join('')}`;
-        const res = await getContractorProducts(url);
+
+        const [all, inStock, notInStock] = await Promise.all([getContractorProducts(url), getContractorProducts(`?in_stock=${true}`), getContractorProducts(`?in_stock=${false}`)]);
 
         this.setState({
-            products: res.results,
-            count: res.count
+            products: all.results,
+            count: all.count,
+            inStock: inStock.count,
+            notInStock: notInStock.count,
         })
     };
 
@@ -207,7 +214,9 @@ class ContractorProducts extends Component {
                 brand,
             },
             uploadExel,
-            uploadRozetka
+            uploadRozetka,
+            inStock,
+            notInStock
         } = this.state;
 
         const rowSelection = {
@@ -316,15 +325,15 @@ class ContractorProducts extends Component {
                                 {({getRootProps, getInputProps}) => (
                                     <div {...getRootProps({className: 'dropzone'})}>
                                         <input {...getInputProps()} />
-                                        {!haveRozetkaAkaunt ? <Tooltip title="Поля логин и пароль с «Rozetka marketplace» не заполнены">
+                                        {!haveRozetkaAkaunt ?
+                                            <Tooltip title="Поля логин и пароль с «Rozetka marketplace» не заполнены">
                                                 <button className='btn'
                                                         disabled>Загрузить с Rozetka
                                                 </button>
                                             </Tooltip>
                                             :
                                             <button className='btn'
-                                                    disabled={!uploadRozetka}>Загрузить с
-                                                Rozetka</button>
+                                                    disabled={!uploadRozetka}>Загрузить с Rozetka</button>
                                         }
 
                                     </div>
@@ -338,6 +347,8 @@ class ContractorProducts extends Component {
 
                             <div className={styles.totalProducts}>
                                 Товаров: {count}
+                                <span>-в наличие: {inStock}</span>
+                                <span>-нет в наличие: {notInStock}</span>
                             </div>
 
                         </div>

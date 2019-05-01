@@ -273,9 +273,13 @@ input[type=submit] {
 
 .totalProducts {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     font-size: 15px;
     font-weight: bold;
     margin: 0 0 0 auto;
 
+}
+.totalProducts span{
+    font-size: 13px;
+    font-weight: 500;
 }

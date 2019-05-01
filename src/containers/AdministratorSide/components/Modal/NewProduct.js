@@ -56,7 +56,10 @@ class NewProduct extends Component {
             category: '',
             description: '',
             price: '',
-            imageUrls: [],
+            imageUrl: '',
+            imageUrls: [{
+                url: ''
+            }],
             coverImages: [],
             uploadImage: false,
             visible: false,
@@ -159,6 +162,18 @@ class NewProduct extends Component {
         });
     };
 
+    handleAddImageUrl = () => {
+        this.setState({
+            imageUrl: '',
+            imageUrls: [
+                ...this.state.imageUrls,
+                {
+                    url: this.state.imageUrl
+                }
+            ]
+        })
+    };
+
     async componentDidMount() {
         const res = await getFirstLevelCategories();
         console.log(res);
@@ -184,14 +199,13 @@ class NewProduct extends Component {
             description,
             price,
             imageUrls,
+            imageUrl,
             categories,
             selectedCategories,
             activeTabKey,
             coverImages,
             uploadImage
         } = this.state;
-
-        console.log(coverImages);
 
         return (
             <div>
@@ -347,9 +361,13 @@ class NewProduct extends Component {
                                         </div>
 
                                         <div className={styles.addUrl}>
-                                            <input type="text" name='imageUrls' value={imageUrls}
+                                            <input type="text" name='imageUrl'
+                                                   value={imageUrl}
                                                    onChange={this.handleChangeInput}/>
-                                            <button className={styles.addUrlBtn}>Добавить URL</button>
+
+                                            <button className={styles.addUrlBtn}
+                                                    onClick={this.handleAddImageUrl}>Добавить URL
+                                            </button>
                                         </div>
                                     </div>
 

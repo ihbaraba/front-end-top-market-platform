@@ -176,7 +176,7 @@ class ProfileSettings extends Component {
     }
 
     render() {
-        const {firstName, lastName, patronymic, email, visibleModal, emailNotifications, phoneNotifications, avatarImage, webSite, phone} = this.state;
+        const {firstName, lastName, patronymic, email, visibleModal, emailNotifications, phoneNotifications, avatarImage, webSite, phone, rozetkaUsername, rozetkaPassword} = this.state;
         const {getFieldDecorator} = this.props.form;
 
         return (
@@ -237,17 +237,17 @@ class ProfileSettings extends Component {
 
                                     <div>
                                         <label>Rozetka username</label>
-                                        <input type="text"
+                                        <input type="password"
                                                name='rozetkaUsername'
-                                            // value={webSite || ''}
+                                            value={rozetkaUsername || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
                                     <div>
                                         <label>Rozetka password</label>
-                                        <input type="text"
+                                        <input type="password"
                                                name='rozetkaPassword'
-                                            // value={webSite || ''}
+                                            value={rozetkaPassword || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>

@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import styles from './ContractorProducts.module.css';
 import {Icon} from 'antd';
 import moment from 'moment';
+import {Link} from 'react-router-dom';
 import {getDownloadsStatus} from '../../../actions/productsActions';
 import progres from '../../../img/progress.gif';
 
@@ -40,7 +41,7 @@ class DownloadHistory extends Component {
         return (
             <Fragment>
                 <div className={styles.top}>
-                    <h3 className={styles.title}>История загрузок</h3>
+                    <h3 className={styles.title}><Link to='/admin/products'>Мои товары</Link> -> История загрузок</h3>
                 </div>
 
                 <div className={styles.historyPage}>

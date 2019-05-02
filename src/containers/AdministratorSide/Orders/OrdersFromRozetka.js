@@ -138,17 +138,14 @@ class OrdersFromRozetka extends Component {
             this.setState({
                 currentPage1: e.current
             }, () => this.getOrders1({page: e.current}))
-
         } else if (type === '2') {
             this.setState({
                 currentPage2: e.current
             }, () => this.getOrders2({page: e.current}))
-
         } else if (type === '3') {
             this.setState({
                 currentPage3: e.current
             }, () => this.getOrders3({page: e.current}))
-
         }
     };
 
@@ -199,9 +196,34 @@ class OrdersFromRozetka extends Component {
                             <Table
                                 {...config1}
                                 columns={columns}
-                                expandedRowRender={record => <span>
-                                    {record.description}
-                                </span>}
+                                expandedRowRender={record => {
+                                    return (
+                                        <div className={styles.orderDescription}>
+                                            <div className={styles.product}>
+                                                <div className={styles.productList}>
+                                                    {record.itemProducts.map(product => (
+                                                        <img
+                                                            src={product.coverImages.length > 0 ? product.coverImages[0].url : ''}/>
+                                                    ))}
+                                                </div>
+
+                                                <div className={styles.delivery}>
+                                                 <h4>Способ доставки:</h4>
+                                                        <span>
+                                                            {`${record.delivery.deliveryServiceName}, №${record.delivery.placeNumber}`}<br/>
+                                                            {` ${record.delivery.city}`} <br/>
+                                                            {` ${record.delivery.recipientTitle}`}
+                                                    </span>
+                                                </div>
+
+                                                <div className={styles.total}>
+                                                    <h4>Всего к оплате:</h4>
+                                                    {`${record.amount} грн`}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }}
                                 dataSource={orders1}
                                 onChange={(e) => this.handleChangeTable(e, '1')}
                             />

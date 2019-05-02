@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import {Modal, Cascader, Tabs} from 'antd';
 import styles from "../../MyProducts/MyProducts.module.css";
-import stylesModal from "./Modal.module.css";
 import {
     createNewProduct,
     getFirstLevelCategories,
@@ -212,7 +211,7 @@ class NewProduct extends Component {
                 <button className='btn' onClick={this.showModal}>Добавить товар</button>
 
                 <Modal
-                    title="Новый товар"
+                    title={id ? name : "Новый товар"}
                     visible={this.state.visible}
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}

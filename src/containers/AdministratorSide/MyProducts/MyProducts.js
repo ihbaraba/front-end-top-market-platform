@@ -9,50 +9,11 @@ import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTa
 import {getPartnerProducts, generateYml, getAllCategories} from '../../../actions/productsActions';
 import CategoryList from "./CategoryList";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-
-
 import {Menu, Dropdown, Icon} from 'antd';
+import EditProductWindow from './EditProductWindow';
 
 const TabPane = Tabs.TabPane;
 
-
-const columns = [
-    {
-        title: 'Название товара',
-        dataIndex: 'name',
-        render: (name, item) => (
-            <span className='product-avatar'>
-                <img
-                    src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls.length > 0 ? item.imageUrls [0].url : '')}
-                    alt=""/>
-                {name}
-            </span>
-        )
-    },
-    {
-        title: 'Артикул',
-        dataIndex: 'vendorCode',
-    },
-    {
-        title: 'Бренд',
-        dataIndex: 'brand',
-    },
-    {
-        title: 'Категория',
-        dataIndex: 'category',
-        render: (category) => (
-            <span>{category ? category.name : ''}</span>
-        )
-    },
-    {
-        title: 'Количество',
-        dataIndex: 'count',
-    },
-    {
-        title: 'Цена',
-        dataIndex: 'price',
-    }
-];
 
 function callback(key) {
     console.log(key);
@@ -61,6 +22,7 @@ function callback(key) {
 class MyProducts extends Component {
     state = {
         products: [],
+        product: {},
         selectedProducts: [],
         categories: [],
         filters: {
@@ -124,6 +86,12 @@ class MyProducts extends Component {
         })
     };
 
+    handleOpenWindow = (product) => {
+        this.setState({
+            product
+        })
+    }
+
     onSelectChange = (selectedRowKeys) => {
         this.setState({selectedProducts: selectedRowKeys});
     };
@@ -152,7 +120,7 @@ class MyProducts extends Component {
         })
     };
 
-   async componentDidMount() {
+    async componentDidMount() {
         this.getMyProducts();
 
 
@@ -164,7 +132,23 @@ class MyProducts extends Component {
 
 
     render() {
-        const {products, selectedProducts, promUrl, categories, rozetkaUrl, count, currentPage, filters: {brand, name, vendor_code, min_price, max_price}} = this.state;
+        const {
+            products,
+            product,
+            selectedProducts,
+            promUrl,
+            categories,
+            rozetkaUrl,
+            count,
+            currentPage,
+            filters: {
+                brand,
+                name,
+                vendor_code,
+                min_price,
+                max_price
+            },
+        } = this.state;
         const rowSelection = {
             selectedProducts,
             onChange: this.onSelectChange,
@@ -194,18 +178,18 @@ class MyProducts extends Component {
                         {/*</div>*/}
                         <div>
                             <label>Для Prom.ua</label>
-                            <input type="text" value={promUrl} disabled/>
+                            <input type="text" value={promUrl.template} disabled/>
 
 
-                            <CopyToClipboard text={promUrl}
+                            <CopyToClipboard text={promUrl.template}
                                              onCopy={() => this.setState({copied: true})}>
                                 <button className={styles.copy}>Копировать</button>
                             </CopyToClipboard>
                         </div>
                         <div>
                             <label>Для Rozetka</label>
-                            <input type="text" value={rozetkaUrl} disabled/>
-                            <CopyToClipboard text={rozetkaUrl}
+                            <input type="text" value={rozetkaUrl.template} disabled/>
+                            <CopyToClipboard text={rozetkaUrl.template}
                                              onCopy={() => this.setState({copied: true})}>
                                 <button className={styles.copy}>Копировать</button>
                             </CopyToClipboard>
@@ -221,6 +205,52 @@ class MyProducts extends Component {
             </Menu>
         );
 
+
+        const columns = [
+            {
+                title: 'Название товара',
+                dataIndex: 'name',
+                render: (name, item) => (
+                    <span className='product-avatar'>
+                        <img
+                            src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls.length > 0 ? item.imageUrls [0].url : '')}
+                            alt=""/>
+                        {name}
+                     </span>
+                )
+            },
+            {
+                title: 'Артикул',
+                dataIndex: 'vendorCode',
+            },
+            {
+                title: 'Бренд',
+                dataIndex: 'brand',
+            },
+            {
+                title: 'Категория',
+                dataIndex: 'category',
+                render: (category) => (
+                    <span>{category ? category.name : ''}</span>
+                )
+            },
+            {
+                title: 'Количество',
+                dataIndex: 'count',
+            },
+            {
+                title: 'Цена',
+                dataIndex: 'price',
+            },
+            {
+                title: '',
+                dataIndex: 'actions',
+                render: (actions, item) => (
+                    <button className='btn edit-btn' onClick={() => this.handleOpenWindow(item)}>Редактировать</button>
+                )
+            }
+        ];
+
         return (
             <div>
                 <h3 className={styles.title}>
@@ -233,18 +263,21 @@ class MyProducts extends Component {
                         <Icon type="bars"/>
                     </Popover>
 
-                    Мои товары</h3>
+                    Мои товары
+                </h3>
+
                 <Tabs onChange={callback} type="card">
                     <TabPane tab={`Товари в продажу - ${products.length}`} key="1">
 
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
                                 {/*<Tooltip placement="bottom" title='Находится в разработке'>*/}
-                                    <Dropdown overlay={menu} trigger={['click']}>
-                                        <button onClick={this.handleGenerateYml} className='btn' disabled={selectedProducts.length < 1}>
-                                            Добавить в YML
-                                        </button>
-                                    </Dropdown>
+                                <Dropdown overlay={menu} trigger={['click']}>
+                                    <button onClick={this.handleGenerateYml} className='btn'
+                                            disabled={selectedProducts.length < 1}>
+                                        Добавить в YML
+                                    </button>
+                                </Dropdown>
                                 {/*</Tooltip>*/}
 
                                 {/*<NewProduct/>*/}
@@ -420,7 +453,7 @@ class MyProducts extends Component {
                     <TabPane tab="Управління товарами" key="4" disabled>
                         <div className={styles.management}>
                             <a href="#" className={styles.uploadList} download>Загрузить список производителей в
-                                Exel</a>
+                                Exсel</a>
                             <h3>Управление категориями и параметрами</h3>
                             <div className={styles.categories}>
                                 <div>
@@ -436,6 +469,11 @@ class MyProducts extends Component {
                         </div>
                     </TabPane>
                 </Tabs>
+
+                <EditProductWindow
+                    product={product}
+                    onUpdate={() => {this.setState({product: {}}); this.getMyProducts()}}
+                />
             </div>
         );
     }

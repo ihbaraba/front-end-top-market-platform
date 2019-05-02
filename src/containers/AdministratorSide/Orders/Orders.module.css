@@ -83,3 +83,15 @@
     margin-top: 20px;
     margin-left: auto;
 }
+
+.delivery {
+    display: flex;
+    width: 100%;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #E2E2E2;
+}
+
+.total {
+    display: flex;
+    padding: 20px 0;
+}

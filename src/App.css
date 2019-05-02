@@ -35,6 +35,18 @@ a.active {
     background: #fff;
 }
 
+.active-icon {
+    display: none;
+}
+
+.active .default-icon {
+    display: none !important;
+}
+.active .active-icon {
+    display: block !important;
+    color: #fff;
+}
+
 .ant-collapse > .ant-collapse-item > .ant-collapse-header {
     background: #fff;
     color: #4F4F4F;
@@ -159,6 +171,13 @@ a.active {
     margin-right: 20px;
 }
 
+.edit-btn {
+    height: 30px;
+    width: max-content;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
 .btn button {
     height: 40px;
     width: 206px;
@@ -246,4 +265,9 @@ button:disabled:hover {
     bottom: 0;
     margin: auto !important;
     height: 300px;
+}
+
+/*orders*/
+.order-description {
+    display: flex;
 }

@@ -73,5 +73,9 @@ export const getPartnerProducts = (url) => {
 };
 
 export const generateYml = (products, type) => {
-    return api('patch', `${YML}${type}/`, products)
+    return api('post', `${YML}`, products)
+};
+
+export const updatePartnerProduct = (product) => {
+    return api('patch', `${PARTNER_PRODUCTS}${product.id}/`, product)
 };

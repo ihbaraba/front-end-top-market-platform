@@ -13,6 +13,7 @@
     "react-avatar-edit": "^0.8.2",
     "react-chartjs-2": "^2.7.6",
     "react-collapsing-table": "^0.5.1",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-daypicker": "^3.0.8",
     "react-dom": "^16.8.5",
     "react-dropzone": "^10.1.0",

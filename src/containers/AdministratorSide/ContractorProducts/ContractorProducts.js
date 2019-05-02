@@ -168,13 +168,13 @@ class ContractorProducts extends Component {
             }
         });
 
-        if (innerArr.every(item => item.isUploaded)) {
+        if (innerArr.every(item => (item.isUploaded || item.errors ||  item.errors === 'No errors'))) {
             this.setState({
                 uploadExel: true
             })
         }
 
-        if (rozetkaArr.every(item => item.isUploaded)) {
+        if (rozetkaArr.every(item => (item.isUploaded || item.errors ||  item.errors === 'No errors'))) {
             this.setState({
                 uploadRozetka: true
             })

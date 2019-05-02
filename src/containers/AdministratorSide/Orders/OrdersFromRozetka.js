@@ -39,11 +39,6 @@ const columns = [
 
     },
     {
-        title: 'Поставщик',
-        dataIndex: 'provider',
-        key: 'provider'
-    },
-    {
         title: 'Сумма',
         dataIndex: 'amount',
         key: 'amount'
@@ -68,12 +63,14 @@ class OrdersFromRozetka extends Component {
         orders: [],
 
         count: 0,
-        currentPage: 1,
+        currentPage1: 1,
+        currentPage2: 1,
+        currentPage3: 1,
 
     };
 
-    getOrders1 = async ({id, min_date, max_date, status, user_fio, user_phone, page=1}) => {
-        const {currentPage} = this.state;
+    getOrders1 = async ({id, min_date, max_date, status, user_fio, user_phone}) => {
+        const {currentPage1} = this.state;
 
         const urlParams = [
             id ? `&id=${id}` : '',
@@ -84,7 +81,7 @@ class OrdersFromRozetka extends Component {
             user_phone ? `&user_phone=${user_phone}` : '',
         ];
 
-        const url1 = `?status_group=1&page=${page + urlParams.join('')}`;
+        const url1 = `?status_group=1&page=${currentPage1 + urlParams.join('')}`;
         const res1 = await getOrders(url1);
 
         this.setState({
@@ -94,8 +91,8 @@ class OrdersFromRozetka extends Component {
         })
     };
 
-    getOrders2 = async ({id, min_date, max_date, status, user_fio, user_phone, page=1}) => {
-        const {currentPage} = this.state;
+    getOrders2 = async ({id, min_date, max_date, status, user_fio, user_phone}) => {
+        const {currentPage2} = this.state;
 
         const urlParams = [
             id ? `&id=${id}` : '',
@@ -106,7 +103,7 @@ class OrdersFromRozetka extends Component {
             user_phone ? `&user_phone=${user_phone}` : '',
         ];
 
-        const url2 = `?status_group=2&page=${page + urlParams.join('')}`;
+        const url2 = `?status_group=2&page=${currentPage2 + urlParams.join('')}`;
         const res2 = await getOrders(url2);
 
         this.setState({
@@ -115,8 +112,8 @@ class OrdersFromRozetka extends Component {
         })
     };
 
-    getOrders3 = async ({id, min_date, max_date, status, user_fio, user_phone, page=1}) => {
-        const {currentPage} = this.state;
+    getOrders3 = async ({id, min_date, max_date, status, user_fio, user_phone}) => {
+        const {currentPage3} = this.state;
 
         const urlParams = [
             id ? `&id=${id}` : '',
@@ -127,7 +124,7 @@ class OrdersFromRozetka extends Component {
             user_phone ? `&user_phone=${user_phone}` : '',
         ];
 
-        const url3 = `?status_group=3&page=${page + urlParams.join('')}`;
+        const url3 = `?status_group=3&page=${currentPage3 + urlParams.join('')}`;
         const res3 = await getOrders(url3);
 
         this.setState({
@@ -138,11 +135,20 @@ class OrdersFromRozetka extends Component {
 
     handleChangeTable = (e, type) => {
         if (type === '1') {
-            this.getOrders1({page: e.current})
-        } else if(type === '2') {
-            this.getOrders2({page: e.current})
-        } else if(type === '3') {
-            this.getOrders3({page: e.current})
+            this.setState({
+                currentPage1: e.current
+            }, () => this.getOrders1({page: e.current}))
+
+        } else if (type === '2') {
+            this.setState({
+                currentPage2: e.current
+            }, () => this.getOrders2({page: e.current}))
+
+        } else if (type === '3') {
+            this.setState({
+                currentPage3: e.current
+            }, () => this.getOrders3({page: e.current}))
+
         }
     };
 
@@ -155,27 +161,27 @@ class OrdersFromRozetka extends Component {
     };
 
     render() {
-        const {count1, count2, count3, currentPage} = this.state,
+        const {count1, count2, count3, currentPage1, currentPage2, currentPage3} = this.state,
 
             config1 = {
                 pagination: {
                     pageSize: 10,
                     total: count1,
-                    current: currentPage
+                    current: currentPage1
                 }
             },
             config2 = {
                 pagination: {
                     pageSize: 10,
                     total: count2,
-                    current: currentPage
+                    current: currentPage2
                 }
             },
             config3 = {
                 pagination: {
                     pageSize: 10,
                     total: count3,
-                    current: currentPage
+                    current: currentPage3
                 }
             };
 

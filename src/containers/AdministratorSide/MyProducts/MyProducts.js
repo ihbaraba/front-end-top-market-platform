@@ -8,6 +8,7 @@ import PriceListTable from "../components/PriceListTable/PriceListTable";
 import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTable";
 import {getPartnerProducts, generateYml, getAllCategories} from '../../../actions/productsActions';
 import CategoryList from "./CategoryList";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 
 import {Menu, Dropdown, Icon} from 'antd';
@@ -194,12 +195,21 @@ class MyProducts extends Component {
                         <div>
                             <label>Для Prom.ua</label>
                             <input type="text" value={promUrl} disabled/>
-                            <button className={styles.copy}>Копировать</button>
+
+
+                            <CopyToClipboard text={promUrl}
+                                             onCopy={() => this.setState({copied: true})}>
+                                <button className={styles.copy}>Копировать</button>
+                            </CopyToClipboard>
                         </div>
                         <div>
                             <label>Для Rozetka</label>
                             <input type="text" value={rozetkaUrl} disabled/>
-                            <button className={styles.copy}>Копировать</button>
+                            <CopyToClipboard text={rozetkaUrl}
+                                             onCopy={() => this.setState({copied: true})}>
+                                <button className={styles.copy}>Копировать</button>
+                            </CopyToClipboard>
+
                         </div>
                         {/*<div>*/}
                         {/*<label>Для Top Market</label>*/}
@@ -229,13 +239,13 @@ class MyProducts extends Component {
 
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
-                                <Tooltip placement="bottom" title='Находится в разработке'>
-                                    {/*<Dropdown overlay={menu} trigger={['click']}>*/}
-                                        <button onClick={this.handleGenerateYml} className='btn' disabled>
+                                {/*<Tooltip placement="bottom" title='Находится в разработке'>*/}
+                                    <Dropdown overlay={menu} trigger={['click']}>
+                                        <button onClick={this.handleGenerateYml} className='btn' disabled={selectedProducts.length < 1}>
                                             Добавить в YML
                                         </button>
-                                    {/*</Dropdown>*/}
-                                </Tooltip>
+                                    </Dropdown>
+                                {/*</Tooltip>*/}
 
                                 {/*<NewProduct/>*/}
                                 {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
@@ -326,7 +336,6 @@ class MyProducts extends Component {
                     </TabPane>
 
                     <TabPane tab="Неактивні товари - 0" key="2" disabled>
-
                         <div className={styles.inactiveGoodsTable}>
                             <div className={styles.productsBtns}>
                                 <Dropdown overlay={menu} trigger={['click']}>

@@ -56,7 +56,7 @@ class DownloadHistory extends Component {
                                Загружено {item.totalProductsCount} товаров
                             </span> : ''}
                                 <span className={styles.errorsBlock}>
-                                {item.errors}
+                                {item.errors ==='No errors' ? '' :  item.errors}
                             </span>
                             </span>
                             <span className={styles.date}>
@@ -64,8 +64,7 @@ class DownloadHistory extends Component {
                             </span>
 
                             <span className={styles.status}>
-                                 {item.isUploaded ? <Icon type="check" className={styles.icon}/> :
-                                     <img src={progres} alt=""/>}
+                                 {item.isUploaded ? <Icon type="check" className={styles.icon}/> : <img src={progres} alt=""/>}
                             </span>
 
                         </div>

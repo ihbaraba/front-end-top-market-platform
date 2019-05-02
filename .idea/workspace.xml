@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/DownloadHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/DownloadHistory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/NewProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/NewProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +23,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContractorProducts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js">
+      <file leaf-file-name="MyProducts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="332" column="54" lean-forward="true" selection-start-line="332" selection-start-column="54" selection-end-line="332" selection-end-column="54" />
+            <state relative-caret-position="582">
+              <caret line="350" column="25" selection-start-line="350" selection-start-column="25" selection-end-line="350" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#7679#11468#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Orders.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrdersFromRozetka.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1105">
+              <caret line="127" column="43" lean-forward="true" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -33,22 +57,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewProduct.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/NewProduct.js">
+      <file leaf-file-name="Products.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Products/Products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="196" column="23" lean-forward="true" selection-start-line="196" selection-start-column="23" selection-end-line="196" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfileSettings.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="287" selection-start-line="279" selection-end-line="287" />
+            <state relative-caret-position="390">
+              <caret line="123" column="31" lean-forward="true" selection-start-line="123" selection-start-column="31" selection-end-line="123" selection-end-column="31" />
               <folding>
-                <element signature="e#0#48#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,8 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>21px;</find>
-      <find>availability</find>
       <find>filter</find>
       <find>836px</find>
       <find>767px</find>
@@ -96,6 +109,8 @@
       <find>sessionStorage</find>
       <find>onUpdate</find>
       <find>imageUrls</find>
+      <find>uploadRozetka</find>
+      <find>selectedProducts</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/containers</dir>
@@ -149,21 +164,21 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/ordersList.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/statusList.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/SearchOrders.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Cabinet/Cabinet.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Finance/Finance.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/Recharge.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Instruction/Instruction.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Employees/Employees.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js" />
         <option value="$PROJECT_DIR$/src/actions/userActions.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/DownloadHistory.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.module.css" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/NewProduct.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/DownloadHistory.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js" />
       </list>
     </option>
   </component>
@@ -246,7 +261,7 @@
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Modal" type="462c0819:PsiDirectoryNode" />
+              <item name="Products" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
@@ -254,15 +269,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
-              <item name="ContractorProducts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
-              <item name="ProfileSettings" type="462c0819:PsiDirectoryNode" />
+              <item name="Orders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -373,7 +380,8 @@
       <workItem from="1556088890924" duration="9063000" />
       <workItem from="1556172875909" duration="22029000" />
       <workItem from="1556260896928" duration="22820000" />
-      <workItem from="1556707570694" duration="10926000" />
+      <workItem from="1556707570694" duration="11365000" />
+      <workItem from="1556781949076" duration="6481000" />
     </task>
     <task id="LOCAL-00001" summary="add CI, add Dockerfile">
       <created>1555070821463</created>
@@ -386,18 +394,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257624000" />
+    <option name="totallyTimeSpent" value="264544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47400612" visible="true" weight="0.20072332" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47247708" visible="true" weight="0.20072332" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50030136" side_tool="true" weight="0.32923076" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="npm" order="2" sideWeight="0.5259939" side_tool="true" weight="0.20072332" />
+      <window_info id="npm" order="2" sideWeight="0.5275229" side_tool="true" weight="0.20072332" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4996986" weight="0.32923076" />
@@ -414,31 +422,32 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" sideWeight="0.52446485" side_tool="true" weight="0.20072332" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47553515" visible="true" weight="0.20072332" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4996986" visible="true" weight="0.32923076" />
       <window_info anchor="bottom" id="Python Console" order="13" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50030136" side_tool="true" weight="0.32923076" />
-      <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47553515" visible="true" weight="0.20072332" />
+      <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,13 +476,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Login/Login.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -543,9 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
           <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -574,9 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -591,9 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -611,9 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -661,9 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -709,23 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/SearchOrders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Cabinet/Cabinet.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
@@ -744,9 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="192" column="36" lean-forward="true" selection-start-line="192" selection-start-column="36" selection-end-line="192" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -754,9 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="85" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,9 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="140" column="64" lean-forward="true" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -777,27 +738,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="256" column="28" selection-start-line="256" selection-start-column="28" selection-end-line="256" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="144" column="21" selection-start-line="144" selection-start-column="21" selection-end-line="144" selection-end-column="21" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -815,9 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
           <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -825,19 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/DownloadHistory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -848,9 +776,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/NewProduct.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="212" selection-start-line="212" selection-end-line="212" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
+        <state relative-caret-position="15">
           <caret line="287" selection-start-line="279" selection-end-line="287" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
@@ -858,20 +793,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/DownloadHistory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="332" column="54" lean-forward="true" selection-start-line="332" selection-start-column="54" selection-end-line="332" selection-end-column="54" />
+        <state relative-caret-position="418">
+          <caret line="177" column="27" lean-forward="true" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="27" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Modal/NewProduct.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/SearchOrders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="196" column="23" lean-forward="true" selection-start-line="196" selection-start-column="23" selection-end-line="196" selection-end-column="23" />
+        <state relative-caret-position="-75">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/Products/Products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="123" column="31" lean-forward="true" selection-start-line="123" selection-start-column="31" selection-end-line="123" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="350" column="25" selection-start-line="350" selection-start-column="25" selection-end-line="350" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#7679#11468#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1105">
+          <caret line="127" column="43" lean-forward="true" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -7,6 +7,18 @@ import  girl  from "../../../img/girl.svg";
 import  time  from "../../../img/time.svg";
 import  rozetka  from "../../../img/rozetka.svg";
 import  man  from "../../../img/man.png";
+import  scheme  from "../../../img/scheme.png";
+// import  viber  from "../../../img/viber.svg";
+import  prom  from "../../../img/prom.svg";
+// import  poshta  from "../../../img/poshta.svg";
+import  sms  from "../../../img/sms.svg";
+import  arroba  from "../../../img/arroba.svg";
+import  creaction  from "../../../img/creaction.png";
+import  management  from "../../../img/management.png";
+import  finance  from "../../../img/finance.svg";
+import  services  from "../../../img/services.svg";
+import  learning2  from "../../../img/learning2.png";
+import  additional  from "../../../img/additional.png";
 import {Link} from "react-router-dom";
 
 
@@ -83,25 +95,203 @@ class LandingPage extends Component {
                 </section>
                 <section className={styles.about}>
                     <div className={styles.container}>
-                        <h3>У нас уже более<br/> 500 проектов</h3>
+                        <h3>Начните работать<br/>эффективнее</h3>
                         <div className={styles.aboutinfo}>
                             <div  className={styles.abouttext}>
                                 <div>
+                                    <p>С нами уже работают более 500<br/> интернет-магазинов.</p>
                                     <p>У вас есть возможность,<br/> присоединиться к нам по<br/> сниженной цене.</p>
-                                    <p  className={styles.rozetka}>
-                                        {/*<img src={rozetka} alt="rozetka" />*/}
-                                            Начните успешно<br/> продавать на Розетке!
+                                    <p>
+                                        Начните успешно<br/> продавать на Розетке!
                                     </p>
                                 </div>
                             </div>
                             <form className={styles.consultation}>
                                 <h5>Заполните заявку, чтобы<br/> получить консультацию</h5>
                                 <input type="text" placeholder="Ваше имя" />
-                                    <input type="tel" placeholder="Номер телефона" />
-                                        <button  className={styles.btn}>Жду</button>
+                                <input type="tel" placeholder="Номер телефона" />
+                                <button  className={styles.btn}>Жду</button>
                             </form>
                         </div>
 
+                    </div>
+                </section>
+                <section className={styles.howItWorks}>
+                    <div className="container">
+                        <h3>Как это работает?</h3>
+                        <div className={styles.scheme}>
+                            <img src={scheme} alt=""/>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.integration}>
+                    <div className={styles.container}>
+                        <h3>Интеграция<br/>с сервисами:</h3>
+                        <div className={styles.integrationBlock}>
+                            <div className={styles.integrationItem}>
+                                {/*<div className={styles.viber}>*/}
+                                    {/*<img src={viber} alt=""/>*/}
+                                {/*</div>*/}
+                                <div className={styles.intFeatures}>
+                                    <span>- Заказы</span>
+                                    <span>- Статус заказа</span>
+                                </div>
+                            </div>
+                            <div className={styles.integrationItem}>
+                                {/*<div className={styles.poshta}>*/}
+                                    {/*<img src={poshta} alt=""/>*/}
+                                {/*</div>*/}
+                                <div className={styles.intFeatures}>
+                                    <span>- Статусы доставки</span>
+                                </div>
+                            </div>
+                            <div className={styles.integrationItem}>
+                                <div className={styles.rozetka}>
+                                    <img src={rozetka} alt=""/>
+                                </div>
+                                <div className={styles.intFeatures}>
+                                    <span>- API</span>
+                                    <span>- Полная интеграция</span>
+                                </div>
+                            </div>
+                            <div className={styles.integrationItem}>
+                                <div className={styles.sms}>
+                                    <img src={sms} alt=""/>
+                                </div>
+                                <div className={styles.intFeatures}>
+                                    <span>- Статусы доставки</span>
+                                </div>
+                            </div>
+                            <div className={styles.integrationItem}>
+                                <div className={styles.prom}>
+                                    <img src={prom} alt=""/>
+                                </div>
+                                <div className={styles.intFeatures}>
+                                    <span>- API</span>
+                                    <span>- Полная интеграция</span>
+                                </div>
+                            </div>
+                            <div className={styles.integrationItem}>
+                                <div className={styles.arroba}>
+                                    <img src={arroba} alt=""/>
+                                </div>
+                                <div className={styles.intFeatures}>
+                                    <span>- Уведомления о заказах</span>
+                                    <span>- Уведомления доставках</span>
+                                    <span>- Уведомления о продажах</span>
+                                    <span>- Документы в Rozetka</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.creation}>
+                    <div className={styles.container}>
+                        <h3>Создание моего <br/> интернет-магазина</h3>
+                        <h6>Современная e-commerce площадка на Python/ Django</h6>
+                        <div className={styles.creationBox}>
+                            <ul className={styles.creationList}>
+                                <li>Создание магазина за 2 минуты</li>
+                                <li>Возможность использовать домен и поддомен</li>
+                                <li>Простая в использовании админ-панель</li>
+                                <li>Выбирайте  дизайн - шаблон </li>
+                                <li>Кастомизируйте элементы вашего сайта</li>
+                                <li>Кастомизируйте карточку товара</li>
+                                <button className={styles.btn}>Получить доступ</button>
+                            </ul>
+                            <div className={styles.creationImg}>
+                                <img src={creaction} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.management}>
+                    <div className={styles.container}>
+                        <h3>Управление заказами</h3>
+                        <div className={styles.managementWrap}>
+                            <ul className={styles.creationList}>
+                                <li>Обработка заказов со всех<br/>
+                                    маркетплейсов:<br/>
+                                    Rozetka, Prom.ua, мой магазин</li>
+                                <li>Контроль статуса выполнения заказа</li>
+                                <li>Интеграция с  API Rozetka и др маркетплейсов</li>
+                                <button className={styles.btn}>Узнать</button>
+                            </ul>
+                            <div className={styles.manImg}>
+                                <img src={management} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.finance}>
+                    <div className={styles.container}>
+                        <h3>Финансы</h3>
+                        {/*<h5>Полный контроль над финансами</h5>*/}
+                        <div className={styles.financeWrap}>
+                            <ul className={styles.financeList}>
+                                <h5>Полный контроль над финансами</h5>
+                                <li>Вся история транзакций</li>
+                                <li>Все счета на оплату</li>
+                                <li>Отчеты</li>
+                                <li>Таблица взаиморасчетов</li>
+                                <li>Отчет  о реализованных товарах</li>
+                                <li>Удобный вывод финансов</li>
+                            </ul>
+                            <div className={styles.financeImg}>
+                                <img src={finance} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.services}>
+                    <div className={styles.container}>
+                        <h3>Сервисы от маркетплейса</h3>
+                        <div className={styles.servicesWrap}>
+                            <ul className={styles.servicesList}>
+                                <li className={styles.call}>Call центр </li>
+                                <li className={styles.process}>Обработка заказов</li>
+                                <li className={styles.support}>Поддержка в одном месте</li>
+                                <button className={styles.btn}>Регистрация</button>
+                            </ul>
+                            <div className={styles.servicesImg}>
+                                <img src={services} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.learning}>
+                    <div className={styles.container}>
+                        <h3>Обучающий модуль</h3>
+                        <div className={styles.learningWrap}>
+                            <ul className={styles.learningList}>
+                                <li>Единая база знаний</li>
+                                <li>Видеоуроки по использованию платформы</li>
+                                <li>Оформление договора с  Rozetka</li>
+                                <li>Парсинг товаров из других магазинов</li>
+                                <li>Парсинг товаров из других магазинов</li>
+                                <button className={styles.btn}>Регистрация</button>
+                            </ul>
+                            <div className={styles.learningImg}>
+                                <img src={learning2} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.additionalServices}>
+                    <div className={styles.container}>
+                        <h3>Доп услуги</h3>
+                        <h5>Возможность передачи своего интернет - магазинга маркетплейсу</h5>
+                        <div className={styles.additionalBox}>
+                            <ul className={styles.creationList}>
+                                <li>Сall center</li>
+                                <li>Развитие и обслуживание моего магазина</li>
+                                <li>Услуги копирайтинга</li>
+                                <button className={styles.btn}>Получить доступ</button>
+                            </ul>
+                            <div className={styles.additionalImg}>
+                                <img src={additional} alt=""/>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section  className={styles.description}>
@@ -132,16 +322,24 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </section>
-                <section  className={styles.videoblock}>
+                <footer>
                     <div className={styles.container}>
-                        <h3>Видео</h3>
-                        <div className={styles.video}>
-                            <iframe src="https://www.youtube.com/embed/j2WvV4r4F8s" frameBorder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen></iframe>
+                        <div className={styles.footerTop}>
+                            <a href="#" className={styles.footerLogo}>
+                                <img src={logo} alt=""/>
+                                SMART Lead
+                            </a>
+                            <div className={styles.footerContacts}>
+                                <p>+38 (066) 278-82-80</p>
+                                <p>г. Киев, ул. Затышная 7б</p>
+                            </div>
+                        </div>
+                        <div className={styles.footerBottom}>
+                            <span className={styles.copy}>(c) Smartlead 2019</span>
+                            <span>ФОП Солошенко Володимир Володимирович, ИНН 3220809017</span>
                         </div>
                     </div>
-                </section>
+                </footer>
             </div>
         )
     }

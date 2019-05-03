@@ -135,6 +135,7 @@ class LandingPage extends Component {
                 <section  className={styles.videoblock}>
                     <div className={styles.container}>
                         <h3>Видео</h3>
+
                         <div className={styles.video}>
                             <iframe src="https://www.youtube.com/embed/j2WvV4r4F8s" frameBorder="0"
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import styles from './Orders.module.css'
-import {Tabs, Table, Icon, Popover, Timeline} from 'antd';
+import {Tabs, Table} from 'antd';
 import SearchOrders from "./SearchOrders";
-import {getOrders, passToContractor} from '../../../actions/ordersAction';
+import {getContractorOrders} from '../../../actions/ordersAction';
 import moment from 'moment';
 import {statusList} from './statusList';
 import {connect} from "react-redux";
@@ -25,19 +25,19 @@ const columns = [
         key: 'dateOrder',
         render: (date) => (<span>{moment(date).format('DD-MM-YYYY HH:mm')}</span>)
     },
-    // {
-    //     title: 'Товар',
-    //     dataIndex: 'itemPhotos',
-    //     key: 'itemPhotos',
-    //     render: (itemPhotos) => (
-    //         <span className='product-avatar'>
-    //             {/*<img*/}
-    //             {/*src={itemPhotos.length > 0 ? itemPhotos[0].url : ''}*/}
-    //             {/*alt=""/>*/}
-    //         </span>
-    //     )
-    //
-    // },
+    {
+        title: 'Товар',
+        dataIndex: 'itemPhotos',
+        key: 'itemPhotos',
+        render: (itemPhotos) => (
+            <span className='product-avatar'>
+                {/*<img*/}
+                {/*src={itemPhotos.length > 0 ? itemPhotos[0].url : ''}*/}
+                {/*alt=""/>*/}
+            </span>
+        )
+
+    },
     {
         title: 'Сумма',
         dataIndex: 'amount',
@@ -47,36 +47,17 @@ const columns = [
         title: 'Статус заказа',
         dataIndex: 'status',
         key: 'status',
-        render: (status, order) => {
+        render: (status) => {
             let selectedStatus = statusList.find(item => item.id === status);
             return (
-                <span className={styles.orderStatusInTable}>{selectedStatus.title}
-                    <Popover content={(
-                        <div>
-                            <Timeline>
-                                {order.statusHistory.map(item => {
-                                    const itemStatus = statusList.find(status => status.id === item.statusId);
-                                    return (
-                                        <Timeline.Item>
-                                            {itemStatus.title} <br/>
-                                            {moment(item.created).format('MM-DD HH:mm')}
-                                        </Timeline.Item>
-                                    )
-                                })}
-                            </Timeline>
-                        </div>
-                    )}>
-                         <Icon type="clock-circle" style={{color: '#4A90E2'}}/>
-                    </Popover>
-
-                </span>
+                <span>{selectedStatus.title}</span>
             )
         }
     },
 
 ];
 
-class OrdersFromRozetka extends Component {
+class ContractorOrders extends Component {
 
     state = {
         orders: [],
@@ -101,7 +82,7 @@ class OrdersFromRozetka extends Component {
         ];
 
         const url1 = `?status_group=1&page=${currentPage1 + urlParams.join('')}`;
-        const res1 = await getOrders(url1);
+        const res1 = await getContractorOrders(url1);
 
         this.setState({
             orders1: res1.results,
@@ -123,7 +104,7 @@ class OrdersFromRozetka extends Component {
         ];
 
         const url2 = `?status_group=2&page=${currentPage2 + urlParams.join('')}`;
-        const res2 = await getOrders(url2);
+        const res2 = await getContractorOrders(url2);
 
         this.setState({
             orders2: res2.results,
@@ -144,18 +125,12 @@ class OrdersFromRozetka extends Component {
         ];
 
         const url3 = `?status_group=3&page=${currentPage3 + urlParams.join('')}`;
-        const res3 = await getOrders(url3);
+        const res3 = await getContractorOrders(url3);
 
         this.setState({
             orders3: res3.results,
             count3: res3.count,
         })
-    };
-
-    handlePassToContractor = async (id) => {
-        await passToContractor(id);
-
-        this.getAllOrders();
     };
 
     getAllOrders = () => {
@@ -181,7 +156,7 @@ class OrdersFromRozetka extends Component {
     };
 
     componentDidMount() {
-        if (this.props.user.role !== 'CONTRACTOR') {
+        if (this.props.user.role === 'CONTRACTOR') {
             this.getAllOrders()
         }
     };
@@ -229,42 +204,26 @@ class OrdersFromRozetka extends Component {
                                     return (
                                         <div className={styles.orderDescription}>
                                             <div className={styles.product}>
-                                                <div className={styles.productList}>
-                                                    {record.items.map(product => (
-                                                        <div className={styles.productItem}>
-                                                            <img src={product.imageUrl ? product.imageUrl : ''}/>
-
-                                                            <div>{product.name}</div>
-
-                                                            <div className={styles.productPrice}>
-                                                                <div>Товаров: {product.quantity}</div>
-                                                                <div>Всего за товары: {product.price}</div>
-                                                            </div>
-                                                        </div>
-
-                                                    ))}
-                                                </div>
+                                                {/*<div className={styles.productList}>*/}
+                                                {/*{record.itemProducts.map(product => (*/}
+                                                {/*<img*/}
+                                                {/*src={product.coverImages.length > 0 ? product.coverImages[0].url : ''}/>*/}
+                                                {/*))}*/}
+                                                {/*</div>*/}
 
                                                 <div className={styles.delivery}>
                                                     <h4>Способ доставки:</h4>
-                                                    {record.delivery && <span>
+                                                    <span>
                                                             {`${record.delivery.deliveryServiceName}, №${record.delivery.placeNumber}`}<br/>
                                                         {` ${record.delivery.city}`} <br/>
                                                         {` ${record.delivery.recipientTitle}`}
-                                                    </span>}
+                                                    </span>
                                                 </div>
 
                                                 <div className={styles.total}>
                                                     <h4>Всего к оплате:</h4>
                                                     {`${record.amount} грн`}
                                                 </div>
-                                            </div>
-
-                                            <div className={styles.actions}>
-                                                <button className='btn'
-                                                        onClick={() => this.handlePassToContractor(record.id)}>Отправить
-                                                    поставщику
-                                                </button>
                                             </div>
                                         </div>
                                     )
@@ -280,9 +239,9 @@ class OrdersFromRozetka extends Component {
                             <Table
                                 {...config2}
                                 columns={columns}
-                                // expandedRowRender={record => <span>
-                                //     {record.description}
-                                // </span>}
+                                expandedRowRender={record => <span>
+                                    {record.description}
+                                </span>}
                                 dataSource={orders2}
                                 onChange={(e) => this.handleChangeTable(e, '2')}
                             />
@@ -295,9 +254,9 @@ class OrdersFromRozetka extends Component {
                             <Table
                                 {...config3}
                                 columns={columns}
-                                // expandedRowRender={record => <span>
-                                //     {record.description}
-                                // </span>}
+                                expandedRowRender={record => <span>
+                                    {record.description}
+                                </span>}
                                 dataSource={orders3}
                                 onChange={(e) => this.handleChangeTable(e, '3')}
                             />
@@ -317,7 +276,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrdersFromRozetka);
+export default connect(mapStateToProps, mapDispatchToProps)(ContractorOrders);
 
 
 

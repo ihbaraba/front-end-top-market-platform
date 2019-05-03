@@ -48,15 +48,15 @@ class DownloadHistory extends Component {
                     {files.map((item, index) => (
                         <div key={index} className={styles.fileBlock}>
                             <span className={styles.fileName}>
-                           <a href={`https://api.topmarket.club${item.xlsFile}`}>
-                               {item.xlsFile.split('/')[item.xlsFile.split('/').length - 1]}
-                           </a>
+                               <a href={`https://api.topmarket.club${item.xlsFile}`}>
+                                   {item.xlsFile.split('/')[item.xlsFile.split('/').length - 1]}
+                               </a>
 
                                 {item.totalProductsCount ? <span className={styles.errorsBlock}>
                                Загружено {item.totalProductsCount} товаров
                             </span> : ''}
                                 <span className={styles.errorsBlock}>
-                                {item.errors ==='No errors' ? '' :  item.errors}
+                                {item.errors === 'No errors' ? '' : item.errors}
                             </span>
                             </span>
                             <span className={styles.date}>
@@ -64,9 +64,9 @@ class DownloadHistory extends Component {
                             </span>
 
                             <span className={styles.status}>
-                                 {item.isUploaded ? <Icon type="check" className={styles.icon}/> : <img src={progres} alt=""/>}
+                                 {(item.isUploaded || item.errors || item.errors === 'No errors') ?
+                                     <Icon type="check" className={styles.icon}/> : <img src={progres} alt=""/>}
                             </span>
-
                         </div>
                     ))}
                 </div>

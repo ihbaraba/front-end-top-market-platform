@@ -5,7 +5,6 @@
     font-weight: bold;
     line-height: 35px;
 }
-
 .searchOrders {
     width: 100%;
     background: #fff;
@@ -17,7 +16,6 @@
     /*border-top: none;*/
     margin-bottom: 24px;
 }
-
 .searchOrders label {
     color: #4A4A4A;
     font-family: Ubuntu;
@@ -27,14 +25,12 @@
     margin-bottom: 9px;
     display: block;
 }
-
 .searchOrders .orderNumber,
 .searchOrders .orderStatus,
 .searchOrders .name {
     margin-right: 19px;
 }
-
-.searchOrders .orderNumber input {
+.searchOrders .orderNumber  input {
     height: 31px;
     width: 116px;
     border: 1px solid #B2B2B2;
@@ -51,7 +47,6 @@
     padding-left: 10px;
     margin-right: 24px;
 }
-
 .searchOrders .orderStatus select {
     height: 31px;
     width: 130px;
@@ -60,7 +55,6 @@
     background-color: #FFFFFF;
     display: block;
 }
-
 .searchOrders .name input {
     height: 31px;
     width: 138px;
@@ -68,15 +62,13 @@
     border-radius: 3px;
     background-color: #FFFFFF;
 }
-
-.searchOrders .phone input {
+.searchOrders  .phone input {
     height: 31px;
     width: 162px;
     border: 1px solid #B2B2B2;
     border-radius: 3px;
     background-color: #FFFFFF;
 }
-
 .searchOrders .find {
     height: 40px;
     width: 169px;
@@ -92,41 +84,10 @@
     margin-left: auto;
 }
 
-.orderDescription {
-    display: flex;
-}
-
-.product {
-    width: 70%;
-    border-right: 1px solid #E2E2E2;
-}
-
-.orderStatusInTable {
-    display: flex;
-    justify-content: space-between;
-}
-
-.actions {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.productItem {
-    display: flex;
-    padding: 10px 0;
-    border-bottom: 1px solid #E2E2E2;
-}
-
-.productPrice {
-    margin: 0 0 0 auto;
-}
-
 .delivery {
     display: flex;
     width: 100%;
-    padding: 10px 0;
+    padding: 0 0 10px 0;
     border-bottom: 1px solid #E2E2E2;
 }
 

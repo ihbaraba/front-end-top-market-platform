@@ -26,6 +26,7 @@ import ContractorProducts from "./containers/AdministratorSide/ContractorProduct
 import DownloadHistory from "./containers/AdministratorSide/ContractorProducts/DownloadHistory";
 import LandingPage from "./containers/UserSide/LandingPage/LandingPage";
 import ContactsForm from "./containers/UserSide/ContactsForm2/ContactsForm";
+import ContractorOrders from "./containers/AdministratorSide/ContractorOrders/ContractorOrders";
 
 const Routes = () => {
     return (
@@ -55,6 +56,7 @@ const Routes = () => {
                       <Route path='/admin/lessons' component={Lessons}/>
                       <Route path='/admin/instruction' component={Instruction}/>
                       <Route path='/admin/orders' component={Orders}/>
+                      <Route path='/admin/contractor_orders' component={ContractorOrders}/>
                       <Route path='/admin/contacts-form' component={ContactsForm}/>
 
 

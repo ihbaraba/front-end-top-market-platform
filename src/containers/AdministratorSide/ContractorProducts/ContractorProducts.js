@@ -168,13 +168,13 @@ class ContractorProducts extends Component {
             }
         });
 
-        if (innerArr.every(item => (item.isUploaded || item.errors ||  item.errors === 'No errors'))) {
+        if (innerArr.every(item => (item.isUploaded || item.errors || item.errors === 'No errors'))) {
             this.setState({
                 uploadExel: true
             })
         }
 
-        if (rozetkaArr.every(item => (item.isUploaded || item.errors ||  item.errors === 'No errors'))) {
+        if (rozetkaArr.every(item => (item.isUploaded || item.errors || item.errors === 'No errors'))) {
             this.setState({
                 uploadRozetka: true
             })
@@ -270,7 +270,7 @@ class ContractorProducts extends Component {
                 title: '',
                 dataIndex: 'actions',
                 render: (e, product) => (
-                    <Icon onClick={() => this.openProduct(product)} type="edit" theme="filled"/>
+                    <button className='btn edit-btn' onClick={() => this.openProduct(product)}>Редактировать</button>
                 )
             }
         ];

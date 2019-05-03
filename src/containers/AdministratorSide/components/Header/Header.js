@@ -50,13 +50,13 @@ class Header extends Component {
                     <div className={styles.notification}>
                         <a href="#">
                             <img src={notification} alt=""/>
-                            <span className={styles.alert}>1</span>
+                            {/*<span className={styles.alert}>1</span>*/}
                         </a>
                     </div>
                     <div className={styles.cart}>
                         <Link to="/admin/cart">
                             <img src={cart} alt=""/>
-                            <span className={styles.alert}>1</span>
+                            {/*<span className={styles.alert}>1</span>*/}
                         </Link>
                     </div>
 

@@ -40,5 +40,15 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://zzzfisherzzz@bitbucket.org/gofriendsteam/front-end-top-market-platform.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/gofriendsteam/front-end-top-market-platform#readme"
 }

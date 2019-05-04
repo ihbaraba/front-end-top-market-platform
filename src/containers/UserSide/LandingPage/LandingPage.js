@@ -30,7 +30,7 @@ class LandingPage extends Component {
                     <div className={styles.container}>
                         <a href="#" className={styles.logo}><img src={logo} alt="logo"/>SMART Lead 2.0</a>
                         <div className={styles.headerRight}>
-                            <a href="tel:+380931377674" className={styles.tel}>+38 (093) 137-76-74</a>
+                            <a href="tel:+380931377674" className={styles.tel}>(093) 137-76-74</a>
                             <Link to='/contacts-form' className={styles.regBtn}>Обратная связь</Link>
                             <Link to='/registration' className={styles.regBtn}>Регистрация</Link>
                             <Link to='/login' className={styles.regBtn}>Войти</Link>
@@ -334,7 +334,7 @@ class LandingPage extends Component {
                                 SMART Lead
                             </a>
                             <div className={styles.footerContacts}>
-                                <p>+38 (093) 137-76-74</p>
+                                <p>(093) 137-76-74</p>
                                 <p>г. Киев, ул. Затышная 7б</p>
                             </div>
                         </div>

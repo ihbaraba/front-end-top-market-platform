@@ -889,8 +889,45 @@ footer {
         font-size: 40px;
         line-height: 50px;
     }
+    .logo {
+        margin: 5px auto;
+        font-size: 20px;
+    }
+    .logo img {
+       width: 30px;
+    }
+    .tel {
+        font-size: 15px;
+        display: block;
+        width: 100%;
+    }
     .videoblock {
         padding: 20px;
+    }
+    .integrationBlock {
+        width: 100%;
+    }
+    .integrationItem {
+        margin: 10px auto;
+    }
+    .creationBox {
+        display: flex;
+        flex-direction: column;
+    }
+    .creationList {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .managementWrap,
+    .financeWrap,
+    .servicesWrap,
+    .additionalBox {
+        display: flex;
+        flex-direction: column;
+    }
+    .additionalImg,
+    .manImg {
+        width: 100%;
     }
     .video {
         width: 100%;
@@ -1016,7 +1053,19 @@ footer {
         text-align: center;
     }
     .logo {
+        font-size: 15px;
         margin: 0 auto;
+    }
+    .logo img {
+       width: 25px;
+    }
+    .tel {
+        font-size: 15px;
+    }
+    .regBtn {
+        display: block;
+        width: 100%;
+        margin: 15px 0;
     }
     header {
         height: auto;

@@ -1,7 +1,7 @@
 import React, {Fragment, Component} from 'react';
 import {Link} from 'react-router-dom';
 import queryString from 'query-string';
-import logo from "../../../img/logo.png";
+import logo from "../../../img/logo2.png";
 import styles from './Registration.module.css';
 
 import {confirmEmail} from '../../../actions/userActions';
@@ -10,7 +10,6 @@ class ConfirmRegistration extends Component {
 
     componentDidMount() {
         let urlParams = queryString.parseUrl(document.location.search).query;
-        console.log();
 
         confirmEmail(urlParams.token);
     }
@@ -21,7 +20,7 @@ class ConfirmRegistration extends Component {
                 <div className='container'>
                     <header>
                         <div className={styles.logo}>
-                            <img src={logo} alt=""/>
+                            <img src={logo} alt="logo" />SMART Lead 2.0
                         </div>
                         <Link to='/login'>
                             <button className={styles.regBtn}>Войти</button>

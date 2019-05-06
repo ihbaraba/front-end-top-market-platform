@@ -87,9 +87,11 @@ header .container {
     letter-spacing: 1px;
     line-height: 22px;
     text-align: center;
+    cursor: pointer;
 }
 .btn:hover {
     color: #fff;
+    background-color: #3864a4;
 }
 .left {
     width: 50%;
@@ -306,13 +308,11 @@ header .container {
 }
 
 
-
-
 /* description  */
 .description {
     /*!*padding-top: 79px;*/
     height: auto;
-    padding-bottom: 70px;
+    padding-bottom: 150px;
     background: #fff;
 }
 .description .container {

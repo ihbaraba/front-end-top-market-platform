@@ -42,8 +42,6 @@ class ContactsForm extends Component {
             subject: '',
             text: ''
         })
-
-
     };
 
     handleChange = ({target: {name, value}}) => {

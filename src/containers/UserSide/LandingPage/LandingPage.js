@@ -20,10 +20,45 @@ import services from "../../../img/services.svg";
 import learning2 from "../../../img/learning2.png";
 import additional from "../../../img/additional.png";
 import {Link} from "react-router-dom";
+import {notification} from "antd";
+import {sendContactForm} from "../../../actions/userActions";
 
 
 class LandingPage extends Component {
+    state = {
+        phone: '',
+        name: '',
+    };
+
+    handleChangeInput = (name) => ({target: {value}}) => {
+        this.setState({
+            [name]: value
+        })
+    };
+
+    handleSend = async (e) => {
+        e.preventDefault();
+
+        await sendContactForm(this.state);
+
+        notification.success({
+            message: 'Отправлено',
+        });
+
+        this.setState({
+            name: '',
+            phone: ''
+        })
+    };
+
+
+    goRegistrationPage = () => {
+        this.props.history.push('/registration')
+    };
+
     render() {
+        const {phone, name} = this.state;
+
         return (
             <div>
                 <header>
@@ -43,7 +78,7 @@ class LandingPage extends Component {
                             <h3>Smart Lead 2.0</h3>
                             <p>Авторская система продаж</p>
                             <Link to='/registration'>
-                                <button className={styles.btn}>CTAРТ</button>
+                                <button className={styles.btn} onClick={this.goRegistrationPage}>CTAРТ</button>
                             </Link>
                         </div>
                         <div className={styles.macbook}>
@@ -72,7 +107,7 @@ class LandingPage extends Component {
                                     <li>Экономия времени</li>
                                 </ul>
                             </div>
-                            <a href="#" className={styles.btn}>CTAРТ</a>
+                            <a href="#" className={styles.btn} onClick={this.goRegistrationPage}>CTAРТ</a>
                         </div>
                         <div className={styles.benefitsimg}>
                             <img src={girl} alt="girl"/>
@@ -89,7 +124,7 @@ class LandingPage extends Component {
                                 <li>Экономия в работе с поставщиками</li>
                                 <li>Экономия на обработке заказов</li>
                             </ul>
-                            <a href="#" className={styles.btn}>CTAРТ</a>
+                            <a href="#" className={styles.btn} onClick={this.goRegistrationPage}>CTAРТ</a>
                         </div>
                         <div className={styles.timeimg}>
                             <img src={time} alt="time"/>
@@ -111,9 +146,20 @@ class LandingPage extends Component {
                             </div>
                             <form className={styles.consultation}>
                                 <h5>Заполните заявку, чтобы<br/> получить консультацию</h5>
-                                <input type="text" placeholder="Ваше имя"/>
-                                <input type="tel" placeholder="Номер телефона"/>
-                                <button className={styles.btn}>Жду</button>
+                                <input
+                                    value={name}
+                                    type="text"
+                                    placeholder="Ваше имя"
+                                    onChange={this.handleChangeInput('name')}
+                                />
+                                <input
+                                    value={phone}
+                                    type="tel"
+                                    placeholder="Номер телефона"
+                                    onChange={this.handleChangeInput('phone')}
+                                />
+
+                                <button className={styles.btn} onClick={this.handleSend}>Жду</button>
                             </form>
                         </div>
 
@@ -219,7 +265,8 @@ class LandingPage extends Component {
                                 </li>
                                 <li>Контроль статуса выполнения заказа</li>
                                 <li>Интеграция с API Rozetka и др маркетплейсов</li>
-                                <button className={styles.btn}>Узнать</button>
+
+                                <button className={styles.btn} onClick={this.goRegistrationPage}>Узнать</button>
                             </ul>
                             <div className={styles.manImg}>
                                 <img src={management} alt=""/>
@@ -255,7 +302,8 @@ class LandingPage extends Component {
                                 <li className={styles.call}>Call центр</li>
                                 <li className={styles.process}>Обработка заказов</li>
                                 <li className={styles.support}>Поддержка в одном месте</li>
-                                <button className={styles.btn}>Регистрация</button>
+
+                                <button className={styles.btn} onClick={this.goRegistrationPage}>Регистрация</button>
                             </ul>
                             <div className={styles.servicesImg}>
                                 <img src={services} alt=""/>
@@ -273,7 +321,8 @@ class LandingPage extends Component {
                                 <li>Оформление договора с Rozetka</li>
                                 <li>Парсинг товаров из других магазинов</li>
                                 <li>Парсинг товаров из других магазинов</li>
-                                <button className={styles.btn}>Регистрация</button>
+
+                                <button className={styles.btn} onClick={this.goRegistrationPage}>Регистрация</button>
                             </ul>
                             <div className={styles.learningImg}>
                                 <img src={learning2} alt=""/>
@@ -319,7 +368,7 @@ class LandingPage extends Component {
                                     </li>
                                 </ul>
                             </div>
-                            <a href="#" className={styles.btn}>CTAРТ</a>
+                            <a href="#" className={styles.btn} onClick={this.goRegistrationPage}>CTAРТ</a>
                         </div>
                         <div className={styles.man}>
                             <img src={man} alt="man"/>

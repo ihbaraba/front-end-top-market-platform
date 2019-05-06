@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100% !important;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
 body {
     background-color: #FAFAFA;
 }
@@ -42,6 +48,7 @@ a.active {
 .active .default-icon {
     display: none !important;
 }
+
 .active .active-icon {
     display: block !important;
     color: #fff;
@@ -219,11 +226,12 @@ button:disabled:hover {
     margin-right: 20px;
 }
 
-.product-avatar{
+.product-avatar {
     height: 100px;
     display: flex;
 }
-.product-avatar img{
+
+.product-avatar img {
     width: 80px;
     margin: 0 20px 0 0;
 }

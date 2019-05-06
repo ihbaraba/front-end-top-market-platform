@@ -26,7 +26,7 @@ import {sendContactForm} from "../../../actions/userActions";
 
 class LandingPage extends Component {
     state = {
-        phone: '',
+        phoneNumber: '',
         name: '',
     };
 
@@ -47,7 +47,7 @@ class LandingPage extends Component {
 
         this.setState({
             name: '',
-            phone: ''
+            phoneNumber: ''
         })
     };
 
@@ -57,7 +57,7 @@ class LandingPage extends Component {
     };
 
     render() {
-        const {phone, name} = this.state;
+        const {phoneNumber, name} = this.state;
 
         return (
             <div>
@@ -153,10 +153,10 @@ class LandingPage extends Component {
                                     onChange={this.handleChangeInput('name')}
                                 />
                                 <input
-                                    value={phone}
+                                    value={phoneNumber}
                                     type="tel"
                                     placeholder="Номер телефона"
-                                    onChange={this.handleChangeInput('phone')}
+                                    onChange={this.handleChangeInput('phoneNumber')}
                                 />
 
                                 <button className={styles.btn} onClick={this.handleSend}>Жду</button>

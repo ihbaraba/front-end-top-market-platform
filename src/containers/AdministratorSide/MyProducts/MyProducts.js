@@ -9,7 +9,7 @@ import InactiveGoodsTable from "../components/InactiveGoodsTable/InactiveGoodsTa
 import {getPartnerProducts, generateYml, getAllCategories} from '../../../actions/productsActions';
 import CategoryList from "./CategoryList";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {Menu, Dropdown, Icon} from 'antd';
+import {Menu, Dropdown, Icon, notification} from 'antd';
 import EditProductWindow from './EditProductWindow';
 
 const TabPane = Tabs.TabPane;
@@ -86,11 +86,18 @@ class MyProducts extends Component {
         })
     };
 
+    handleCopied = () => {
+        this.setState({copied: true});
+        notification.success({
+            message: 'Скопировано'
+        });
+    };
+
     handleOpenWindow = (product) => {
         this.setState({
             product
         })
-    }
+    };
 
     onSelectChange = (selectedRowKeys) => {
         this.setState({selectedProducts: selectedRowKeys});
@@ -182,7 +189,7 @@ class MyProducts extends Component {
 
 
                             <CopyToClipboard text={promUrl.template}
-                                             onCopy={() => this.setState({copied: true})}>
+                                             onCopy={() => this.handleCopied()}>
                                 <button className={styles.copy}>Копировать</button>
                             </CopyToClipboard>
                         </div>
@@ -190,7 +197,7 @@ class MyProducts extends Component {
                             <label>Для Rozetka</label>
                             <input type="text" value={rozetkaUrl.template} disabled/>
                             <CopyToClipboard text={rozetkaUrl.template}
-                                             onCopy={() => this.setState({copied: true})}>
+                                             onCopy={() => this.handleCopied()}>
                                 <button className={styles.copy}>Копировать</button>
                             </CopyToClipboard>
 
@@ -472,7 +479,10 @@ class MyProducts extends Component {
 
                 <EditProductWindow
                     product={product}
-                    onUpdate={() => {this.setState({product: {}}); this.getMyProducts()}}
+                    onUpdate={() => {
+                        this.setState({product: {}});
+                        this.getMyProducts()
+                    }}
                 />
             </div>
         );

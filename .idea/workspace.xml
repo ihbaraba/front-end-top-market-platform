@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/userActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Cabinet/Cabinet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Cabinet/Cabinet.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorOrders/ContractorOrders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorOrders/ContractorOrders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorOrders/Orders.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorOrders/Orders.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,14 +18,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContractorOrders.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContractorOrders.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorOrders/ContractorOrders.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="480">
+              <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Orders.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrdersFromRozetka.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="264" column="115" selection-start-line="264" selection-start-column="115" selection-end-line="264" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -145,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/ConfirmRegistration.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Cabinet/Cabinet.module.css" />
         <option value="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.module.css" />
@@ -154,6 +167,7 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorOrders/Orders.module.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorOrders/ContractorOrders.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js" />
       </list>
     </option>
   </component>
@@ -234,6 +248,14 @@
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
               <item name="ContractorOrders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
+              <item name="Orders" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
@@ -357,7 +379,7 @@
       <workItem from="1556911558783" duration="234000" />
       <workItem from="1556987988598" duration="854000" />
       <workItem from="1557040336106" duration="1726000" />
-      <workItem from="1557124844541" duration="10242000" />
+      <workItem from="1557124844541" duration="11241000" />
     </task>
     <task id="LOCAL-00001" summary="add CI, add Dockerfile">
       <created>1555070821463</created>
@@ -370,7 +392,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="315438000" />
+    <option name="totallyTimeSpent" value="316437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -648,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/DownloadHistory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -732,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Cabinet/Cabinet.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -806,11 +814,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorOrders/ContractorOrders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="480">
+          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/Orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Orders/OrdersFromRozetka.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="264" column="115" selection-start-line="264" selection-start-column="115" selection-end-line="264" selection-end-column="115" />
         </state>
       </provider>
     </entry>

@@ -16,8 +16,8 @@ function callback(key) {
 const columns = [
     {
         title: '№ заказа',
-        dataIndex: 'id',
-        key: 'orderNumber'
+        dataIndex: 'rozetkaId',
+        key: 'rozetkaId'
     },
     {
         title: 'Дата заказа',
@@ -262,7 +262,7 @@ class OrdersFromRozetka extends Component {
 
                                             <div className={styles.actions}>
                                                 <button className='btn'
-                                                        onClick={() => this.handlePassToContractor(record.id)}>Отправить
+                                                        onClick={() => this.handlePassToContractor(record.rozetkaId)}>Отправить
                                                     поставщику
                                                 </button>
                                             </div>

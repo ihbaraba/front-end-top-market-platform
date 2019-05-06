@@ -18,7 +18,7 @@ const columns = [
         title: '№ заказа',
         dataIndex: 'id',
         key: 'orderNumber',
-        render: (date, item) => (<span>{item.baseOrder.id}</span>)
+        render: (date, item) => (<span>{item.baseOrder.rozetkaId}</span>)
     },
     {
         title: 'Дата заказа',

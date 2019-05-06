@@ -21,8 +21,8 @@ const columns = [
     },
     {
         title: 'Дата заказа',
-        dataIndex: 'dateOrder',
-        key: 'dateOrder',
+        dataIndex: 'created',
+        key: 'created',
         render: (date) => (<span>{moment(date).format('DD-MM-YYYY HH:mm')}</span>)
     },
     // {

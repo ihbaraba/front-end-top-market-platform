@@ -144,7 +144,7 @@ class LandingPage extends Component {
                                     </p>
                                 </div>
                             </div>
-                            <form className={styles.consultation}>
+                            <form className={styles.consultation} id='form'>
                                 <h5>Заполните заявку, чтобы<br/> получить консультацию</h5>
                                 <input
                                     value={name}
@@ -266,7 +266,7 @@ class LandingPage extends Component {
                                 <li>Контроль статуса выполнения заказа</li>
                                 <li>Интеграция с API Rozetka и др маркетплейсов</li>
 
-                                <button className={styles.btn} onClick={this.goRegistrationPage}>Узнать</button>
+                                <a href='#form' className={styles.btn}>Узнать</a>
                             </ul>
                             <div className={styles.manImg}>
                                 <img src={management} alt=""/>
@@ -339,7 +339,8 @@ class LandingPage extends Component {
                                 <li>Сall center</li>
                                 <li>Развитие и обслуживание моего магазина</li>
                                 <li>Услуги копирайтинга</li>
-                                <button className={styles.btn}>Получить доступ</button>
+
+                                <button className={styles.btn} onClick={this.goRegistrationPage}>Получить доступ</button>
                             </ul>
                             <div className={styles.additionalImg}>
                                 <img src={additional} alt=""/>

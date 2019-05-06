@@ -350,7 +350,6 @@ class ContractorProducts extends Component {
                                 <span>-в наличие: {inStock}</span>
                                 <span>-нет в наличии: {notInStock}</span>
                             </div>
-
                         </div>
 
                         <div className={styles.filter}>

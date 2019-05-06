@@ -60,3 +60,8 @@ export const resetPassword = email => {
 export const sendContactForm = form => {
     return api('post', CONTACT_FORM, form)
 };
+
+
+export const sendInvoice = () => {
+    return api('get', CONTACT_FORM)
+};

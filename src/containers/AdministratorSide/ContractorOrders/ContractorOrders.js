@@ -17,13 +17,14 @@ const columns = [
     {
         title: '№ заказа',
         dataIndex: 'id',
-        key: 'orderNumber'
+        key: 'orderNumber',
+        render: (date, item) => (<span>{item.baseOrder.id}</span>)
     },
     {
         title: 'Дата заказа',
         dataIndex: 'dateOrder',
         key: 'dateOrder',
-        render: (date) => (<span>{moment(date).format('DD-MM-YYYY HH:mm')}</span>)
+        render: (date, item) => (<span>{moment(item.baseOrder.created).format('DD-MM-YYYY HH:mm')}</span>)
     },
     {
         title: 'Товар',
@@ -41,7 +42,8 @@ const columns = [
     {
         title: 'Сумма',
         dataIndex: 'amount',
-        key: 'amount'
+        key: 'amount',
+        render: (date, item) => (<span>{item.baseOrder.amount}</span>)
     },
     {
         title: 'Статус заказа',
@@ -204,26 +206,26 @@ class ContractorOrders extends Component {
                                     return (
                                         <div className={styles.orderDescription}>
                                             <div className={styles.product}>
-                                                {/*<div className={styles.productList}>*/}
-                                                {/*{record.itemProducts.map(product => (*/}
-                                                {/*<img*/}
-                                                {/*src={product.coverImages.length > 0 ? product.coverImages[0].url : ''}/>*/}
-                                                {/*))}*/}
+                                                <div className={styles.productList}>
+                                                {record.itemProducts.map(product => (
+                                                <img
+                                                src={product.coverImages.length > 0 ? product.coverImages[0].imageDecoded : ''}/>
+                                                ))}
+                                                </div>
+
+                                                {/*<div className={styles.delivery}>*/}
+                                                    {/*<h4>Способ доставки:</h4>*/}
+                                                    {/*<span>*/}
+                                                            {/*{`${record.delivery.deliveryServiceName}, №${record.delivery.placeNumber}`}<br/>*/}
+                                                        {/*{` ${record.delivery.city}`} <br/>*/}
+                                                        {/*{` ${record.delivery.recipientTitle}`}*/}
+                                                    {/*</span>*/}
                                                 {/*</div>*/}
 
-                                                <div className={styles.delivery}>
-                                                    <h4>Способ доставки:</h4>
-                                                    <span>
-                                                            {`${record.delivery.deliveryServiceName}, №${record.delivery.placeNumber}`}<br/>
-                                                        {` ${record.delivery.city}`} <br/>
-                                                        {` ${record.delivery.recipientTitle}`}
-                                                    </span>
-                                                </div>
-
-                                                <div className={styles.total}>
-                                                    <h4>Всего к оплате:</h4>
-                                                    {`${record.amount} грн`}
-                                                </div>
+                                                {/*<div className={styles.total}>*/}
+                                                    {/*<h4>Всего к оплате:</h4>*/}
+                                                    {/*{`${record.amount} грн`}*/}
+                                                {/*</div>*/}
                                             </div>
                                         </div>
                                     )

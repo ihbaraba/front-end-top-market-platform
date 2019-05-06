@@ -14,7 +14,7 @@ import {connect} from "react-redux";
 import {Modal, Tooltip as TooltipAntd} from 'antd'
 import {LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip} from 'recharts';
 
-import {getProfile} from '../../../actions/userActions';
+import {getProfile, sendInvoice} from '../../../actions/userActions';
 import {getProfile as getCompanyProfile} from "../../../actions/companyActions";
 
 
@@ -72,6 +72,10 @@ class Cabinet extends Component {
         this.setState({
             visible: false,
         });
+    };
+
+    handleSendInvoice = () => {
+
     };
 
     async componentDidMount() {
@@ -323,8 +327,9 @@ class Cabinet extends Component {
                         <div className={styles.payActions}>
                             <TooltipAntd placement="top" title='Находится в разработке'>
                                 <button className={styles.payBtn}>Оплатить через LiqPay</button>
-                                <button className={styles.payBtn}>Отправить счет фактуру на e-mail</button>
                             </TooltipAntd>
+
+                            <button className={styles.payBtn} onClick={this.sendInvoice}>Отправить счет фактуру на e-mail</button>
                         </div>
                     </Modal>
                 </div>

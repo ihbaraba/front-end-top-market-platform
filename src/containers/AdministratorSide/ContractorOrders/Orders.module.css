@@ -25,6 +25,12 @@
     margin-bottom: 9px;
     display: block;
 }
+
+.productList img {
+    width: 150px;
+    height: 150px;
+}
+
 .searchOrders .orderNumber,
 .searchOrders .orderStatus,
 .searchOrders .name {

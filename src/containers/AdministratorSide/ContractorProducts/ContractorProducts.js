@@ -174,13 +174,11 @@ class ContractorProducts extends Component {
             })
         }
 
-        if (rozetkaArr.every(item => (item.isUploaded || item.errors || item.errors === 'No errors'))) {
+        if (rozetkaArr.every(item => (item.isUploaded || item.errors || item.errors === 'No errors')) || rozetkaArr.length === 0) {
             this.setState({
                 uploadRozetka: true
             })
         }
-
-        console.log(res);
     };
 
 

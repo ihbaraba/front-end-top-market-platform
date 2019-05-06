@@ -348,7 +348,7 @@ class ContractorProducts extends Component {
                             <div className={styles.totalProducts}>
                                 Товаров: {count}
                                 <span>-в наличие: {inStock}</span>
-                                <span>-нет в наличие: {notInStock}</span>
+                                <span>-нет в наличии: {notInStock}</span>
                             </div>
 
                         </div>

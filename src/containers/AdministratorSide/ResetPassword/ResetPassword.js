@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import styles from './Reset.module.css';
 
 import {resetPassword} from '../../../actions/userActions';
-import logo from "../../../img/logo.png";
+import logo from "../../../img/logo2.png";
 
 const FormItem = Form.Item;
 
@@ -31,7 +31,7 @@ class ResetPassword extends Component {
                 <div className='container'>
                     <header>
                         <div className={styles.logo}>
-                            <img src={logo} alt=""/>
+                            <img src={logo} alt="logo" />SMART Lead 2.0
                         </div>
                         <Link to='/registration'><button className={styles.regBtn}>Регистрация</button></Link>
                     </header>

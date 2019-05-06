@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import styles from './Orders.module.css'
-import {Tabs, Table, Icon, Popover, Timeline} from 'antd';
+import {Tabs, Table, Icon, Popover, Timeline, notification} from 'antd';
 import SearchOrders from "./SearchOrders";
 import {getOrders, passToContractor} from '../../../actions/ordersAction';
 import moment from 'moment';
@@ -73,7 +73,6 @@ const columns = [
             )
         }
     },
-
 ];
 
 class OrdersFromRozetka extends Component {
@@ -154,6 +153,10 @@ class OrdersFromRozetka extends Component {
 
     handlePassToContractor = async (id) => {
         await passToContractor(id);
+
+        notification.success({
+            message: 'Отправлено',
+        });
 
         this.getAllOrders();
     };

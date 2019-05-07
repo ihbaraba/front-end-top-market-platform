@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import styles from './Store.module.css'
-import  nike  from "../../../img/nike.jpg";
+import nike from "../../../img/nike.jpg";
 
 class Store extends Component {
 
     render() {
         return (
-            <div >
-                <h3 className={styles.title}>Управление интернет магазином (Находится в разработке)</h3>
+            <div className='page'>
+                <h3 className='page-title'>Управление интернет магазином (Находится в разработке)</h3>
 
-                <form className={styles.storeManagement}>
+                <form className='page-content'>
                     <div className={styles.domen}>
                         <div>
                             <div className={styles.inputsGroup}>
@@ -96,7 +96,7 @@ class Store extends Component {
                     <h4 className={styles.formTitle}>Выберите дизайн-шаблон</h4>
                     <div className={styles.choiceDesign}>
                         <label>
-                            <input type="radio" name="template" value="blue" />
+                            <input type="radio" name="template" value="blue"/>
                             <img src={nike}/>
                         </label>
                         <label>
@@ -104,11 +104,11 @@ class Store extends Component {
                             <img src={nike}/>
                         </label>
                         <label>
-                            <input  type="radio" name="template" value="purple" />
+                            <input type="radio" name="template" value="purple"/>
                             <img src={nike}/>
                         </label>
                         <label>
-                            <input  type="radio" name="template" value="orange" />
+                            <input type="radio" name="template" value="orange"/>
                             <img src={nike}/>
                         </label>
 

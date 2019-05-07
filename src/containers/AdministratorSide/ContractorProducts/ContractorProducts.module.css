@@ -32,8 +32,11 @@
 
 .top {
     display: flex;
-    /*align-items: center;*/
+    width: 100%;
+    align-items: center;
     justify-content: space-between;
+    background: #FAFAFA;
+    border-bottom: 1px solid #ECECEC;
 }
 
 .howToAdd {
@@ -88,15 +91,6 @@
 
 .categories {
     display: flex;
-}
-
-.categoriesBlock {
-    flex: 1;
-    width: 80%;
-    border: 1px solid #ECECEC;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-    padding: 34px 30px;
 }
 
 .actions {
@@ -192,7 +186,6 @@ input[type=submit] {
 }
 
 .removeBtn {
-    position: absolute;
     bottom: 50px;
 }
 
@@ -279,7 +272,8 @@ input[type=submit] {
     margin: 0 0 0 auto;
 
 }
-.totalProducts span{
+
+.totalProducts span {
     font-size: 13px;
     font-weight: 500;
 }

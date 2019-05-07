@@ -259,8 +259,8 @@ class MyProducts extends Component {
         ];
 
         return (
-            <div>
-                <h3 className={styles.title}>
+            <div className='page'>
+                <h3 className='page-title'>
                     <Popover placement="bottom" content={(
                         <CategoryList
                             categories={categories}

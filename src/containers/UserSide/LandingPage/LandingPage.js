@@ -246,7 +246,8 @@ class LandingPage extends Component {
                                 <li>Выбирайте дизайн - шаблон</li>
                                 <li>Кастомизируйте элементы вашего сайта</li>
                                 <li>Кастомизируйте карточку товара</li>
-                                <button className={styles.btn}>Получить доступ</button>
+
+                                <button className={styles.btn} onClick={this.goRegistrationPage}>Получить доступ</button>
                             </ul>
                             <div className={styles.creationImg}>
                                 <img src={creaction} alt=""/>

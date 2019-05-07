@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Icon, Input, Button} from "antd";
+import {Form, Input, Button} from "antd";
 import {Link} from 'react-router-dom';
 import styles from './Reset.module.css';
 
@@ -31,9 +31,12 @@ class ResetPassword extends Component {
                 <div className='container'>
                     <header>
                         <div className={styles.logo}>
-                            <img src={logo} alt="logo" />SMART Lead 2.0
+                            <img src={logo} alt="logo"/>SMART Lead 2.0
                         </div>
-                        <Link to='/registration'><button className={styles.regBtn}>Регистрация</button></Link>
+
+                        <Link to='/registration'>
+                            <button className={styles.regBtn}>Регистрация</button>
+                        </Link>
                     </header>
                 </div>
                 <Form onSubmit={this.handleSubmit} className={styles.Form}>
@@ -64,8 +67,6 @@ class ResetPassword extends Component {
                             Отправить
                         </Button>
                     </div>
-
-
 
 
                 </Form>

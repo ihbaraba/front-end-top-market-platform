@@ -236,7 +236,14 @@ class ContractorProducts extends Component {
                     alt=""/>
                         {name}
             </span>
-                )
+                ),
+                filters: [{
+                    text: 'London',
+                    value: 'London',
+                }, {
+                    text: 'New York',
+                    value: 'New York',
+                }],
             },
             {
                 title: 'Артикул',
@@ -282,24 +289,23 @@ class ContractorProducts extends Component {
         };
 
         return (
-            <div className={styles.Page}>
-                <div className={styles.top}>
-                    <h3 className={styles.title}>
-                        <Popover placement="bottom" content={(
-                            <CategoryList
-                                categories={categories}
-                                onSelectCategory={this.handleSelectCategory}
-                            />
-                        )}>
-                            <Icon type="bars"/>
-                        </Popover>
-
+            <div className='page'>
+                <div className={`page-title ${styles.top}`}>
+                    <Popover placement="bottom" content={(
+                        <CategoryList
+                            categories={categories}
+                            onSelectCategory={this.handleSelectCategory}
+                        />
+                    )}>
+                        <Icon type="bars"/>
                         Категории
-                    </h3>
+                    </Popover>
+
+
                     <Link to="/admin/instruction" className={styles.howToAdd}>Как добавить товар?</Link>
                 </div>
 
-                <div className={styles.categories}>
+                <div className='page-content'>
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
                             <NewProduct

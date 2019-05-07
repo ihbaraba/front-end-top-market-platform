@@ -11,7 +11,7 @@ class AdministratorSide extends Component {
             <div className="admin-side">
                <Header/>
 
-                <div className='container wrap'>
+                <div className='container wrap content-container'>
                     <NavBar/>
 
                     <div className='admin-content'>

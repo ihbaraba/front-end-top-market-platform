@@ -12,8 +12,8 @@ import handgrip from '../../../img/handgrip.svg';
 class AdditionalServices extends Component {
     render() {
         return (
-            <div >
-                <h3 className={styles.title}>Дополнительные услуги (Находится в разработке)</h3>
+            <div className='page'>
+                <h3 className='page-title'>Дополнительные услуги (Находится в разработке)</h3>
 
                 <div className={styles.servicesBlock}>
                     <div className={styles.servicesItem}>

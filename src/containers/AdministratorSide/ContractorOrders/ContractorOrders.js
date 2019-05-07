@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import styles from './Orders.module.css'
-import {Tabs, Table} from 'antd';
+import {Tabs, Table, Icon, Popover, Timeline, notification} from 'antd';
 import SearchOrders from "./SearchOrders";
 import {getContractorOrders} from '../../../actions/ordersAction';
 import moment from 'moment';
@@ -37,7 +37,6 @@ const columns = [
                 {/*alt=""/>*/}
             </span>
         )
-
     },
     {
         title: 'Сумма',
@@ -49,10 +48,63 @@ const columns = [
         title: 'Статус заказа',
         dataIndex: 'status',
         key: 'status',
-        render: (status) => {
+        render: (status, order) => {
             let selectedStatus = statusList.find(item => item.id === status);
+            let dates = [];
+            let newHistory = [];
+
+            const sortedArr = order.statusHistory.sort(function (a, b) {
+                return new Date(b.created) - new Date(a.created);
+            });
+
+            for (let i = 0; i < order.statusHistory.length; i++) {
+                if (sortedArr.length > 0) {
+                    if (sortedArr[i + 1]) {
+                        if (moment(sortedArr[i].created).format('YYYY-MM-DD') === moment(sortedArr[i + 1].created).format('YYYY-MM-DD')) {
+                            dates.push(sortedArr[i]);
+                        } else {
+                            dates.push(sortedArr[i]);
+
+                            newHistory.push({
+                                title: moment(sortedArr[i].created).format('YYYY-MM-DD'),
+                                date: dates
+                            });
+
+                            dates = [];
+                        }
+                    }
+                }
+            }
+
             return (
-                <span>{selectedStatus.title}</span>
+                <span className={styles.orderStatusInTable}>
+                    <span style={{color: status===5 ? '#02850e' : '#cbbe1d'}}>{selectedStatus.title}</span>
+                    <Popover content={(
+                        <div>
+                            <Timeline>
+                                {newHistory.map(item => {
+                                    const getStatus = (id) => {
+                                        let status = statusList.find(status => status.id === id);
+                                        return status.title;
+                                    };
+
+                                    return (
+                                        <Timeline.Item>
+                                            <strong> {moment(item.title).format('DD-MM-YYYY')}</strong>
+                                            {item.date.map(date => (
+                                                <div>
+                                                    {moment(date.created).format('HH:mm')} - {getStatus(date.statusId)}
+                                                </div>
+                                            ))}
+                                        </Timeline.Item>
+                                    )
+                                })}
+                            </Timeline>
+                        </div>
+                    )}>
+                         <Icon type="clock-circle" style={{color: '#4A90E2'}}/>
+                    </Popover>
+                </span>
             )
         }
     },
@@ -191,7 +243,9 @@ class ContractorOrders extends Component {
 
         const {orders1, orders2, orders3,} = this.state;
         return (
-            <div>
+            <div className='page'>
+                <h3 className='page-title'>Мои заказы</h3>
+
                 <SearchOrders
                     onSearch={this.getAllOrders}
                 />

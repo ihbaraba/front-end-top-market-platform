@@ -17,8 +17,8 @@ class Finance extends Component {
 
     render() {
         return (
-            <div >
-                <h3 className={styles.title}>Финансы и баланс (Находится в разработке)</h3>
+            <div className='page'>
+                <h3 className='page-title'>Финансы и баланс (Находится в разработке)</h3>
 
                 <Tabs onChange={callback} type="card">
                     <TabPane tab="История транзакций" key="1">

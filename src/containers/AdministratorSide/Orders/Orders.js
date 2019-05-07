@@ -12,8 +12,8 @@ class Orders extends Component {
 
     render() {
         return (
-            <div>
-                <h3 className={styles.title}>Мои заказы</h3>
+            <div className='page'>
+                <h3 className='page-title'>Мои заказы</h3>
 
                 <Tabs onChange={callback} type="card">
                     <TabPane tab="Заказы из Rozetka" key="1">

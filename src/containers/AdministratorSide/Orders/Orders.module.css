@@ -13,7 +13,7 @@
     display: flex;
     /*align-items: flex-end;*/
     flex-wrap: wrap;
-    border: 1px solid #ECECEC;
+    /*border: 1px solid #ECECEC;*/
     /*border-top: none;*/
     margin-bottom: 24px;
 }

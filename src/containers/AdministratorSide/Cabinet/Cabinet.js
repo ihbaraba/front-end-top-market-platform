@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import styles from './Cabinet.module.css'
 import 'antd/dist/antd.css';
 import {Link} from 'react-router-dom'
@@ -91,9 +91,10 @@ class Cabinet extends Component {
         const {user, company} = this.state;
 
         return (
-            <div>
-                <h3 className={styles.title}>Мой кабинет</h3>
-                <div className={styles.userCard}>
+            <div className='page'>
+                <h3 className='page-title'>Мой кабинет</h3>
+
+                <div className={`${styles.userCard} page-content`}>
                     <div className={styles.userBlock}>
                         <div className={styles.userContacts}>
                             <div className={styles.userImg}>

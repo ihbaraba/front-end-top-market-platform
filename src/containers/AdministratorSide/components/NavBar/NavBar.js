@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Tooltip} from 'antd';
+import {Tooltip, Menu, Icon} from 'antd';
 import {connect} from "react-redux";
 import {NavLink} from 'react-router-dom';
 import styles from './NavBar.module.css'
@@ -35,6 +35,7 @@ import studyActive from '../../../../img/navIcons/teacher-reading2.svg';
 import сontact from '../../../../img/navIcons/contact.svg';
 import сontactActive from '../../../../img/navIcons/contact-active.svg';
 
+const SubMenu = Menu.SubMenu;
 
 const contractorMenu = [
     {
@@ -103,18 +104,25 @@ const partnerMenu = [
         developing: false
     },
     {
-        title: 'Мой магазин',
-        icon: home,
-        activeIcon: homeActive,
-        href: 'store',
-        developing: true
-    },
-    {
         title: 'Все товары',
         icon: cart,
         activeIcon: cartActive,
         href: 'categories',
         developing: false
+    },
+    {
+        title: 'Мои товары',
+        icon: shopping,
+        activeIcon: shoppingActive,
+        href: 'my_products',
+        developing: false
+    },
+    {
+        title: 'Мой магазин',
+        icon: home,
+        activeIcon: homeActive,
+        href: 'store',
+        developing: true
     },
     {
         title: 'Мои заказы',
@@ -129,13 +137,6 @@ const partnerMenu = [
         activeIcon: chartActive,
         href: 'finance',
         developing: true
-    },
-    {
-        title: 'Мои товары',
-        icon: shopping,
-        activeIcon: shoppingActive,
-        href: 'my_products',
-        developing: false
     },
     {
         title: 'База знаний',
@@ -167,42 +168,65 @@ const partnerMenu = [
 ];
 
 class NavBar extends Component {
+    state = {
+        collapsed: false,
+    };
+
+    toggleCollapsed = () => {
+        this.setState({
+            collapsed: !this.state.collapsed,
+        });
+    };
 
     render() {
         const navigation = this.props.user.role === 'CONTRACTOR' ? contractorMenu : partnerMenu;
 
         return (
             <div className={styles.navigationBar}>
-                {navigation.map((item, index) => {
-                    if (item.developing) {
-                        return (
-                            <Tooltip placement="right" title='Находится в разработке'>
-                                <NavLink
-                                    className={styles.menuItem}
-                                    key={index}
-                                    to={`/admin/${item.href}`}>
-                                    <img src={item.icon} alt="" className='default-icon'/>
-                                    <img src={item.activeIcon} alt="" className='active-icon'/>
+                <Menu
+                    mode="inline"
+                    inlineCollapsed={this.state.collapsed}
+                >
+                    <div onClick={this.toggleCollapsed} className={styles.navButton}>
+                        <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}/>
+                    </div>
 
-                                    {item.title}
-                                </NavLink>
-                            </Tooltip>
-                        )
-                    } else {
-                        return (
-                            <NavLink
-                                className={styles.menuItem}
-                                key={index}
-                                to={`/admin/${item.href}`}>
-                                <img src={item.icon} alt="" className='default-icon'/>
-                                <img src={item.activeIcon} alt="" className='active-icon'/>
+                    {navigation.map((item, index) => {
+                        if (item.developing) {
+                            return (
+                                <Menu.Item key={index}>
+                                    <Tooltip placement="right" title='Находится в разработке'>
+                                        <NavLink
+                                            className={styles.menuItem}
+                                            key={index}
+                                            to={`/admin/${item.href}`}>
+                                            <img src={item.icon} alt="" className='default-icon'/>
+                                            <img src={item.activeIcon} alt="" className='active-icon'/>
 
-                                {item.title}
-                            </NavLink>
-                        )
-                    }
-                })}
+                                            {item.title}
+                                        </NavLink>
+                                    </Tooltip>
+                                </Menu.Item>
+                            )
+                        } else {
+                            return (
+                                <Menu.Item key={index}>
+                                    <NavLink
+                                        className={styles.menuItem}
+                                        key={index}
+                                        to={`/admin/${item.href}`}>
+                                        <img src={item.icon} alt="" className='default-icon'/>
+                                        <img src={item.activeIcon} alt="" className='active-icon'/>
+
+                                        {item.title}
+                                    </NavLink>
+                                </Menu.Item>
+                            )
+                        }
+                    })}
+                </Menu>
             </div>
+
         )
     }
 }

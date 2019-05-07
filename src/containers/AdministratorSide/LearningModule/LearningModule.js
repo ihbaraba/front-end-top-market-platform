@@ -1,42 +1,39 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css';
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import styles from './LearningModule.module.css'
 import {Modal} from "antd";
 
 
-
-
 class LearningModule extends Component {
 
-    state = { visible: false }
+    state = {visible: false}
 
     showModal = () => {
         this.setState({
             visible: true,
         });
-    }
+    };
 
     handleOk = (e) => {
-        console.log(e);
         this.setState({
             visible: false,
         });
-    }
+    };
 
     handleCancel = (e) => {
-        console.log(e);
         this.setState({
             visible: false,
         });
-    }
+    };
 
     render() {
 
 
         return (
-            <div>
-                <h3 className={styles.title}>Обучающий модуль (Находится в разработке)</h3>
+            <div className='page'>
+                <h3 className='page-title'>Обучающий модуль (Находится в разработке)</h3>
+
                 <div className={styles.learningModule}>
                     <div className={styles.previewImg}></div>
                     <div className={styles.aboutModule}>
@@ -74,7 +71,9 @@ class LearningModule extends Component {
                             </p>
                         </div>
                         <div className={styles.payActions}>
-                            <Link to="/admin/lessons"><button className={styles.payBtn}>Оплатить через LiqPay</button></Link>
+                            <Link to="/admin/lessons">
+                                <button className={styles.payBtn}>Оплатить через LiqPay</button>
+                            </Link>
                             <button className={styles.payBtn}>Отправить счет фактуру на e-mail</button>
                         </div>
                     </Modal>

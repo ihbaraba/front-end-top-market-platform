@@ -13,31 +13,49 @@ function callback(key) {
     console.log(key);
 }
 
+const arrTest = [
+    {statusId: 5, created: "2019-05-06T17:00:15"},
+    {statusId: 1, created: "2019-04-28T10:40:18"},
+    {statusId: 26, created: "2019-04-29T10:44:42"},
+    {statusId: 47, created: "2019-04-29T10:52:35"},
+    {statusId: 2, created: "2019-04-30T10:14:05"},
+    {statusId: 26, created: "2019-05-03T11:33:13"},
+    {statusId: 2, created: "2019-05-03T11:34:31"},
+    {statusId: 3, created: "2019-05-04T22:56:08"},
+    {statusId: 4, created: "2019-05-04T23:00:13"},
+];
+
 const columns = [
     {
         title: '№ заказа',
         dataIndex: 'rozetkaId',
-        key: 'rozetkaId'
+        key: 'rozetkaId',
+        render: (id) => (
+            <span>№ {id}</span>
+        )
     },
     {
         title: 'Дата заказа',
         dataIndex: 'created',
         key: 'created',
-        render: (date) => (<span>{moment(date).format('DD-MM-YYYY HH:mm')}</span>)
+        render: (date, order) => (
+            <span>
+                {moment(date).format('DD-MM-YYYY HH:mm')}
+                <img style={{width: '30px', margin: '0 0 0 30px'}} src={order.items[0].imageUrl} alt=""/>
+            </span>
+        )
     },
-    // {
-    //     title: 'Товар',
-    //     dataIndex: 'itemPhotos',
-    //     key: 'itemPhotos',
-    //     render: (itemPhotos) => (
-    //         <span className='product-avatar'>
-    //             {/*<img*/}
-    //             {/*src={itemPhotos.length > 0 ? itemPhotos[0].url : ''}*/}
-    //             {/*alt=""/>*/}
-    //         </span>
-    //     )
-    //
-    // },
+    {
+        title: 'К-во',
+        dataIndex: 'quantity',
+        key: 'quantity',
+        render: (item, order) => (
+            <span className='product-avatar'>
+                {order.items[0].quantity} шт.
+            </span>
+        )
+
+    },
     {
         title: 'Сумма',
         dataIndex: 'amount',
@@ -49,17 +67,52 @@ const columns = [
         key: 'status',
         render: (status, order) => {
             let selectedStatus = statusList.find(item => item.id === status);
+            let dates = [];
+            let newHistory = [];
+
+            const sortedArr = order.statusHistory.sort(function (a, b) {
+                return new Date(b.created) - new Date(a.created);
+            });
+
+            for (let i = 0; i < order.statusHistory.length; i++) {
+                if (sortedArr.length > 0) {
+                    if (sortedArr[i + 1]) {
+                        if (moment(sortedArr[i].created).format('YYYY-MM-DD') === moment(sortedArr[i + 1].created).format('YYYY-MM-DD')) {
+                            dates.push(sortedArr[i]);
+                        } else {
+                            dates.push(sortedArr[i]);
+
+                            newHistory.push({
+                                title: moment(sortedArr[i].created).format('YYYY-MM-DD'),
+                                date: dates
+                            });
+
+                            dates = []
+                        }
+                    }
+                }
+            }
+
             return (
-                <span className={styles.orderStatusInTable}>{selectedStatus.title}
+                <span className={styles.orderStatusInTable}>
+                    <span style={{color: status===5 ? '#02850e' : '#cbbe1d'}}>{selectedStatus.title}</span>
                     <Popover content={(
                         <div>
                             <Timeline>
-                                {order.statusHistory.map(item => {
-                                    const itemStatus = statusList.find(status => status.id === item.statusId);
+                                {newHistory.map(item => {
+                                    const getStatus = (id) => {
+                                        let status = statusList.find(status => status.id === id);
+                                        return status.title;
+                                    };
+
                                     return (
                                         <Timeline.Item>
-                                            {itemStatus.title} <br/>
-                                            {moment(item.created).format('MM-DD HH:mm')}
+                                            <strong> {moment(item.title).format('DD-MM-YYYY')}</strong>
+                                            {item.date.map(date => (
+                                                <div>
+                                                    {moment(date.created).format('HH:mm')} - {getStatus(date.statusId)}
+                                                </div>
+                                            ))}
                                         </Timeline.Item>
                                     )
                                 })}
@@ -68,7 +121,6 @@ const columns = [
                     )}>
                          <Icon type="clock-circle" style={{color: '#4A90E2'}}/>
                     </Popover>
-
                 </span>
             )
         }

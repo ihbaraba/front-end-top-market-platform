@@ -84,10 +84,8 @@
 .categoriesBlock {
     height: max-content;
     width: 100%;
-    border: 1px solid #ECECEC;
     border-radius: 5px;
     background-color: #FFFFFF;
-    padding: 34px 30px;
 }
 
 .actions {

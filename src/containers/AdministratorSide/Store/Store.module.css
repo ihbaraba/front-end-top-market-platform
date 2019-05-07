@@ -6,13 +6,6 @@
     line-height: 35px;
     margin-bottom: 27px;
 }
-.storeManagement {
-    background: #fff;
-    padding: 35px 30px;
-    border: 1px solid #ECECEC;
-    border-radius: 5px;
-}
-
 .storeManagement label {
     color: #4A4A4A;
     font-family: Ubuntu;

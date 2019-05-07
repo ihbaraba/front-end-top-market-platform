@@ -161,25 +161,21 @@ class Categories extends Component {
         };
 
         return (
-            <div>
-                <div className={styles.top}>
-                    <h3 className={styles.title}>
-                        <Popover placement="bottom" content={(
-                            <CategoryList
-                                categories={categories}
-                                onSelectCategory={this.handleSelectCategory}
-                            />
-                        )}>
-                            <Icon type="bars"/>
-                        </Popover>
+            <div className='page'>
+                <h3 className='page-title'>
+                    <Popover placement="bottom" content={(
+                        <CategoryList
+                            categories={categories}
+                            onSelectCategory={this.handleSelectCategory}
+                        />
+                    )}>
+                        <Icon type="bars"/>
+                    </Popover>
 
-                        Категории
-                    </h3>
+                    Категории
+                </h3>
 
-                    {/*<Link to="/admin/instruction" className={styles.howToAdd}>Как добавить товар?</Link>*/}
-                </div>
-
-                <div className={styles.categories}>
+                <div className={`${styles.categories} page-content`}>
                     <div className={styles.categoriesBlock}>
                         <div className={styles.actions}>
                             <button

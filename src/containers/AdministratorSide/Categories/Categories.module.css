@@ -10,6 +10,7 @@
 .title i {
     margin: 0 20px 0 0;
 }
+
 .title i:hover {
     color: #4A90E2;
     cursor: pointer;
@@ -148,13 +149,12 @@ input[type=submit] {
     background-position: center center;
 }
 
-
 /* Filter */
 .filter {
     padding: 30px 0 0 0;
     background: #fff;
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: flex-end;
 }
 
@@ -167,40 +167,57 @@ input[type=submit] {
     display: block;
     margin-bottom: 8.5px;
 }
-.filter .code,
-.filter .vendorCode {
-    height: 31px;
-    width: 108px;
-    border: 1px solid #B2B2B2;
-    border-radius: 3px;
-    background-color: #FFFFFF;
-}
+
+/*.filter .code,*/
+/*.filter .vendorCode {*/
+    /*height: 31px;*/
+    /*width: 108px;*/
+    /*border: 1px solid #B2B2B2;*/
+    /*border-radius: 3px;*/
+    /*background-color: #FFFFFF;*/
+/*}*/
 
 .filter .productName {
     height: 31px;
-    width: 126px;
+    width: 100%;
     border: 1px solid #B2B2B2;
     border-radius: 3px;
     background-color: #FFFFFF;
+    padding: 0 0 0 5px;
 }
 
+.filter > div {
+    margin: 0 20px 0 0;
+    display: flex;
+    flex-direction: column;
+}
 
 .filter .category {
-    height: 31px;
-    width: 157px;
-    border: 1px solid #B2B2B2;
+    width: 100%;
     border-radius: 3px;
     background-color: #FFFFFF;
 }
 
+.filter .nameProduct {
+    width: 24%;
+}
+.filter .vendorCode {
+    width: 8%;
+}
+.filter .brand {
+    width: 13%;
+}
+.filter .category {
+    width: 25%;
+}
 
 .filter .availability {
     height: 31px;
-    width: 107px;
     border: 1px solid #B2B2B2;
     border-radius: 3px;
     background-color: #FFFFFF;
 }
+
 .filter .priceMin,
 .filter .priceMax {
     height: 31px;

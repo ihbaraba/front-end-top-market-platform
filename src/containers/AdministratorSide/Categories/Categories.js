@@ -16,7 +16,8 @@ const columns = [
                     alt=""/>
                 {name}
             </span>
-        )
+        ),
+        width: '20%'
     },
     {
         title: 'Артикул',
@@ -25,6 +26,7 @@ const columns = [
     {
         title: 'Бренд',
         dataIndex: 'brand',
+        width: '15%'
     },
     {
         title: 'Категория',
@@ -193,7 +195,7 @@ class Categories extends Component {
                         </div>
 
                         <div className={styles.filter}>
-                            <div>
+                            <div className={styles.nameProduct}>
                                 <label>Название товара</label>
                                 <input
                                     type="text"
@@ -204,7 +206,7 @@ class Categories extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={styles.vendorCode}>
                                 <label>Артикул</label>
                                 <input
                                     type="text"
@@ -215,7 +217,7 @@ class Categories extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={styles.brand}>
                                 <label>Бренд</label>
                                 <input
                                     type="text"
@@ -224,6 +226,19 @@ class Categories extends Component {
                                     value={brand}
                                     onChange={this.handleChangeFilters}
                                 />
+                            </div>
+
+                            <div className={styles.category}>
+                                <label>Категория</label>
+
+                                <select className={styles.availability} onChange={({target: {value}}) => this.setState({
+                                    filters: {
+                                        ...this.state.filters,
+                                        category: value
+                                    }
+                                })}>
+                                    <option value=''>Все</option>
+                                </select>
                             </div>
 
                             <div>
@@ -260,9 +275,9 @@ class Categories extends Component {
                                     onChange={this.handleChangeFilters}
                                 />
                             </div>
-                            <div>
-                                <button className='btn' onClick={this.getProducts}>Поиск</button>
-                            </div>
+                            {/*<div>*/}
+                                {/*<button className='btn' onClick={this.getProducts}>Поиск</button>*/}
+                            {/*</div>*/}
                         </div>
 
 

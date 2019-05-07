@@ -23,6 +23,7 @@ header {
 .logo {
     height: 79px;
     margin-right: 97px;
+    padding: 0 0 0 30px;
 
     display: flex;
     align-items: center;

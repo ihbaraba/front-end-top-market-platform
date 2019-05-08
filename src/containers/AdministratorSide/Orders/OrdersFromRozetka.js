@@ -39,7 +39,7 @@ const columns = [
         render: (date, order) => (
             <span>
                 {moment(date).format('DD-MM-YYYY HH:mm')}
-                <img style={{width: '30px', margin: '0 0 0 30px'}} src={order.items[0].imageUrl} alt=""/>
+                <img style={{width: '30px', margin: '0 0 0 30px'}} src={order.items.length > 0 ? order.items[0].imageUrl : ''} alt=""/>
             </span>
         )
     },
@@ -49,7 +49,7 @@ const columns = [
         key: 'quantity',
         render: (item, order) => (
             <span className='product-avatar'>
-                {order.items[0].quantity} шт.
+                {order.items.length > 0 ? order.items[0].quantity : ''} шт.
             </span>
         )
 

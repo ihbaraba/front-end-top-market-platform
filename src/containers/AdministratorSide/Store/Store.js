@@ -36,7 +36,11 @@ class Store extends Component {
     handleSave = async (e) => {
         e.preventDefault();
 
-        await updateStore(this.state);
+        let newStore = this.state;
+
+        delete newStore.logoDecoded
+
+        await updateStore(newStore);
     };
 
     componentDidMount() {

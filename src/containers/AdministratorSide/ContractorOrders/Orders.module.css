@@ -13,6 +13,11 @@
     flex-wrap: wrap;
     margin-bottom: 24px;
 }
+
+.searchOrders .orderNumber {
+    width: 18%;
+}
+
 .searchOrders label {
     color: #4A4A4A;
     font-family: Ubuntu;
@@ -35,7 +40,6 @@
 }
 .searchOrders .orderNumber  input {
     height: 31px;
-    width: 116px;
     border: 1px solid #B2B2B2;
     border-radius: 3px;
     background-color: #FFFFFF;

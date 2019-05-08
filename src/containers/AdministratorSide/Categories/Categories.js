@@ -122,11 +122,10 @@ class Categories extends Component {
                 ...this.state.filters,
                 [name]: value
             }
-        })
+        }, () => this.getProducts())
     };
 
     handleSelectCategory = (category) => {
-        console.log(category);
         this.setState({
             filters: {
                 ...this.state.filters,

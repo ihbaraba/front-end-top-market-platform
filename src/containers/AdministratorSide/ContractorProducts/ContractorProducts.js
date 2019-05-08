@@ -236,14 +236,7 @@ class ContractorProducts extends Component {
                     alt=""/>
                         {name}
             </span>
-                ),
-                filters: [{
-                    text: 'London',
-                    value: 'London',
-                }, {
-                    text: 'New York',
-                    value: 'New York',
-                }],
+                )
             },
             {
                 title: 'Артикул',
@@ -261,15 +254,15 @@ class ContractorProducts extends Component {
                 )
             },
             {
+                title: 'Наличие',
+                dataIndex: 'count',
+            },
+            {
                 title: 'Цена',
                 dataIndex: 'price',
                 render: (price) => (
                     <span>{price} грн</span>
                 )
-            },
-            {
-                title: 'Наличие',
-                dataIndex: 'count',
             },
             {
                 title: '',
@@ -357,7 +350,7 @@ class ContractorProducts extends Component {
                         </div>
 
                         <div className={styles.filter}>
-                            <div>
+                            <div className={styles.nameProduct}>
                                 <label>Название товара</label>
                                 <input
                                     type="text"
@@ -368,7 +361,7 @@ class ContractorProducts extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={styles.vendorCode}>
                                 <label>Артикул</label>
                                 <input
                                     type="text"
@@ -379,7 +372,7 @@ class ContractorProducts extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={styles.brand}>
                                 <label>Бренд</label>
                                 <input
                                     type="text"
@@ -390,15 +383,27 @@ class ContractorProducts extends Component {
                                 />
                             </div>
 
+                            <div className={styles.category}>
+                                <label>Категория</label>
+
+                                <select className={styles.availability} onChange={({target: {value}}) => this.setState({
+                                    filters: {
+                                        ...this.state.filters,
+                                        category: value
+                                    }
+                                })}>
+                                    <option value=''>Все</option>
+                                </select>
+                            </div>
+
                             <div>
                                 <label>Наличие</label>
-                                <select className={styles.availability}
-                                        onChange={({target: {value}}) => this.setState({
-                                            filters: {
-                                                ...this.state.filters,
-                                                in_stock: value
-                                            }
-                                        })}>
+                                <select className={styles.availability} onChange={({target: {value}}) => this.setState({
+                                    filters: {
+                                        ...this.state.filters,
+                                        in_stock: value
+                                    }
+                                })}>
                                     <option value=''>Все</option>
                                     <option value={true}>В наличии</option>
                                     <option value={false}>Нет в наличии</option>
@@ -425,9 +430,9 @@ class ContractorProducts extends Component {
                                     onChange={this.handleChangeFilters}
                                 />
                             </div>
-                            <div>
-                                <button className='btn' onClick={this.getMyProducts}>Поиск</button>
-                            </div>
+                            {/*<div>*/}
+                            {/*<button className='btn' onClick={this.getProducts}>Поиск</button>*/}
+                            {/*</div>*/}
                         </div>
 
                         <Table

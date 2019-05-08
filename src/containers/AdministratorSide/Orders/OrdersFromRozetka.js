@@ -13,17 +13,15 @@ function callback(key) {
     console.log(key);
 }
 
-const arrTest = [
-    {statusId: 5, created: "2019-05-06T17:00:15"},
-    {statusId: 1, created: "2019-04-28T10:40:18"},
-    {statusId: 26, created: "2019-04-29T10:44:42"},
-    {statusId: 47, created: "2019-04-29T10:52:35"},
-    {statusId: 2, created: "2019-04-30T10:14:05"},
-    {statusId: 26, created: "2019-05-03T11:33:13"},
-    {statusId: 2, created: "2019-05-03T11:34:31"},
-    {statusId: 3, created: "2019-05-04T22:56:08"},
-    {statusId: 4, created: "2019-05-04T23:00:13"},
-];
+const colors =
+    {
+        '1': '#cbbe1d',
+        '2': '#770b85',
+        '5': '#02850e',
+        '26': '#3860f6',
+        '11': '#fb3f4c',
+        '18': '#fb3f4c',
+    };
 
 const columns = [
     {
@@ -95,7 +93,7 @@ const columns = [
 
             return (
                 <span className={styles.orderStatusInTable}>
-                    <span style={{color: status===5 ? '#02850e' : '#cbbe1d'}}>{selectedStatus.title}</span>
+                    <span style={{color: colors[status], fontWeight: 'bold'}}>{selectedStatus.title}</span>
                     <Popover content={(
                         <div>
                             <Timeline>

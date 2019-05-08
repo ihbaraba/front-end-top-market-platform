@@ -42,11 +42,22 @@ class SearchOrders extends Component {
                                onChange={this.handleChangeInput}
                         />
                     </div>
+
+                    <div className={styles.orderNumber}>
+                        <label>Название товара /Код товара</label>
+                        <input type="text"
+                               name='id'
+                               value={id}
+                               onChange={this.handleChangeInput}
+                        />
+                    </div>
+
                     <div className={styles.orderDate}>
                         <label>Дата заказа</label>
                         <input type="date" name='min_date' value={min_date} onChange={this.handleChangeInput}/>
                         <input type="date" name='max_date' value={max_date} onChange={this.handleChangeInput}/>
                     </div>
+
                     <div className={styles.orderStatus}>
                         <label>Статус заказа</label>
                         <select name='status' value={status} onChange={this.handleChangeInput}>
@@ -63,15 +74,15 @@ class SearchOrders extends Component {
                                onChange={this.handleChangeInput}
                         />
                     </div>
-                    <div className={styles.phone}>
-                        <label>Телефон</label>
-                        <input type="tel"
-                               name='user_phone'
-                               value={user_phone}
-                               onChange={this.handleChangeInput}
-                        />
-                    </div>
-                    <button className={styles.find} type='button' onClick={() => this.props.onSearch(this.state)}>Поиск</button>
+                    {/*<div className={styles.phone}>*/}
+                    {/*<label>Телефон</label>*/}
+                    {/*<input type="tel"*/}
+                    {/*name='user_phone'*/}
+                    {/*value={user_phone}*/}
+                    {/*onChange={this.handleChangeInput}*/}
+                    {/*/>*/}
+                    {/*</div>*/}
+                    {/*<button className={styles.find} type='button' onClick={() => this.props.onSearch(this.state)}>Поиск</button>*/}
 
                 </form>
             </div>

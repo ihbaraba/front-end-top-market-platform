@@ -83,7 +83,7 @@ class MyProducts extends Component {
                 ...this.state.filters,
                 [name]: value
             }
-        })
+        }, () => this.getMyProducts())
     };
 
     handleCopied = () => {
@@ -224,7 +224,8 @@ class MyProducts extends Component {
                             alt=""/>
                         {name}
                      </span>
-                )
+                ),
+                width: '20%'
             },
             {
                 title: 'Артикул',
@@ -233,6 +234,7 @@ class MyProducts extends Component {
             {
                 title: 'Бренд',
                 dataIndex: 'brand',
+                width: '15%'
             },
             {
                 title: 'Категория',
@@ -292,7 +294,7 @@ class MyProducts extends Component {
                             </div>
 
                             <div className={styles.filter}>
-                                <div>
+                                <div className={styles.nameProduct}>
                                     <label>Название товара</label>
                                     <input
                                         type="text"
@@ -303,7 +305,7 @@ class MyProducts extends Component {
                                     />
                                 </div>
 
-                                <div>
+                                <div className={styles.vendorCode}>
                                     <label>Артикул</label>
                                     <input
                                         type="text"
@@ -314,7 +316,7 @@ class MyProducts extends Component {
                                     />
                                 </div>
 
-                                <div>
+                                <div className={styles.brand}>
                                     <label>Бренд</label>
                                     <input
                                         type="text"
@@ -323,6 +325,20 @@ class MyProducts extends Component {
                                         value={brand}
                                         onChange={this.handleChangeFilters}
                                     />
+                                </div>
+
+                                <div className={styles.category}>
+                                    <label>Категория</label>
+
+                                    <select className={styles.availability}
+                                            onChange={({target: {value}}) => this.setState({
+                                                filters: {
+                                                    ...this.state.filters,
+                                                    category: value
+                                                }
+                                            })}>
+                                        <option value=''>Все</option>
+                                    </select>
                                 </div>
 
                                 <div>
@@ -360,9 +376,9 @@ class MyProducts extends Component {
                                         onChange={this.handleChangeFilters}
                                     />
                                 </div>
-                                <div>
-                                    <button className='btn' onClick={this.getMyProducts}>Поиск</button>
-                                </div>
+                                {/*<div>*/}
+                                {/*<button className='btn' onClick={this.getProducts}>Поиск</button>*/}
+                                {/*</div>*/}
                             </div>
 
                             <Table

@@ -34,9 +34,12 @@
     margin-right: 19px;
 }
 
+.searchOrders .orderNumber {
+    width: 18%;
+}
+
 .searchOrders .orderNumber input {
     height: 31px;
-    width: 116px;
     border: 1px solid #B2B2B2;
     border-radius: 3px;
     background-color: #FFFFFF;

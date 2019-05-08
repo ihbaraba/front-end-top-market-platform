@@ -248,6 +248,15 @@
     display: block;
 }
 
+.totalProducts {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 0 auto;
+
+}
+
  .inactiveGoodsTable {
      background: #fff;
      padding: 31px 30px;

@@ -323,7 +323,6 @@ class ContractorProducts extends Component {
                                     <button className='btn' disabled>Загрузить с Rozetka</button>
                                 </Tooltip>
                                 :
-
                                 <Dropzone disabled={!uploadRozetka} onDrop={e => this.handleUploadFile(e, 'rozetka')}
                                           multiple={false}>
                                     {({getRootProps, getInputProps}) => (
@@ -332,8 +331,6 @@ class ContractorProducts extends Component {
                                             <button className='btn'
                                                     disabled={!uploadRozetka}>Загрузить с Rozetka
                                             </button>
-                                            }
-
                                         </div>
                                     )}
                                 </Dropzone>

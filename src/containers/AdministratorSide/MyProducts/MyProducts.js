@@ -177,6 +177,7 @@ class MyProducts extends Component {
                     <div className={styles.top}>
                         <h5>Выберите YML для вашего магазина</h5>
                     </div>
+
                     <div className={styles.body}>
                         {/*<div>*/}
                         {/*<label>Стандартная</label>*/}
@@ -287,6 +288,11 @@ class MyProducts extends Component {
                                         Добавить в YML
                                     </button>
                                 </Dropdown>
+
+                                <div className={styles.totalProducts}>
+                                    Товаров: {count}
+                                </div>
+
                                 {/*</Tooltip>*/}
 
                                 {/*<NewProduct/>*/}

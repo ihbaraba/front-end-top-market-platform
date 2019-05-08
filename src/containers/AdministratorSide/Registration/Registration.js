@@ -119,7 +119,7 @@ class Registration extends Component {
                         <label>Выберите роль</label>
                         {getFieldDecorator("role", {
                             rules: [
-                                {required: true, message: "Please input your email!"},
+                                {required: true, message: "Выберите роль!"},
                             ]
                         })(
                             <Select className={styles.role}>

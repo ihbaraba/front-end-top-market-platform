@@ -318,24 +318,26 @@ class ContractorProducts extends Component {
                                 )}
                             </Dropzone>
 
-                            <Dropzone onDrop={e => this.handleUploadFile(e, 'rozetka')} multiple={false}>
-                                {({getRootProps, getInputProps}) => (
-                                    <div {...getRootProps({className: 'dropzone'})}>
-                                        <input {...getInputProps()} />
-                                        {!haveRozetkaAkaunt ?
-                                            <Tooltip title="Поля логин и пароль с «Rozetka marketplace» не заполнены">
-                                                <button className='btn'
-                                                        disabled>Загрузить с Rozetka
-                                                </button>
-                                            </Tooltip>
-                                            :
-                                            <button className='btn'
-                                                    disabled={!uploadRozetka}>Загрузить с Rozetka</button>
-                                        }
+                            {!haveRozetkaAkaunt ?
+                                <Tooltip title="Поля логин и пароль с «Rozetka marketplace» не заполнены">
+                                    <button className='btn' disabled>Загрузить с Rozetka</button>
+                                </Tooltip>
+                                :
 
-                                    </div>
-                                )}
-                            </Dropzone>
+                                <Dropzone disabled={!uploadRozetka} onDrop={e => this.handleUploadFile(e, 'rozetka')}
+                                          multiple={false}>
+                                    {({getRootProps, getInputProps}) => (
+                                        <div {...getRootProps({className: 'dropzone'})}>
+                                            <input {...getInputProps()} />
+                                            <button className='btn'
+                                                    disabled={!uploadRozetka}>Загрузить с Rozetka
+                                            </button>
+                                            }
+
+                                        </div>
+                                    )}
+                                </Dropzone>
+                            }
 
                             <button className='btn'
                                     onClick={() => this.props.history.push('/admin/products/download_history')}>

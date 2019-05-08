@@ -322,15 +322,15 @@ class GeneralInformation extends Component {
                             />
                         </FormItem>
 
-                        <FormItem>
-                            <label htmlFor="">Кому видны контактные данные ?</label>
-                            <input
-                                type="text"
-                                name='whoSeeContact'
-                                value={whoSeeContact || ''}
-                                onChange={this.handleChangeInput}
-                            />
-                        </FormItem>
+                        {/*<FormItem>*/}
+                            {/*<label htmlFor="">Кому видны контактные данные ?</label>*/}
+                            {/*<input*/}
+                                {/*type="text"*/}
+                                {/*name='whoSeeContact'*/}
+                                {/*value={whoSeeContact || ''}*/}
+                                {/*onChange={this.handleChangeInput}*/}
+                            {/*/>*/}
+                        {/*</FormItem>*/}
                     </div>
 
                     <Button

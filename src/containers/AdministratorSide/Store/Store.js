@@ -12,7 +12,8 @@ class Store extends Component {
         domainName: '',
         instagram: '',
         facebook: '',
-        linkedin: ''
+        linkedin: '',
+        domainSubdomain: 'SDM'
     };
 
     handleChangeInput = (name) => ({target: {value}}) => {
@@ -74,7 +75,7 @@ class Store extends Component {
                             {/*</select>*/}
                             {/*</div>*/}
                             <div>
-                                <label>Имя домена</label>
+                                <label>Имя поддомена</label>
                                 <input
                                     type="text"
                                     value={domainName}

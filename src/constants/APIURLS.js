@@ -40,6 +40,8 @@ export const RESET_PASSWORD = 'password_reset/';
 
 export const CONTACT_FORM = 'marketplace/base/contact_us/';
 
+export const INVOICE = 'marketplace/base/liqpay/';
+
 //COMPANY
 export const COMPANY_PROFILE = 'company/detail/';
 

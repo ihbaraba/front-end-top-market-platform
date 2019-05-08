@@ -74,8 +74,13 @@ class Cabinet extends Component {
         });
     };
 
-    handleSendInvoice = () => {
-
+    handleSendInvoice = async () => {
+       await sendInvoice({
+           userPocket: 'BASE'
+       });
+       this.setState({
+           visible: false
+       })
     };
 
     async componentDidMount() {
@@ -330,7 +335,7 @@ class Cabinet extends Component {
                                 <button className={styles.payBtn}>Оплатить через LiqPay</button>
                             </TooltipAntd>
 
-                            <button className={styles.payBtn} onClick={this.sendInvoice}>Отправить счет фактуру на e-mail</button>
+                            <button className={styles.payBtn} onClick={this.handleSendInvoice}>Отправить счет фактуру на e-mail</button>
                         </div>
                     </Modal>
                 </div>

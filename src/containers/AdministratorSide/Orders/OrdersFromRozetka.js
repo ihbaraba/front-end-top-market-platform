@@ -13,15 +13,14 @@ function callback(key) {
     console.log(key);
 }
 
-const colors =
-    {
-        '1': '#cbbe1d',
-        '2': '#770b85',
-        '5': '#02850e',
-        '26': '#3860f6',
-        '11': '#fb3f4c',
-        '18': '#fb3f4c',
-    };
+const colors = {
+    '1': '#cbbe1d',
+    '2': '#770b85',
+    '5': '#02850e',
+    '26': '#3860f6',
+    '11': '#fb3f4c',
+    '18': '#fb3f4c',
+};
 
 const columns = [
     {
@@ -39,7 +38,8 @@ const columns = [
         render: (date, order) => (
             <span>
                 {moment(date).format('DD-MM-YYYY HH:mm')}
-                <img style={{width: '30px', margin: '0 0 0 30px'}} src={order.items.length > 0 ? order.items[0].imageUrl : ''} alt=""/>
+                <img style={{width: '30px', margin: '0 0 0 30px'}}
+                     src={order.items.length > 0 ? order.items[0].imageUrl : ''} alt=""/>
             </span>
         )
     },
@@ -52,7 +52,6 @@ const columns = [
                 {order.items.length > 0 ? order.items[0].quantity : ''} шт.
             </span>
         )
-
     },
     {
         title: 'Сумма',

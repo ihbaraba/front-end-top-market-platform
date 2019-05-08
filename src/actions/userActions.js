@@ -7,7 +7,8 @@ import {
     PROFILE,
     PASSWORD,
     RESET_PASSWORD,
-    CONTACT_FORM
+    CONTACT_FORM,
+    INVOICE
 } from '../constants/APIURLS';
 
 
@@ -62,6 +63,6 @@ export const sendContactForm = form => {
 };
 
 
-export const sendInvoice = () => {
-    return api('get', CONTACT_FORM)
+export const sendInvoice = (pocket) => {
+    return api('put', INVOICE, pocket)
 };

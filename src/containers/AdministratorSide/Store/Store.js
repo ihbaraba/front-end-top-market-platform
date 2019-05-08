@@ -39,7 +39,9 @@ class Store extends Component {
 
         let newStore = this.state;
 
-        delete newStore.logoDecoded
+        newStore.domainSubdomain = 'SDM';
+
+        delete newStore.logoDecoded;
 
         await updateStore(newStore);
     };

@@ -314,7 +314,7 @@ class OrdersFromRozetka extends Component {
 
                                             <div className={styles.actions}>
                                                 <button className='btn'
-                                                        onClick={() => this.handlePassToContractor(record.rozetkaId)}>Отправить
+                                                        onClick={() => this.handlePassToContractor(record.id)}>Отправить
                                                     поставщику
                                                 </button>
                                             </div>

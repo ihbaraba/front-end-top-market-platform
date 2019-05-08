@@ -102,7 +102,7 @@ class ContractorProducts extends Component {
                 ...this.state.filters,
                 [name]: value
             }
-        })
+        }, () => this.getMyProducts())
     };
 
     handleRemoveProducts = async () => {

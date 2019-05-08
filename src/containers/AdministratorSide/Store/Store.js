@@ -2,53 +2,93 @@ import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import styles from './Store.module.css'
 import nike from "../../../img/nike.jpg";
+import {updateStore, getMyStore} from '../../../actions/storeActions';
 
 class Store extends Component {
 
     state = {
-        phoneNumber: ''
+        headerPhonesNumber: [],
+        footerPhonesNumber: [],
+        domainName: '',
+        instagram: '',
+        facebook: '',
+        linkedin: ''
     };
 
     handleChangeInput = (name) => ({target: {value}}) => {
-        this.setState({
-            [name]: value
-        })
+        if (name === 'headerPhonesNumber' || name === 'footerPhonesNumber') {
+            this.setState({
+                [name]: [{number: value}]
+            })
+        } else {
+            this.setState({
+                [name]: value
+            })
+        }
     };
+
+    getStorInfo = async () => {
+        const res = await getMyStore();
+
+        this.setState(res)
+    };
+
+    handleSave = async (e) => {
+        e.preventDefault();
+
+        await updateStore(this.state);
+    };
+
+    componentDidMount() {
+        this.getStorInfo();
+    }
+
 
     render() {
         const {
-            phoneNumber
+            headerPhonesNumber,
+            footerPhonesNumber,
+            domainName,
+            instagram,
+            facebook,
+            linkedin,
+
+
         } = this.state;
         return (
             <div className='page'>
                 <h3 className='page-title'>Управление интернет магазином (Находится в разработке)</h3>
 
-                <form className='page-content'>
-                    {/*<div className={styles.domen}>*/}
-                    {/*<div>*/}
-                    {/*<div className={styles.inputsGroup}>*/}
-                    {/*<label>Домен или поддомен</label>*/}
-                    {/*<select>*/}
-                    {/*<option>Домен</option>*/}
-                    {/*<option>Поддомен</option>*/}
-                    {/*</select>*/}
-                    {/*</div>*/}
-                    {/*<div>*/}
-                    {/*<label>Имя домена</label>*/}
-                    {/*<input type="text"/>*/}
-                    {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className={styles.radioBtns}>*/}
-                    {/*<div className={styles.radio}>*/}
-                    {/*<input type="radio" id="radio01" name="radio"/>*/}
-                    {/*<label htmlFor="radio01">Топ продаж</label>*/}
-                    {/*</div>*/}
-                    {/*<div className={styles.radio}>*/}
-                    {/*<input type="radio" id="radio02" name="radio"/>*/}
-                    {/*<label htmlFor="radio02">Без товара</label>*/}
-                    {/*</div>*/}
-                    {/*</div>*/}
-                    {/*</div>*/}
+                <form className='page-content' onSubmit={this.handleSave}>
+                    <div className={styles.domen}>
+                        <div>
+                            {/*<div className={styles.inputsGroup}>*/}
+                            {/*<label>Домен или поддомен</label>*/}
+                            {/*<select>*/}
+                            {/*<option>Домен</option>*/}
+                            {/*<option>Поддомен</option>*/}
+                            {/*</select>*/}
+                            {/*</div>*/}
+                            <div>
+                                <label>Имя домена</label>
+                                <input
+                                    type="text"
+                                    value={domainName}
+                                    onChange={this.handleChangeInput('domainName')}
+                                />
+                            </div>
+                        </div>
+                        {/*<div className={styles.radioBtns}>*/}
+                        {/*<div className={styles.radio}>*/}
+                        {/*<input type="radio" id="radio01" name="radio"/>*/}
+                        {/*<label htmlFor="radio01">Топ продаж</label>*/}
+                        {/*</div>*/}
+                        {/*<div className={styles.radio}>*/}
+                        {/*<input type="radio" id="radio02" name="radio"/>*/}
+                        {/*<label htmlFor="radio02">Без товара</label>*/}
+                        {/*</div>*/}
+                        {/*</div>*/}
+                    </div>
 
                     <h4 className={styles.formTitle}>Информация в «Хэдере»</h4>
                     <div className={styles.headerInfo}>
@@ -58,16 +98,17 @@ class Store extends Component {
                                 <input
                                     type="tel"
                                     placeholder="+38 (096) 933 - 45 - 43"
-                                    value={phoneNumber}
-                                    onChange={this.handleChangeInput('phoneNumber')}
+                                    value={headerPhonesNumber.length > 0 ? headerPhonesNumber[0].number : ''}
+                                    onChange={this.handleChangeInput('headerPhonesNumber')}
                                 />
                                 {/*<button className={styles.add} onClick={this.add}>+</button>*/}
                             </div>
-                            <div className={styles.input}>
-                                <label>Раздел навигации 1 (до 6 включительно)</label>
-                                <input type="text" placeholder="Доставка и оплата"/>
-                                {/*<button className={styles.add} onClick={this.add}>+</button>*/}
-                            </div>
+
+                            {/*<div className={styles.input}>*/}
+                                {/*<label>Раздел навигации 1 (до 6 включительно)</label>*/}
+                                {/*<input type="text" placeholder="Доставка и оплата"/>*/}
+                                {/*/!*<button className={styles.add} onClick={this.add}>+</button>*!/*/}
+                            {/*</div>*/}
 
                             {/*<div className={styles.input}>*/}
                             {/*<label>Функция Call-back</label>*/}
@@ -95,25 +136,45 @@ class Store extends Component {
                     <div className={styles.footerInfo}>
                         <div className={styles.input}>
                             <label>Номер телефона 1 (до 6 включительно)</label>
-                            <input type="tel" placeholder="+38 (096) 933 - 45 - 43"/>
+                            <input
+                                type="tel"
+                                placeholder="+38 (096) 933 - 45 - 43"
+                                value={footerPhonesNumber.length > 0 ? footerPhonesNumber[0].number : ''}
+                                onChange={this.handleChangeInput('footerPhonesNumber')}
+
+                            />
                             {/*<button className={styles.add} onClick={this.add}>+</button>*/}
                         </div>
-                        <div className={styles.input}>
-                            <label>Раздел навигации 1 (до 6 включительно)</label>
-                            <input type="text" placeholder="Доставка и оплата"/>
-                            {/*<button className={styles.add} onClick={this.add}>+</button>*/}
-                        </div>
+
+                        {/*<div className={styles.input}>*/}
+                            {/*<label>Раздел навигации 1 (до 6 включительно)</label>*/}
+                            {/*<input type="text" placeholder="Доставка и оплата"/>*/}
+                            {/*/!*<button className={styles.add} onClick={this.add}>+</button>*!/*/}
+                        {/*</div>*/}
+
                         <div>
                             <label>Facebook</label>
-                            <input type="text"/>
+                            <input
+                                type="text"
+                                value={facebook}
+                                onChange={this.handleChangeInput('facebook')}
+                            />
                         </div>
                         <div>
                             <label>Instagram</label>
-                            <input type="text"/>
+                            <input
+                                type="text"
+                                value={instagram}
+                                onChange={this.handleChangeInput('instagram')}
+                            />
                         </div>
                         <div>
                             <label>Linkedin</label>
-                            <input type="text"/>
+                            <input
+                                type="text"
+                                value={linkedin}
+                                onChange={this.handleChangeInput('linkedin')}
+                            />
                         </div>
                     </div>
 

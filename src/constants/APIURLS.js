@@ -92,7 +92,7 @@ export const PASS_TO_CONTRACTOR = (id) => `orders/${id}/pass_to_contractor/`;
 export const CONTRACTOR_ORDERS = 'orders_contractor/';
 
 //STORE
-export const STORE = 'orders/';
+export const STORE = 'my_store/';
 
 
 

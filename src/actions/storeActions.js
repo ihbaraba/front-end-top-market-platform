@@ -5,7 +5,12 @@ import {
 } from '../constants/APIURLS';
 
 
-export const createStore = (store) => {
+export const getMyStore = () => {
     // console.log("login_request this.props", this.props);
-    return api('post', STORE, store)
+    return api('get', STORE)
+};
+
+export const updateStore = (store) => {
+    // console.log("login_request this.props", this.props);
+    return api('put', STORE, store)
 };

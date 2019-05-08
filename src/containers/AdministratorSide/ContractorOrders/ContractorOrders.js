@@ -53,28 +53,28 @@ const columns = [
             let dates = [];
             let newHistory = [];
 
-            const sortedArr = order.statusHistory.sort(function (a, b) {
-                return new Date(b.created) - new Date(a.created);
-            });
+            // const sortedArr = order.statusHistory.sort(function (a, b) {
+            //     return new Date(b.created) - new Date(a.created);
+            // });
 
-            for (let i = 0; i < order.statusHistory.length; i++) {
-                if (sortedArr.length > 0) {
-                    if (sortedArr[i + 1]) {
-                        if (moment(sortedArr[i].created).format('YYYY-MM-DD') === moment(sortedArr[i + 1].created).format('YYYY-MM-DD')) {
-                            dates.push(sortedArr[i]);
-                        } else {
-                            dates.push(sortedArr[i]);
-
-                            newHistory.push({
-                                title: moment(sortedArr[i].created).format('YYYY-MM-DD'),
-                                date: dates
-                            });
-
-                            dates = [];
-                        }
-                    }
-                }
-            }
+            // for (let i = 0; i < order.statusHistory.length; i++) {
+            //     if (sortedArr.length > 0) {
+            //         if (sortedArr[i + 1]) {
+            //             if (moment(sortedArr[i].created).format('YYYY-MM-DD') === moment(sortedArr[i + 1].created).format('YYYY-MM-DD')) {
+            //                 dates.push(sortedArr[i]);
+            //             } else {
+            //                 dates.push(sortedArr[i]);
+            //
+            //                 newHistory.push({
+            //                     title: moment(sortedArr[i].created).format('YYYY-MM-DD'),
+            //                     date: dates
+            //                 });
+            //
+            //                 dates = [];
+            //             }
+            //         }
+            //     }
+            // }
 
             return (
                 <span className={styles.orderStatusInTable}>

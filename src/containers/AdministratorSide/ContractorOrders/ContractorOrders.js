@@ -112,7 +112,6 @@ const columns = [
 ];
 
 class ContractorOrders extends Component {
-
     state = {
         orders: [],
 

@@ -287,6 +287,10 @@ class Categories extends Component {
                             dataSource={products}
                             onChange={this.handleChangeTable}
                         />
+
+                        <div className={styles.totalProductsBottom}>
+                            Товаров: {count}
+                        </div>
                     </div>
                 </div>
             </div>

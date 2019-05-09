@@ -22,7 +22,14 @@
     font-size: 15px;
     font-weight: bold;
     margin: 0 0 0 auto;
+}
 
+.totalProductsBottom {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin: -45px 0 0 auto;
 }
 
 .top {

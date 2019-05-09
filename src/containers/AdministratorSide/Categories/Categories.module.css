@@ -27,9 +27,10 @@
 .totalProductsBottom {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     font-size: 15px;
     font-weight: bold;
-    margin: -45px 0 0 auto;
+    margin: -45px 20px 0 auto;
 }
 
 .top {

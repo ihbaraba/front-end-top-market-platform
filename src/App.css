@@ -112,6 +112,10 @@ a.active {
     color: #fff;
 }
 
+.ant-table-pagination.ant-pagination {
+    margin-left: 20px;
+}
+
 .ant-collapse > .ant-collapse-item > .ant-collapse-header {
     background: #fff;
     color: #4F4F4F;

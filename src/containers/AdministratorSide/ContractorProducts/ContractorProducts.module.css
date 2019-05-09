@@ -281,6 +281,15 @@ input[type=submit] {
     display: block;
 }
 
+.totalProductsBottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 15px;
+    font-weight: bold;
+    margin: -45px 20px 0 auto;
+}
+
 .totalProducts {
     display: flex;
     flex-direction: column;

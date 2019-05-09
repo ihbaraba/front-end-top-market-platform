@@ -442,6 +442,10 @@ class ContractorProducts extends Component {
                             onChange={this.handleChangeTable}
                         />
 
+                        <div className={styles.totalProductsBottom}>
+                            Товаров: {count}
+                        </div>
+
                         <button className={`btn-remove ${styles.removeBtn}`}
                                 onClick={this.handleRemoveProducts}>
                             Удалить товары

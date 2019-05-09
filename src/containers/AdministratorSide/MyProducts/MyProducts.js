@@ -394,6 +394,10 @@ class MyProducts extends Component {
                                 dataSource={products}
                                 onChange={this.handleChangeTable}
                             />
+
+                            <div className={styles.totalProductsBottom}>
+                                Товаров: {count}
+                            </div>
                         </div>
                     </TabPane>
 
@@ -453,6 +457,7 @@ class MyProducts extends Component {
                             </div>
 
                             <InactiveGoodsTable/>
+
                         </div>
                     </TabPane>
 

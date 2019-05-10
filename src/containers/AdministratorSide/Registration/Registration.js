@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Icon, Input, Button, Select, Dropdown} from "antd";
+import {Form, Icon, Input, Button, Select, Radio} from "antd";
 import {Link} from 'react-router-dom';
 import {Modal} from 'antd';
 
@@ -7,18 +7,24 @@ import styles from './Registration.module.css';
 
 import {registration} from '../../../actions/userActions';
 import logo from "../../../img/logo2.png";
-import cart from "../../../img/cart.svg";
-import dollar from "../../../img/dollar.svg";
-import avatar from "../../../img/ava.png";
-import Header from "../components/Header/Header";
 
 const FormItem = Form.Item,
-    Option = Select.Option;
-
+    Option = Select.Option,
+    RadioButton = Radio.Button,
+    RadioGroup = Radio.Group;
 
 class Registration extends Component {
+    state = {
+        role: 'CONTRACTOR'
+    };
 
-     success = () => {
+    onChange = (e) => {
+        this.setState({
+            role: e.target.value
+        })
+    }
+
+    success = () => {
         Modal.success({
             title: 'Регистрация успешна',
             content: 'Для подтверждения вашего адреса электронной почты мы отправили вам письмо',
@@ -33,7 +39,10 @@ class Registration extends Component {
 
         this.props.form.validateFields((err, user) => {
             if (!err) {
-                registration(user)
+                registration({
+                    ...user,
+                    role: this.state.role
+                })
                     .then(res => {
                         this.success()
 
@@ -51,13 +60,23 @@ class Registration extends Component {
                 <div className='container'>
                     <header>
                         <div className={styles.logo}>
-                            <img src={logo} alt="logo" />SMART Lead 2.0
+                            <img src={logo} alt="logo"/>SMART Lead 2.0
                         </div>
-                        <Link to='/login'><button className={styles.regBtn}>Войти</button></Link>
+                        <Link to='/login'>
+                            <button className={styles.regBtn}>Войти</button>
+                        </Link>
                     </header>
                 </div>
                 <Form onSubmit={this.handleSubmit} className={styles.Form}>
                     <h3 className={styles.title}>Регистрация</h3>
+
+                    <div className={styles.selectedRole}>
+                        <RadioGroup onChange={this.onChange} defaultValue="CONTRACTOR">
+                            <RadioButton value="CONTRACTOR">Поставщик</RadioButton>
+                            <RadioButton value="PARTNER">Партнер</RadioButton>
+                        </RadioGroup>
+                    </div>
+
                     <FormItem>
                         <label>Ваш email</label>
                         {getFieldDecorator("email", {
@@ -65,7 +84,6 @@ class Registration extends Component {
                                 {required: true, message: "Введите Ваш email!"},
                             ]
                         })(
-
                             <Input
                                 // prefix={<Icon type="user" style={{fontSize: 13}}/>}
                                 placeholder="Email"
@@ -80,7 +98,6 @@ class Registration extends Component {
                                 {required: true, message: "Введите Ваш номер тетефона!"},
                             ]
                         })(
-
                             <Input
                                 type="tel"
                                 placeholder="Phone"
@@ -115,19 +132,6 @@ class Registration extends Component {
                         )}
                     </FormItem>
 
-                    <FormItem>
-                        <label>Выберите роль</label>
-                        {getFieldDecorator("role", {
-                            rules: [
-                                {required: true, message: "Выберите роль!"},
-                            ]
-                        })(
-                            <Select className={styles.role}>
-                                <Option value='CONTRACTOR'>поставщик</Option>
-                                <Option value='PARTNER'>партнер</Option>
-                            </Select>
-                        )}
-                    </FormItem>
 
                     <div className={styles.actions}>
                         <Link to='/'>У меня уже есть аккаунт</Link>

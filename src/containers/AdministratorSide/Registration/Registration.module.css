@@ -31,6 +31,17 @@
     display: block;
 }
 
+.selectedRole div {
+    width: 100%;
+    display: flex !important;
+}
+.selectedRole div label {
+    width: 50%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
 .title {
     color: #4A4A4A;
     font-family: Ubuntu;

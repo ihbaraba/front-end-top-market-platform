@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Icon, Input, Button, Select, Radio} from "antd";
+import {Form, Input, Button, Radio} from "antd";
 import {Link} from 'react-router-dom';
 import {Modal} from 'antd';
 
@@ -9,7 +9,6 @@ import {registration} from '../../../actions/userActions';
 import logo from "../../../img/logo2.png";
 
 const FormItem = Form.Item,
-    Option = Select.Option,
     RadioButton = Radio.Button,
     RadioGroup = Radio.Group;
 
@@ -67,6 +66,7 @@ class Registration extends Component {
                         </Link>
                     </header>
                 </div>
+
                 <Form onSubmit={this.handleSubmit} className={styles.Form}>
                     <h3 className={styles.title}>Регистрация</h3>
 

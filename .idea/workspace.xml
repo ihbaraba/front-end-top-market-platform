@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/userActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/CategoryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Registration/Registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/2/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/2/t-shirt-outline.svg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,13 +31,10 @@
       <file leaf-file-name="CategoryList.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+            <state relative-caret-position="502">
+              <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#609#654#0" expanded="true" />
-                <element signature="e#802#849#0" expanded="true" />
-                <element signature="e#1048#1095#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -447,7 +440,7 @@
       <workItem from="1557480289226" duration="4954000" />
       <workItem from="1557559406376" duration="1710000" />
       <workItem from="1557644891133" duration="1814000" />
-      <workItem from="1557732449097" duration="10045000" />
+      <workItem from="1557732449097" duration="12779000" />
     </task>
     <task id="LOCAL-00001" summary="add CI, add Dockerfile">
       <created>1555070821463</created>
@@ -460,13 +453,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391274000" />
+    <option name="totallyTimeSpent" value="394008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46259543" visible="true" weight="0.15792646" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46259543" visible="true" weight="0.15792646" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50030136" side_tool="true" weight="0.32923076" />
@@ -564,7 +557,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -922,13 +915,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        <state relative-caret-position="502">
+          <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#609#654#0" expanded="true" />
-            <element signature="e#802#849#0" expanded="true" />
-            <element signature="e#1048#1095#0" expanded="true" />
           </folding>
         </state>
       </provider>

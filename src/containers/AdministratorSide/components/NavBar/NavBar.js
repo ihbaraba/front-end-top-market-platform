@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {NavLink} from 'react-router-dom';
 import styles from './NavBar.module.css'
 import 'antd/dist/antd.css';
+import CategoryList from "./CategoryList";
 
 import cabinet from '../../../../img/navIcons/user.svg';
 import cabinetActive from '../../../../img/navIcons/user2.svg';
@@ -34,6 +35,10 @@ import studyActive from '../../../../img/navIcons/teacher-reading2.svg';
 
 import сontact from '../../../../img/navIcons/contact.svg';
 import сontactActive from '../../../../img/navIcons/contact-active.svg';
+
+
+import {selectedCategory} from "../../../../actions/userActions";
+import {getAllCategories} from "../../../../actions/productsActions";
 
 const SubMenu = Menu.SubMenu;
 
@@ -170,6 +175,8 @@ const partnerMenu = [
 class NavBar extends Component {
     state = {
         collapsed: false,
+        categories: [],
+        selectedItem: 'Мои товары'
     };
 
     toggleCollapsed = () => {
@@ -178,8 +185,25 @@ class NavBar extends Component {
         });
     };
 
+    handleChangeCategory = (category) => {
+        console.log(category);
+        this.props.selectedCategory(category.key)
+    };
+
+    async componentDidMount() {
+        const res = await getAllCategories();
+        this.setState({
+            categories: res
+        });
+    }
+
     render() {
-        const navigation = this.props.user.role === 'CONTRACTOR' ? contractorMenu : partnerMenu;
+        const navigation = this.props.user.role === 'CONTRACTOR' ? contractorMenu : partnerMenu,
+            {
+                selectedItem,
+                categories
+            } = this.state;
+
 
         return (
             <div className={styles.navigationBar}>
@@ -194,7 +218,7 @@ class NavBar extends Component {
                     {navigation.map((item, index) => {
                         if (item.developing) {
                             return (
-                                <Menu.Item key={index}>
+                                <Menu.Item key={index} onClick={() => this.setState({selectedItem: item.title})}>
                                     <Tooltip placement="right" title='Находится в разработке'>
                                         <NavLink
                                             className={styles.menuItem}
@@ -210,7 +234,7 @@ class NavBar extends Component {
                             )
                         } else {
                             return (
-                                <Menu.Item key={index}>
+                                <Menu.Item key={index} onClick={() => this.setState({selectedItem: item.title})}>
                                     <NavLink
                                         className={styles.menuItem}
                                         key={index}
@@ -220,6 +244,12 @@ class NavBar extends Component {
 
                                         {item.title}
                                     </NavLink>
+
+                                    {(item.title === 'Мои товары' && selectedItem === 'Мои товары') ?
+                                        <CategoryList
+                                            categories={categories}
+                                            onSelectCategory={this.handleChangeCategory}
+                                        /> : ''}
                                 </Menu.Item>
                             )
                         }
@@ -236,6 +266,8 @@ const mapStateToProps = state => ({
     user: state.user
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    selectedCategory: (category) => dispatch(selectedCategory(category)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

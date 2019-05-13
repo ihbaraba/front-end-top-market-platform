@@ -284,16 +284,15 @@ class ContractorProducts extends Component {
         return (
             <div className='page'>
                 <div className={`page-title ${styles.top}`}>
-                    <Popover placement="bottom" content={(
-                        <CategoryList
-                            categories={categories}
-                            onSelectCategory={this.handleSelectCategory}
-                        />
-                    )}>
-                        <Icon type="bars"/>
-                        Категории
-                    </Popover>
-
+                    {/*<Popover placement="bottom" content={(*/}
+                        {/*<CategoryList*/}
+                            {/*categories={categories}*/}
+                            {/*onSelectCategory={this.handleSelectCategory}*/}
+                        {/*/>*/}
+                    {/*)}>*/}
+                        {/*<Icon type="bars"/>*/}
+                    {/*</Popover>*/}
+                    Категории
 
                     <Link to="/admin/instruction" className={styles.howToAdd}>Как добавить товар?</Link>
                 </div>

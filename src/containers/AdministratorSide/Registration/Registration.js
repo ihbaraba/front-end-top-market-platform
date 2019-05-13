@@ -21,7 +21,7 @@ class Registration extends Component {
         this.setState({
             role: e.target.value
         })
-    }
+    };
 
     success = () => {
         Modal.success({

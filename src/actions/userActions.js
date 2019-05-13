@@ -50,6 +50,13 @@ export const updateProfile = user => dispatch => {
         })
 };
 
+export const selectedCategory = (category) => dispatch => {
+    return dispatch({
+        type: 'CHANGE_CATEGORY',
+        payload: category
+    })
+};
+
 export const changePassword = pass => {
     return api('put', PASSWORD, pass)
 };

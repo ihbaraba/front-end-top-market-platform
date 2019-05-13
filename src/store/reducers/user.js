@@ -9,6 +9,12 @@ export default function userState(state = {}, action) {
                 ...payload
             };
 
+        case 'CHANGE_CATEGORY':
+            return {
+                ...state,
+                payload
+            };
+
         default:
             return state
     }

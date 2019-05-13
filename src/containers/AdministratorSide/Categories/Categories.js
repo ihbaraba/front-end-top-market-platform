@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import {Table, Popover, Icon} from 'antd';
 import styles from './Categories.module.css'
-import CategoryList from "./CategoryList";
+import CategoryList from "../components/NavBar/CategoryList";
 import {getAllProducts, getAllCategories, copyProducts} from '../../../actions/productsActions';
 
 const columns = [
@@ -164,14 +164,14 @@ class Categories extends Component {
         return (
             <div className='page'>
                 <h3 className='page-title'>
-                    <Popover placement="bottom" content={(
-                        <CategoryList
-                            categories={categories}
-                            onSelectCategory={this.handleSelectCategory}
-                        />
-                    )}>
-                        <Icon type="bars"/>
-                    </Popover>
+                    {/*<Popover placement="bottom" content={(*/}
+                        {/*<CategoryList*/}
+                            {/*categories={categories}*/}
+                            {/*onSelectCategory={this.handleSelectCategory}*/}
+                        {/*/>*/}
+                    {/*)}>*/}
+                        {/*<Icon type="bars"/>*/}
+                    {/*</Popover>*/}
 
                     Категории
                 </h3>
@@ -275,7 +275,7 @@ class Categories extends Component {
                                 />
                             </div>
                             {/*<div>*/}
-                                {/*<button className='btn' onClick={this.getProducts}>Поиск</button>*/}
+                            {/*<button className='btn' onClick={this.getProducts}>Поиск</button>*/}
                             {/*</div>*/}
                         </div>
 

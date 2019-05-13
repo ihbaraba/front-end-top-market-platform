@@ -176,7 +176,7 @@ class NavBar extends Component {
     state = {
         collapsed: false,
         categories: [],
-        selectedItem: 'Мои товары'
+        selectedItem: ''
     };
 
     toggleCollapsed = () => {
@@ -245,7 +245,7 @@ class NavBar extends Component {
                                         {item.title}
                                     </NavLink>
 
-                                    {(item.title === 'Мои товары' && selectedItem === 'Мои товары') ?
+                                    {((item.title === 'Мои товары' && selectedItem === 'Мои товары') || ( item.title === 'Все товары' && selectedItem === 'Все товары')) ?
                                         <CategoryList
                                             categories={categories}
                                             onSelectCategory={this.handleChangeCategory}

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/2/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/2/t-shirt-outline.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryList.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CategoryList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+            <state relative-caret-position="330">
+              <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -40,15 +37,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavBar.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NavBar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="248" column="48" lean-forward="true" selection-start-line="248" selection-start-column="48" selection-end-line="248" selection-end-column="48" />
+            <state relative-caret-position="406">
+              <caret line="245" column="46" lean-forward="true" selection-start-line="245" selection-start-column="46" selection-end-line="245" selection-end-column="46" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#1630#2847#0" />
-                <element signature="e#2870#4370#0" />
               </folding>
             </state>
           </provider>
@@ -84,8 +80,8 @@
       <file leaf-file-name="Categories.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="174" selection-start-line="166" selection-end-line="174" />
+            <state relative-caret-position="92">
+              <caret line="164" column="34" lean-forward="true" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -203,8 +199,8 @@
         <option value="$PROJECT_DIR$/src/store/reducers/user.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" />
       </list>
     </option>
   </component>
@@ -259,12 +255,6 @@
               <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
               <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
@@ -440,7 +430,7 @@
       <workItem from="1557480289226" duration="4954000" />
       <workItem from="1557559406376" duration="1710000" />
       <workItem from="1557644891133" duration="1814000" />
-      <workItem from="1557732449097" duration="12779000" />
+      <workItem from="1557732449097" duration="15875000" />
     </task>
     <task id="LOCAL-00001" summary="add CI, add Dockerfile">
       <created>1555070821463</created>
@@ -453,13 +443,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394008000" />
+    <option name="totallyTimeSpent" value="397104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46259543" visible="true" weight="0.15792646" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46259543" visible="true" weight="0.15792646" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50030136" side_tool="true" weight="0.32923076" />
@@ -467,7 +457,7 @@
       <window_info id="npm" order="2" sideWeight="0.5374046" side_tool="true" weight="0.15792646" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32820514" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4996986" weight="0.32820514" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4996986" visible="true" weight="0.32820514" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
@@ -884,16 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="174" selection-start-line="166" selection-end-line="174" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="563">
@@ -901,24 +881,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="248" column="48" lean-forward="true" selection-start-line="248" selection-start-column="48" selection-end-line="248" selection-end-column="48" />
+        <state relative-caret-position="330">
+          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#1630#2847#0" />
-            <element signature="e#2870#4370#0" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+        <state relative-caret-position="92">
+          <caret line="164" column="34" lean-forward="true" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="245" column="46" lean-forward="true" selection-start-line="245" selection-start-column="46" selection-end-line="245" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#1630#2847#0" />
           </folding>
         </state>
       </provider>

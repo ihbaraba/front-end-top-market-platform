@@ -186,8 +186,12 @@ class NavBar extends Component {
     };
 
     handleChangeCategory = (category) => {
-        console.log(category);
-        this.props.selectedCategory(category.key)
+        this.props.selectedCategory({selectedCategory: category.key})
+    };
+
+    changePage = (title) => {
+        this.setState({selectedItem: title});
+        this.props.selectedCategory({selectedCategory: ''})
     };
 
     async componentDidMount() {
@@ -218,11 +222,12 @@ class NavBar extends Component {
                     {navigation.map((item, index) => {
                         if (item.developing) {
                             return (
-                                <Menu.Item key={index} onClick={() => this.setState({selectedItem: item.title})}>
+                                <Menu.Item key={index}>
                                     <Tooltip placement="right" title='Находится в разработке'>
                                         <NavLink
                                             className={styles.menuItem}
                                             key={index}
+                                            onClick={() => this.changePage(item.title)}
                                             to={`/admin/${item.href}`}>
                                             <img src={item.icon} alt="" className='default-icon'/>
                                             <img src={item.activeIcon} alt="" className='active-icon'/>
@@ -234,10 +239,11 @@ class NavBar extends Component {
                             )
                         } else {
                             return (
-                                <Menu.Item key={index} onClick={() => this.setState({selectedItem: item.title})}>
+                                <Menu.Item key={index}>
                                     <NavLink
                                         className={styles.menuItem}
                                         key={index}
+                                        onClick={() => this.changePage(item.title)}
                                         to={`/admin/${item.href}`}>
                                         <img src={item.icon} alt="" className='default-icon'/>
                                         <img src={item.activeIcon} alt="" className='active-icon'/>
@@ -245,7 +251,7 @@ class NavBar extends Component {
                                         {item.title}
                                     </NavLink>
 
-                                    {((item.title === 'Мои товары' && selectedItem === 'Мои товары') || ( item.title === 'Все товары' && selectedItem === 'Все товары')) ?
+                                    {((item.title === 'Мои товары' && selectedItem === 'Мои товары') || (item.title === 'Все товары' && selectedItem === 'Все товары')) ?
                                         <CategoryList
                                             categories={categories}
                                             onSelectCategory={this.handleChangeCategory}

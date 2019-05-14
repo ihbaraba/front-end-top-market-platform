@@ -4,6 +4,7 @@ import {Table, Popover, Icon} from 'antd';
 import styles from './Categories.module.css'
 import CategoryList from "../components/NavBar/CategoryList";
 import {getAllProducts, getAllCategories, copyProducts} from '../../../actions/productsActions';
+import {connect} from "react-redux";
 
 const columns = [
     {
@@ -133,6 +134,17 @@ class Categories extends Component {
             }
         }, () => this.getProducts())
     };
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.user.selectedCategory !== this.state.category_id) {
+            this.setState({
+                filters: {
+                    ...this.state.filters,
+                    category_id: nextProps.user.selectedCategory
+                }
+            }, () => this.getMyProducts())
+        }
+    }
 
     async componentDidMount() {
         this.getProducts();
@@ -298,7 +310,16 @@ class Categories extends Component {
     }
 }
 
-export default Categories;
+
+
+
+const mapStateToProps = state => ({
+    user: state.user
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);
 
 
 

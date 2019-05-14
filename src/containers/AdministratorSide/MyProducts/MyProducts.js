@@ -11,6 +11,7 @@ import CategoryList from "./CategoryList";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {Menu, Dropdown, Icon, notification} from 'antd';
 import EditProductWindow from './EditProductWindow';
+import {connect} from "react-redux";
 
 const TabPane = Tabs.TabPane;
 
@@ -126,6 +127,18 @@ class MyProducts extends Component {
             promUrl: prom
         })
     };
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.user.selectedCategory !== this.state.category_id) {
+            this.setState({
+                filters: {
+                    ...this.state.filters,
+                    category_id: nextProps.user.selectedCategory
+                }
+            }, () => this.getMyProducts())
+        }
+    }
+
 
     async componentDidMount() {
         this.getMyProducts();
@@ -516,9 +529,12 @@ class MyProducts extends Component {
     }
 }
 
-export default MyProducts;
 
+const mapStateToProps = state => ({
+    user: state.user
+});
 
+const mapDispatchToProps = dispatch => ({});
 
-
+export default connect(mapStateToProps, mapDispatchToProps)(MyProducts);
 

@@ -12,8 +12,9 @@ import {
     removeContractorProduct,
     getDownloadsStatus
 } from '../../../actions/productsActions';
-import {getProfile} from '../../../actions/userActions';
+import {getProfile, selectedCategory} from '../../../actions/userActions';
 import NewProduct from "../components/Modal/NewProduct";
+import {connect} from "react-redux";
 
 class ContractorProducts extends Component {
     state = {
@@ -44,6 +45,7 @@ class ContractorProducts extends Component {
 
     getMyProducts = async () => {
         const {currentPage, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
+        console.log(this.props.user)
 
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',
@@ -181,6 +183,16 @@ class ContractorProducts extends Component {
         }
     };
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.user.selectedCategory !== this.state.category_id) {
+            this.setState({
+                filters: {
+                    ...this.state.filters,
+                    category_id: nextProps.user.selectedCategory
+                }
+            }, () => this.getMyProducts())
+        }
+    }
 
     async componentDidMount() {
         this.getMyProducts();
@@ -224,7 +236,7 @@ class ContractorProducts extends Component {
             onSelection: this.onSelection,
         };
 
-
+        console.log(this.props.user.selectedCategory);
         const columns = [
             {
                 title: 'Название товара',
@@ -285,12 +297,12 @@ class ContractorProducts extends Component {
             <div className='page'>
                 <div className={`page-title ${styles.top}`}>
                     {/*<Popover placement="bottom" content={(*/}
-                        {/*<CategoryList*/}
-                            {/*categories={categories}*/}
-                            {/*onSelectCategory={this.handleSelectCategory}*/}
-                        {/*/>*/}
+                    {/*<CategoryList*/}
+                    {/*categories={categories}*/}
+                    {/*onSelectCategory={this.handleSelectCategory}*/}
+                    {/*/>*/}
                     {/*)}>*/}
-                        {/*<Icon type="bars"/>*/}
+                    {/*<Icon type="bars"/>*/}
                     {/*</Popover>*/}
                     Категории
 
@@ -456,9 +468,12 @@ class ContractorProducts extends Component {
     }
 }
 
-export default ContractorProducts;
 
+const mapStateToProps = state => ({
+    user: state.user
+});
 
+const mapDispatchToProps = dispatch => ({});
 
-
+export default connect(mapStateToProps, mapDispatchToProps)(ContractorProducts);
 

@@ -35,6 +35,7 @@ class ContractorProducts extends Component {
 
         count: 0,
         currentPage: 1,
+        pageSize: 10,
 
         uploadExel: false,
         uploadRozetka: false,
@@ -44,8 +45,7 @@ class ContractorProducts extends Component {
     };
 
     getMyProducts = async () => {
-        const {currentPage, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
-        console.log(this.props.user)
+        const {currentPage,pageSize, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
 
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',
@@ -57,7 +57,7 @@ class ContractorProducts extends Component {
             max_price ? `&max_price=${max_price}` : '',
         ];
 
-        const url = `?page=${currentPage + urlParams.join('')}`;
+        const url = `?page_size=${pageSize}&page=${currentPage + urlParams.join('')}`;
 
         const [all, inStock, notInStock] = await Promise.all([getContractorProducts(url), getContractorProducts(`?in_stock=${true}`), getContractorProducts(`?in_stock=${false}`)]);
 
@@ -120,9 +120,10 @@ class ContractorProducts extends Component {
     };
 
 
-    handleChangeTable = ({current}) => {
+    handleChangeTable = (pagination) => {
         this.setState({
-            currentPage: current
+            currentPage: pagination.current,
+            pageSize: pagination.pageSize
         }, () => this.getMyProducts())
     };
 
@@ -226,7 +227,8 @@ class ContractorProducts extends Component {
             uploadExel,
             uploadRozetka,
             inStock,
-            notInStock
+            notInStock,
+            pageSize
         } = this.state;
 
         const rowSelection = {
@@ -236,7 +238,6 @@ class ContractorProducts extends Component {
             onSelection: this.onSelection,
         };
 
-        console.log(this.props.user.selectedCategory);
         const columns = [
             {
                 title: 'Название товара',
@@ -287,7 +288,9 @@ class ContractorProducts extends Component {
 
         const config = {
             pagination: {
-                pageSize: 10,
+                pageSize: pageSize,
+                pageSizeOptions: [10, 20, 50],
+                showSizeChanger: true,
                 total: count,
                 current: currentPage
             }

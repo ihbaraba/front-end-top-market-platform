@@ -36,13 +36,14 @@ class MyProducts extends Component {
             in_stock: ''
         },
         count: 0,
+        pageSize: 10,
         currentPage: 1,
         rozetkaUrl: '',
         promUrl: ''
     };
 
     getMyProducts = async () => {
-        const {currentPage, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
+        const {currentPage, pageSize, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',
             name ? `&name=${name}` : '',
@@ -53,7 +54,7 @@ class MyProducts extends Component {
             max_price ? `&max_price=${max_price}` : '',
         ];
 
-        const url = `?page=${currentPage + urlParams.join('')}`;
+        const url = `?page_size=${pageSize}&page=${currentPage + urlParams.join('')}`;
         const res = await getPartnerProducts(url);
 
         this.setState({
@@ -71,12 +72,13 @@ class MyProducts extends Component {
         }, () => this.getMyProducts())
     };
 
-
-    handleChangeTable = ({current}) => {
+    handleChangeTable = (pagination) => {
         this.setState({
-            currentPage: current
+            currentPage: pagination.current,
+            pageSize: pagination.pageSize
         }, () => this.getMyProducts())
     };
+
 
     handleChangeFilters = ({target: {name, value}}) => {
         this.setState({
@@ -160,6 +162,7 @@ class MyProducts extends Component {
             categories,
             rozetkaUrl,
             count,
+            pageSize,
             currentPage,
             filters: {
                 brand,
@@ -178,7 +181,9 @@ class MyProducts extends Component {
 
         const config = {
             pagination: {
-                pageSize: 10,
+                pageSize: pageSize,
+                pageSizeOptions: [10, 20, 50],
+                showSizeChanger: true,
                 total: count,
                 current: currentPage
             }

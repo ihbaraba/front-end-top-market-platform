@@ -172,6 +172,11 @@ a.active {
     background: #ffffff;
 }
 
+.ant-pagination-options .ant-select-selection--single {
+    width: 100px !important;
+    height: auto !important;
+}
+
 .ant-modal-content {
     width: 691px;
     border: 1px solid #ECECEC;

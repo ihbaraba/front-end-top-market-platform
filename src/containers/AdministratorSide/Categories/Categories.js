@@ -64,6 +64,7 @@ class Categories extends Component {
         },
 
         count: 0,
+        pageSize: 10,
         currentPage: 1
     };
 
@@ -72,7 +73,7 @@ class Categories extends Component {
     };
 
     getProducts = async () => {
-        const {currentPage, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
+        const {currentPage, pageSize, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',
             name ? `&name=${name}` : '',
@@ -83,7 +84,7 @@ class Categories extends Component {
             max_price ? `&max_price=${max_price}` : '',
         ];
 
-        const url = `?page=${currentPage + urlParams.join('')}`;
+        const url = `?page_size=${pageSize}&page=${currentPage + urlParams.join('')}`;
         const res = await getAllProducts(url);
 
         this.setState({
@@ -92,9 +93,10 @@ class Categories extends Component {
         })
     };
 
-    handleChangeTable = ({current}) => {
+    handleChangeTable = (pagination) => {
         this.setState({
-            currentPage: current
+            currentPage: pagination.current,
+            pageSize: pagination.pageSize
         }, () => this.getProducts())
     };
 
@@ -157,7 +159,7 @@ class Categories extends Component {
 
 
     render() {
-        const {selectedRowKeys, products, categories, count, currentPage, filters: {brand, name, vendor_code, min_price, max_price}} = this.state;
+        const {selectedRowKeys, products, categories, count, pageSize, currentPage, filters: {brand, name, vendor_code, min_price, max_price}} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -167,7 +169,9 @@ class Categories extends Component {
 
         const config = {
             pagination: {
-                pageSize: 10,
+                pageSize: pageSize,
+                pageSizeOptions: [10, 20, 50],
+                showSizeChanger: true,
                 total: count,
                 current: currentPage
             }

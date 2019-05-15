@@ -102,7 +102,7 @@ class Categories extends Component {
                     ...this.state.filters,
                     category_id: nextProps.user.selectedCategory
                 }
-            }, () => this.getMyProducts())
+            }, () => this.getProducts())
         }
     }
 
@@ -117,7 +117,7 @@ class Categories extends Component {
 
 
     render() {
-        const {selectedRowKeys, products, categories, count, pageSize, currentPage, filters: {brand, name, vendor_code, min_price, max_price}} = this.state;
+        const {selectedRowKeys, products, count, pageSize, currentPage, filters: {brand, name, vendor_code, min_price, max_price}} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -213,11 +213,38 @@ class Categories extends Component {
                 )
             },
             {
-                title: 'Количество',
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Количество</label>
+                        <select className={styles.availability}
+                                onChange={({target: {value}}) => this.handleChangeFilters({
+                                    target: {
+                                        name: 'in_stock',
+                                        value: value
+                                    }
+                                })}>
+                            <option value=''>Все</option>
+                            <option value={true}>В наличии</option>
+                            <option value={false}>Нет в наличии</option>
+                        </select>
+                    </div>
+
+                ),
                 dataIndex: 'count',
             },
             {
-                title: 'Цена',
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Цена</label>
+                        <input
+                            type="number"
+                            className={styles.productName}
+                            name='min_price'
+                            value={min_price}
+                            onChange={this.handleChangeFilters}
+                        />
+                    </div>
+                ),
                 dataIndex: 'price',
             }
         ];
@@ -225,15 +252,6 @@ class Categories extends Component {
         return (
             <div className='page'>
                 <h3 className='page-title'>
-                    {/*<Popover placement="bottom" content={(*/}
-                    {/*<CategoryList*/}
-                    {/*categories={categories}*/}
-                    {/*onSelectCategory={this.handleSelectCategory}*/}
-                    {/*/>*/}
-                    {/*)}>*/}
-                    {/*<Icon type="bars"/>*/}
-                    {/*</Popover>*/}
-
                     Категории
                 </h3>
 
@@ -250,96 +268,7 @@ class Categories extends Component {
                             <div className={styles.totalProducts}>
                                 Товаров: {count}
                             </div>
-
-                            {/*<button className={styles.downloadExel}>Загрузить Exel файл</button>*/}
                         </div>
-
-                        <div className={styles.filter}>
-                            {/*<div className={styles.nameProduct}>*/}
-                            {/*<label>Название товара</label>*/}
-                            {/*<input*/}
-                            {/*type="text"*/}
-                            {/*className={styles.productName}*/}
-                            {/*name='name'*/}
-                            {/*value={name}*/}
-                            {/*onChange={this.handleChangeFilters}*/}
-                            {/*/>*/}
-                            {/*</div>*/}
-
-                            {/*<div className={styles.vendorCode}>*/}
-                            {/*<label>Артикул</label>*/}
-                            {/*<input*/}
-                            {/*type="text"*/}
-                            {/*className={styles.productName}*/}
-                            {/*name='vendor_code'*/}
-                            {/*value={vendor_code}*/}
-                            {/*onChange={this.handleChangeFilters}*/}
-                            {/*/>*/}
-                            {/*</div>*/}
-
-                            {/*<div className={styles.brand}>*/}
-                            {/*<label>Бренд</label>*/}
-                            {/*<input*/}
-                            {/*type="text"*/}
-                            {/*className={styles.productName}*/}
-                            {/*name='brand'*/}
-                            {/*value={brand}*/}
-                            {/*onChange={this.handleChangeFilters}*/}
-                            {/*/>*/}
-                            {/*</div>*/}
-
-                            {/*<div className={styles.category}>*/}
-                                {/*<label>Категория</label>*/}
-
-                                {/*<select className={styles.availability} onChange={({target: {value}}) => this.setState({*/}
-                                    {/*filters: {*/}
-                                        {/*...this.state.filters,*/}
-                                        {/*category: value*/}
-                                    {/*}*/}
-                                {/*})}>*/}
-                                    {/*<option value=''>Все</option>*/}
-                                {/*</select>*/}
-                            {/*</div>*/}
-
-                            <div>
-                                <label>Наличие</label>
-                                <select className={styles.availability} onChange={({target: {value}}) => this.setState({
-                                    filters: {
-                                        ...this.state.filters,
-                                        in_stock: value
-                                    }
-                                })}>
-                                    <option value=''>Все</option>
-                                    <option value={true}>В наличии</option>
-                                    <option value={false}>Нет в наличии</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label>Цена от</label>
-                                <input
-                                    type="number"
-                                    className={styles.productName}
-                                    name='min_price'
-                                    value={min_price}
-                                    onChange={this.handleChangeFilters}
-                                />
-                            </div>
-                            <div>
-                                <label>До</label>
-                                <input
-                                    type="number"
-                                    className={styles.productName}
-                                    name='max_price'
-                                    value={max_price}
-                                    onChange={this.handleChangeFilters}
-                                />
-                            </div>
-                            {/*<div>*/}
-                            {/*<button className='btn' onClick={this.getProducts}>Поиск</button>*/}
-                            {/*</div>*/}
-                        </div>
-
 
                         <Table
                             {...config}

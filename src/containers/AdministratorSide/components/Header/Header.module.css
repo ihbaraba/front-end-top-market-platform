@@ -115,10 +115,20 @@ header {
     margin-right: 19px;
     overflow: hidden;
 }
+
 .avatar img {
     width: 100%;
 }
+
+.nameBlock {
+    display: flex;
+    flex-direction: column;
+    color: #9B9B9B;
+    font-size: 12px !important;
+}
+
 .name {
+    display: flex;
     color: #9B9B9B;
     font-family: Ubuntu;
     font-size: 18px;

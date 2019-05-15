@@ -81,7 +81,11 @@ class Header extends Component {
                         </div>
                         <Dropdown overlay={menu}>
                             <a className="ant-dropdown-link" href="#">
-                                <span className={styles.name}>{user.firstName || 'User'}</span><Icon type="down"/>
+                                <div className={styles.nameBlock}>
+                                    <span className={styles.name}>{user.firstName || 'User'}</span>
+                                    <span>{user.role === 'PARTNER' ? 'Партнер' : 'Поставщик'}</span>
+                                </div>
+                                <Icon type="down"/>
                             </a>
                         </Dropdown>
                     </div>

@@ -291,6 +291,12 @@ button:disabled:hover {
     font-weight: bold;
     line-height: 22px;
     margin-right: 20px;
+    cursor: pointer;
+}
+
+.ant-dropdown-link {
+    display: flex;
+    align-items: center;
 }
 
 .product-avatar {

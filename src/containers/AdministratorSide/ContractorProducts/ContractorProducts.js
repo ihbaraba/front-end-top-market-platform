@@ -45,7 +45,7 @@ class ContractorProducts extends Component {
     };
 
     getMyProducts = async () => {
-        const {currentPage,pageSize, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
+        const {currentPage, pageSize, filters: {category_id, name, brand, in_stock, vendor_code, min_price, max_price}} = this.state;
 
         const urlParams = [
             category_id ? `&category_id=${category_id}` : '',

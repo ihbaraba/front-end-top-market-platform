@@ -2,50 +2,8 @@ import React, {Component} from 'react'
 import 'antd/dist/antd.css';
 import {Table, Popover, Icon} from 'antd';
 import styles from './Categories.module.css'
-import CategoryList from "../components/NavBar/CategoryList";
 import {getAllProducts, getAllCategories, copyProducts} from '../../../actions/productsActions';
 import {connect} from "react-redux";
-
-const columns = [
-    {
-        title: 'Название товара',
-        dataIndex: 'name',
-        render: (name, item) => (
-            <span className='product-avatar'>
-                <img
-                    src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls.length > 0 ? item.imageUrls [0].url : '')}
-                    alt=""/>
-                {name}
-            </span>
-        ),
-        width: '20%'
-    },
-    {
-        title: 'Артикул',
-        dataIndex: 'vendorCode',
-    },
-    {
-        title: 'Бренд',
-        dataIndex: 'brand',
-        width: '15%'
-    },
-    {
-        title: 'Категория',
-        dataIndex: 'category',
-        render: (category) => (
-            <span>{category ? category.name : ''}</span>
-        )
-    },
-    {
-        title: 'Количество',
-        dataIndex: 'count',
-    },
-    {
-        title: 'Цена',
-        dataIndex: 'price',
-    }
-];
-
 
 class Categories extends Component {
     state = {
@@ -177,16 +135,103 @@ class Categories extends Component {
             }
         };
 
+        const columns = [
+            {
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Название товара</label>
+                        <input
+                            type="text"
+                            className={styles.productName}
+                            name='name'
+                            value={name}
+                            onChange={this.handleChangeFilters}
+                        />
+                    </div>
+                ),
+                dataIndex: 'name',
+                render: (name, item) => (
+                    <span className='product-avatar'>
+                <img
+                    src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls.length > 0 ? item.imageUrls [0].url : '')}
+                    alt=""/>
+                        {name}
+            </span>
+                ),
+                width: '20%'
+            },
+            {
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Артикул</label>
+                        <input
+                            type="text"
+                            className={styles.productName}
+                            name='vendor_code'
+                            value={vendor_code}
+                            onChange={this.handleChangeFilters}
+                        />
+                    </div>
+                ),
+                dataIndex: 'vendorCode',
+            },
+            {
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Бренд</label>
+                        <input
+                            type="text"
+                            className={styles.productName}
+                            name='brand'
+                            value={brand}
+                            onChange={this.handleChangeFilters}
+                        />
+                    </div>
+                ),
+                dataIndex: 'brand',
+                width: '15%'
+            },
+            {
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Категория</label>
+
+                        <select className={styles.availability} onChange={({target: {value}}) => this.setState({
+                            filters: {
+                                ...this.state.filters,
+                                category: value
+                            }
+                        })}>
+                            <option value=''>Все</option>
+                        </select>
+                    </div>
+
+                ),
+                dataIndex: 'category',
+                render: (category) => (
+                    <span>{category ? category.name : ''}</span>
+                )
+            },
+            {
+                title: 'Количество',
+                dataIndex: 'count',
+            },
+            {
+                title: 'Цена',
+                dataIndex: 'price',
+            }
+        ];
+
         return (
             <div className='page'>
                 <h3 className='page-title'>
                     {/*<Popover placement="bottom" content={(*/}
-                        {/*<CategoryList*/}
-                            {/*categories={categories}*/}
-                            {/*onSelectCategory={this.handleSelectCategory}*/}
-                        {/*/>*/}
+                    {/*<CategoryList*/}
+                    {/*categories={categories}*/}
+                    {/*onSelectCategory={this.handleSelectCategory}*/}
+                    {/*/>*/}
                     {/*)}>*/}
-                        {/*<Icon type="bars"/>*/}
+                    {/*<Icon type="bars"/>*/}
                     {/*</Popover>*/}
 
                     Категории
@@ -210,51 +255,51 @@ class Categories extends Component {
                         </div>
 
                         <div className={styles.filter}>
-                            <div className={styles.nameProduct}>
-                                <label>Название товара</label>
-                                <input
-                                    type="text"
-                                    className={styles.productName}
-                                    name='name'
-                                    value={name}
-                                    onChange={this.handleChangeFilters}
-                                />
-                            </div>
+                            {/*<div className={styles.nameProduct}>*/}
+                            {/*<label>Название товара</label>*/}
+                            {/*<input*/}
+                            {/*type="text"*/}
+                            {/*className={styles.productName}*/}
+                            {/*name='name'*/}
+                            {/*value={name}*/}
+                            {/*onChange={this.handleChangeFilters}*/}
+                            {/*/>*/}
+                            {/*</div>*/}
 
-                            <div className={styles.vendorCode}>
-                                <label>Артикул</label>
-                                <input
-                                    type="text"
-                                    className={styles.productName}
-                                    name='vendor_code'
-                                    value={vendor_code}
-                                    onChange={this.handleChangeFilters}
-                                />
-                            </div>
+                            {/*<div className={styles.vendorCode}>*/}
+                            {/*<label>Артикул</label>*/}
+                            {/*<input*/}
+                            {/*type="text"*/}
+                            {/*className={styles.productName}*/}
+                            {/*name='vendor_code'*/}
+                            {/*value={vendor_code}*/}
+                            {/*onChange={this.handleChangeFilters}*/}
+                            {/*/>*/}
+                            {/*</div>*/}
 
-                            <div className={styles.brand}>
-                                <label>Бренд</label>
-                                <input
-                                    type="text"
-                                    className={styles.productName}
-                                    name='brand'
-                                    value={brand}
-                                    onChange={this.handleChangeFilters}
-                                />
-                            </div>
+                            {/*<div className={styles.brand}>*/}
+                            {/*<label>Бренд</label>*/}
+                            {/*<input*/}
+                            {/*type="text"*/}
+                            {/*className={styles.productName}*/}
+                            {/*name='brand'*/}
+                            {/*value={brand}*/}
+                            {/*onChange={this.handleChangeFilters}*/}
+                            {/*/>*/}
+                            {/*</div>*/}
 
-                            <div className={styles.category}>
-                                <label>Категория</label>
+                            {/*<div className={styles.category}>*/}
+                                {/*<label>Категория</label>*/}
 
-                                <select className={styles.availability} onChange={({target: {value}}) => this.setState({
-                                    filters: {
-                                        ...this.state.filters,
-                                        category: value
-                                    }
-                                })}>
-                                    <option value=''>Все</option>
-                                </select>
-                            </div>
+                                {/*<select className={styles.availability} onChange={({target: {value}}) => this.setState({*/}
+                                    {/*filters: {*/}
+                                        {/*...this.state.filters,*/}
+                                        {/*category: value*/}
+                                    {/*}*/}
+                                {/*})}>*/}
+                                    {/*<option value=''>Все</option>*/}
+                                {/*</select>*/}
+                            {/*</div>*/}
 
                             <div>
                                 <label>Наличие</label>
@@ -313,8 +358,6 @@ class Categories extends Component {
         );
     }
 }
-
-
 
 
 const mapStateToProps = state => ({

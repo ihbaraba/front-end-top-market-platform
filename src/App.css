@@ -299,6 +299,25 @@ button:disabled:hover {
     align-items: center;
 }
 
+.ant-table-header-column {
+    width: 100%;
+}
+
+.filter-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.filter-field input,
+.filter-field select {
+    height: 31px;
+    width: 100%;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    padding: 0 0 0 5px;
+}
+
 .product-avatar {
     display: flex;
 }

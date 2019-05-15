@@ -62,7 +62,7 @@ const contractorMenu = [
         icon: list,
         activeIcon: listActive,
         href: 'contractor_orders',
-        developing: false
+        developing: true
     },
     {
         title: 'Финансы',

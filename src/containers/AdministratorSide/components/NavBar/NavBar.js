@@ -127,7 +127,7 @@ const partnerMenu = [
         icon: home,
         activeIcon: homeActive,
         href: 'store',
-        developing: true
+        developing: false
     },
     {
         title: 'Мои заказы',

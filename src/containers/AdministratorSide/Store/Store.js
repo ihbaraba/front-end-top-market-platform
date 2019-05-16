@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import styles from './Store.module.css'
 import nike from "../../../img/nike.jpg";
 import {updateStore, getMyStore} from '../../../actions/storeActions';
+import Dropzone from 'react-dropzone';
 
 class Store extends Component {
 
@@ -13,7 +14,8 @@ class Store extends Component {
         instagram: '',
         facebook: '',
         linkedin: '',
-        domainSubdomain: 'SDM'
+        domainSubdomain: 'SDM',
+        updateImage: false
     };
 
     handleChangeInput = (name) => ({target: {value}}) => {
@@ -34,16 +36,42 @@ class Store extends Component {
         this.setState(res)
     };
 
+    onDrop = (file) => {
+        this.getBase64(file[0], (result) => {
+            this.setState({
+                logoDecoded: result,
+                updateImage: true
+            })
+        });
+    };
+
+    getBase64(file, cb) {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            cb(reader.result)
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
+
     handleSave = async (e) => {
         e.preventDefault();
 
-        let newStore = this.state;
+        let newStore = { ...this.state};
 
         newStore.domainSubdomain = 'SDM';
 
-        delete newStore.logoDecoded;
+        if(!this.state.updateImage) {
+          delete   newStore.logoDecoded
+        }
 
         await updateStore(newStore);
+
+        this.setState({
+            updateImage: false
+        })
     };
 
     componentDidMount() {
@@ -59,12 +87,12 @@ class Store extends Component {
             instagram,
             facebook,
             linkedin,
-
+            logoDecoded,
 
         } = this.state;
         return (
             <div className='page'>
-                <h3 className='page-title'>Управление интернет магазином (Находится в разработке)</h3>
+                <h3 className='page-title'>Управление интернет магазином</h3>
 
                 <form className='page-content' onSubmit={this.handleSave}>
                     <div className={styles.domen}>
@@ -112,9 +140,9 @@ class Store extends Component {
                             </div>
 
                             {/*<div className={styles.input}>*/}
-                                {/*<label>Раздел навигации 1 (до 6 включительно)</label>*/}
-                                {/*<input type="text" placeholder="Доставка и оплата"/>*/}
-                                {/*/!*<button className={styles.add} onClick={this.add}>+</button>*!/*/}
+                            {/*<label>Раздел навигации 1 (до 6 включительно)</label>*/}
+                            {/*<input type="text" placeholder="Доставка и оплата"/>*/}
+                            {/*/!*<button className={styles.add} onClick={this.add}>+</button>*!/*/}
                             {/*</div>*/}
 
                             {/*<div className={styles.input}>*/}
@@ -126,16 +154,25 @@ class Store extends Component {
                             {/*</div>*/}
                         </div>
 
-                        {/*<div className={styles.logo}>*/}
-                        {/*<div className={styles.logoImg}>*/}
-                        {/*<img src={nike} alt="nike"/>*/}
-                        {/*</div>*/}
-                        {/*<div className={styles.logoInfo}>*/}
-                        {/*<h4 className={styles.formTitle}>Логотип</h4>*/}
-                        {/*<p>Логотип должен быть в формате: JPEG,SVG,PNG</p>*/}
-                        {/*<button className={styles.download}>Загрузить логотип</button>*/}
-                        {/*</div>*/}
-                        {/*</div>*/}
+                        <div className={styles.logo}>
+                            <div className={styles.logoImg}>
+                                <img src={logoDecoded ? logoDecoded : nike} alt="nike"/>
+                            </div>
+                            <div className={styles.logoInfo}>
+                                <h4 className={styles.formTitle}>Логотип</h4>
+                                <p>Логотип должен быть в формате: JPEG,SVG,PNG</p>
+
+                                <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">
+                                    {({getRootProps, getInputProps}) => (
+                                        <div {...getRootProps({className: 'dropzone'})}>
+                                            <input {...getInputProps()} />
+                                            <button className={styles.download}>Загрузить логотип</button>
+                                        </div>
+                                    )}
+                                </Dropzone>
+
+                            </div>
+                        </div>
                     </div>
 
                     <h4 className={styles.formTitle}>Информация в «Футере»</h4>
@@ -154,12 +191,12 @@ class Store extends Component {
                         </div>
 
                         {/*<div className={styles.input}>*/}
-                            {/*<label>Раздел навигации 1 (до 6 включительно)</label>*/}
-                            {/*<input type="text" placeholder="Доставка и оплата"/>*/}
-                            {/*/!*<button className={styles.add} onClick={this.add}>+</button>*!/*/}
+                        {/*<label>Раздел навигации 1 (до 6 включительно)</label>*/}
+                        {/*<input type="text" placeholder="Доставка и оплата"/>*/}
+                        {/*/!*<button className={styles.add} onClick={this.add}>+</button>*!/*/}
                         {/*</div>*/}
 
-                        <div>
+                        <div className={styles.input}>
                             <label>Facebook</label>
                             <input
                                 type="text"
@@ -167,7 +204,7 @@ class Store extends Component {
                                 onChange={this.handleChangeInput('facebook')}
                             />
                         </div>
-                        <div>
+                        <div className={styles.input}>
                             <label>Instagram</label>
                             <input
                                 type="text"
@@ -175,7 +212,7 @@ class Store extends Component {
                                 onChange={this.handleChangeInput('instagram')}
                             />
                         </div>
-                        <div>
+                        <div className={styles.input}>
                             <label>Linkedin</label>
                             <input
                                 type="text"

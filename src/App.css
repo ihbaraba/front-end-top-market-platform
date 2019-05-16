@@ -308,6 +308,7 @@ button:disabled:hover {
     display: flex;
     flex-direction: column;
 }
+
 .filter-field input,
 .filter-field select {
     height: 31px;
@@ -322,10 +323,18 @@ button:disabled:hover {
     display: flex;
 }
 
-.product-avatar img {
-    width: 30px;
-    height: 30px;
+.product-avatar .product-avatar-block {
+    flex-basis: 40px !important;
     margin: 0 10px 0 0;
+    overflow: hidden;
+}
+
+.product-avatar span {
+    width: 90%;
+}
+
+.product-avatar .product-avatar-block img {
+    width: 100%;
 }
 
 .ant-table-tbody .ant-table-row-level-0:nth-child(2n) {

@@ -151,12 +151,16 @@ class Categories extends Component {
                 ),
                 dataIndex: 'name',
                 render: (name, item) => (
-                    <span className='product-avatar'>
-                <img
-                    src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls.length > 0 ? item.imageUrls [0].url : '')}
-                    alt=""/>
+                    <div className='product-avatar'>
+                        <div className="product-avatar-block">
+                            <img
+                                src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls.length > 0 ? item.imageUrls [0].url : '')}
+                                alt=""/>
+                        </div>
+                        <span>
                         {name}
-            </span>
+                        </span>
+                    </div>
                 ),
                 width: '20%'
             },

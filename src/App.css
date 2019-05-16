@@ -216,7 +216,7 @@ a.active {
 .ant-tabs-content {
     background: #fff;
     border: 1px solid #ECECEC;
-    padding: 25px;
+    padding: 25px 40px 25px 25px;
 }
 
 /*FORM*/

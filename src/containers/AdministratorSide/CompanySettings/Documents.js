@@ -59,10 +59,14 @@ class Documents extends Component {
             });
         });
 
-
+        console.log(arrFiles);
         this.setState({
+            documentsFromServer: {
+                ...this.state.documentsFromServer,
+                [typeDoc]: [...this.state.documentsFromServer[typeDoc], ...arrFiles]
+            },
             [typeDoc]: arrFiles
-        })
+        }, () => console.log(this.state))
     };
 
     getBase64(file, cb) {
@@ -131,10 +135,10 @@ class Documents extends Component {
                 },
             ],
             {documentsFromServer} = this.state;
-        console.log(documentsFromServer);
+
         return (
             <div>
-                <h4 className={styles.information}>Изображение должно быть в форматах pdf. jpeg или png. размер файла до
+                <h4 className={styles.information}>Изображение должно быть в форматах jpeg или png. Размер файла до
                     2Мб</h4>
 
                 {documents.map((item) => (

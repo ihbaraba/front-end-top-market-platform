@@ -3,6 +3,8 @@ import {Tabs, Checkbox, Form, Button, Select} from 'antd';
 import styles from './CompanySettings.module.css';
 import {getProfile, updateProfile, getSelectParams} from "../../../actions/companyActions";
 import {notification} from "antd/lib/index";
+import nike from "../../../img/nike.jpg";
+import Dropzone from 'react-dropzone';
 
 
 const Option = Select.Option,
@@ -19,7 +21,6 @@ class GeneralInformation extends Component {
         importer: false,
         isInternetShop: false,
         isOfflineShop: false,
-        logoDecoded: '',
         manufacturer: false,
         name: '',
         officialRepresentative: false,
@@ -27,25 +28,57 @@ class GeneralInformation extends Component {
         retailNetwork: false,
         subDealer: false,
         town: '',
+        logoDecoded: '',
         url: '',
         whoSeeContact: '',
         workingConditions: '',
+        updateImage: false,
     };
 
     handleUpdateCompanyProfile = e => {
         e.preventDefault();
 
-        let letNewState = this.state;
+        let letNewState = {...this.state};
+
         delete letNewState.activityArea;
         delete letNewState.companyType;
         delete letNewState.serviceIndustry;
 
-        updateProfile(this.state)
-            .then(() => notification.success({
-                    message: 'Сохранено',
-                })
+        if (!this.state.updateImage) {
+            delete letNewState.avatar
+        }
+
+        updateProfile(letNewState)
+            .then(() => {
+                    notification.success({
+                        message: 'Сохранено',
+                    });
+                    this.setState({
+                        updateImage: false,
+                    })
+                }
             )
     };
+
+    onDrop = (file) => {
+        this.getBase64(file[0], (result) => {
+            this.setState({
+                logoDecoded: result,
+                updateImage: true
+            })
+        });
+    };
+
+    getBase64(file, cb) {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            cb(reader.result)
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
 
     handleChangeInput = ({target: {name, value}}) => {
         this.setState({
@@ -98,6 +131,7 @@ class GeneralInformation extends Component {
             subDealer,
             exporter,
             officialRepresentative,
+            logoDecoded,
 
             activityAreaOptions = [],
             companyTypeOptions = [],
@@ -298,6 +332,26 @@ class GeneralInformation extends Component {
 
                 <div className={styles.secondColumn}>
                     <div>
+                        <div className={styles.logo}>
+                            <div className={styles.logoImg}>
+                                <img src={logoDecoded ? logoDecoded : nike} alt="nike"/>
+                            </div>
+                            <div className={styles.logoInfo}>
+                                <h4 className={styles.formTitle}>Логотип</h4>
+                                <p>Логотип должен быть в формате: JPEG,SVG,PNG</p>
+
+                                <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">
+                                    {({getRootProps, getInputProps}) => (
+                                        <div {...getRootProps({className: 'dropzone'})}>
+                                            <input {...getInputProps()} />
+                                            <button className={styles.download}>Загрузить логотип</button>
+                                        </div>
+                                    )}
+                                </Dropzone>
+
+                            </div>
+                        </div>
+
                         <div className='section-title'>
                             <h3 className={styles.title}>Контактные данные</h3>
                         </div>
@@ -323,13 +377,13 @@ class GeneralInformation extends Component {
                         </FormItem>
 
                         {/*<FormItem>*/}
-                            {/*<label htmlFor="">Кому видны контактные данные ?</label>*/}
-                            {/*<input*/}
-                                {/*type="text"*/}
-                                {/*name='whoSeeContact'*/}
-                                {/*value={whoSeeContact || ''}*/}
-                                {/*onChange={this.handleChangeInput}*/}
-                            {/*/>*/}
+                        {/*<label htmlFor="">Кому видны контактные данные ?</label>*/}
+                        {/*<input*/}
+                        {/*type="text"*/}
+                        {/*name='whoSeeContact'*/}
+                        {/*value={whoSeeContact || ''}*/}
+                        {/*onChange={this.handleChangeInput}*/}
+                        {/*/>*/}
                         {/*</FormItem>*/}
                     </div>
 

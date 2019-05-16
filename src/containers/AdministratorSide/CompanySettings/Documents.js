@@ -22,6 +22,8 @@ class Documents extends Component {
         const typeDoc = this.state.type;
         let uploadType = '';
 
+        console.log(files);
+
         switch (typeDoc) {
             case 'passport':
                 uploadType = 'passDocDecoded';
@@ -59,14 +61,9 @@ class Documents extends Component {
             });
         });
 
-        console.log(arrFiles);
-        this.setState({
-            documentsFromServer: {
-                ...this.state.documentsFromServer,
-                [typeDoc]: [...this.state.documentsFromServer[typeDoc], ...arrFiles]
-            },
-            [typeDoc]: arrFiles
-        }, () => console.log(this.state))
+        setTimeout(() => {
+            this.handleUploadDocuments({[typeDoc]: arrFiles})
+        }, 100)
     };
 
     getBase64(file, cb) {
@@ -80,8 +77,8 @@ class Documents extends Component {
         };
     };
 
-    handleUploadDocuments = () => {
-        uploadDocuments(this.state)
+    handleUploadDocuments = (doc) => {
+        uploadDocuments(doc)
             .then(() => notification.success({
                     message: 'Сохранено',
                 })
@@ -91,7 +88,6 @@ class Documents extends Component {
 
     getDocuments = async () => {
         const res = await getDocuments();
-        console.log(res.passport.length);
         this.setState({documentsFromServer: res})
     };
 
@@ -154,7 +150,7 @@ class Documents extends Component {
                             </div>
                         </div>
 
-                        <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">
+                        <Dropzone onDrop={this.onDrop}>
                             {({getRootProps, getInputProps}) => (
                                 <div {...getRootProps({className: 'dropzone'})}>
                                     <input {...getInputProps()} />
@@ -171,7 +167,7 @@ class Documents extends Component {
                     </div>
                 ))}
 
-                <button onClick={this.handleUploadDocuments} className={styles.save}>Сохранить</button>
+                {/*<button onClick={this.handleUploadDocuments} className={styles.save}>Сохранить</button>*/}
             </div>
         )
     }

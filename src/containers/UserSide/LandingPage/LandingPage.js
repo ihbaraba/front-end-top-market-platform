@@ -321,7 +321,6 @@ class LandingPage extends Component {
                                 <li>Видеоуроки по использованию платформы</li>
                                 <li>Оформление договора с Rozetka</li>
                                 <li>Парсинг товаров из других магазинов</li>
-                                <li>Парсинг товаров из других магазинов</li>
 
                                 <button className={styles.btn} onClick={this.goRegistrationPage}>Регистрация</button>
                             </ul>
@@ -391,7 +390,7 @@ class LandingPage extends Component {
                         </div>
                         <div className={styles.footerBottom}>
                             <span className={styles.copy}>(c) Smartlead 2019</span>
-                            <span>ФОП Солошенко Володимир Володимирович, ИНН 3220809017</span>
+                            <span>ФЛП Солошенко Владимир Владимирович, ИНН 3220809017</span>
                         </div>
                     </div>
                 </footer>

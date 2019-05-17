@@ -288,6 +288,7 @@ class ProfileSettings extends Component {
                                     </div>
 
                                     <h2>Платежная информация</h2>
+
                                     <div>
                                         <label>Название банка</label>
                                         <input type="text"

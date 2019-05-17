@@ -256,7 +256,7 @@ class Categories extends Component {
         return (
             <div className='page'>
                 <h3 className='page-title'>
-                    Мои товары
+                    Все товары
                 </h3>
 
                 <div className={`${styles.categories} page-content`}>

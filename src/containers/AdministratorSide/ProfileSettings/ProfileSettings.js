@@ -258,8 +258,8 @@ class ProfileSettings extends Component {
                                     <div>
                                         <label>Организационно-правовая форма предприятия</label>
                                         <Select onChange={this.handleChangeInput}>
-                                            <Option value="jack">ТОВ</Option>
-                                            <Option value="lucy">ФОП</Option>
+                                            <Option value="tov">ТОВ</Option>
+                                            <Option value="fop">ФОП</Option>
                                         </Select>
                                     </div>
                                     <div>
@@ -313,7 +313,6 @@ class ProfileSettings extends Component {
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
-
                                 </div>
 
                                 <div className={styles.userInfo}>

@@ -132,49 +132,118 @@ class Cabinet extends Component {
                         <div className={styles.chooseTariff}>
                             <h3>Приобретите пакет</h3>
                             <div className={styles.tariffsBox}>
-                                <div className={styles.tariffItem}>
-                                    <div className={styles.tariffHead}>
-                                        <p>Базовый</p>
-                                        <p><span><span className={styles.tariffPrice}>35.000</span>грн</span></p>
+                              <div className={styles.tariffItem}>
+                                    <div className={styles.silverTitle}>
+                                        <h4>Silver</h4>
                                     </div>
+                                  <div className={styles.tariffPrice}>
+                                      <div className={styles.priceBlock}>
+                                          <span className={styles.oldPrice}>35.000 грн</span>
+                                          <span className={styles.currentPrice}>27.000 грн</span>
+                                      </div>
+                                  </div>
+                                  <div className={styles.tariffItemBody}>
+                                      <ul>
+                                          <li>Добавление до 800 товаров в
+                                              свой аккаунт</li>
+                                          <li>Обучение в Smartlead Academy</li>
+                                          <li>Возможность интеграции с
+                                              интернет магазинам</li>
+                                          <li>Полный доступ ко всем
+                                              проверенным поставщикам</li>
+                                          <li>Автоматизация заказов,
+                                              готовая СРМ для Вашего бизнеса</li>
+                                          <li>Возможность интеграции с
+                                              маркетплейсами:
+                                              (Prom.ua, Rozetka, Bigl)</li>
+                                          <li>Удаленный контроль
+                                              Вашего бизнеса</li>
+                                          <li>Гарантия получения денег
+                                              от поставщика</li>
+                                      </ul>
+                                  </div>
+                                  <button className={styles.activeBtn}>Активен</button>
 
-                                    <div className={styles.tariffBody}>
+                              </div>
+                                <div className={styles.tariffItem}>
+                                    <div className={styles.goldTitle}>
+                                        <h4>Gold</h4>
+                                    </div>
+                                    <div className={styles.tariffPrice}>
+                                        <div className={styles.priceBlock}>
+                                            <span className={styles.oldPrice}>59.000 грн</span>
+                                            <span className={styles.currentPrice}>45.000 грн</span>
+                                        </div>
+                                    </div>
+                                    <div className={styles.tariffItemBody}>
                                         <ul>
-                                            <li>Полный доступ к платформе</li>
-                                            <li>Возможность неограниченно редактировать товары</li>
-                                            <li>Поддержка 24/7</li>
-                                            <li>Полный доступ к платформе</li>
-                                            <li>Возможность неограниченно редактировать товары</li>
-                                            <li>Поддержка 24/7</li>
-                                            <li>Полный доступ к платформе</li>
-                                            <li>Возможность неограниченно редактировать товары</li>
+                                            <li>Добавление до 1200 товаров в
+                                                свой аккаунт</li>
+                                            <li>Обучение в Smartlead Academy</li>
+                                            <li>Топ-50 популярных товаров</li>
+                                            <li>Полный доступ ко всем
+                                                проверенным поставщикам</li>
+                                            <li>Возможность интеграции с
+                                                интернет магазинами</li>
+                                            <li>Получение аналитики о
+                                                востребуемых товарах</li>
+                                            <li>Полный доступ ко всем
+                                                проверенным поставщикам</li>
+                                            <li>Автоматизация заказов,
+                                                готовая СРМ для Вашего бизнеса</li>
+                                            <li>Возможность интеграции с
+                                                маркетплейсами:
+                                                (Prom.ua, Rozetka, Bigl)</li>
+                                            <li>Удаленный контроль
+                                                Вашего бизнеса</li>
+                                            <li>Гарантия получения денег
+                                                от поставщика</li>
                                         </ul>
                                     </div>
-
-                                    <button className={styles.buyBtn} onClick={this.showModal}>
-                                        Купить
-                                    </button>
+                                    <button className={styles.buyBtn}>КУПИТЬ</button>
                                 </div>
                                 <div className={styles.tariffItem}>
-                                    <div className={styles.tariffHead}>
-                                        <p>Базовый</p>
-                                        <p><span><span className={styles.tariffPrice}>50.000</span>грн</span></p>
+                                    <div className={styles.platinumTitle}>
+                                        <h4>Platinum</h4>
                                     </div>
-                                    <div className={styles.tariffBody}>
+                                    <div className={styles.tariffPrice}>
+                                        <div className={styles.priceBlock}>
+                                            <span className={styles.oldPrice}>89.000 грн</span>
+                                            <span className={styles.currentPrice}>59.000 грн</span>
+                                        </div>
+                                    </div>
+                                    <div className={styles.tariffItemBody}>
                                         <ul>
-                                            <li>Полный доступ к платформе</li>
-                                            <li>Возможность неограниченно редактировать товары</li>
-                                            <li>Поддержка 24/7</li>
-                                            <li>Полный доступ к платформе</li>
-                                            <li>Возможность неограниченно редактировать товары</li>
-                                            <li>Поддержка 24/7</li>
-                                            <li>Полный доступ к платформе</li>
-                                            <li>Возможность неограниченно редактировать товары</li>
+                                            <li>Добавление до 2000 товаров в
+                                                свой аккаунт</li>
+                                            <li>Обучение в Smartlead Academy</li>
+                                            <li>Топ-100 популярных товаров</li>
+                                            <li>Помощь в продвижении товаров
+                                                в первый месяц</li>
+                                            <li>Полный вывод на
+                                                маркетплейс Rozetka</li>
+                                            <li>Возможность интеграции с
+                                                интернет магазинами</li>
+                                            <li>Полный доступ ко всем
+                                                проверенным поставщикам</li>
+                                            <li>Личный разбор магазина с
+                                                Владимиром Солошенко</li>
+                                            <li>Получение аналитики о
+                                                востребуемых товарах</li>
+                                            <li>Полный доступ ко всем
+                                                проверенным поставщикам</li>
+                                            <li>Автоматизация заказов,
+                                                готовая СРМ для Вашего бизнеса</li>
+                                            <li>Возможность интеграции с
+                                                маркетплейсами:
+                                                (Prom.ua, Rozetka, Bigl)</li>
+                                            <li>Удаленный контроль
+                                                Вашего бизнеса</li>
+                                            <li>Гарантия получения денег
+                                                от поставщика</li>
                                         </ul>
                                     </div>
-                                    <button className={styles.buyBtn} onClick={this.showModal}>
-                                        Купить
-                                    </button>
+                                    <button className={styles.buyBtn}>КУПИТЬ</button>
                                 </div>
                             </div>
                         </div>

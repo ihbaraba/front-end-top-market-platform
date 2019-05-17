@@ -1,9 +1,9 @@
 const SERVERS = {
     PRODUCT: {
-        XHR: "https://api.smartlead.top/api/v1/",
+        XHR: "https://api-dev.topmarket.ua/api/v1/",
     },
     DEV: {
-        XHR: "https://api.smartlead.top/api/v1/",
+        XHR: "https://api-dev.topmarket.ua/api/v1/",
     },
 };
 

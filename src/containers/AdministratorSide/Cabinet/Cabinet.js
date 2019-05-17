@@ -338,12 +338,12 @@ class Cabinet extends Component {
                                 <button className={styles.payBtn}>Оплатить через LiqPay</button>
                             </form>
 
-                            <button className={styles.payBtn} onClick={this.handleSendInvoice}>Отправить счет фактуру на e-mail
+                            <button className={styles.payBtn} onClick={this.handleSendInvoice}>
+                                Отправить счет фактуру на e-mail
                             </button>
                         </div>
                     </Modal>
                 </div>
-
             </div>
         );
     }

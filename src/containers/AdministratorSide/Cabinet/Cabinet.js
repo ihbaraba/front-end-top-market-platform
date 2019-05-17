@@ -75,12 +75,12 @@ class Cabinet extends Component {
     };
 
     handleSendInvoice = async () => {
-       await sendInvoice({
-           userPocket: 'BASE'
-       });
-       this.setState({
-           visible: false
-       })
+        await sendInvoice({
+            userPocket: 'BASE'
+        });
+        this.setState({
+            visible: false
+        })
     };
 
     async componentDidMount() {
@@ -119,13 +119,13 @@ class Cabinet extends Component {
 
                         {this.props.user.role === 'CONTRACTOR' ? '' :
                             <div className={styles.description}>
-                            <p>Для того чтобы пользоватся услугами Маркетплейса, Вы должны
-                                приобрести один из вариантов пакетов доступа, цена на которые 35
-                                000 грн и 50 000 грн/месяц. Все доступы которые дает кажыдй пакет
-                                указанны в описании.
-                                указанны в описании.
-                            </p>
-                        </div>}
+                                <p>Для того чтобы пользоватся услугами Маркетплейса, Вы должны
+                                    приобрести один из вариантов пакетов доступа, цена на которые 35
+                                    000 грн и 50 000 грн/месяц. Все доступы которые дает кажыдй пакет
+                                    указанны в описании.
+                                    указанны в описании.
+                                </p>
+                            </div>}
                     </div>
 
                     {this.props.user.role === 'CONTRACTOR' ? '' :
@@ -331,15 +331,19 @@ class Cabinet extends Component {
                             </p>
                         </div>
                         <div className={styles.payActions}>
-                            <TooltipAntd placement="top" title='Находится в разработке'>
+                            <form method="POST" action="https://www.liqpay.ua/api/3/checkout"
+                                  accept-charset="utf-8">
+                                <input type="hidden" name="data" value="{{ data }}"/>
+                                <input type="hidden" name="signature" value="{{ signature }}"/>
                                 <button className={styles.payBtn}>Оплатить через LiqPay</button>
-                            </TooltipAntd>
+                            </form>
 
-                            <button className={styles.payBtn} onClick={this.handleSendInvoice}>Отправить счет фактуру на e-mail</button>
+                            <button className={styles.payBtn} onClick={this.handleSendInvoice}>
+                                Отправить счет фактуру на e-mail
+                            </button>
                         </div>
                     </Modal>
                 </div>
-
             </div>
         );
     }

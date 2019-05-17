@@ -32,7 +32,7 @@ const Routes = () => {
     return (
         <Fragment>
             <Switch>
-                <Route exact path='/login' component={LandingPage}/>
+                <Route exact path='/' component={Login}/>
                 <Route exact path='/login' component={Login}/>
                 <Route path='/registration' component={Registration}/>
                 <Route path='/reset_password' component={ResetPassword}/>

@@ -238,7 +238,9 @@ a.active {
 
 .btn {
     height: 40px;
-    width: 206px;
+    min-width: 206px;
+    width: max-content;
+    padding: 0 10px;
     border-radius: 5px;
     background-color: #4A90E2;
     color: #FFFFFF;
@@ -247,6 +249,10 @@ a.active {
     font-weight: bold;
     line-height: 22px;
     margin-right: 20px;
+}
+
+.m-0 {
+    margin: 0;
 }
 
 .edit-btn {

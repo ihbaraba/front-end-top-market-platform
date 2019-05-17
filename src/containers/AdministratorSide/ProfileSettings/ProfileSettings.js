@@ -58,6 +58,14 @@ class ProfileSettings extends Component {
         email: '',
         webSite: '',
         phone: '',
+        organizationalLegalFormOfTheCompany: '',
+        organization: '',
+        edpnou: '',
+        vatPayerCertificate: '',
+        bankName: '',
+        mfi: '',
+        checkingAccount: '',
+
         avatarImage: '',
         updateImage: false,
         emailNotifications: [],
@@ -177,7 +185,28 @@ class ProfileSettings extends Component {
     }
 
     render() {
-        const {firstName, lastName, patronymic, email, visibleModal, emailNotifications, phoneNotifications, avatarImage, webSite, phone, rozetkaUsername, rozetkaPassword} = this.state;
+        const {
+            firstName,
+            lastName,
+            patronymic,
+            email,
+            visibleModal,
+            emailNotifications,
+            phoneNotifications,
+            avatarImage,
+            webSite,
+            phone,
+            rozetkaUsername,
+            rozetkaPassword,
+            organizationalLegalFormOfTheCompany,
+            organization,
+            edpnou,
+            vatPayerCertificate,
+            bankName,
+            mfi,
+            checkingAccount,
+
+        } = this.state;
         const {getFieldDecorator} = this.props.form;
 
         return (
@@ -257,32 +286,32 @@ class ProfileSettings extends Component {
 
                                     <div>
                                         <label>Организационно-правовая форма предприятия</label>
-                                        <Select onChange={this.handleChangeInput}>
-                                            <Option value="tov">ТОВ</Option>
-                                            <Option value="fop">ФОП</Option>
-                                        </Select>
+                                        <Input onChange={this.handleChangeInput}
+                                               name='organizationalLegalFormOfTheCompany'
+                                               value={organizationalLegalFormOfTheCompany}
+                                        />
                                     </div>
                                     <div>
                                         <label>Организация</label>
                                         <input type="text"
-                                               name='webSite'
-                                               value={webSite || ''}
+                                               name='organization'
+                                               value={organization || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
                                     <div>
                                         <label>ЕДРПОУ</label>
                                         <input type="text"
-                                               name='webSite'
-                                               value={webSite || ''}
+                                               name='edpnou'
+                                               value={edpnou || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
                                     <div>
                                         <label>Свидетельства плательщика НДС</label>
                                         <input type="text"
-                                               name='webSite'
-                                               value={webSite || ''}
+                                               name='vatPayerCertificate'
+                                               value={vatPayerCertificate || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
@@ -292,24 +321,24 @@ class ProfileSettings extends Component {
                                     <div>
                                         <label>Название банка</label>
                                         <input type="text"
-                                               name='webSite'
-                                               value={webSite || ''}
+                                               name='bankName'
+                                               value={bankName || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
                                     <div>
                                         <label>МФО</label>
                                         <input type="text"
-                                               name='webSite'
-                                               value={webSite || ''}
+                                               name='mfi'
+                                               value={mfi || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
                                     <div>
                                         <label>Рассчетный счет</label>
                                         <input type="text"
-                                               name='webSite'
-                                               value={webSite || ''}
+                                               name='checkingAccount'
+                                               value={checkingAccount || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>

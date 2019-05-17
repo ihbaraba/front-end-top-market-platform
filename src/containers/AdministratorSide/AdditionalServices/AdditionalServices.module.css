@@ -20,6 +20,7 @@
 }
 
 .servicesItem {
+    text-align: center;
     width: 258px;
 }
 .item {
@@ -33,6 +34,13 @@
     flex-direction: column;
     margin-bottom: 19px;
 }
+
+.payActions {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
 
 .itemImg {
     margin-bottom: 18px;

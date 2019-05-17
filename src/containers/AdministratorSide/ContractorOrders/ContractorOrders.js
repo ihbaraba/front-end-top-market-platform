@@ -280,6 +280,13 @@ class ContractorOrders extends Component {
                                                     {/*{`${record.amount} грн`}*/}
                                                 {/*</div>*/}
                                             </div>
+
+                                            <div className={styles.ttnBlock}>
+                                                <div>
+                                                    <label htmlFor="">ТТН</label>
+                                                    <input type="text"/>
+                                                </div>
+                                            </div>
                                         </div>
                                     )
                                 }}

@@ -53,7 +53,13 @@ class LandingPage extends Component {
 
 
     goRegistrationPage = () => {
-        this.props.history.push('/registration')
+        window.location.href = 'https://topmarket.ua/registration';
+    };
+    goLoginPage = () => {
+        window.location.href = 'https://topmarket.ua/login';
+    };
+    goContactPage = () => {
+        window.location.href = 'https://topmarket.ua/contacts-form';
     };
 
     render() {
@@ -66,9 +72,9 @@ class LandingPage extends Component {
                         <a href="#" className={styles.logo}><img src={logo} alt="logo"/>SMART Lead 2.0</a>
                         <div className={styles.headerRight}>
                             <a href="tel:+380931377674" className={styles.tel}>(093) 137-76-74</a>
-                            <Link to='/contacts-form' className={styles.regBtn}>Обратная связь</Link>
-                            <Link to='/registration' className={styles.regBtn}>Регистрация</Link>
-                            <Link to='/login' className={styles.regBtn}>Войти</Link>
+                            <Link to='' onClick={this.goContactPage} className={styles.regBtn}>Обратная связь</Link>
+                            <Link to='' onClick={this.goRegistrationPage} className={styles.regBtn}>Регистрация</Link>
+                            <Link to='' onClick={this.goLoginPage} className={styles.regBtn}>Войти</Link>
                         </div>
                     </div>
                 </header>
@@ -77,7 +83,7 @@ class LandingPage extends Component {
                         <div className={styles.left}>
                             <h3>Smart Lead 2.0</h3>
                             <p>Авторская система продаж</p>
-                            <Link to='/registration'>
+                            <Link>
                                 <button className={styles.btn} onClick={this.goRegistrationPage}>CTAРТ</button>
                             </Link>
                         </div>
@@ -247,7 +253,8 @@ class LandingPage extends Component {
                                 <li>Кастомизируйте элементы вашего сайта</li>
                                 <li>Кастомизируйте карточку товара</li>
 
-                                <button className={styles.btn} onClick={this.goRegistrationPage}>Получить доступ</button>
+                                <button className={styles.btn} onClick={this.goRegistrationPage}>Получить доступ
+                                </button>
                             </ul>
                             <div className={styles.creationImg}>
                                 <img src={creaction} alt=""/>
@@ -343,7 +350,8 @@ class LandingPage extends Component {
                                 <li>Развитие и обслуживание моего магазина</li>
                                 <li>Услуги копирайтинга</li>
 
-                                <button className={styles.btn} onClick={this.goRegistrationPage}>Получить доступ</button>
+                                <button className={styles.btn} onClick={this.goRegistrationPage}>Получить доступ
+                                </button>
                             </ul>
                             <div className={styles.additionalImg}>
                                 <img src={additional} alt=""/>

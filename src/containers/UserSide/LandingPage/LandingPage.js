@@ -299,13 +299,14 @@ class LandingPage extends Component {
                     <div className={styles.container}>
                         <h3>Сервисы от маркетплейса</h3>
                         <div className={styles.servicesWrap}>
-                            <ul className={styles.servicesList}>
-                                <li className={styles.call}>Call центр</li>
-                                <li className={styles.process}>Обработка заказов</li>
-                                <li className={styles.support}>Поддержка в одном месте</li>
-
+                            <div className={styles.servicesListBlock}>
+                                <ul className={styles.servicesList}>
+                                    <li className={styles.call}>Call центр</li>
+                                    <li className={styles.process}>Обработка заказов</li>
+                                    <li className={styles.support}>Поддержка в одном месте</li>
+                                </ul>
                                 <button className={styles.btn} onClick={this.goRegistrationPage}>Регистрация</button>
-                            </ul>
+                            </div>
                             <div className={styles.servicesImg}>
                                 <img src={services} alt=""/>
                             </div>

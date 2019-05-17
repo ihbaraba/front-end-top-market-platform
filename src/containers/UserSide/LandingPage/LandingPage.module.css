@@ -639,6 +639,7 @@ header .container {
     display: flex;
     justify-content: space-between;
 }
+
 .servicesList {
     width: 286px;
     margin-right: 240px;
@@ -697,6 +698,10 @@ header .container {
     background-position: center center;
     box-shadow: 0 2px 9px 0 rgba(0,0,0,0.26);
     border-radius: 50%;
+}
+
+.servicesListBlock .btn {
+    margin-left: 100px;
 }
 
 .servicesImg {
@@ -1219,6 +1224,7 @@ footer {
     }
     .btn {
         margin: 0 auto;
+        margin-bottom: 30px;
     }
     .descriptiontext {
         width: 100%;
@@ -1484,6 +1490,18 @@ footer {
     }
     .footerContacts a {
         color:#fff;
+    }
+    .servicesList {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .servicesList li:last-child {
+        margin-bottom: 40px;
+    }
+    .servicesListBlock .btn {
+        margin: 0 auto;
+        margin-bottom: 30px;
     }
 
 }

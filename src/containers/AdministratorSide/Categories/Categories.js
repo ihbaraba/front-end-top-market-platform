@@ -256,7 +256,7 @@ class Categories extends Component {
         return (
             <div className='page'>
                 <h3 className='page-title'>
-                    Категории
+                    Мои товары
                 </h3>
 
                 <div className={`${styles.categories} page-content`}>
@@ -267,6 +267,13 @@ class Categories extends Component {
                                 className='btn'
                                 onClick={this.handleCopyProducts}>
                                 Добавить в мои товары
+                            </button>
+
+                            <button
+                                disabled
+                                className='btn'
+                                onClick={this.handleCopyProducts}>
+                                Добавить в мой магазин
                             </button>
 
                             <div className={styles.totalProducts}>

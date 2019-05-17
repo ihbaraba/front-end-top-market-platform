@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +19,8 @@
       <file leaf-file-name="ProfileSettings.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="259" column="26" lean-forward="true" selection-start-line="259" selection-start-column="26" selection-end-line="259" selection-end-column="26" />
+            <state relative-caret-position="179">
+              <caret line="256" lean-forward="true" selection-start-line="256" selection-end-line="256" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -30,11 +28,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryList.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Categories.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2225">
+              <caret line="267" column="38" lean-forward="true" selection-start-line="267" selection-end-line="268" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="210">
+              <caret line="85" column="46" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -144,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Store/Store.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/GeneralInformation.js" />
         <option value="$PROJECT_DIR$/src/actions/companyActions.js" />
@@ -154,6 +163,7 @@
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" />
       </list>
     </option>
   </component>
@@ -228,7 +238,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Categories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
@@ -237,7 +247,6 @@
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="NavBar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
@@ -381,7 +390,7 @@
       <workItem from="1557837696682" duration="5525000" />
       <workItem from="1557910133187" duration="8918000" />
       <workItem from="1557988034249" duration="15493000" />
-      <workItem from="1558072460893" duration="7064000" />
+      <workItem from="1558072460893" duration="7998000" />
     </task>
     <task id="LOCAL-00001" summary="add CI, add Dockerfile">
       <created>1555070821463</created>
@@ -394,7 +403,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="438541000" />
+    <option name="totallyTimeSpent" value="439475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -743,16 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="154" selection-start-line="154" selection-end-line="155" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
@@ -839,20 +838,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="85" column="46" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="259" column="26" lean-forward="true" selection-start-line="259" selection-start-column="26" selection-end-line="259" selection-end-column="26" />
+        <state relative-caret-position="179">
+          <caret line="256" lean-forward="true" selection-start-line="256" selection-end-line="256" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="2225">
+          <caret line="267" column="38" lean-forward="true" selection-start-line="267" selection-end-line="268" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

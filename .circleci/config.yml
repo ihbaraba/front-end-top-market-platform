@@ -13,6 +13,7 @@ commands:
           command: |
             PROJECT_BRANCH=$(echo $CIRCLE_BRANCH | awk -F "/" '{print $1}')
             if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "Development" ];
+            then
               TAG=$PROJECT_BRANCH-$CIRCLE_BUILD_NUM
               docker build -t gofriends/$CIRCLE_PROJECT_REPONAME:$CIRCLE_BRANCH .
               docker tag gofriends/$CIRCLE_PROJECT_REPONAME:$CIRCLE_BRANCH gofriends/$CIRCLE_PROJECT_REPONAME:$TAG

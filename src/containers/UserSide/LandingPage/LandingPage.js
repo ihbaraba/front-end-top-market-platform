@@ -295,6 +295,7 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </section>
+
                 <section className={styles.services}>
                     <div className={styles.container}>
                         <h3>Сервисы от маркетплейса</h3>
@@ -312,6 +313,7 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </section>
+
                 <section className={styles.learning}>
                     <div className={styles.container}>
                         <h3>Обучающий модуль</h3>

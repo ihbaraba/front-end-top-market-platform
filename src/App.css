@@ -219,6 +219,10 @@ a.active {
     padding: 25px 40px 25px 25px;
 }
 
+.ant-select-selection--single {
+    width: 100% !important;
+}
+
 /*FORM*/
 .ant-form-item {
     margin: 0;

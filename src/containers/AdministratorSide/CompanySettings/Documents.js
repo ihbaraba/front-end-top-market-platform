@@ -30,23 +30,23 @@ class Documents extends Component {
                 break;
 
             case 'ukStatistic':
-                uploadType = 'ukDoc';
+                uploadType = 'ukDocDecoded';
                 break;
 
             case 'certificate':
-                uploadType = 'certDoc';
+                uploadType = 'certDocDecoded';
                 break;
 
             case 'taxPayer':
-                uploadType = 'taxDoc';
+                uploadType = 'taxDocDecoded';
                 break;
 
             case 'payerRegister':
-                uploadType = 'payerRegDoc';
+                uploadType = 'payerRegDocDecoded';
                 break;
 
             case 'payerCertificate':
-                uploadType = 'payerCertDoc';
+                uploadType = 'payerCertDocDecoded';
                 break;
 
             default:
@@ -150,7 +150,7 @@ class Documents extends Component {
                             </div>
                         </div>
 
-                        <Dropzone onDrop={this.onDrop}>
+                        <Dropzone onDrop={this.onDrop} accept=".png, .svg, .jpg">
                             {({getRootProps, getInputProps}) => (
                                 <div {...getRootProps({className: 'dropzone'})}>
                                     <input {...getInputProps()} />

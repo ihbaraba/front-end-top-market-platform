@@ -3,14 +3,15 @@ import {Tabs, Table, Checkbox, Form, Input, Button} from 'antd';
 import styles from './ProfileSettings.module.css'
 import defaultAvatar from "../../../img/avatar.png";
 import Dropzone from 'react-dropzone'
-import {Modal, notification, Icon, Tooltip} from 'antd'
+import {Modal, notification, Icon, Tooltip, Select} from 'antd'
 
 import {getProfile, updateProfile, changePassword, login} from '../../../actions/userActions';
 import {connect} from "react-redux";
 
 const TabPane = Tabs.TabPane,
     CheckboxGroup = Checkbox.Group,
-    FormItem = Form.Item;
+    FormItem = Form.Item,
+    Option = Select.Option;
 
 
 const columns = [
@@ -239,7 +240,7 @@ class ProfileSettings extends Component {
                                         <label>Rozetka username</label>
                                         <input type="password"
                                                name='rozetkaUsername'
-                                            value={rozetkaUsername || ''}
+                                               value={rozetkaUsername || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
@@ -247,10 +248,71 @@ class ProfileSettings extends Component {
                                         <label>Rozetka password</label>
                                         <input type="password"
                                                name='rozetkaPassword'
-                                            value={rozetkaPassword || ''}
+                                               value={rozetkaPassword || ''}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>
+
+                                    <h2>Юридические данные</h2>
+
+                                    <div>
+                                        <label>Организационно-правовая форма предприятия</label>
+                                        <Select onChange={this.handleChangeInput}>
+                                            <Option value="jack">ТОВ</Option>
+                                            <Option value="lucy">ФОП</Option>
+                                        </Select>
+                                    </div>
+                                    <div>
+                                        <label>Организация</label>
+                                        <input type="text"
+                                               name='webSite'
+                                               value={webSite || ''}
+                                               onChange={this.handleChangeInput}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label>ЕДРПОУ</label>
+                                        <input type="text"
+                                               name='webSite'
+                                               value={webSite || ''}
+                                               onChange={this.handleChangeInput}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label>Свидетельства плательщика НДС</label>
+                                        <input type="text"
+                                               name='webSite'
+                                               value={webSite || ''}
+                                               onChange={this.handleChangeInput}
+                                        />
+                                    </div>
+
+                                    <h2>Платежная информация</h2>
+                                    <div>
+                                        <label>Название банка</label>
+                                        <input type="text"
+                                               name='webSite'
+                                               value={webSite || ''}
+                                               onChange={this.handleChangeInput}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label>МФО</label>
+                                        <input type="text"
+                                               name='webSite'
+                                               value={webSite || ''}
+                                               onChange={this.handleChangeInput}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label>Рассчетный счет</label>
+                                        <input type="text"
+                                               name='webSite'
+                                               value={webSite || ''}
+                                               onChange={this.handleChangeInput}
+                                        />
+                                    </div>
+
                                 </div>
 
                                 <div className={styles.userInfo}>

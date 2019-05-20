@@ -639,6 +639,7 @@ header .container {
     display: flex;
     justify-content: space-between;
 }
+
 .servicesList {
     width: 286px;
     margin-right: 240px;
@@ -697,6 +698,10 @@ header .container {
     background-position: center center;
     box-shadow: 0 2px 9px 0 rgba(0,0,0,0.26);
     border-radius: 50%;
+}
+
+.servicesListBlock .btn {
+    margin-left: 100px;
 }
 
 .servicesImg {
@@ -853,6 +858,9 @@ footer {
     letter-spacing: 0.31px;
     line-height: 22px;
 }
+.footerContacts a {
+    color:#fff;
+}
 
 /*MEdia*/
 
@@ -882,12 +890,57 @@ footer {
     .description {
         padding: 20px 20px 100px 20px;
     }
+    .creation,
+    .management,
+    .services,
+    .finance,
+    .learning ,
+    .additionalServices {
+        padding: 20px;
+    }
+    .creationImg,
+    .manImg,
+    .financeImg,
+    .servicesImg,
+    .additionalImg {
+        width: 55%;
+        height: auto;
+    }
+    .creationImg img,
+    .manImg img,
+    .financeImg img,
+    .servicesImg img,
+    .additionalImg img ,
+    .benefitsimg img {
+        width: 100%;
+    }
+
+    .benefitsimg {
+        width: 40%;
+    }
+    .servicesList {
+        margin-right: 200px;
+    }
+    .additionalBox {
+        justify-content: space-around;
+    }
+    .benefitsimg {
+        display: flex;
+        align-items: center;
+    }
+    .benefitslist div {
+        padding-top: 20px;
+    }
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {
     h3 {
-        font-size: 40px;
-        line-height: 50px;
+        font-size: 50px;
+        line-height: 60px;
     }
     .logo {
         margin: 5px auto;
@@ -904,30 +957,43 @@ footer {
     .videoblock {
         padding: 20px;
     }
+    .integration {
+        padding: 20px;
+    }
+    .integration h3,
+    .learning h3 {
+        font-size: 50px;
+        line-height: 60px;
+        margin-bottom: 30px;
+    }
     .integrationBlock {
         width: 100%;
     }
     .integrationItem {
         margin: 10px auto;
+        width: 49%;
+    }
+    .integrationItem span {
+        font-size: 12px;
     }
     .creationBox {
         display: flex;
-        flex-direction: column;
+        align-items: center;
     }
     .creationList {
-        width: 80%;
+        width: 50%;
         margin: 0 auto;
+        margin-bottom: 30px;
     }
     .managementWrap,
     .financeWrap,
     .servicesWrap,
     .additionalBox {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
-    .additionalImg,
     .manImg {
-        width: 100%;
+        width: 50%;
     }
     .video {
         width: 100%;
@@ -990,7 +1056,7 @@ footer {
         padding: 20px;
     }
     .abouttext {
-        width: 50%;
+        width: 46%;
         margin-right: 0;
         padding-top: 40px;
     }
@@ -1043,12 +1109,74 @@ footer {
     .description .container {
         padding-top: 0;
     }
+    .creation h3,
+    .management h3{
+        font-size: 50px;
+        line-height: 60px;
+        margin-bottom: 20px;
+    }
+    .creation h6 {
+        font-size: 20px;
+    }
+    .creationImg {
+        width: 50%;
+    }
+    .btn {
+        margin: 0 auto;
+    }
+    .servicesWrap {
+        justify-content: center;
+    }
+    .learningImg {
+        width: 50%;
+        height: auto;
+    }
+    .learningImg img {
+        width: 100%;
+    }
+    .additionalServices h3 {
+        font-size: 50px;
+        line-height: 60px;
+        margin-bottom: 30px;
+    }
+    .additionalServices h5 {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    .servicesList {
+        margin-right: 20px;
+    }
+    .financeList li {
+        margin-bottom: 20px;
+    }
+    .services h3 {
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 30px;
+    }
+    .manImg,
+    .additionalImg {
+        margin-right: 20px;
+    }
+    .creationList li {
+        margin-bottom: 20px;
+    }
+    .additionalImg {
+        width: 50%;
+    }
+    .benefitslist ul li {
+        margin-bottom: 10px;
+    }
+    .descriptiontext ul {
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
 
 }
 
 @media screen and (max-width: 480px) {
     h3 {
-        font-size: 35px;
+        font-size: 30px;
         line-height: 40px;
         text-align: center;
     }
@@ -1096,6 +1224,7 @@ footer {
     }
     .btn {
         margin: 0 auto;
+        margin-bottom: 30px;
     }
     .descriptiontext {
         width: 100%;
@@ -1207,9 +1336,6 @@ footer {
         margin: 0 auto;
         height: 50px;
         width: 100%;
-    }
-    .aboutinfo {
-        padding: 20px;
     }
     .about {
         padding-top: 30px;
@@ -1351,4 +1477,31 @@ footer {
     .footerBottom span {
         text-align: center;
     }
+    .creationList {
+        width: 100%;
+    }
+    .integrationItem {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    footer {
+        padding-top: 25px;
+        padding-bottom: 50px;
+    }
+    .footerContacts a {
+        color:#fff;
+    }
+    .servicesList {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .servicesList li:last-child {
+        margin-bottom: 40px;
+    }
+    .servicesListBlock .btn {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
 }

@@ -94,10 +94,10 @@ class LandingPage extends Component {
                         <div className={styles.benefitslist}>
                             <div className={styles.list}>
                                 <ul>
-                                    <li>Автоматизированная «кнопка деньги</li>
+                                    <li>Автоматизированная "кнопка деньги"</li>
                                     <li>Удобство управления всеми <br/> заявками/продажами</li>
                                     <li>Синхронизация с популярными <br/> маркетплейсами в 2 клика</li>
-                                    <li>Все действия и процессы <br/> Автоматизированы в одном месте</li>
+                                    <li>Все действия и процессы <br/> автоматизированы в одном месте</li>
                                     <li>Возможность взаимодействия <br/> партнеров и поставщиков</li>
                                 </ul>
                                 <ul>
@@ -299,13 +299,14 @@ class LandingPage extends Component {
                     <div className={styles.container}>
                         <h3>Сервисы от маркетплейса</h3>
                         <div className={styles.servicesWrap}>
-                            <ul className={styles.servicesList}>
-                                <li className={styles.call}>Call центр</li>
-                                <li className={styles.process}>Обработка заказов</li>
-                                <li className={styles.support}>Поддержка в одном месте</li>
-
+                            <div className={styles.servicesListBlock}>
+                                <ul className={styles.servicesList}>
+                                    <li className={styles.call}>Call центр</li>
+                                    <li className={styles.process}>Обработка заказов</li>
+                                    <li className={styles.support}>Поддержка в одном месте</li>
+                                </ul>
                                 <button className={styles.btn} onClick={this.goRegistrationPage}>Регистрация</button>
-                            </ul>
+                            </div>
                             <div className={styles.servicesImg}>
                                 <img src={services} alt=""/>
                             </div>
@@ -320,7 +321,6 @@ class LandingPage extends Component {
                                 <li>Единая база знаний</li>
                                 <li>Видеоуроки по использованию платформы</li>
                                 <li>Оформление договора с Rozetka</li>
-                                <li>Парсинг товаров из других магазинов</li>
                                 <li>Парсинг товаров из других магазинов</li>
 
                                 <button className={styles.btn} onClick={this.goRegistrationPage}>Регистрация</button>
@@ -357,13 +357,13 @@ class LandingPage extends Component {
                                 <ul>
                                     <li><strong>Владимир Солошенко, 30 лет</strong></li>
                                     <li><strong>Владелец торговой марки Smart Baby Watch</strong> <a
-                                        href="https://smartbabywatch.ua/" target="_blank">(smartbabywatch.ua)</a>;
+                                        href="https://smartbabywatch.ua/" target="_blank">(smartbabywatch.ua).</a>
                                     </li>
-                                    <li>Более 2х лет опыта продаж на маркетплейсе Розетка как результат: более 2400
-                                        товаров продается на маркетплейсе, от 80 продаж в день;
+                                    <li>Более 2х лет опыта продаж на маркетплейсе Розетка.
+                                        Как результат - более 2400 товаров продается на маркетплейсе, от 80 продаж в день.
                                     </li>
                                     <li><strong>Владелец компании Smart Lead</strong> – за 3 месяца обучил и вывел на
-                                        розетку более 500 человек которые уже получают от 3 - 60 продаж в день;
+                                        Розетку более 500 человек, которые уже имеют 3 - 60 продаж в день.
                                     </li>
                                     <li>Реализует совместно с миллиардером Марком Гинзбургом первый в мире маркетплейс
                                         на блокчейн технологии <a href="https://bitonmarket.io/">(bitonmarket.io).</a>
@@ -385,13 +385,13 @@ class LandingPage extends Component {
                                 SMART Lead
                             </a>
                             <div className={styles.footerContacts}>
-                                <p>(093) 137-76-74</p>
+                                <p><a href="+380931377674">(093) 137-76-74</a></p>
                                 <p>г. Киев, ул. Затышная 7б</p>
                             </div>
                         </div>
                         <div className={styles.footerBottom}>
                             <span className={styles.copy}>(c) Smartlead 2019</span>
-                            <span>ФОП Солошенко Володимир Володимирович, ИНН 3220809017</span>
+                            <span>ФЛП Солошенко Владимир Владимирович, ИНН 3220809017</span>
                         </div>
                     </div>
                 </footer>

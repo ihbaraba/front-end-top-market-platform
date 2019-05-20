@@ -100,34 +100,40 @@ class Documents extends Component {
                 {
                     title: 'Паспорт',
                     description: '(стр. 1, 2, 3 и место регистрации личности)',
-                    typeDoc: 'passport'
+                    typeDoc: 'passport',
+                    imgType: 'passDocDecoded'
                 },
                 {
                     title: 'Справка Государственного комитета статистики Украины',
                     description: '(если договор подписывается с юр.лицом - обязательно, если с \n' +
                     'физ.лицом - в случае, если такую справку получало это лицо)',
-                    typeDoc: 'ukStatistic'
+                    typeDoc: 'ukStatistic',
+                    imgType: 'ukDocDecoded'
                 },
                 {
                     title: 'Свидетельство о гос.регистрации или выписка с ЕГРПОУ',
                     description: '',
-                    typeDoc: 'certificate'
+                    typeDoc: 'certificate',
+                    imgType: 'certDocDecoded'
                 },
                 {
                     title: 'Справка 4 Учета плательщика налогов',
                     description: '',
-                    typeDoc: 'taxPayer'
+                    typeDoc: 'taxPayer',
+                    imgType: 'taxDocDecoded'
                 },
                 {
                     title: 'Свидетельство, выписка плательщика налога на добавленную \n' +
                     'стоимость, выписка из реестра плательщиков НДС',
                     description: '',
-                    typeDoc: 'payerRegister'
+                    typeDoc: 'payerRegister',
+                    imgType: 'payerRegDocDecoded'
                 },
                 {
                     title: 'Свидетельство плательщика единого налога',
                     description: '(если лицо является плательщиком по упрощенной системе)',
-                    typeDoc: 'payerCertificate'
+                    typeDoc: 'payerCertificate',
+                    imgType: 'payerCertDocDecoded'
                 },
             ],
             {documentsFromServer} = this.state;
@@ -144,8 +150,8 @@ class Documents extends Component {
                             <span className={styles.description}>{item.description}</span>
 
                             <div className={styles.docImg}>
-                                {documentsFromServer[item.typeDoc] ? documentsFromServer[item.typeDoc].map(item => (
-                                    <img src={item.passDocDecoded} alt=""/>
+                                {documentsFromServer[item.typeDoc] ? documentsFromServer[item.typeDoc].map(item1 => (
+                                    <img src={item1[item.imgType]} alt=""/>
                                 )) : ''}
                             </div>
                         </div>

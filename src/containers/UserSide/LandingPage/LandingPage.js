@@ -385,7 +385,7 @@ class LandingPage extends Component {
                                 SMART Lead
                             </a>
                             <div className={styles.footerContacts}>
-                                <p><a href="+380931377674">(093) 137-76-74</a></p>
+                                <p><a href="tel:+380931377674">(093) 137-76-74</a></p>
                                 <p>г. Киев, ул. Затышная 7б</p>
                             </div>
                         </div>

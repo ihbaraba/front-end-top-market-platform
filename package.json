@@ -1,8 +1,8 @@
 {
   "name": "top-market",
   "version": "0.1.0",
-    "private": true,
-    "homepage": ".",
+  "private": true,
+  "homepage": "https://bitbucket.org/gofriendsteam/front-end-top-market-platform#readme",
   "dependencies": {
     "antd": "^3.15.2",
     "axios": "^0.18.0",
@@ -50,6 +50,5 @@
     "url": "git+https://zzzfisherzzz@bitbucket.org/gofriendsteam/front-end-top-market-platform.git"
   },
   "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/gofriendsteam/front-end-top-market-platform#readme"
+  "license": "ISC"
 }

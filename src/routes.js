@@ -33,10 +33,10 @@ const Routes = () => {
         <Fragment>
             <Switch>
                 <Route exact path='/' component={LandingPage}/>
-                {/*<Route exact path='/login' component={Login}/>*/}
-                {/*<Route path='/registration' component={Registration}/>*/}
-                {/*<Route path='/reset_password' component={ResetPassword}/>*/}
-                {/*<Route path='/confirm_email' component={ConfirmRegistration}/>*/}
+                <Route exact path='/login' component={Login}/>
+                <Route path='/registration' component={Registration}/>
+                <Route path='/reset_password' component={ResetPassword}/>
+                <Route path='/confirm_email' component={ConfirmRegistration}/>
 
                 {/*ADMIN SIDE*/}
                 <Route path='/admin' render={() => (

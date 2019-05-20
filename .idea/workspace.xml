@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="redesign landing page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/macbook.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/macbook.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Cabinet/Cabinet.module.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="1890">
               <caret line="126" selection-start-line="126" selection-end-line="126" />
             </state>
           </provider>
@@ -39,7 +36,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
+            <state relative-caret-position="4170">
               <caret line="301" column="68" selection-start-line="301" selection-start-column="51" selection-end-line="301" selection-end-column="68" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -51,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="1494" column="16" selection-start-line="1494" selection-start-column="16" selection-end-line="1494" selection-end-column="16" />
+            <state relative-caret-position="663">
+              <caret line="1504" column="5" selection-start-line="1504" selection-start-column="5" selection-end-line="1504" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -183,10 +180,9 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="22" />
-    <option name="width" value="1680" />
-    <option name="height" value="801" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -196,7 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,6 +261,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -392,7 +388,8 @@
       <workItem from="1557817951953" duration="4348000" />
       <workItem from="1557837696682" duration="3439000" />
       <workItem from="1557907664924" duration="8063000" />
-      <workItem from="1558102678773" duration="3197000" />
+      <workItem from="1558102678773" duration="3592000" />
+      <workItem from="1558192496272" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="add CI, add Dockerfile">
       <created>1555070821463</created>
@@ -415,11 +412,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558104033716</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="redesign landing page">
+      <created>1558108377084</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558108377084</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="416396000" />
+    <option name="totallyTimeSpent" value="416808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -440,7 +444,7 @@
       <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4996986" weight="0.27831325" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50030136" side_tool="true" weight="0.32923076" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32771084" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -878,14 +882,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Cabinet/Cabinet.module.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="1890">
           <caret line="126" selection-start-line="126" selection-end-line="126" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
+        <state relative-caret-position="4170">
           <caret line="301" column="68" selection-start-line="301" selection-start-column="51" selection-end-line="301" selection-end-column="68" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
@@ -895,8 +899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="1494" column="16" selection-start-line="1494" selection-start-column="16" selection-end-line="1494" selection-end-column="16" />
+        <state relative-caret-position="663">
+          <caret line="1504" column="5" selection-start-line="1504" selection-start-column="5" selection-end-line="1504" selection-end-column="5" />
         </state>
       </provider>
     </entry>

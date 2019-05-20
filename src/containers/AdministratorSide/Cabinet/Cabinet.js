@@ -200,7 +200,7 @@ class Cabinet extends Component {
                                                 от поставщика</li>
                                         </ul>
                                     </div>
-                                    <button className={styles.buyBtn}>КУПИТЬ</button>
+                                    <button className={styles.buyBtn} onClick={this.showModal}>КУПИТЬ</button>
                                 </div>
                                 <div className={styles.tariffItem}>
                                     <div className={styles.platinumTitle}>
@@ -243,7 +243,7 @@ class Cabinet extends Component {
                                                 от поставщика</li>
                                         </ul>
                                     </div>
-                                    <button className={styles.buyBtn}>КУПИТЬ</button>
+                                    <button className={styles.buyBtn} onClick={this.showModal}>КУПИТЬ</button>
                                 </div>
                             </div>
                         </div>

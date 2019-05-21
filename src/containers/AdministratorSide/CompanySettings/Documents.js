@@ -106,7 +106,7 @@ class Documents extends Component {
                 {
                     title: 'Справка Государственного комитета статистики Украины',
                     description: '(если договор подписывается с юр.лицом - обязательно, если с \n' +
-                    'физ.лицом - в случае, если такую справку получало это лицо)',
+                        'физ.лицом - в случае, если такую справку получало это лицо)',
                     typeDoc: 'ukStatistic',
                     imgType: 'ukDocDecoded'
                 },
@@ -124,7 +124,7 @@ class Documents extends Component {
                 },
                 {
                     title: 'Свидетельство, выписка плательщика налога на добавленную \n' +
-                    'стоимость, выписка из реестра плательщиков НДС',
+                        'стоимость, выписка из реестра плательщиков НДС',
                     description: '',
                     typeDoc: 'payerRegister',
                     imgType: 'payerRegDocDecoded'
@@ -165,8 +165,6 @@ class Documents extends Component {
                                         :
                                         <Icon type="plus-circle" theme="filled"
                                               onClick={() => this.setState({type: item.typeDoc})}/>}
-
-
                                 </div>
                             )}
                         </Dropzone>

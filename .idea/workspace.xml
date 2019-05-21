@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/GeneralInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/GeneralInformation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,9 +20,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="608">
+              <caret line="365" selection-start-line="343" selection-end-line="365" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -30,19 +32,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/GeneralInformation.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+            <state relative-caret-position="611">
+              <caret line="262" selection-start-line="240" selection-end-line="262" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="153" column="64" selection-start-line="153" selection-start-column="64" selection-end-line="153" selection-end-column="64" />
+            <state relative-caret-position="354">
+              <caret line="382" lean-forward="true" selection-start-line="374" selection-end-line="382" />
             </state>
           </provider>
         </entry>
@@ -60,7 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>navigationBar</find>
       <find>Обрабатывается менеджером</find>
       <find>orderNumber</find>
       <find>totalProducts</find>
@@ -90,6 +94,7 @@
       <find>save</find>
       <find>userInfo</find>
       <find>checked.png</find>
+      <find>item</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/containers</dir>
@@ -140,17 +145,13 @@
         <option value="$PROJECT_DIR$/src/actions/storeActions.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Store/Store.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/NavBar.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" />
         <option value="$PROJECT_DIR$/src/actions/companyActions.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.module.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js" />
-        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" />
         <option value="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/AdditionalServices/AdditionalServices.module.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/AdditionalServices/AdditionalServices.js" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorOrders/ContractorOrders.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ProfileSettings/ProfileSettings.module.css" />
@@ -159,6 +160,10 @@
         <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/GeneralInformation.js" />
         <option value="$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js" />
+        <option value="$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js" />
       </list>
     </option>
   </component>
@@ -202,12 +207,6 @@
               <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
               <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -223,7 +222,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
-              <item name="CompanySettings" type="462c0819:PsiDirectoryNode" />
+              <item name="Categories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
+              <item name="ContractorProducts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-top-market-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-top-market-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="AdministratorSide" type="462c0819:PsiDirectoryNode" />
+              <item name="MyProducts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -372,7 +387,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="446681000" />
+    <option name="totallyTimeSpent" value="448237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -643,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="250" column="62" selection-start-line="250" selection-start-column="62" selection-end-line="250" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Store/Store.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -702,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4530">
-          <caret line="302" column="35" lean-forward="true" selection-start-line="302" selection-start-column="35" selection-end-line="302" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/components/NavBar/CategoryList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
@@ -719,13 +717,6 @@
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="254" column="14" lean-forward="true" selection-start-line="254" selection-start-column="14" selection-end-line="254" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -787,16 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2355">
-          <caret line="173" column="13" selection-start-line="173" selection-start-column="13" selection-end-line="173" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Cabinet/Cabinet.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -834,12 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="421">
+          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
         </state>
       </provider>
     </entry>
@@ -850,10 +829,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/Documents.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/CompanySettings/CompanySettings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="153" column="64" selection-start-line="153" selection-start-column="64" selection-end-line="153" selection-end-column="64" />
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="265" column="16" lean-forward="true" selection-start-line="265" selection-start-column="16" selection-end-line="265" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/ContractorProducts/ContractorProducts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="365" selection-start-line="343" selection-end-line="365" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/Categories/Categories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="262" selection-start-line="240" selection-end-line="262" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AdministratorSide/MyProducts/MyProducts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="382" lean-forward="true" selection-start-line="374" selection-end-line="382" />
         </state>
       </provider>
     </entry>

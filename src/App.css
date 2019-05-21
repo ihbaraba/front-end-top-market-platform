@@ -240,7 +240,6 @@ a.active {
     height: 40px;
     min-width: 206px;
     width: max-content;
-    padding: 0 10px;
     border-radius: 5px;
     background-color: #4A90E2;
     color: #FFFFFF;
@@ -264,7 +263,7 @@ a.active {
 
 .btn button {
     height: 40px;
-    width: 206px;
+    width: 100%;
     border-radius: 5px;
     background-color: #4A90E2;
     color: #FFFFFF;

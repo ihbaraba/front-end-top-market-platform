@@ -252,7 +252,7 @@ class ProfileSettings extends Component {
                                         <label>Телефон</label>
                                         <input type="tel"
                                                name='phone'
-                                               value={phone || ''}
+                                               value={phone}
                                                onChange={this.handleChangeInput}
                                         />
                                     </div>

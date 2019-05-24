@@ -260,6 +260,7 @@ class ProfileSettings extends Component {
                                         <label>Веб-сайт</label>
                                         <input type="text"
                                                name='webSite'
+                                               placeholder="https://example.com.ua"
                                                value={webSite || ''}
                                                onChange={this.handleChangeInput}
                                         />
@@ -377,15 +378,15 @@ class ProfileSettings extends Component {
                                         </Tooltip>
                                     </div>
 
-                                    <div className={styles.smsNotifications}>
-                                        <h3>SMS Уведомления</h3>
-                                        <span className={styles.number}>+380997786633</span>
-                                        <Tooltip title="Находится в разработке">
+                                    {/*<div className={styles.smsNotifications}>*/}
+                                    {/*    <h3>SMS Уведомления</h3>*/}
+                                    {/*    <span className={styles.number}>+380997786633</span>*/}
+                                    {/*    <Tooltip title="Находится в разработке">*/}
 
-                                            <CheckboxGroup options={smsOptions} value={phoneNotifications}
-                                                           onChange={e => this.handleChangeCheckbox(e, 'phone')}/>
-                                        </Tooltip>
-                                    </div>
+                                    {/*        <CheckboxGroup options={smsOptions} value={phoneNotifications}*/}
+                                    {/*                       onChange={e => this.handleChangeCheckbox(e, 'phone')}/>*/}
+                                    {/*    </Tooltip>*/}
+                                    {/*</div>*/}
 
                                     <button className={styles.save}>Сохранить</button>
                                 </div>

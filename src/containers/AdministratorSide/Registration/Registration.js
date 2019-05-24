@@ -101,6 +101,7 @@ class Registration extends Component {
                             <Input
                                 type="tel"
                                 placeholder="Phone"
+                                // required
                             />
                         )}
                     </FormItem>

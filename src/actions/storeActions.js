@@ -12,5 +12,5 @@ export const getMyStore = () => {
 
 export const updateStore = (store) => {
     // console.log("login_request this.props", this.props);
-    return api('put', STORE, store)
+    return api('patch', STORE, store)
 };

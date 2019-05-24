@@ -243,7 +243,7 @@ class ContractorOrders extends Component {
         const {orders1, orders2, orders3,} = this.state;
         return (
             <div className='page'>
-                <h3 className='page-title'>Мои заказы</h3>
+                <h3 className='page-title'>Мои заказы (Находится в разработке)</h3>
 
                 <SearchOrders
                     onSearch={this.getAllOrders}
@@ -279,6 +279,13 @@ class ContractorOrders extends Component {
                                                     {/*<h4>Всего к оплате:</h4>*/}
                                                     {/*{`${record.amount} грн`}*/}
                                                 {/*</div>*/}
+                                            </div>
+
+                                            <div className={styles.ttnBlock}>
+                                                <div>
+                                                    <label htmlFor="">ТТН</label>
+                                                    <input type="text"/>
+                                                </div>
                                             </div>
                                         </div>
                                     )

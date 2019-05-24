@@ -202,7 +202,7 @@
     position: absolute;
     width: 12.57px;
     height: 20px;
-    background: url("../../../img/hryvna.png") no-repeat;
+    /*background: url("../../../img/hryvna.png") no-repeat;*/
     left: -20px;
     top: 10px;
 }
@@ -227,7 +227,7 @@
     height: 15px;
     left: -25px;
     top: 5px;
-    background: url("../../../img/checked.png");
+    /*background: url("../../../img/checked.png");*/
 }
 .tariffsBox {
     display: flex;

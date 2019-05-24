@@ -22,29 +22,31 @@ class Documents extends Component {
         const typeDoc = this.state.type;
         let uploadType = '';
 
+        console.log(files);
+
         switch (typeDoc) {
             case 'passport':
                 uploadType = 'passDocDecoded';
                 break;
 
             case 'ukStatistic':
-                uploadType = 'ukDoc';
+                uploadType = 'ukDocDecoded';
                 break;
 
             case 'certificate':
-                uploadType = 'certDoc';
+                uploadType = 'certDocDecoded';
                 break;
 
             case 'taxPayer':
-                uploadType = 'taxDoc';
+                uploadType = 'taxDocDecoded';
                 break;
 
             case 'payerRegister':
-                uploadType = 'payerRegDoc';
+                uploadType = 'payerRegDocDecoded';
                 break;
 
             case 'payerCertificate':
-                uploadType = 'payerCertDoc';
+                uploadType = 'payerCertDocDecoded';
                 break;
 
             default:
@@ -59,10 +61,9 @@ class Documents extends Component {
             });
         });
 
-
-        this.setState({
-            [typeDoc]: arrFiles
-        })
+        setTimeout(() => {
+            this.handleUploadDocuments({[typeDoc]: arrFiles})
+        }, 100)
     };
 
     getBase64(file, cb) {
@@ -76,8 +77,8 @@ class Documents extends Component {
         };
     };
 
-    handleUploadDocuments = () => {
-        uploadDocuments(this.state)
+    handleUploadDocuments = (doc) => {
+        uploadDocuments(doc)
             .then(() => notification.success({
                     message: 'Сохранено',
                 })
@@ -87,7 +88,6 @@ class Documents extends Component {
 
     getDocuments = async () => {
         const res = await getDocuments();
-        console.log(res.passport.length);
         this.setState({documentsFromServer: res})
     };
 
@@ -131,10 +131,10 @@ class Documents extends Component {
                 },
             ],
             {documentsFromServer} = this.state;
-        console.log(documentsFromServer);
+
         return (
             <div>
-                <h4 className={styles.information}>Изображение должно быть в форматах pdf. jpeg или png. размер файла до
+                <h4 className={styles.information}>Изображение должно быть в форматах jpeg или png. Размер файла до
                     2Мб</h4>
 
                 {documents.map((item) => (
@@ -167,7 +167,7 @@ class Documents extends Component {
                     </div>
                 ))}
 
-                <button onClick={this.handleUploadDocuments} className={styles.save}>Сохранить</button>
+                {/*<button onClick={this.handleUploadDocuments} className={styles.save}>Сохранить</button>*/}
             </div>
         )
     }

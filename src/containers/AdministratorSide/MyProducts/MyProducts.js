@@ -231,43 +231,120 @@ class MyProducts extends Component {
             </Menu>
         );
 
-
         const columns = [
             {
-                title: 'Название товара',
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Название товара</label>
+                        <input
+                            type="text"
+                            className={styles.productName}
+                            name='name'
+                            value={name}
+                            onChange={this.handleChangeFilters}
+                        />
+                    </div>
+                ),
                 dataIndex: 'name',
                 render: (name, item) => (
-                    <span className='product-avatar'>
-                        <img
-                            src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls.length > 0 ? item.imageUrls [0].url : '')}
-                            alt=""/>
+                    <div className='product-avatar'>
+                        <div className="product-avatar-block">
+                            <img
+                                src={item.coverImages.length > 0 ? item.coverImages[0].imageDecoded : (item.imageUrls.length > 0 ? item.imageUrls [0].url : '')}
+                                alt=""/>
+                        </div>
+                        <span>
                         {name}
-                     </span>
+                        </span>
+                    </div>
                 ),
                 width: '20%'
             },
             {
-                title: 'Артикул',
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Артикул</label>
+                        <input
+                            type="text"
+                            className={styles.productName}
+                            name='vendor_code'
+                            value={vendor_code}
+                            onChange={this.handleChangeFilters}
+                        />
+                    </div>
+                ),
                 dataIndex: 'vendorCode',
             },
             {
-                title: 'Бренд',
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Бренд</label>
+                        <input
+                            type="text"
+                            className={styles.productName}
+                            name='brand'
+                            value={brand}
+                            onChange={this.handleChangeFilters}
+                        />
+                    </div>
+                ),
                 dataIndex: 'brand',
                 width: '15%'
             },
             {
-                title: 'Категория',
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Категория</label>
+
+                        <select className={styles.availability} onChange={({target: {value}}) => this.setState({
+                            filters: {
+                                ...this.state.filters,
+                                category: value
+                            }
+                        })}>
+                            <option value=''>Все</option>
+                        </select>
+                    </div>
+
+                ),
                 dataIndex: 'category',
                 render: (category) => (
                     <span>{category ? category.name : ''}</span>
                 )
             },
             {
-                title: 'Количество',
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Количество</label>
+                        <select className={styles.availability}
+                                onChange={({target: {value}}) => this.handleChangeFilters({
+                                    target: {
+                                        name: 'in_stock',
+                                        value: value
+                                    }
+                                })}>
+                            <option value=''>Все</option>
+                            <option value={true}>В наличии</option>
+                            <option value={false}>Нет в наличии</option>
+                        </select>
+                    </div>
+
+                ),
                 dataIndex: 'count',
             },
             {
-                title: 'Цена',
+                title: () => (
+                    <div className='filter-field'>
+                        <label>Цена</label>
+                        <input
+                            type="number"
+                            className={styles.productName}
+                            name='min_price'
+                            value={min_price}
+                            onChange={this.handleChangeFilters}
+                        />
+                    </div>
+                ),
                 dataIndex: 'price',
             },
             {
@@ -277,6 +354,7 @@ class MyProducts extends Component {
                     <button className='btn edit-btn' onClick={() => this.handleOpenWindow(item)}>Редактировать</button>
                 )
             }
+
         ];
 
         return (
@@ -315,94 +393,6 @@ class MyProducts extends Component {
 
                                 {/*<NewProduct/>*/}
                                 {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
-                            </div>
-
-                            <div className={styles.filter}>
-                                <div className={styles.nameProduct}>
-                                    <label>Название товара</label>
-                                    <input
-                                        type="text"
-                                        className={styles.productName}
-                                        name='name'
-                                        value={name}
-                                        onChange={this.handleChangeFilters}
-                                    />
-                                </div>
-
-                                <div className={styles.vendorCode}>
-                                    <label>Артикул</label>
-                                    <input
-                                        type="text"
-                                        className={styles.productName}
-                                        name='vendor_code'
-                                        value={vendor_code}
-                                        onChange={this.handleChangeFilters}
-                                    />
-                                </div>
-
-                                <div className={styles.brand}>
-                                    <label>Бренд</label>
-                                    <input
-                                        type="text"
-                                        className={styles.productName}
-                                        name='brand'
-                                        value={brand}
-                                        onChange={this.handleChangeFilters}
-                                    />
-                                </div>
-
-                                <div className={styles.category}>
-                                    <label>Категория</label>
-
-                                    <select className={styles.availability}
-                                            onChange={({target: {value}}) => this.setState({
-                                                filters: {
-                                                    ...this.state.filters,
-                                                    category: value
-                                                }
-                                            })}>
-                                        <option value=''>Все</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label>Наличие</label>
-                                    <select className={styles.availability}
-                                            onChange={({target: {value}}) => this.setState({
-                                                filters: {
-                                                    ...this.state.filters,
-                                                    in_stock: value
-                                                }
-                                            })}>
-                                        <option value=''>Все</option>
-                                        <option value={true}>В наличии</option>
-                                        <option value={false}>Нет в наличии</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label>Цена от</label>
-                                    <input
-                                        type="number"
-                                        className={styles.productName}
-                                        name='min_price'
-                                        value={min_price}
-                                        onChange={this.handleChangeFilters}
-                                    />
-                                </div>
-                                <div>
-                                    <label>До</label>
-                                    <input
-                                        type="number"
-                                        className={styles.productName}
-                                        name='max_price'
-                                        value={max_price}
-                                        onChange={this.handleChangeFilters}
-                                    />
-                                </div>
-                                {/*<div>*/}
-                                {/*<button className='btn' onClick={this.getProducts}>Поиск</button>*/}
-                                {/*</div>*/}
                             </div>
 
                             <Table

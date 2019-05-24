@@ -62,7 +62,7 @@ const contractorMenu = [
         icon: list,
         activeIcon: listActive,
         href: 'contractor_orders',
-        developing: false
+        developing: true
     },
     {
         title: 'Финансы',
@@ -127,7 +127,7 @@ const partnerMenu = [
         icon: home,
         activeIcon: homeActive,
         href: 'store',
-        developing: true
+        developing: false
     },
     {
         title: 'Мои заказы',

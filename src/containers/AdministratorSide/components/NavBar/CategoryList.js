@@ -81,18 +81,20 @@ const renderCategories = (categories) => {
 const CategoryList = ({categories, onSelectCategory}) => {
     return (
         <Menu onClick={onSelectCategory}>
-            {categories.map((category, index) => (
-                <SubMenu key={category.id}
-                         title={<span><img style={{width: '15px', margin: '0 10px 0 5px'}} src={icons[index + 1]}
-                                           alt=""/> {category.name}</span>}>
-                    {category.subcategories.length > 0 ? renderCategories(category.subcategories)
-                        :
-                        <Menu.Item key={category.id}>
-                            {category.name}
-                        </Menu.Item>}
-                </SubMenu>
-            ))
-            }
+            <SubMenu title={<span>Категории</span>}>
+                {categories.map((category, index) => (
+                    <SubMenu key={category.id}
+                             title={<span><img style={{width: '15px', margin: '0 10px 0 5px'}} src={icons[index + 1]}
+                                               alt=""/> {category.name}</span>}>
+                        {category.subcategories.length > 0 ? renderCategories(category.subcategories)
+                            :
+                            <Menu.Item key={category.id}>
+                                {category.name}
+                            </Menu.Item>}
+                    </SubMenu>
+                ))
+                }
+            </SubMenu>
         </Menu>
     );
 };

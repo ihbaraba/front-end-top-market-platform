@@ -44,6 +44,8 @@ form input[type="tel"] {
 
 .userInfo {
     padding-top: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .ChangeAvatar {
@@ -153,7 +155,7 @@ form input[type="tel"] {
 }
 
 .save {
-    margin-left: auto;
+    margin: auto 0 0 auto;
     display: block;
 }
 

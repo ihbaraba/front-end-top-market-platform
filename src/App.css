@@ -216,7 +216,11 @@ a.active {
 .ant-tabs-content {
     background: #fff;
     border: 1px solid #ECECEC;
-    padding: 25px;
+    padding: 25px 40px 25px 25px;
+}
+
+.ant-select-selection--single {
+    width: 100% !important;
 }
 
 /*FORM*/
@@ -234,7 +238,9 @@ a.active {
 
 .btn {
     height: 40px;
-    width: 206px;
+    min-width: 206px;
+    width: max-content;
+    padding: 0 10px;
     border-radius: 5px;
     background-color: #4A90E2;
     color: #FFFFFF;
@@ -243,6 +249,10 @@ a.active {
     font-weight: bold;
     line-height: 22px;
     margin-right: 20px;
+}
+
+.m-0 {
+    margin: 0;
 }
 
 .edit-btn {
@@ -291,16 +301,50 @@ button:disabled:hover {
     font-weight: bold;
     line-height: 22px;
     margin-right: 20px;
+    cursor: pointer;
+}
+
+.ant-dropdown-link {
+    display: flex;
+    align-items: center;
+}
+
+.ant-table-header-column {
+    width: 100%;
+}
+
+.filter-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-field input,
+.filter-field select {
+    height: 31px;
+    width: 100%;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    padding: 0 0 0 5px;
 }
 
 .product-avatar {
     display: flex;
 }
 
-.product-avatar img {
-    width: 30px;
-    height: 30px;
+.product-avatar .product-avatar-block {
+    flex-basis: 40px !important;
     margin: 0 10px 0 0;
+    overflow: hidden;
+}
+
+.product-avatar span {
+    width: 90%;
+}
+
+.product-avatar .product-avatar-block img {
+    width: 100%;
 }
 
 .ant-table-tbody .ant-table-row-level-0:nth-child(2n) {

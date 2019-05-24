@@ -47,18 +47,18 @@ class Header extends Component {
                         <img src={logo} alt="logo"/>SMART Lead 2.0
                     </div>
 
-                    <div className={styles.notification}>
-                        <a href="#">
-                            <img src={notification} alt=""/>
-                            {/*<span className={styles.alert}>1</span>*/}
-                        </a>
-                    </div>
-                    <div className={styles.cart}>
-                        <Link to="/admin/cart">
-                            <img src={cart} alt=""/>
-                            {/*<span className={styles.alert}>1</span>*/}
-                        </Link>
-                    </div>
+                    {/*<div className={styles.notification}>*/}
+                        {/*<a href="#">*/}
+                            {/*<img src={notification} alt=""/>*/}
+                            {/*/!*<span className={styles.alert}>1</span>*!/*/}
+                        {/*</a>*/}
+                    {/*</div>*/}
+                    {/*<div className={styles.cart}>*/}
+                        {/*<Link to="/admin/cart">*/}
+                            {/*<img src={cart} alt=""/>*/}
+                            {/*/!*<span className={styles.alert}>1</span>*!/*/}
+                        {/*</Link>*/}
+                    {/*</div>*/}
 
                     <div className={styles.balanceBlock}>
                         <div>
@@ -81,7 +81,11 @@ class Header extends Component {
                         </div>
                         <Dropdown overlay={menu}>
                             <a className="ant-dropdown-link" href="#">
-                                <span className={styles.name}>{user.firstName || 'User'}</span><Icon type="down"/>
+                                <div className={styles.nameBlock}>
+                                    <span className={styles.name}>{user.firstName || 'User'}</span>
+                                    <span>{user.role === 'PARTNER' ? 'Партнер' : 'Поставщик'}</span>
+                                </div>
+                                <Icon type="down"/>
                             </a>
                         </Dropdown>
                     </div>

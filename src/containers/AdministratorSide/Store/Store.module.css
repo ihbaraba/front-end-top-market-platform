@@ -55,12 +55,16 @@ form.storeManagement input[type=tel] {
     object-fit: cover;
 }
 .headerInfo {
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 37px;
 }
 .logo {
+    position: absolute;
+    right: 0;
+    top: -200px;
     display: flex;
     padding-top: 49px;
 }

@@ -334,15 +334,27 @@ class MyProducts extends Component {
             },
             {
                 title: () => (
-                    <div className='filter-field'>
-                        <label>Цена</label>
-                        <input
-                            type="number"
-                            className={styles.productName}
-                            name='min_price'
-                            value={min_price}
-                            onChange={this.handleChangeFilters}
-                        />
+                    <div style={{display: 'flex'}}>
+                        <div className='filter-field'>
+                            <label>Цена от</label>
+                            <input
+                                type="number"
+                                className={styles.productName}
+                                name='min_price'
+                                value={min_price}
+                                onChange={this.handleChangeFilters}
+                            />
+                        </div>
+                        <div className='filter-field'>
+                            <label>до</label>
+                            <input
+                                type="number"
+                                className={styles.productName}
+                                name='max_price'
+                                value={max_price}
+                                onChange={this.handleChangeFilters}
+                            />
+                        </div>
                     </div>
                 ),
                 dataIndex: 'price',
@@ -360,14 +372,14 @@ class MyProducts extends Component {
         return (
             <div className='page'>
                 <h3 className='page-title'>
-                    <Popover placement="bottom" content={(
-                        <CategoryList
-                            categories={categories}
-                            onSelectCategory={this.handleSelectCategory}
-                        />
-                    )}>
-                        <Icon type="bars"/>
-                    </Popover>
+                    {/*<Popover placement="bottom" content={(*/}
+                        {/*<CategoryList*/}
+                            {/*categories={categories}*/}
+                            {/*onSelectCategory={this.handleSelectCategory}*/}
+                        {/*/>*/}
+                    {/*)}>*/}
+                        {/*<Icon type="bars"/>*/}
+                    {/*</Popover>*/}
 
                     Мои товары
                 </h3>

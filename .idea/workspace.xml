@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="added img">
+    <list default="true" id="d806f874-38ad-440c-a2f7-4734c64f3ea2" name="Default" comment="added active tel to footer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="387" column="63" selection-start-line="387" selection-start-column="63" selection-end-line="387" selection-end-column="63" />
+            <state relative-caret-position="220">
+              <caret line="379" column="24" selection-start-line="379" selection-start-column="24" selection-end-line="379" selection-end-column="24" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -49,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="22560">
               <caret line="1504" column="5" selection-start-line="1504" selection-start-column="5" selection-end-line="1504" selection-end-column="5" />
             </state>
           </provider>
@@ -194,6 +193,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -269,7 +269,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -399,7 +398,8 @@
       <workItem from="1558102678773" duration="3592000" />
       <workItem from="1558192496272" duration="17000" />
       <workItem from="1558343222358" duration="611000" />
-      <workItem from="1558351320620" duration="282000" />
+      <workItem from="1558351320620" duration="683000" />
+      <workItem from="1558682720788" duration="358000" />
     </task>
     <task id="LOCAL-00001" summary="add CI, add Dockerfile">
       <created>1555070821463</created>
@@ -436,15 +436,21 @@
       <option name="project" value="LOCAL" />
       <updated>1558343372181</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added active tel to footer">
+      <created>1558351682857</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558351682857</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="417701000" />
+    <option name="totallyTimeSpent" value="418460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="794" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.45954198" visible="true" weight="0.20014094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -459,7 +465,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4996986" weight="0.2777778" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4996986" visible="true" weight="0.2777778" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50030136" side_tool="true" weight="0.32923076" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32771084" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
@@ -553,7 +559,8 @@
     <MESSAGE value="add CI, add Dockerfile" />
     <MESSAGE value="redesign landing page" />
     <MESSAGE value="added img" />
-    <option name="LAST_COMMIT_MESSAGE" value="added img" />
+    <MESSAGE value="added active tel to footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added active tel to footer" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/index.html">
@@ -907,15 +914,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.module.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="22560">
           <caret line="1504" column="5" selection-start-line="1504" selection-start-column="5" selection-end-line="1504" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/UserSide/LandingPage/LandingPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="387" column="63" selection-start-line="387" selection-start-column="63" selection-end-line="387" selection-end-column="63" />
+        <state relative-caret-position="220">
+          <caret line="379" column="24" selection-start-line="379" selection-start-column="24" selection-end-line="379" selection-end-column="24" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

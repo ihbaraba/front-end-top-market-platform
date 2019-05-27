@@ -1,9 +1,9 @@
 const SERVERS = {
     PRODUCT: {
-        XHR: "https://api.smartlead.top/api/v1/",
+        XHR: "https://api-dev.topmarket.ua/api/v1/",
     },
     DEV: {
-        XHR: "https://api.smartlead.top/api/v1/",
+        XHR: "https://api-dev.topmarket.ua/api/v1/",
     },
 };
 
@@ -14,8 +14,8 @@ const SERVERS = {
 * */
 
 const generatedDetected = {
-    XHR: `https://api.${document.location.hostname}/api/v1/`,
-    SOCKET: `wss://api.${document.location.hostname}/`,
+    XHR: `https://api-dev.topmarket.ua/api/v1/`,
+    SOCKET: `https://api-dev.topmarket.ua/`,
 };
 
 export const BASE_URL = document.location.hostname === "localhost"

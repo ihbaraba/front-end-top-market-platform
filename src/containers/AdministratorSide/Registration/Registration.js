@@ -105,7 +105,6 @@ class Registration extends Component {
                         )}
                     </FormItem>
 
-
                     <FormItem>
                         <label>Пароль</label>
                         {getFieldDecorator("password", {
@@ -131,7 +130,6 @@ class Registration extends Component {
                             />
                         )}
                     </FormItem>
-
 
                     <div className={styles.actions}>
                         <Link to='/'>У меня уже есть аккаунт</Link>

@@ -37,11 +37,13 @@ const http = (method, url, data, type) => {
                                         message: error.response.data[key],
                                     });
                                 } else {
-                                    notification.error({
-                                        // message: key,
-                                        // description: error.response.data[key][0],
-                                        message: error.response.data[key][0],
-                                    });
+                                    if (typeof error.response.data[key][0] !== 'object') {
+                                        notification.error({
+                                            // message: key,
+                                            // description: error.response.data[key][0],
+                                            message: error.response.data[key][0],
+                                        });
+                                    }
                                 }
 
                             }

@@ -1,9 +1,9 @@
 const SERVERS = {
     PRODUCT: {
-        XHR: "http://api-dev.topmarket.ua/api/v1/",
+        XHR: "https://api-dev.topmarket.ua/api/v1/",
     },
     DEV: {
-        XHR: "http://api-dev.topmarket.ua/api/v1/",
+        XHR: "https://api-dev.topmarket.ua/api/v1/",
     },
 };
 
@@ -14,7 +14,7 @@ const SERVERS = {
 * */
 
 const generatedDetected = {
-    XHR: `http://api-dev.topmarket.ua/api/v1/`,
+    XHR: `https://api-dev.topmarket.ua/api/v1/`,
     SOCKET: `wss://api.${document.location.hostname}/`,
 };
 

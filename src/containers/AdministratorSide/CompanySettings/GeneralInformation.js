@@ -3,7 +3,7 @@ import {Tabs, Checkbox, Form, Button, Select} from 'antd';
 import styles from './CompanySettings.module.css';
 import {getProfile, updateProfile, getSelectParams} from "../../../actions/companyActions";
 import {notification} from "antd/lib/index";
-import nike from "../../../img/nike.jpg";
+import nike from "../../../img/defaultimage.png";
 import Dropzone from 'react-dropzone';
 
 

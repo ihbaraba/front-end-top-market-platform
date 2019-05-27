@@ -33,6 +33,8 @@
 
 .userImg img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .userName {
@@ -100,7 +102,7 @@
 }
 
 .chooseTariff {
-    width: 60%;
+    width: 70%;
 }
 
 .chooseTariff h3 {
@@ -109,85 +111,156 @@
     font-size: 18px;
     font-weight: bold;
     line-height: 21px;
+    margin-bottom: 25px;
 }
 
+
+.tariffItem {
+    width: 307px;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.55);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 500ms ease;
+}
+
+
+.silverTitle {
+    width: 307px;
+    height: 65px;
+    background: #F4F4F4;
+    border-radius: 5px 0px 0px 0px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.goldTitle {
+    width: 307px;
+    height: 65px;
+    background: #D7B95E;
+    border-radius: 5px 0px 0px 0px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.platinumTitle {
+    width: 307px;
+    height: 65px;
+    background: #BABABA;
+    border-radius: 5px 0px 0px 0px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.silverTitle h4,
+.goldTitle h4,
+.platinumTitle h4{
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #4A4A4A;
+}
+.tariffPrice {
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 10px;
+}
+.tariffPrice .oldPrice {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration-line: line-through;
+    color: #969696;
+    display: block;
+}
+.tariffPrice .currentPrice{
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #4A92DD;
+}
+.priceBlock {
+    position: relative;
+}
+.priceBlock:before{
+    content: '';
+    position: absolute;
+    width: 12.57px;
+    height: 20px;
+    /*background: url("../../../img/hryvna.png") no-repeat;*/
+    left: -20px;
+    top: 10px;
+}
+
+.tariffItemBody {
+    padding: 20px 52px 20px 52px;
+}
+.tariffItemBody ul li {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4A4A4A;
+    margin-bottom: 20px;
+    position: relative;
+}
+.tariffItemBody ul li:before {
+    position: absolute;
+    content:"";
+    width: 15px;
+    height: 15px;
+    left: -25px;
+    top: 5px;
+    /*background: url("../../../img/checked.png");*/
+}
 .tariffsBox {
     display: flex;
     justify-content: space-between;
 }
 
-.tariffItem {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 469px;
-    width: 45%;
-    border: 1px solid #ECECEC;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-    margin-right: 30px;
-}
-
-.tariffHead {
-    height: 40px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 14px;
-    border-bottom: 1px solid #E2E2E2;
-}
-
-.tariffHead p {
-    color: #4A4A4A;
-    font-family: Ubuntu;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 22px;
-}
-
-.tariffHead span {
-    color: #4A90E2;
-    font-family: Ubuntu;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 21px;
-}
-
-.tariffHead .tariffPrice {
-    margin-right: 5px;
-}
-
-.tariffBody {
-    padding: 16px 12px;
-}
-
-.tariffBody ul li {
-    list-style: none;
-    color: #4A4A4A;
-    font-family: Ubuntu;
+.activeBtn {
+    width: 308px;
+    height: 38.19px;
+    background: #6AC259;
+    border-radius: 0px 0px 5px 5px;
+    font-style: normal;
+    font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    margin-bottom: 20px;
+    color: #FFFFFF;
 }
 
 .buyBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
     width: 100%;
-    border-radius: 0 0 5px 5px;
-    background-color: #4A90E2;
-    color: #FFFFFF;
+    height: 55px;
+    background: #4A92DD;
+    border-radius: 0px 0px 5px 5px;
     font-family: Ubuntu;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 22px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 25px;
+    color: #FFFFFF;
 }
 
-.buyBtn:hover {
-    color: #fff;
-}
+
+
 
 /* activated */
 

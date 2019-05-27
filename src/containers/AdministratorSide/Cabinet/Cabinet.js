@@ -160,7 +160,8 @@ class Cabinet extends Component {
                                               от поставщика</li>
                                       </ul>
                                   </div>
-                                  <button className={styles.activeBtn}>Активен</button>
+                                  {/*<button className={styles.activeBtn}>Активен</button>  */}
+                                  <button className={styles.buyBtn} onClick={this.showModal}>КУПИТЬ</button>
 
                               </div>
                                 <div className={styles.tariffItem}>

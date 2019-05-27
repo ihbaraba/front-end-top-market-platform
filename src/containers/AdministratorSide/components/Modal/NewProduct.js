@@ -107,15 +107,31 @@ class NewProduct extends Component {
     handleCreateProduct = async (e) => {
         e.preventDefault();
 
-        await createNewProduct(this.state);
+        let newProduct = {...this.state};
+
+        if (newProduct.imageUrls.length > 0) {
+            if (newProduct.imageUrls[0].url) {
+                delete newProduct.imageUrls
+            }
+        }
+
+        await createNewProduct(newProduct);
         this.props.onUpdate();
 
         this.handleCancel();
     };
 
     updateProduct = async () => {
+        let newProduct = {...this.state};
+
+        if (newProduct.imageUrls.length > 0) {
+            if (newProduct.imageUrls[0].url) {
+                delete newProduct.imageUrls
+            }
+        }
+
         await updateProduct({
-            ...this.state,
+            ...newProduct,
             category: this.state.categories.id
         });
 

@@ -73,7 +73,7 @@ class Registration extends Component {
                     <div className={styles.selectedRole}>
                         <RadioGroup onChange={this.onChange} defaultValue="CONTRACTOR">
                             <RadioButton value="CONTRACTOR">Поставщик</RadioButton>
-                            <RadioButton value="PARTNER">Партнер</RadioButton>
+                            <RadioButton value="PARTNER">Продавец</RadioButton>
                         </RadioGroup>
                     </div>
 

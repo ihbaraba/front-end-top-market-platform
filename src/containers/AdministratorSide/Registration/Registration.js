@@ -93,7 +93,7 @@ class Registration extends Component {
 
                     <FormItem>
                         <label>Номер телефона</label>
-                        {getFieldDecorator("tel", {
+                        {getFieldDecorator("phone", {
                             rules: [
                                 {required: true, message: "Введите Ваш номер тетефона!"},
                             ]

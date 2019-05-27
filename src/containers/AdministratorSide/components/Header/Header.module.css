@@ -137,3 +137,16 @@ header {
     line-height: 21px;
     margin-right: 18px;
 }
+
+/*Media*/
+@media screen and (max-width: 480px) {
+    header {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center;
+        height: auto !important;
+    }
+    .logo {
+        font-size: 22px !important;
+    }
+}

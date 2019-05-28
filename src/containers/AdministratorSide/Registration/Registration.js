@@ -73,7 +73,7 @@ class Registration extends Component {
                     <div className={styles.selectedRole}>
                         <RadioGroup onChange={this.onChange} defaultValue="CONTRACTOR">
                             <RadioButton value="CONTRACTOR">Поставщик</RadioButton>
-                            <RadioButton value="PARTNER">Продавец</RadioButton>
+                            <RadioButton value="PARTNER">Партнер</RadioButton>
                         </RadioGroup>
                     </div>
 
@@ -101,11 +101,9 @@ class Registration extends Component {
                             <Input
                                 type="tel"
                                 placeholder="Phone"
-                                // required
                             />
                         )}
                     </FormItem>
-
 
                     <FormItem>
                         <label>Пароль</label>
@@ -132,7 +130,6 @@ class Registration extends Component {
                             />
                         )}
                     </FormItem>
-
 
                     <div className={styles.actions}>
                         <Link to='/'>У меня уже есть аккаунт</Link>

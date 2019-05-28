@@ -1,6 +1,6 @@
 const SERVERS = {
     PRODUCT: {
-        XHR: "https://api-dev.topmarket.ua/api/v1/",
+        XHR: "https://api.topmarket.ua/api/v1/",
     },
     DEV: {
         XHR: "https://api-dev.topmarket.ua/api/v1/",

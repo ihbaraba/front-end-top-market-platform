@@ -102,7 +102,6 @@ class NewProduct extends Component {
     this.setState({
       [name]: value
     });
-    console.log("STATE: ", this.state);
   };
   //   handleChangeImgUrl = (e) => {
 
@@ -138,7 +137,6 @@ class NewProduct extends Component {
       ...newProduct,
       category: this.state.categories.id
     });
-
     this.props.onUpdate();
     this.handleCancel();
   };
@@ -182,6 +180,7 @@ class NewProduct extends Component {
   handleAddImageUrl = () => {
     this.setState({
       imageUrl: "",
+      coverImages: [],
       imageUrls: [
         ...this.state.imageUrls,
         {

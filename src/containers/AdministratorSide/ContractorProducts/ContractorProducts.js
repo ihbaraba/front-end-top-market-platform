@@ -282,10 +282,15 @@ class ContractorProducts extends Component {
             <div className="product-avatar-block">
               <img
                 src={
-                  item.coverImages.length > 0
-                    ? item.coverImages[0].imageDecoded
-                    : item.imageUrls.length > 0
+                  // item.coverImages.length > 0
+                  //   ? item.coverImages[0].imageDecoded
+                  //   : item.imageUrls.length > 0
+                  //   ? item.imageUrls[0].url
+                  //   : ""
+                  item.coverImages === []
                     ? item.imageUrls[0].url
+                    : item.coverImages.length > 0
+                    ? item.coverImages[0].imageDecoded
                     : ""
                 }
                 alt=""

@@ -409,7 +409,7 @@ class NewProduct extends Component {
                         className={styles.addUrlBtn}
                         onClick={this.handleAddImageUrl}
                       >
-                        Добавить URLTEST
+                        Добавить URL
                       </button>
                     </div>
                   </div>

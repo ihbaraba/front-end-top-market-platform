@@ -180,7 +180,6 @@ class NewProduct extends Component {
   handleAddImageUrl = () => {
     this.setState({
       imageUrl: "",
-      coverImages: [],
       imageUrls: [
         ...this.state.imageUrls,
         {

@@ -54,11 +54,7 @@ class NewProduct extends Component {
       description: "",
       price: "",
       imageUrl: "",
-      imageUrls: [
-        {
-          url: ""
-        }
-      ],
+      imageUrls: [],
       coverImages: [],
       uploadImage: false,
       visible: false,
@@ -71,7 +67,9 @@ class NewProduct extends Component {
   };
 
   onDrop = async files => {
-    let arrFiles = [];
+    let arrFiles = this.state.coverImages.length
+      ? [...this.state.coverImages]
+      : [];
 
     await files.forEach(file => {
       this.getBase64(file, result => {
@@ -81,10 +79,13 @@ class NewProduct extends Component {
       });
     });
 
-    this.setState({
-      coverImages: arrFiles,
-      uploadImage: true
-    });
+    this.setState(
+      {
+        coverImages: arrFiles,
+        uploadImage: true
+      },
+      () => console.log("ADDed IMG:", this.state)
+    );
   };
 
   getBase64(file, cb) {
@@ -99,9 +100,12 @@ class NewProduct extends Component {
   }
 
   handleChangeInput = ({ target: { value, name } }) => {
-    this.setState({
-      [name]: value
-    });
+    this.setState(
+      {
+        [name]: value
+      },
+      () => console.log("STATE: ", this.state)
+    );
   };
   //   handleChangeImgUrl = (e) => {
 
@@ -112,12 +116,6 @@ class NewProduct extends Component {
 
     let newProduct = { ...this.state };
 
-    // if (newProduct.imageUrls.length > 0) {
-    //   if (newProduct.imageUrls[0].url) {
-    //     delete newProduct.imageUrls;
-    //   }
-    // } Под вопросом...
-
     await createNewProduct(newProduct);
     this.props.onUpdate();
 
@@ -126,12 +124,6 @@ class NewProduct extends Component {
 
   updateProduct = async () => {
     let newProduct = { ...this.state };
-
-    // if (newProduct.imageUrls.length > 0) {
-    //   if (newProduct.imageUrls[0].url) {
-    //     delete newProduct.imageUrls;
-    //   }
-    // } // Под вопросом...
 
     await updateProduct({
       ...newProduct,
@@ -178,15 +170,18 @@ class NewProduct extends Component {
   };
 
   handleAddImageUrl = () => {
-    this.setState({
-      imageUrl: "",
-      imageUrls: [
-        ...this.state.imageUrls,
-        {
-          url: this.state.imageUrl
-        }
-      ]
-    });
+    this.setState(
+      {
+        imageUrl: "",
+        imageUrls: [
+          ...this.state.imageUrls,
+          {
+            url: this.state.imageUrl
+          }
+        ]
+      },
+      () => console.log("ADDed URL IMG:", this.state)
+    );
   };
 
   async componentDidMount() {

@@ -167,6 +167,8 @@ class NewProduct extends Component {
   };
 
   handleAddImageUrl = () => {
+    this.state.imageUrl
+    &&
     this.setState({
       imageUrl: "",
       imageUrls: [

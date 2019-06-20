@@ -9,6 +9,7 @@ import {
   getCategoriesById
 } from "../../../../actions/productsActions";
 import Dropzone from "react-dropzone";
+import ProductPictureGallery from "../ProductPictureGallery/ProductPictureGallery"
 
 const TabPane = Tabs.TabPane;
 
@@ -375,6 +376,29 @@ class NewProduct extends Component {
 
               <TabPane tab="Изображение" key="4">
                 <div className={styles.addPicture}>
+
+                  {/* ATTENTION --------------------------------------------------------------------------------------- TESTING */}
+
+                    {/* REMOVE THIS BLOCK AFTER TESTING WILL DONE */}
+
+                      <p style={{color:'red', textAlign:'center'}}>!!! The --== ProductPictureGallery ==-- is under testing !!!</p>
+
+                      {/* <ul>
+                      {imageUrls.map(el => <li><img src={el.url}></img></li>)}
+                      </ul> */}
+
+                    {/* REMOVE THIS BLOCK AFTER TESTING WILL DONE */}
+
+                    {coverImages || imageUrls 
+                      ? (() => {
+                        // console.log(coverImages,imageUrls);
+                        return <ProductPictureGallery coverImageList={coverImages} urlImageList={imageUrls}/>
+                      })()
+                      : null
+                    }
+
+                  {/* ATTENTION --------------------------------------------------------------------------------------- TESTING */}
+
                   <div className={styles.upload}>
                     <div>
                       <input type="file" name="uploadfile" id="addImg" />

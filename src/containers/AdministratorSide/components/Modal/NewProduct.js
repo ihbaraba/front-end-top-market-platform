@@ -379,16 +379,6 @@ class NewProduct extends Component {
 
                   {/* ATTENTION --------------------------------------------------------------------------------------- TESTING */}
 
-                    {/* REMOVE THIS BLOCK AFTER TESTING WILL DONE */}
-
-                      <p style={{color:'red', textAlign:'center'}}>!!! The --== ProductPictureGallery ==-- is under testing !!!</p>
-
-                      {/* <ul>
-                      {imageUrls.map(el => <li><img src={el.url}></img></li>)}
-                      </ul> */}
-
-                    {/* REMOVE THIS BLOCK AFTER TESTING WILL DONE */}
-
                     {coverImages || imageUrls 
                       ? (() => {
                         // console.log(coverImages,imageUrls);

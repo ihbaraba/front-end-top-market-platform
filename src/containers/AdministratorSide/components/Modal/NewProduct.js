@@ -381,7 +381,7 @@ class NewProduct extends Component {
 
                     {/* REMOVE THIS BLOCK AFTER TESTING WILL DONE */}
 
-                      <p style={{color:'red', textAlign:'center'}}>!!! The --== ProductPictureGallery ==-- is under testing !!!</p>
+                      {/* <p style={{color:'red', textAlign:'center'}}>!!! The --== ProductPictureGallery ==-- is under testing !!!</p> */}
 
                       {/* <ul>
                       {imageUrls.map(el => <li><img src={el.url}></img></li>)}
@@ -391,7 +391,7 @@ class NewProduct extends Component {
 
                     {coverImages || imageUrls 
                       ? (() => {
-                        // console.log(coverImages,imageUrls);
+                        console.log(coverImages,imageUrls);
                         return <ProductPictureGallery coverImageList={coverImages} urlImageList={imageUrls}/>
                       })()
                       : null

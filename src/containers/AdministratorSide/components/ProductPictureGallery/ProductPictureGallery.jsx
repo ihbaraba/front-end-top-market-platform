@@ -5,10 +5,9 @@ import styles from './ProductPictureGallery.module.css';
 
 
 const ProductPictureGallery = (props) => {
-    // console.log(props);
+
     const {urlImageList, coverImageList} = props;
-    // console.log(urlImageList);
-    // console.log(coverImageList);
+
     const imageList = [...urlImageList, ...coverImageList];
 
     return (
@@ -30,8 +29,8 @@ const ProductPictureGallery = (props) => {
 
             {/* VERSION 2 */}
                 {imageList.map((el, i )=> (
-                    <li className={styles.galleryItem}>
-                        <img src={el.imageDecoded || el.url} id={i===0 && "myImg"} alt=""/>
+                    <li className={styles.galleryItem} key={el.imageDecoded || el.url + i}>
+                        <img src={el.imageDecoded || el.url} alt=""/>
                     </li>
                 ))}
             {/* VERSION 2 */}

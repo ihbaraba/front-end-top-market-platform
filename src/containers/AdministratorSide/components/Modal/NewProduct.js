@@ -391,7 +391,7 @@ class NewProduct extends Component {
 
                     {coverImages || imageUrls 
                       ? (() => {
-                        console.log(coverImages,imageUrls);
+                        // console.log(coverImages,imageUrls);
                         return <ProductPictureGallery coverImageList={coverImages} urlImageList={imageUrls}/>
                       })()
                       : null

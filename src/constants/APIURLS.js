@@ -19,10 +19,11 @@ const generatedDetected = {
   SOCKET: `wss://api.${document.location.hostname}/`
 };
 
+
 export const BASE_URL =
-  document.location.hostname === "localhost"
-    ? SERVERS.DEV.XHR /* <=== set here server what needs for developing -  */
-    : generatedDetected.XHR;
+    /\bdev\b|\blocalhost\b/.test(document.location.hostname)
+        ? SERVERS.DEV.XHR /* <=== set here server what needs for developing -  */
+        : generatedDetected.XHR;
 
 /**************************
  * */
@@ -67,19 +68,19 @@ export const PARTNER_PRODUCTS = "catalog/partner_products/";
 export const ALL_PRODUCTS = "catalog/partner_products/products_by_contractors/";
 
 export const CONTRACTOR_CATEGORIES =
-  "catalog/contractor_products/contractor_categories/";
+    "catalog/contractor_products/contractor_categories/";
 
 export const UPLOAD_PRODUCTS = "catalog/products_upload/";
 
 export const REMOVE_CONTRACTOR_PRODUCTS =
-  "catalog/contractor_products/delete_list_of_products/";
+    "catalog/contractor_products/delete_list_of_products/";
 
 export const NEW_PRODUCTS = "catalog/contractor_products/";
 
 export const DOWNLOADS_STATUS = "catalog/contractor_products/upload_history/";
 
 export const COPY_TO_MY_PRODUCTS =
-  "catalog/partner_products/copy_to_my_products/";
+    "catalog/partner_products/copy_to_my_products/";
 
 export const YML = "catalog/yml-handler/";
 

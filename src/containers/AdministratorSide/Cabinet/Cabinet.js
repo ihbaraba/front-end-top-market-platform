@@ -97,6 +97,7 @@ class Cabinet extends Component {
 
         return (
             <div className='page'>
+                <div>
                 <h3 className='page-title'>{user.role === 'PARTNER' ? 'Кабинет продавца' : 'Кабинет поставщика'}</h3>
 
                 <div className={`${styles.userCard} page-content`}>

@@ -126,42 +126,54 @@ class Cabinet extends Component {
                             </div>}
                     </div>
 
-                    {this.props.user.role === 'CONTRACTOR' ? '' :
-                        <div className={styles.chooseTariff}>
-                            <h3>Приобретите пакет</h3>
-                            <div className={styles.tariffsBox}>
-                              <div className={styles.tariffItem}>
-                                    <div className={styles.silverTitle}>
-                                        <h4>Silver</h4>
+                    <div className={styles.videoTariff}>
+                        <h4>Для чего нужен пакет</h4>
+                        <div className={styles.videoBlock}>
+                            <iframe  src="https://www.youtube.com/embed/MizPu-dTPQU"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen></iframe>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                {this.props.user.role === 'CONTRACTOR' ? '' :
+                    <div className={styles.chooseTariff}>
+                        <h3>Приобретите пакет</h3>
+                        <div className={styles.tariffsBox}>
+                            <div className={styles.tariffItem}>
+                                <div className={styles.silverTitle}>
+                                    <h4>Silver</h4>
+                                </div>
+                                <div className={styles.tariffPrice}>
+                                    <div className={styles.priceBlock}>
+                                        <span className={styles.oldPrice}>35.000 грн</span>
+                                        <span className={styles.currentPrice}>27.000 грн</span>
                                     </div>
-                                  <div className={styles.tariffPrice}>
-                                      <div className={styles.priceBlock}>
-                                          <span className={styles.oldPrice}>35.000 грн</span>
-                                          <span className={styles.currentPrice}>27.000 грн</span>
-                                      </div>
-                                  </div>
-                                  <div className={styles.tariffItemBody}>
-                                      <ul>
-                                          <li>Добавление до 800 товаров в
-                                              свой аккаунт</li>
-                                          <li>Обучение в Smartlead Academy</li>
-                                          <li>Возможность интеграции с
-                                              интернет магазинам</li>
-                                          <li>Полный доступ ко всем
-                                              проверенным поставщикам</li>
-                                          <li>Автоматизация заказов,
-                                              готовая СРМ для Вашего бизнеса</li>
-                                          <li>Возможность интеграции с
-                                              маркетплейсами:
-                                              (Prom.ua, Rozetka, Bigl)</li>
-                                          <li>Удаленный контроль
-                                              Вашего бизнеса</li>
-                                          <li>Гарантия получения денег
-                                              от поставщика</li>
-                                      </ul>
-                                  </div>
-                                  {/*<button className={styles.activeBtn}>Активен</button>  */}
-                                  <button className={styles.buyBtn} onClick={this.showModal}>КУПИТЬ</button>
+                                </div>
+                                <div className={styles.tariffItemBody}>
+                                    <ul>
+                                        <li>Добавление до 800 товаров в
+                                            свой аккаунт</li>
+                                        <li>Обучение в Smartlead Academy</li>
+                                        <li>Возможность интеграции с
+                                            интернет магазинам</li>
+                                        <li>Полный доступ ко всем
+                                            проверенным поставщикам</li>
+                                        <li>Автоматизация заказов,
+                                            готовая СРМ для Вашего бизнеса</li>
+                                        <li>Возможность интеграции с
+                                            маркетплейсами:
+                                            (Prom.ua, Rozetka, Bigl)</li>
+                                        <li>Удаленный контроль
+                                            Вашего бизнеса</li>
+                                        <li>Гарантия получения денег
+                                            от поставщика</li>
+                                    </ul>
+                                </div>
+                                <button className={styles.activeBtn}>Активен</button>
 
                               </div>
                                 <div className={styles.tariffItem}>

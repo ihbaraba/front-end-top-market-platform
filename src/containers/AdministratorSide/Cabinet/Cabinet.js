@@ -115,6 +115,7 @@ class Cabinet extends Component {
                                 <p>Веб-сайт:<span> {company.url}</span></p>
                             </div>
                         </div>
+
                         <Link to="/admin/profile_settings" className={styles.editBtn}>Редактировать профиль</Link>
 
                         {this.props.user.role === 'CONTRACTOR' ? '' :
@@ -123,19 +124,21 @@ class Cabinet extends Component {
                                     пакетов доступа, цена на которые 27 000 грн, 45 000 и 59 000 грн. Все доступы,
                                     которые дает каждый пакет, указаны в описании.
                                 </p>
-                            </div>}
+                            </div>
+                        }
                     </div>
 
-                    <div className={styles.videoTariff}>
-                        <h4>Для чего нужен пакет</h4>
-                        <div className={styles.videoBlock}>
-                            <iframe  src="https://www.youtube.com/embed/MizPu-dTPQU"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen></iframe>
+                    {this.props.user.role === 'CONTRACTOR' ? '' :
+                        <div className={styles.videoTariff}>
+                            <h4>Для чего нужен пакет</h4>
+                            <div className={styles.videoBlock}>
+                                <iframe  src="https://www.youtube.com/embed/MizPu-dTPQU"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen></iframe>
+                            </div>
                         </div>
-                    </div>
-
+                    }
 
                 </div>
 

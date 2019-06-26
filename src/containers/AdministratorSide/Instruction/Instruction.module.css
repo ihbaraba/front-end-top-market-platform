@@ -60,6 +60,16 @@
     line-height: 23px;
 }
 
+.instructionBlock h5 {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+    margin-bottom: 52px;
+}
+
 .img1 {
     height: 741px;
     width: 971px;
@@ -131,4 +141,30 @@
     font-size: 20px;
     margin: 20px auto;
     text-align: center;
+}
+
+.list {
+    padding-left: 15px;
+}
+.list li {
+    list-style: disc;
+}
+
+
+/*For sallers */
+.main {
+    padding: 28px 30px;
+}
+
+.allProd1 {
+    margin-bottom: 49px;
+}
+.allProd2 {
+    margin-bottom: 39px;
+}
+
+.allProd3 {
+    max-width: 429px;
+    height: 385px;
+    /*margin: 0 auto;*/
 }

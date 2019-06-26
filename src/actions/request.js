@@ -22,6 +22,7 @@ const http = (method, url, data, type) => {
             }
         })
             .then((result) => {
+                console.log(result);
                 resolve(result.data);
             })
             .catch(error => {

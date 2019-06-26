@@ -29,7 +29,6 @@ class ContactsForm extends Component {
                 subject: subject ? subject : '',
                 text: text ? text : ''
             });
-
         }
 
         notification.success({
@@ -63,6 +62,7 @@ class ContactsForm extends Component {
                                value={subject}
                                name='subject'
                                onChange={this.handleChange}
+                               required
                         />
                     </div>
                     <div>
@@ -71,6 +71,7 @@ class ContactsForm extends Component {
                             value={text}
                             name='text'
                             onChange={this.handleChange}
+                            required
                         />
                     </div>
                 </Fragment>
@@ -119,10 +120,15 @@ class ContactsForm extends Component {
 
         return (
             <div>
-                <form className={styles.contactForm}>
+                <form className={styles.contactForm} onSubmit={this.handleSend}>
                     <h5 className={styles.title}>Контактная форма</h5>
                     {this.renderForm()}
-                    <button className={styles.send} onClick={this.handleSend}>Отправить</button>
+                    <button 
+                        className={styles.send}
+                        typehtmlType="submit"
+                    >
+                        Отправить
+                    </button>
                 </form>
             </div>
         );

@@ -177,6 +177,8 @@ class NewProduct extends Component {
     );
   };
 
+
+
   async componentDidMount() {
     const res = await getFirstLevelCategories();
     console.log(res);
@@ -376,7 +378,7 @@ class NewProduct extends Component {
                     {coverImages || imageUrls 
                       ? (() => {
                         // console.log(coverImages,imageUrls);
-                        return <ProductPictureGallery coverImageList={coverImages} urlImageList={imageUrls}/>
+                        return <ProductPictureGallery coverImageList={coverImages} urlImageList={imageUrls} key={id}/>
                       })()
                       : null
                     }

@@ -4,7 +4,7 @@ const initialUserState = {
 
 export default function userState(state = {...initialUserState}, action) {
     const {payload} = action;
-    console.log(payload);
+    // console.log(payload);
 
     switch (action.type) {
         case 'UPDATE_PROFILE':

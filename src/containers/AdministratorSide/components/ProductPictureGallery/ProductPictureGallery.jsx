@@ -56,16 +56,16 @@ class ProductPictureGallery extends Component {
           currentImageIndex 
         } = this.state;
     
-        console.log(this.state);
-        console.log(currentImageIndex)
+        // console.log(this.state);
+        // console.log(currentImageIndex)
 
         const newImageList = imageList.filter( el => el.url !== imageList[currentImageIndex].url || el.imageDecoded !== imageList[currentImageIndex].imageDecoded );
         const newUrlImageList = urlImageList.filter( el => el.url !== imageList[currentImageIndex].url );
         const newCoverImageList = coverImageList.filter( el => el.imageDecoded !== imageList[currentImageIndex].imageDecoded );
 
-        console.log(newImageList);
-        console.log(newUrlImageList);
-        console.log(newCoverImageList);
+        // console.log(newImageList);
+        // console.log(newUrlImageList);
+        // console.log(newCoverImageList);
         console.log('Image have to delete');
 
         if(currentImageIndex === (imageList.length - 1)) {
@@ -78,16 +78,14 @@ class ProductPictureGallery extends Component {
             coverImageList: [ ...newCoverImageList ],
           },
           () => {
-            console.log(this.props);
+            // console.log(this.props);
             // console.log(this.state);
             // console.log(this.state.imageList.length)
             // console.log(!this.state.imageList.length);
             !this.state.imageList.length && this.handleCancel();
             this.props.deleteImage( newCoverImageList, newUrlImageList );
-
           }
         );
-
         // this.props.deleteImage( newUrlImageList, newCoverImageList );
       },
       onCancel: () => {

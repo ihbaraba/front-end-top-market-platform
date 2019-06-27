@@ -12,6 +12,7 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {Menu, Dropdown, Icon, notification} from 'antd';
 import EditProductWindow from './EditProductWindow';
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 const TabPane = Tabs.TabPane;
 
@@ -370,168 +371,164 @@ class MyProducts extends Component {
         ];
 
         return (
-            <div className='page'>
-                <h3 className='page-title'>
-                    {/*<Popover placement="bottom" content={(*/}
-                        {/*<CategoryList*/}
-                            {/*categories={categories}*/}
-                            {/*onSelectCategory={this.handleSelectCategory}*/}
-                        {/*/>*/}
-                    {/*)}>*/}
-                        {/*<Icon type="bars"/>*/}
-                    {/*</Popover>*/}
+            <div className={styles.main}>
+                <div>
+                    <div className={styles.wrap}>
+                        <h3 className={styles.title}>Мои товары</h3>
+                    </div>
+                </div>
+                <div className='page'>
 
-                    Мои товары
-                </h3>
+                    <Tabs onChange={callback} type="card">
+                        <TabPane tab={`Товари в продажу - ${products.length}`} key="1">
 
-                <Tabs onChange={callback} type="card">
-                    <TabPane tab={`Товари в продажу - ${products.length}`} key="1">
+                            <div className={styles.inactiveGoodsTable}>
+                                <div className={styles.productsBtns}>
+                                    {/*<Tooltip placement="bottom" title='Находится в разработке'>*/}
+                                    <Dropdown overlay={menu} trigger={['click']}>
+                                        <button onClick={this.handleGenerateYml} className='btn'
+                                                disabled={selectedProducts.length < 1}>
+                                            Добавить в YML
+                                        </button>
+                                    </Dropdown>
 
-                        <div className={styles.inactiveGoodsTable}>
-                            <div className={styles.productsBtns}>
-                                {/*<Tooltip placement="bottom" title='Находится в разработке'>*/}
-                                <Dropdown overlay={menu} trigger={['click']}>
-                                    <button onClick={this.handleGenerateYml} className='btn'
-                                            disabled={selectedProducts.length < 1}>
-                                        Добавить в YML
-                                    </button>
-                                </Dropdown>
+                                    <div className={styles.totalProducts}>
+                                        Товаров: {count}
+                                    </div>
 
-                                <div className={styles.totalProducts}>
+                                    {/*</Tooltip>*/}
+
+                                    {/*<NewProduct/>*/}
+                                    {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
+                                </div>
+
+                                <Table
+                                    {...config}
+                                    rowSelection={rowSelection}
+                                    columns={columns}
+                                    dataSource={products}
+                                    onChange={this.handleChangeTable}
+                                />
+
+                                <div className={styles.totalProductsBottom}>
                                     Товаров: {count}
                                 </div>
-
-                                {/*</Tooltip>*/}
-
-                                {/*<NewProduct/>*/}
-                                {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
                             </div>
+                        </TabPane>
 
-                            <Table
-                                {...config}
-                                rowSelection={rowSelection}
-                                columns={columns}
-                                dataSource={products}
-                                onChange={this.handleChangeTable}
-                            />
+                        <TabPane tab="Неактивні товари - 0" key="2" disabled>
+                            <div className={styles.inactiveGoodsTable}>
+                                <div className={styles.productsBtns}>
+                                    <Dropdown overlay={menu} trigger={['click']}>
+                                        <button onClick={this.handleGenerateYml} className='btn'>
+                                            Добавить в YML
+                                        </button>
 
-                            <div className={styles.totalProductsBottom}>
-                                Товаров: {count}
-                            </div>
-                        </div>
-                    </TabPane>
-
-                    <TabPane tab="Неактивні товари - 0" key="2" disabled>
-                        <div className={styles.inactiveGoodsTable}>
-                            <div className={styles.productsBtns}>
-                                <Dropdown overlay={menu} trigger={['click']}>
-                                    <button onClick={this.handleGenerateYml} className='btn'>
-                                        Добавить в YML
-                                    </button>
-
-                                </Dropdown>
-                                {/*<NewProduct/>*/}
-                                {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
-                            </div>
-
-                            <div className={styles.filter}>
-                                <form>
-                                    <div>
-                                        <label>Код товара</label>
-                                        <input type="text" className={styles.code}/>
-                                    </div>
-                                    <div>
-                                        <label>Артикул</label>
-                                        <input type="text" className={styles.vendorCode}/>
-                                    </div>
-                                    <div>
-                                        <label>Название товара</label>
-                                        <input type="text" className={styles.productName}/>
-                                    </div>
-                                    <div>
-                                        <label>Категория</label>
-                                        <select className={styles.category}>
-                                            <option>Телефоны</option>
-                                            <option>Телефоны</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label>Наличие</label>
-                                        <select className={styles.availability}>
-                                            <option>В наличии</option>
-                                            <option>Нет в наличии</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label>Цена от</label>
-                                        <input type="text" className={styles.priceMin}/>
-                                    </div>
-                                    <div>
-                                        <label>До</label>
-                                        <input type="text" className={styles.priceMax}/>
-                                    </div>
-                                    <div>
-                                        <button className={styles.find}>Поиск</button>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <InactiveGoodsTable/>
-
-                        </div>
-                    </TabPane>
-
-                    <TabPane tab="Прайс-лист" key="3" disabled>
-                        <div className={styles.priceList}>
-                            <div>
-                                <p>Тип источника</p>
-                                <a href="#" className={styles.copyLink}><img src={copyLink} alt=""/> URL ссылка</a>
-                            </div>
-                            <div className={styles.priceAction}>
-                                <div className={styles.url}>
-                                    <label>URL на Прайс-лист</label>
-                                    <input type="text"/>
+                                    </Dropdown>
+                                    {/*<NewProduct/>*/}
+                                    {/*<button className={styles.actbtn}>Загрузить Exel файл</button>*/}
                                 </div>
-                                <div className={styles.actionbtn}>
-                                    <button className={styles.delete}>Удалить</button>
-                                    <button className={styles.downloadBtn}>Загрузить</button>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 className={styles.title}>Прайс-листы на валидации</h3>
-                        <div className={styles.priceListTable}>
-                            <PriceListTable/>
-                        </div>
-                    </TabPane>
 
-                    <TabPane tab="Управління товарами" key="4" disabled>
-                        <div className={styles.management}>
-                            <a href="#" className={styles.uploadList} download>Загрузить список производителей в
-                                Exсel</a>
-                            <h3>Управление категориями и параметрами</h3>
-                            <div className={styles.categories}>
+                                <div className={styles.filter}>
+                                    <form>
+                                        <div>
+                                            <label>Код товара</label>
+                                            <input type="text" className={styles.code}/>
+                                        </div>
+                                        <div>
+                                            <label>Артикул</label>
+                                            <input type="text" className={styles.vendorCode}/>
+                                        </div>
+                                        <div>
+                                            <label>Название товара</label>
+                                            <input type="text" className={styles.productName}/>
+                                        </div>
+                                        <div>
+                                            <label>Категория</label>
+                                            <select className={styles.category}>
+                                                <option>Телефоны</option>
+                                                <option>Телефоны</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label>Наличие</label>
+                                            <select className={styles.availability}>
+                                                <option>В наличии</option>
+                                                <option>Нет в наличии</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label>Цена от</label>
+                                            <input type="text" className={styles.priceMin}/>
+                                        </div>
+                                        <div>
+                                            <label>До</label>
+                                            <input type="text" className={styles.priceMax}/>
+                                        </div>
+                                        <div>
+                                            <button className={styles.find}>Поиск</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <InactiveGoodsTable/>
+
+                            </div>
+                        </TabPane>
+
+                        <TabPane tab="Прайс-лист" key="3" disabled>
+                            <div className={styles.priceList}>
                                 <div>
-                                    <label>Категория 1 уровня</label>
-                                    <select></select>
+                                    <p>Тип источника</p>
+                                    <a href="#" className={styles.copyLink}><img src={copyLink} alt=""/> URL ссылка</a>
                                 </div>
-                                <div>
-                                    <label>Категория 2 уровня</label>
-                                    <select></select>
+                                <div className={styles.priceAction}>
+                                    <div className={styles.url}>
+                                        <label>URL на Прайс-лист</label>
+                                        <input type="text"/>
+                                    </div>
+                                    <div className={styles.actionbtn}>
+                                        <button className={styles.delete}>Удалить</button>
+                                        <button className={styles.downloadBtn}>Загрузить</button>
+                                    </div>
                                 </div>
-                                <button className={styles.export}>Экспорт параметров</button>
                             </div>
-                        </div>
-                    </TabPane>
-                </Tabs>
+                            <h3 className={styles.title}>Прайс-листы на валидации</h3>
+                            <div className={styles.priceListTable}>
+                                <PriceListTable/>
+                            </div>
+                        </TabPane>
 
-                <EditProductWindow
-                    product={product}
-                    onUpdate={() => {
-                        this.setState({product: {}});
-                        this.getMyProducts()
-                    }}
-                />
+                        <TabPane tab="Управління товарами" key="4" disabled>
+                            <div className={styles.management}>
+                                <a href="#" className={styles.uploadList} download>Загрузить список производителей в
+                                    Exсel</a>
+                                <h3>Управление категориями и параметрами</h3>
+                                <div className={styles.categories}>
+                                    <div>
+                                        <label>Категория 1 уровня</label>
+                                        <select></select>
+                                    </div>
+                                    <div>
+                                        <label>Категория 2 уровня</label>
+                                        <select></select>
+                                    </div>
+                                    <button className={styles.export}>Экспорт параметров</button>
+                                </div>
+                            </div>
+                        </TabPane>
+                    </Tabs>
+
+                    <EditProductWindow
+                        product={product}
+                        onUpdate={() => {
+                            this.setState({product: {}});
+                            this.getMyProducts()
+                        }}
+                    />
+                </div>
             </div>
+
         );
     }
 }

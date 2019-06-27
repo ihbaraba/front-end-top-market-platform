@@ -39,13 +39,12 @@ class GeneralInformation extends Component {
         e.preventDefault();
 
         let letNewState = {...this.state};
-
         delete letNewState.activityArea;
         delete letNewState.companyType;
         delete letNewState.serviceIndustry;
 
         if (!this.state.updateImage) {
-            delete letNewState.avatar
+            delete letNewState.logoDecoded
         }
 
         updateProfile(letNewState)

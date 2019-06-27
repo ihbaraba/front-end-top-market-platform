@@ -143,6 +143,7 @@ class Cabinet extends Component {
 
                 </div>
 
+
                 {this.props.user.role === 'CONTRACTOR' ? '' :
                     <div className={styles.chooseTariff}>
                         <h3>Приобретите пакет</h3>

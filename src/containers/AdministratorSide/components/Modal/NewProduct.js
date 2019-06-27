@@ -120,13 +120,7 @@ class NewProduct extends Component {
   };
 
   updateProduct = async () => {
-    let newProduct = { ...this.state };
-
-    await updateProduct({
-      ...newProduct,
-      category: this.state.categories.id
-    });
-
+    await updateProduct(this.state);
     this.props.onUpdate();
     this.handleCancel();
   };

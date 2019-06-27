@@ -375,7 +375,6 @@ class MyProducts extends Component {
                 <div>
                     <div className={styles.wrap}>
                         <h3 className={styles.title}>Мои товары</h3>
-                        <Link to="/admin/instruction_sellers" className={styles.howToAdd}>Как добавить товар?</Link>
                     </div>
                 </div>
                 <div className='page'>

@@ -95,7 +95,7 @@ class Registration extends Component {
                         <label>Номер телефона</label>
                         {getFieldDecorator("phone", {
                             rules: [
-                                {required: true, message: "Введите Ваш номер тетефона!"},
+                                {required: true, message: "Введите Ваш номер телефона!"},
                             ]
                         })(
                             <Input

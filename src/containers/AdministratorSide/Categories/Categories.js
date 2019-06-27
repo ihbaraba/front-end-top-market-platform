@@ -246,7 +246,7 @@ class Categories extends Component {
                                 type="number"
                                 className={styles.productName}
                                 name='min_price'
-                                value={min_price}
+                                value={min_price * 1.05}
                                 onChange={this.handleChangeFilters}
                             />
                         </div>
@@ -256,7 +256,7 @@ class Categories extends Component {
                                 type="number"
                                 className={styles.productName}
                                 name='max_price'
-                                value={max_price}
+                                value={max_price * 1.05}
                                 onChange={this.handleChangeFilters}
                             />
                         </div>

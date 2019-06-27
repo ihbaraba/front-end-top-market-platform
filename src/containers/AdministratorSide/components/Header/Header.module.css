@@ -10,12 +10,12 @@
   margin: 0 auto;
 }
 
-header {
+.Header {
   height: 100px;
   width: 100%;
   display: flex !important;
   align-items: center;
-  background: #fff;
+  background-color: #022448;
   padding-left: 18px;
   padding-right: 52px;
 }
@@ -23,11 +23,11 @@ header {
 .logo {
   height: 79px;
   margin-right: 97px;
-  padding: 0 0 0 30px;
+  padding: 0 0 0 80px;
 
   display: flex;
   align-items: center;
-  color: red;
+  color: #fa8d15;
   font-family: Montserrat;
   font-size: 25px;
   font-weight: 600;

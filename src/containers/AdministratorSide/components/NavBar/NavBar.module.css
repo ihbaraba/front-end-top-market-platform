@@ -1,6 +1,6 @@
 .navigationBar {
   max-width: 226px;
-  border: 1px solid #ececec;
+  /* border: 1px solid #ececec; */
   background: #fff;
   min-height: 100%;
   position: relative;
@@ -17,6 +17,7 @@
   font-size: 30px;
   margin: 0 0 0 10px;
   cursor: pointer;
+  color: #fff;
 }
 
 .navigationBar a.menuItem {
@@ -24,10 +25,11 @@
   width: 225px;
   display: flex;
   align-items: center;
-  background-color: #065467;
-  color: #86c7d8;
-  font-family: Ubuntu;
-  font-size: 15px;
+  background-color: #003367;
+  color: #068fdd;
+  font-family: NoirPro;
+  font-weight: 300;
+  font-size: 14px;
   line-height: 17px;
   text-decoration: none;
   padding-left: 15px;
@@ -38,10 +40,10 @@
 
 .navigationBar a.menuItem:hover,
 .navigationBar a.menuItem:focus {
-  color: #14b5db;
-  font-family: Ubuntu;
-  font-size: 15px;
-  font-weight: bold;
+  color: #fa8d15;
+}
+.Selected {
+  color: #fa8d15;
 }
 
 .navigationBar a.menuItem div {

@@ -1,409 +1,408 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    max-width: 100% !important;
-    overflow: hidden;
-    overflow-y: auto;
+html,
+body {
+  max-width: 100% !important;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 body {
-    background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 #root,
 .App {
-    height: 100%;
+  height: 100%;
 }
 
 a.active {
-    color: #fff !important;
-    background-color: #4A90E2;
+  color: #fff !important;
+  background-color: #4a90e2;
 }
 
 .container {
-    width: 100%;
-    /*max-width: 1440px;*/
-    margin: 0 auto;
+  width: 100%;
+  /*max-width: 1440px;*/
+  margin: 0 auto;
 }
 
 .content-container {
-    min-height: calc(100% - 82px);
+  min-height: calc(100% - 82px);
 }
 
 .wrap {
-    display: flex;
+  display: flex;
 }
 
 .admin-side {
-    height: 100%;
+  height: 100%;
 }
 
 .admin-content {
-    background: #FAFAFA;
-    width: 100%;
-    flex: 1;
+  background: #fafafa;
+  width: 100%;
+  flex: 1;
 }
 
 .page {
-    min-height: 100%;
-    height: max-content;
-    background: #fff;
+  min-height: 100%;
+  height: max-content;
+  background: #fff;
 }
 
 .page-title {
-    color: #4A4A4A;
-    background: #FAFAFA;
-    font-family: Ubuntu;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: initial;
-    padding: 10px 50px 10px 10px;
+  color: #4a4a4a;
+  background: #fafafa;
+  font-family: Ubuntu;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: initial;
+  padding: 10px 50px 10px 10px;
 
-    border-bottom: 1px solid #ECECEC;
+  border-bottom: 1px solid #ececec;
 }
 
 .page-title i {
-    margin: 0 20px 0 0;
+  margin: 0 20px 0 0;
 }
 
 .page-title i:hover {
-    color: #4A90E2;
-    cursor: pointer;
+  color: #4a90e2;
+  cursor: pointer;
 }
 
 .ant-menu-item {
-    padding: 0 !important;
-    margin: 0 !important;
-    height: max-content !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: max-content !important;
 }
 
 .ant-menu-inline-collapsed > .ant-menu-item {
-    padding: 0 !important;
-    margin: 0 !important;
-    height: max-content !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: max-content !important;
 }
 
 .page-content {
-    padding: 20px 40px 0 20px;
-    margin-bottom: 30px;
+  padding: 20px 40px 0 20px;
+  margin-bottom: 30px;
 }
 
 .ant-menu-inline-collapsed {
-    width: 49px !important;
+  width: 49px !important;
 }
 
 .ant-table-thead > tr > th {
-    background: #fff;
+  background: #fff;
 }
 
 .active-icon {
-    display: none;
+  display: none;
 }
 
 .active .default-icon {
-    display: none !important;
+  display: none !important;
 }
 
 .active .active-icon {
-    display: block !important;
-    color: #fff;
+  display: block !important;
+  color: #fff;
 }
 
 .ant-table-pagination.ant-pagination {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .ant-collapse > .ant-collapse-item > .ant-collapse-header {
-    background: #fff;
-    color: #4F4F4F;
-    font-family: Ubuntu;
-    font-size: 16px;
-    line-height: 18px;
-    position: relative !important;
+  background: #fff;
+  color: #4f4f4f;
+  font-family: Ubuntu;
+  font-size: 16px;
+  line-height: 18px;
+  position: relative !important;
 }
 
 .ant-collapse > .ant-collapse-item > .ant-collapse-header:active,
 .ant-collapse > .ant-collapse-item > .ant-collapse-header:focus,
 .ant-collapse > .ant-collapse-item > .ant-collapse-header:visited {
-    background: #4A90E2;
-    color: #FFFFFF;
-    font-family: Ubuntu;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 22px;
+  background: #4a90e2;
+  color: #ffffff;
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
 }
 
 .react-daypicker-root {
-    width: 100%;
-    border-bottom: 1px solid #E2E2E2;
-    padding-bottom: 30px;
+  width: 100%;
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 30px;
 }
 
 .react-daypicker-root table {
-    width: 100%;
+  width: 100%;
 }
 
 .react-daypicker-root .header {
-    margin-bottom: 30px;
-    /*padding-bottom: 20px;*/
+  margin-bottom: 30px;
+  /*padding-bottom: 20px;*/
 }
 
 .ant-modal-title {
-    color: #4A4A4A;
-    font-family: Ubuntu;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 35px;
+  color: #4a4a4a;
+  font-family: Ubuntu;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 35px;
 }
 
 .ant-modal-content {
-    padding: 23px 30px;
+  padding: 23px 30px;
 }
 
 .ant-tabs-bar {
-    margin: 0;
+  margin: 0;
 }
 
 .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
-    margin-right: 0;
-    background: #ffffff;
+  margin-right: 0;
+  background: #ffffff;
 }
 
 .ant-pagination-options .ant-select-selection--single {
-    width: 100px !important;
-    height: auto !important;
+  width: 100px !important;
+  height: auto !important;
 }
 
 .ant-modal-content {
-    width: 691px;
-    border: 1px solid #ECECEC;
-    border-radius: 5px;
-    background-color: #FFFFFF;
+  width: 691px;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  background-color: #ffffff;
 }
 
 .ant-modal-body {
-    padding: 26px 0;
+  padding: 26px 0;
 }
 
 .ant-modal-header {
-    padding: 0 0 25px 0;
+  padding: 0 0 25px 0;
 }
 
 .ant-table-body {
-    overflow: scroll;
-    padding: 0;
+  overflow: scroll;
+  padding: 0;
 }
 
 .ant-upload {
-    height: 30px;
-    width: 30px;
-    background-color: #4A90E2;
+  height: 30px;
+  width: 30px;
+  background-color: #4a90e2;
 }
 
 .ant-menu-sub {
-    width: 100%;
+  width: 100%;
 }
 
 .ant-tabs-bar {
-    border-bottom: none;
-    /*margin-bottom: 30px;*/
+  border-bottom: none;
+  /*margin-bottom: 30px;*/
 }
 
 /*TABS*/
 .ant-tabs-content {
-    background: #fff;
-    border: 1px solid #ECECEC;
-    padding: 25px 40px 25px 25px;
+  background: #fff;
+  border: 1px solid #ececec;
+  padding: 25px 40px 25px 25px;
 }
 
 .ant-select-selection--single {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 /*FORM*/
 .ant-form-item {
-    margin: 0;
+  margin: 0;
 }
 
 .ant-checkbox-wrapper + .ant-checkbox-wrapper {
-    margin: 0;
+  margin: 0;
 }
 
 .ant-form-item-control {
-    /*line-height: 0;*/
+  /*line-height: 0;*/
 }
 
 .btn {
-    height: 40px;
-    min-width: 206px;
-    width: max-content;
-    border-radius: 5px;
-    background-color: #4A90E2;
-    color: #FFFFFF;
-    font-family: Ubuntu;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 22px;
-    margin-right: 20px;
+  height: 40px;
+  min-width: 206px;
+  width: max-content;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+  margin-right: 20px;
 }
 
 .m-0 {
-    margin: 0;
+  margin: 0;
 }
 
 .edit-btn {
-    height: 30px;
-    width: max-content;
-    padding: 0 10px;
-    font-size: 14px;
+  height: 30px;
+  width: max-content;
+  padding: 0 10px;
+  font-size: 14px;
 }
 
 .btn button {
-    height: 40px;
-    width: 100%;
-    border-radius: 5px;
-    background-color: #4A90E2;
-    color: #FFFFFF;
-    font-family: Ubuntu;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 22px;
-    margin-right: 20px;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+  margin-right: 20px;
 }
 
 .btn:hover {
-    background-color: #3870af !important;
-    cursor: pointer;
+  background-color: #3870af !important;
+  cursor: pointer;
 }
 
 button:disabled {
-    background-color: #B1B1B1 !important;
-    color: #FFFFFF;
+  background-color: #b1b1b1 !important;
+  color: #ffffff;
 }
 
 button:disabled:hover {
-    background-color: #B1B1B1 !important;
-    color: #FFFFFF;
-    cursor: no-drop;
+  background-color: #b1b1b1 !important;
+  color: #ffffff;
+  cursor: no-drop;
 }
 
 .btn-remove {
-    border-radius: 5px;
-    background-color: #e20013;
-    padding: 10px 15px;
-    color: #FFFFFF;
-    font-family: Ubuntu;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 22px;
-    margin-right: 20px;
-    cursor: pointer;
+  border-radius: 5px;
+  background-color: #e20013;
+  padding: 10px 15px;
+  color: #ffffff;
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .ant-dropdown-link {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .ant-table-header-column {
-    width: 100%;
+  width: 100%;
 }
 
 .filter-field {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .filter-field input,
 .filter-field select {
-    height: 31px;
-    width: 100%;
-    border: 1px solid #B2B2B2;
-    border-radius: 3px;
-    background-color: #FFFFFF;
-    padding: 0 0 0 5px;
+  height: 31px;
+  width: 100%;
+  border: 1px solid #b2b2b2;
+  border-radius: 3px;
+  background-color: #ffffff;
+  padding: 0 0 0 5px;
 }
 
 .product-avatar {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .product-avatar .product-avatar-block {
-    flex-basis: 43px !important;
-    height: 40px !important;
-    margin: 0 10px 0 0;
-    overflow: hidden;
+  flex-basis: 43px !important;
+  height: 40px !important;
+  margin: 0 10px 0 0;
+  overflow: hidden;
 }
 
 .product-avatar span {
-    width: 90%;
+  width: 90%;
 }
 
 .product-avatar .product-avatar-block img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .ant-table-tbody .ant-table-row-level-0:nth-child(2n) {
-    background-color: rgba(143, 143, 143, 0.19) !important;
+  background-color: rgba(143, 143, 143, 0.19) !important;
 }
 
 .ant-select-selection--single {
-    height: 46px;
-    width: 630px;
-    border: 1px solid #e3e3e3;
-    border-radius: 3px;
-    background-color: #FFFFFF;
-    /*margin-bottom: 42px;*/
+  height: 46px;
+  width: 630px;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  background-color: #ffffff;
+  /*margin-bottom: 42px;*/
 }
 
 .ant-menu-vertical {
-    border: 0 !important;
+  border: 0 !important;
 }
 
 .ant-menu-submenu-arrow {
-    right: 0 !important;
+  right: 0 !important;
 }
 
 /*modal*/
 
 .modal .ant-tabs-content {
-    padding: 0 16px !important;
-    border: 0 !important;
+  padding: 0 16px !important;
+  border: 0 !important;
 }
 
 .modal .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
-    border: 0 !important;
+  border: 0 !important;
 }
 
 .ant-modal-confirm-success {
-    width: max-content !important;
-    position: absolute !important;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto !important;
-    height: 300px;
+  width: max-content !important;
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto !important;
+  height: 300px;
 }
 
 /*orders*/
 .order-description {
-    display: flex;
+  display: flex;
 }
 
-
-
 @media screen and (max-width: 480px) {
-    .ant-modal-content {
-        width: 100% !important;
-        padding: 20px;
-    }
+  .ant-modal-content {
+    width: 100% !important;
+    padding: 20px;
+  }
 }

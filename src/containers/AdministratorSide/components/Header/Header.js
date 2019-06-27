@@ -38,11 +38,8 @@ class Header extends Component {
       )
     return (
       <div className="container">
-        <header>
-          <div className={styles.logo}>
-            <img src={logo} alt="logo" />
-            Buy and Sale
-          </div>
+        <header className={styles.Header}>
+          <div className={styles.logo}>Buy and Sale</div>
 
           {/*<div className={styles.notification}>*/}
           {/*<a href="#">*/}

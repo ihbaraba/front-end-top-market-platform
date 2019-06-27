@@ -120,10 +120,14 @@ class NewProduct extends Component {
   };
 
   updateProduct = async () => {
-    await updateProduct({
-      ...this.state,
-      category: this.state.category.id
-    });
+    typeof this.state.category === 'object' 
+      ? await updateProduct({
+        ...this.state,
+        category: this.state.category.id
+        })
+      : await updateProduct({
+        ...this.state
+        })
     this.props.onUpdate();
     this.handleCancel();
   };
@@ -191,7 +195,7 @@ class NewProduct extends Component {
 
   async componentDidMount() {
     const res = await getFirstLevelCategories();
-    console.log(res);
+    //console.log(res);
 
     this.setState({
       categories: res.map(item => ({

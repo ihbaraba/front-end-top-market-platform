@@ -248,3 +248,19 @@ input[type=submit] {
     margin-top: 20px;
     display: block;
 }
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main {
+    padding: 28px 30px;
+}
+.howToAdd {
+    color: #4A90E2;
+    font-family: Ubuntu;
+    font-size: 26px;
+    display: block;
+}

@@ -4,6 +4,7 @@ import {Table, Popover, Icon} from 'antd';
 import styles from './Categories.module.css'
 import {getAllProducts, getAllCategories, copyProducts} from '../../../actions/productsActions';
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 class Categories extends Component {
     state = {
@@ -266,47 +267,55 @@ class Categories extends Component {
         ];
 
         return (
-            <div className='page'>
-                <h3 className='page-title'>
-                    Все товары
-                </h3>
 
-                <div className={`${styles.categories} page-content`}>
-                    <div className={styles.categoriesBlock}>
-                        <div className={styles.actions}>
-                            <button
-                                disabled={selectedRowKeys.length === 0}
-                                className='btn'
-                                onClick={this.handleCopyProducts}>
-                                Добавить в мои товары
-                            </button>
+            <div className={styles.main}>
+                <div>
+                    <div className={styles.wrap}>
+                        <h3 className={styles.title}>Все товары</h3>
+                        <Link to="/admin/instruction_sellers" className={styles.howToAdd}>Как добавить товар?</Link>
+                    </div>
+                </div>
+                <div className='page'>
 
-                            <button
-                                disabled
-                                className='btn'
-                                onClick={this.handleCopyProducts}>
-                                Добавить в мой магазин
-                            </button>
+                    <div className={`${styles.categories} page-content`}>
+                        <div className={styles.categoriesBlock}>
+                            <div className={styles.actions}>
+                                <button
+                                    disabled={selectedRowKeys.length === 0}
+                                    className='btn'
+                                    onClick={this.handleCopyProducts}>
+                                    Добавить в мои товары
+                                </button>
 
-                            <div className={styles.totalProducts}>
+                                <button
+                                    disabled
+                                    className='btn'
+                                    onClick={this.handleCopyProducts}>
+                                    Добавить в мой магазин
+                                </button>
+
+                                <div className={styles.totalProducts}>
+                                    Товаров: {count}
+                                </div>
+                            </div>
+
+                            <Table
+                                {...config}
+                                rowSelection={rowSelection}
+                                columns={columns}
+                                dataSource={products}
+                                onChange={this.handleChangeTable}
+                            />
+
+                            <div className={styles.totalProductsBottom}>
                                 Товаров: {count}
                             </div>
-                        </div>
-
-                        <Table
-                            {...config}
-                            rowSelection={rowSelection}
-                            columns={columns}
-                            dataSource={products}
-                            onChange={this.handleChangeTable}
-                        />
-
-                        <div className={styles.totalProductsBottom}>
-                            Товаров: {count}
                         </div>
                     </div>
                 </div>
             </div>
+
+
         );
     }
 }

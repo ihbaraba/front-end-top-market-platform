@@ -120,7 +120,10 @@ class NewProduct extends Component {
   };
 
   updateProduct = async () => {
-    await updateProduct(this.state);
+    await updateProduct({
+      ...this.state,
+      category: this.state.category.id
+    });
     this.props.onUpdate();
     this.handleCancel();
   };
@@ -177,7 +180,14 @@ class NewProduct extends Component {
     );
   };
 
-
+  // =====================================================================
+  handleUpdateImages = (newCovers, newUrls) => {
+    this.setState({
+      coverImages: [ ...newCovers ],
+      imageUrls: [ ...newUrls ]
+    },
+    () => console.log(this.state))
+  }
 
   async componentDidMount() {
     const res = await getFirstLevelCategories();
@@ -375,10 +385,14 @@ class NewProduct extends Component {
 
                   {/* ATTENTION --------------------------------------------------------------------------------------- TESTING */}
 
-                    {coverImages || imageUrls 
+                    {coverImages.length || imageUrls.length 
                       ? (() => {
                         // console.log(coverImages,imageUrls);
-                        return <ProductPictureGallery coverImageList={coverImages} urlImageList={imageUrls} key={id}/>
+                        return <ProductPictureGallery 
+                          coverImageList={coverImages} 
+                          urlImageList={imageUrls} 
+                          deleteImage={this.handleUpdateImages}
+                          key={id}/>
                       })()
                       : null
                     }

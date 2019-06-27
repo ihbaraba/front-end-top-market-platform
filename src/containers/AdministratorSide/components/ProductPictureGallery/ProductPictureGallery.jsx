@@ -137,7 +137,7 @@ class ProductPictureGallery extends Component {
 
   render() {
     const { visible, imageList, currentImageIndex } = this.state
-    console.log(imageList[currentImageIndex])
+    // console.log(imageList[currentImageIndex])
 
     return (
       <>

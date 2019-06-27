@@ -13,7 +13,7 @@
     border-radius: 10%;
     overflow: hidden;
     opacity: 1;
-
+    
 }
 .galleryItem:hover {
     opacity: 0.5;
@@ -28,9 +28,18 @@
 .overViewBlock{
     display: flex;
     justify-content: space-between;
+    /* user-select: none; */
+}
+.overViewBlock p {
+    width: 42px;
+    cursor: pointer;
+}
+.overViewBlock__next {
+    text-align: end;
 }
 .overViewBlock__img {
-    max-width: 100%;
+    max-width: calc(100% - 74px);
+    margin: auto;
 }
 
 /* ------------------- PopUp Styles ------------------- */

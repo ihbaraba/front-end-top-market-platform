@@ -28,30 +28,69 @@ class ProductPictureGallery extends Component {
   }
 
   handleOk = e => {
-    console.log(e)
+    // console.log(e)
     this.setState({
       visible: false,
     })
   }
 
   handleCancel = e => {
-    console.log(e)
+    // console.log(e)
     this.setState({
       visible: false,
     })
   }
 
-  showDeleteConfirm() {
+  showDeleteConfirm = () => {
     Modal.confirm({
       title: 'Are you sure delete this task?',
       content: 'Some descriptions',
       okText: 'Yes',
       okType: 'danger',
       cancelText: 'No',
-      onOk() {
-        console.log('Image have to delete')
+      onOk: async () => {
+        const {
+          imageList,
+          urlImageList,
+          coverImageList,
+          currentImageIndex 
+        } = this.state;
+    
+        console.log(this.state);
+        console.log(currentImageIndex)
+
+        const newImageList = imageList.filter( el => el.url !== imageList[currentImageIndex].url || el.imageDecoded !== imageList[currentImageIndex].imageDecoded );
+        const newUrlImageList = urlImageList.filter( el => el.url !== imageList[currentImageIndex].url );
+        const newCoverImageList = coverImageList.filter( el => el.imageDecoded !== imageList[currentImageIndex].imageDecoded );
+
+        console.log(newImageList);
+        console.log(newUrlImageList);
+        console.log(newCoverImageList);
+        console.log('Image have to delete');
+
+        if(currentImageIndex === (imageList.length - 1)) {
+          this.showPrev()
+        };
+
+        await this.setState({
+            imageList: [ ...newImageList ],
+            urlImageList: [ ...newUrlImageList ],
+            coverImageList: [ ...newCoverImageList ],
+          },
+          () => {
+            console.log(this.props);
+            // console.log(this.state);
+            // console.log(this.state.imageList.length)
+            // console.log(!this.state.imageList.length);
+            !this.state.imageList.length && this.handleCancel();
+            this.props.deleteImage( newCoverImageList, newUrlImageList );
+
+          }
+        );
+
+        // this.props.deleteImage( newUrlImageList, newCoverImageList );
       },
-      onCancel() {
+      onCancel: () => {
         console.log('Cancel')
       },
     })
@@ -95,18 +134,10 @@ class ProductPictureGallery extends Component {
       imageList: [...this.props.urlImageList, ...this.props.coverImageList],
     })
   }
-  // componentWillUpdate(){
-  //   console.log(this.state);
-  //   console.log([...this.props.urlImageList, ...this.props.coverImageList]);
-  // }
-  // componentWillUnmount(){
-  //   console.log('component unmount');
-
-  // }
 
   render() {
     const { visible, imageList, currentImageIndex } = this.state
-    console.log(imageList[currentImageIndex])
+    // console.log(imageList[currentImageIndex])
 
     return (
       <>
@@ -140,6 +171,7 @@ class ProductPictureGallery extends Component {
         </ul>
         <Modal
           // title="Basic Modal"
+          style={{userSelect: "none"}}
           visible={visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
@@ -153,17 +185,36 @@ class ProductPictureGallery extends Component {
             {currentImageIndex + 1} of {imageList.length}
           </p>
           <div className={styles.overViewBlock}>
-            <p onClick={this.showPrev}> {"< Prev..."} </p>
-            <img
-              src={
-                imageList[currentImageIndex].url ||
-                imageList[currentImageIndex].imageDecoded ||
-                ''
-              }
-              alt=""
-              className={styles.overViewBlock__img}
-            />
-            <p onClick={this.showNext}> Next... > </p>
+
+            {imageList[1] && 
+              <p 
+                onClick={this.showPrev}
+              > 
+                {"< Prev..."} 
+              </p>
+            }
+
+            {imageList.length &&
+              <img
+                src={
+                  imageList[currentImageIndex].url ||
+                  imageList[currentImageIndex].imageDecoded ||
+                  ''
+                }
+                alt=""
+                className={styles.overViewBlock__img}
+              />
+            }
+
+            {imageList[1] && 
+              <p 
+                onClick={this.showNext} 
+                className={styles.overViewBlock__next}
+              >
+                > ...Next 
+              </p>
+            }
+
           </div>
         </Modal>
       </>
